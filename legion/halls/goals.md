@@ -2,11 +2,22 @@
 
 > Living document. Check off as done. Add new goals at the top. Archive to memory.md monthly.
 
-Last updated: 2026-04-17
+Last updated: 2026-04-26
 
 ## Now (Active Sprint)
-- [ ] **Install Graphify (codebase knowledge-graph tool)** — `pip install graphifyy && graphify install`, then test on AdsRadar. Repo cloned at `Claude Project/graphify/`. See evaluation in session 14 log. (Reminder set 2026-04-16)
-- [ ] Submit 4 job applications (Ruach, GHL Specialist, PlanetArt, Lumaprints) — CVs ready
+- [ ] **Portfolio audit fixes (parked from 2026-04-26 review)** — `.fade-section` no-JS/reduced-motion fallback, `aria-hidden` on duplicated marquee + tripled hero heading, re-tag projects honestly (LIVE vs DEMO vs FREE), fix typewriter mid-render flash, "View Workflows →" `<a href="#">` → `<button>`
+- [ ] Submit Discord portfolio share post (drafted in `portfolio-discord-post.md`) + collect community feedback
+- [x] 2026-04-22 — **MemPalace KG populated** — 0 → 52 facts, auto-load on session start, auto-save on wrap-up
+- [x] 2026-04-22 — **Graphify on memory** — 81 nodes, 98 edges, 10 communities, bridge patterns discovered
+- [x] 2026-04-22 — **LinkedIn profile optimized** — headline, About, Experience, Skills, banner image
+- [x] 2026-04-22 — **Client acquisition strategy** — FB Groups + OLJ (primary), LinkedIn content (secondary)
+- [ ] Join 5 FB groups + post intro when approved (GHL Official, Automation Experts, Marketplace, Freelancers, Agency Owners)
+- [ ] Optimize OLJ profile for GHL/SEO/Ads roles
+- [ ] Upload LinkedIn banner image
+- [ ] Draft FB group intro post + pitch/DM templates
+- [x] 2026-04-17 — **Install Graphify** — installed, ran on kei project (790 nodes, 18 communities), added .graphifyignore
+- [ ] Submit 5 job applications (Ruach, GHL Specialist, PlanetArt, Lumaprints, **Foxxr**) — CVs ready
+- [x] 2026-04-17 — **Foxxr SEO Web Designer/Developer** — full application stack built (CV + cover letter + case study + email pitch)
 - [ ] Complete Upwork profile (100%) using career-ops/output/Upwork-Profile-Guide-Keyvin-Abillon.docx
 - [ ] Add a real case study page for Solution13.online
 - [ ] Set up Google Analytics or Plausible for traffic tracking

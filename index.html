@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,16 +46,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="stylesheet" href="css/animations.min.css">
-  <!-- Anti-flash: apply theme before CSS paints -->
+  <link rel="stylesheet" href="css/editorial-overrides.css">
+  <!-- Anti-flash: apply theme + js class before CSS paints -->
   <script>
     (function () {
+      var html = document.documentElement;
+      html.classList.remove('no-js');
+      html.classList.add('js');
       var saved = localStorage.getItem('theme');
       var valid = ['light', 'dark'];
       var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       var theme = (valid.indexOf(saved) !== -1) ? saved : (prefersDark ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
+      html.setAttribute('data-theme', theme);
     })();
   </script>
+  <!-- Plausible analytics (privacy-respecting, GDPR-clean) -->
+  <script defer data-domain="keidark13.github.io" src="https://plausible.io/js/script.tagged-events.outbound-links.js"></script>
+  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 </head>
 <body>
 
@@ -106,22 +113,16 @@
     </ul>
   </div>
 
-  <canvas id="particle-mesh" aria-hidden="true"></canvas>
   <main id="main">
 
     <!-- HERO -->
     <section id="hero" aria-label="Hero section">
-      <div class="aura" aria-hidden="true">
-        <div class="aura-blob aura-blob--primary"></div>
-        <div class="aura-blob aura-blob--rose"></div>
-        <div class="aura-blob aura-blob--deep"></div>
-      </div>
       <div class="hero-content">
         <div class="hero-grid">
           <div class="hero-text">
             <p class="hero-eyebrow">Your leads are leaking. Let's fix that.</p>
-            <h1 class="glitch-text" data-text="Keyvin.">Keyvin.</h1>
-            <span class="role-text" id="role-text" aria-live="polite" aria-label="Automation Specialist, SEO Specialist, CRO Specialist"></span>
+            <h1 class="glitch-text" data-text="Keyvin." aria-label="Keyvin.">Keyvin.</h1>
+            <span class="role-text" id="role-text" aria-live="polite" aria-label="Automation Specialist, SEO Specialist, CRO Specialist">Automation Specialist</span>
             <p class="hero-tagline">Hand me the follow-ups, the funnels, the ad accounts. Your business has bigger things to focus on.</p>
             <div class="hero-stats" aria-label="Quick stats">
               <div class="hero-stat">
@@ -143,46 +144,22 @@
               <a href="#contact" class="btn btn-primary">Let's Build Your System</a>
               <a href="#projects" class="btn btn-outline">See Real Results</a>
             </div>
-          </div>
-          <div class="hero-photo" aria-hidden="true">
-            <div class="hero-photo-frame">
-              <div class="todo-card todo-card--1" aria-hidden="true">
-                <div class="todo-item todo-done">✓ Automate client follow-ups</div>
-                <div class="todo-item todo-done">✓ Google Ads ROAS +40%</div>
-                <div class="todo-item">○ SEO content cluster</div>
-                <div class="todo-item todo-done">✓ GHL pipeline deployed</div>
+
+            <!-- BUILDER LOG — paco-style status strip -->
+            <dl class="builder-log" aria-label="What I'm working on right now">
+              <div class="builder-log__row">
+                <dt class="builder-log__label">Recent</dt>
+                <dd class="builder-log__value">Vision Play (NYC) — repaired broken Conversation AI capture flow + shipped internal lead-notification workflow <span class="builder-log__muted">(live session, client sub-account)</span></dd>
               </div>
-              <div class="todo-card todo-card--2" aria-hidden="true">
-                <div class="todo-item todo-done">✓ Landing page A/B test</div>
-                <div class="todo-item">○ Analytics dashboard</div>
-                <div class="todo-item todo-done">✓ Lead magnet live</div>
+              <div class="builder-log__row">
+                <dt class="builder-log__label">Active</dt>
+                <dd class="builder-log__value">14 Google Ads accounts · 7 client price/GMC monitors · Custom GHL workflow injection pipeline <span class="builder-log__muted">(internal tool)</span></dd>
               </div>
-              <div class="todo-card todo-card--3" aria-hidden="true">
-                <div class="todo-item todo-done">✓ Rank target keywords</div>
-                <div class="todo-item">○ Email sequence setup</div>
-                <div class="todo-item todo-done">✓ CRO audit — 3 clients</div>
+              <div class="builder-log__row">
+                <dt class="builder-log__label">Shipped</dt>
+                <dd class="builder-log__value">Solution13 · AdsRadar · GHL Sniffer · 7-workflow Lead Nurture · 4 SaaS micro-tools</dd>
               </div>
-              <div class="todo-card todo-card--r1" aria-hidden="true">
-                <div class="todo-item todo-done">✓ SEO audit — 3 clients</div>
-                <div class="todo-item todo-done">✓ Keyword rankings up</div>
-                <div class="todo-item">○ Backlink outreach</div>
-                <div class="todo-item todo-done">✓ On-page fixes live</div>
-              </div>
-              <div class="todo-card todo-card--r2" aria-hidden="true">
-                <div class="todo-item todo-done">✓ Ad copy A/B test</div>
-                <div class="todo-item">○ Retargeting setup</div>
-                <div class="todo-item todo-done">✓ ROAS target hit</div>
-              </div>
-              <div class="todo-card todo-card--r3" aria-hidden="true">
-                <div class="todo-item todo-done">✓ Funnel conversion +18%</div>
-                <div class="todo-item">○ Checkout flow audit</div>
-                <div class="todo-item todo-done">✓ Heatmap review done</div>
-              </div>
-              <picture>
-                <source srcset="assets/keyvin-headshot-nobg.webp" type="image/webp">
-                <img src="assets/keyvin-headshot-nobg.png" alt="Keyvin Abillon" class="hero-avatar">
-              </picture>
-            </div>
+            </dl>
           </div>
         </div>
       </div>
@@ -216,39 +193,42 @@
         <span class="tool-sep">|</span>
         <span class="tool-item"><img src="assets/icons/ffmpeg.svg" class="tool-icon" alt="FFmpeg">FFmpeg</span>
         <span class="tool-sep">|</span>
-        <!-- set 2 (duplicate for seamless loop) -->
-        <span class="tool-item"><img src="assets/icons/openai.svg" class="tool-icon" alt="OpenAI">ChatGPT</span>
-        <span class="tool-sep">|</span>
-        <span class="tool-item"><svg class="tool-icon" viewBox="0 0 24 24"><path d="M13.5 2L4 13.5H11L9 22L20 10.5H13L13.5 2z" fill="#F9F64A"/></svg>GoHighLevel</span>
-        <span class="tool-sep">|</span>
-        <span class="tool-item"><img src="assets/icons/google-ads.svg" class="tool-icon" alt="Google Ads">Google Ads</span>
-        <span class="tool-sep">|</span>
-        <span class="tool-item"><img src="assets/icons/anthropic.svg" class="tool-icon" alt="Anthropic">Claude AI</span>
-        <span class="tool-sep">|</span>
-        <span class="tool-item"><img src="assets/icons/python.svg" class="tool-icon" alt="Python">Python</span>
-        <span class="tool-sep">|</span>
-        <span class="tool-item"><img src="assets/icons/playwright.svg" class="tool-icon" alt="Playwright">Playwright</span>
-        <span class="tool-sep">|</span>
-        <span class="tool-item"><svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="16,18 22,12 16,6" stroke="#34D399" stroke-width="2"/><polyline points="8,6 2,12 8,18" stroke="#34D399" stroke-width="2"/><line x1="14" y1="3" x2="10" y2="21" stroke="#F472B6" stroke-width="1.5"/></svg>Vibe Coding</span>
-        <span class="tool-sep">|</span>
-        <span class="tool-item"><svg class="tool-icon" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Claude Code</span>
-        <span class="tool-sep">|</span>
-        <span class="tool-item"><img src="assets/icons/meta.svg" class="tool-icon" alt="Meta">Meta Ads</span>
-        <span class="tool-sep">|</span>
-        <span class="tool-item"><img src="assets/icons/google-analytics.svg" class="tool-icon" alt="Google Analytics">Google Analytics</span>
-        <span class="tool-sep">|</span>
-        <span class="tool-item"><img src="assets/icons/cursor.svg" class="tool-icon" alt="Cursor">Cursor</span>
-        <span class="tool-sep">|</span>
-        <span class="tool-item"><img src="assets/icons/ffmpeg.svg" class="tool-icon" alt="FFmpeg">FFmpeg</span>
-        <span class="tool-sep">|</span>
+        <!-- set 2 (duplicate for seamless loop — hidden from screen readers) -->
+        <span class="tool-item" aria-hidden="true"><img src="assets/icons/openai.svg" class="tool-icon" alt="">ChatGPT</span>
+        <span class="tool-sep" aria-hidden="true">|</span>
+        <span class="tool-item" aria-hidden="true"><svg class="tool-icon" viewBox="0 0 24 24"><path d="M13.5 2L4 13.5H11L9 22L20 10.5H13L13.5 2z" fill="#F9F64A"/></svg>GoHighLevel</span>
+        <span class="tool-sep" aria-hidden="true">|</span>
+        <span class="tool-item" aria-hidden="true"><img src="assets/icons/google-ads.svg" class="tool-icon" alt="">Google Ads</span>
+        <span class="tool-sep" aria-hidden="true">|</span>
+        <span class="tool-item" aria-hidden="true"><img src="assets/icons/anthropic.svg" class="tool-icon" alt="">Claude AI</span>
+        <span class="tool-sep" aria-hidden="true">|</span>
+        <span class="tool-item" aria-hidden="true"><img src="assets/icons/python.svg" class="tool-icon" alt="">Python</span>
+        <span class="tool-sep" aria-hidden="true">|</span>
+        <span class="tool-item" aria-hidden="true"><img src="assets/icons/playwright.svg" class="tool-icon" alt="">Playwright</span>
+        <span class="tool-sep" aria-hidden="true">|</span>
+        <span class="tool-item" aria-hidden="true"><svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="16,18 22,12 16,6" stroke="#34D399" stroke-width="2"/><polyline points="8,6 2,12 8,18" stroke="#34D399" stroke-width="2"/><line x1="14" y1="3" x2="10" y2="21" stroke="#F472B6" stroke-width="1.5"/></svg>Vibe Coding</span>
+        <span class="tool-sep" aria-hidden="true">|</span>
+        <span class="tool-item" aria-hidden="true"><svg class="tool-icon" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Claude Code</span>
+        <span class="tool-sep" aria-hidden="true">|</span>
+        <span class="tool-item" aria-hidden="true"><img src="assets/icons/meta.svg" class="tool-icon" alt="">Meta Ads</span>
+        <span class="tool-sep" aria-hidden="true">|</span>
+        <span class="tool-item" aria-hidden="true"><img src="assets/icons/google-analytics.svg" class="tool-icon" alt="">Google Analytics</span>
+        <span class="tool-sep" aria-hidden="true">|</span>
+        <span class="tool-item" aria-hidden="true"><img src="assets/icons/cursor.svg" class="tool-icon" alt="">Cursor</span>
+        <span class="tool-sep" aria-hidden="true">|</span>
+        <span class="tool-item" aria-hidden="true"><img src="assets/icons/ffmpeg.svg" class="tool-icon" alt="">FFmpeg</span>
+        <span class="tool-sep" aria-hidden="true">|</span>
       </div>
     </section>
 
     <!-- SKILLS -->
     <section id="skills" class="fade-section section-pad" aria-labelledby="skills-heading">
       <div class="container">
-        <h2 id="skills-heading" class="section-heading">What I Do</h2>
-        <p class="section-subheading">Systems that generate leads, rank on Google, and convert at scale.</p>
+        <div class="section-head">
+          <span class="section-eyebrow">01 — Skills</span>
+          <h2 id="skills-heading" class="section-heading">What I Do</h2>
+          <p class="section-subheading">Systems that generate leads, rank on Google, and convert at scale.</p>
+        </div>
         <div class="skills-carousel-wrapper">
           <button class="skills-arrow skills-arrow--prev" id="skills-prev" aria-label="Previous skills">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15,18 9,12 15,6"/></svg>
@@ -321,7 +301,10 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-text">
-            <h2 id="about-heading">About Me</h2>
+            <div class="section-head section-head--inline">
+              <span class="section-eyebrow">04 — About</span>
+              <h2 id="about-heading" class="section-heading">About Me</h2>
+            </div>
             <p>3+ years in digital marketing, long enough to know exactly where leads leak, rankings slip, and ad budgets disappear. Since then: GHL automation pipelines, Google Ads accounts, and SEO systems built to compound over time.</p>
             <p style="margin-top: 1rem;">You get someone who has seen the problem firsthand and builds the fix — automations that still run, rankings that still hold, and conversions that keep climbing.</p>
             <div class="skill-badges" role="list" aria-label="Skills">
@@ -371,8 +354,11 @@
     <!-- PROJECTS -->
     <section id="projects" class="fade-section section-pad" aria-labelledby="projects-heading">
       <div class="container">
-        <h2 id="projects-heading" class="section-heading">Projects</h2>
-        <p class="section-subheading">Real work, real results. Systems that still run and rankings that still hold.</p>
+        <div class="section-head">
+          <span class="section-eyebrow">02 — Projects</span>
+          <h2 id="projects-heading" class="section-heading">Projects</h2>
+          <p class="section-subheading">Real work, real results. Systems that still run and rankings that still hold.</p>
+        </div>
 
         <!-- FEATURED — 2 hero cards -->
         <div class="projects-featured">
@@ -381,9 +367,6 @@
             <div class="card-beam" aria-hidden="true"></div>
             <div class="hero-card__inner">
               <div class="hero-card__visual">
-                <div class="aurora-blob aurora-blob--1"></div>
-                <div class="aurora-blob aurora-blob--2"></div>
-                <div class="aurora-blob aurora-blob--3"></div>
                 <div class="hero-card__icon">
                   <img src="assets/icons/google-ads.svg" alt="" width="32" height="32">
                   <span class="hero-card__plus">+</span>
@@ -398,9 +381,10 @@
                 </div>
               </div>
               <div class="card-body">
-                <span class="status-badge status-live">● LIVE</span>
+                <span class="status-badge status-live">LIVE</span>
                 <span class="card-label-inline">CLIENT WORK</span>
                 <h3>Solution13 — Local Growth System</h3>
+                <!-- LIVE: actual client site at solution13.online -->
                 <p>End-to-end lead-gen platform for local businesses: Google Ads management, GHL automation (SMS/email follow-up, missed-call text-back), and Local SEO — all in one system.</p>
                 <div class="tags">
                   <span class="tag">Go High Level</span>
@@ -416,9 +400,6 @@
             <div class="card-beam" aria-hidden="true"></div>
             <div class="hero-card__inner">
               <div class="hero-card__visual">
-                <div class="aurora-blob aurora-blob--1"></div>
-                <div class="aurora-blob aurora-blob--2"></div>
-                <div class="aurora-blob aurora-blob--3"></div>
                 <div class="hero-card__icon">
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 12h4l2-5h2"/><path d="M13 12l2 5h2"/></svg>
                 </div>
@@ -429,7 +410,7 @@
                 </div>
               </div>
               <div class="card-body">
-                <span class="status-badge status-live">● LIVE</span>
+                <span class="status-badge status-demo">DEMO</span>
                 <span class="card-label-inline">AUTOMATION</span>
                 <h3>GHL Lead Nurture System</h3>
                 <p>7-workflow automation pipeline — new lead intake, follow-up sequences, qualification, booking, no-show recovery, and a 30-day lost-lead recycling loop. Built in GoHighLevel.</p>
@@ -438,7 +419,7 @@
                   <span class="tag">Automation</span>
                   <span class="tag">CRM</span>
                 </div>
-                <a href="#" class="card-link" id="open-ghl-modal">View Workflows →</a>
+                <button type="button" class="card-link card-link--btn" id="open-ghl-modal">View Workflows →</button>
               </div>
             </div>
           </article>
@@ -453,7 +434,7 @@
             <div class="card-body">
               <div class="compact-card__header">
                 <h3>AdsRadar</h3>
-                <span class="status-badge status-live">● LIVE</span>
+                <span class="status-badge status-tool">TOOL</span>
               </div>
               <p>Drag a Google Ads CSV in — out comes a client-ready Excel workbook + HTML dashboard flagging wasted spend, CTR drops, and CPA risk.</p>
               <div class="tags">
@@ -470,7 +451,7 @@
             <div class="card-body">
               <div class="compact-card__header">
                 <h3>GHL Sniffer</h3>
-                <span class="status-badge status-live">● LIVE</span>
+                <span class="status-badge status-tool">TOOL</span>
               </div>
               <p>Chrome extension captures every GoHighLevel API call. Python CLI analyzes, audits security, and maps 91+ undocumented endpoints.</p>
               <div class="tags">
@@ -487,7 +468,7 @@
             <div class="card-body">
               <div class="compact-card__header">
                 <h3>SEO Audit Dashboard</h3>
-                <span class="status-badge status-live">● LIVE</span>
+                <span class="status-badge status-tool">TOOL</span>
               </div>
               <p>Crawls any domain and surfaces critical SEO issues ranked by impact — Core Web Vitals to keyword cannibalization.</p>
               <div class="tags">
@@ -503,7 +484,7 @@
             <div class="card-body">
               <div class="compact-card__header">
                 <h3>Landing Page CRO Kit</h3>
-                <span class="status-badge status-live">● LIVE</span>
+                <span class="status-badge status-template">TEMPLATE</span>
               </div>
               <p>Modular landing page framework — social proof, scarcity signals, and frictionless CTAs baked in.</p>
               <div class="tags">
@@ -519,7 +500,7 @@
             <div class="card-body">
               <div class="compact-card__header">
                 <h3>Keyword Rank Tracker</h3>
-                <span class="status-badge status-live">● LIVE</span>
+                <span class="status-badge status-tool">TOOL</span>
               </div>
               <p>Track keyword positions across domains over time. Visualizes ranking trends and volatility alerts.</p>
               <div class="tags">
@@ -535,7 +516,7 @@
             <div class="card-body">
               <div class="compact-card__header">
                 <h3>GHL Lead Nurture Snapshot</h3>
-                <span class="status-badge status-live">● LIVE</span>
+                <span class="status-badge status-free">FREE</span>
               </div>
               <p>Battle-tested 7-workflow GoHighLevel snapshot. Import-ready, zero setup from scratch.</p>
               <div class="tags">
@@ -551,7 +532,7 @@
             <div class="card-body">
               <div class="compact-card__header">
                 <h3>GHL Account Audit Tool</h3>
-                <span class="status-badge status-live">● LIVE</span>
+                <span class="status-badge status-free">FREE</span>
               </div>
               <p>20 questions. Instant score. Find what's missing in your GoHighLevel setup.</p>
               <div class="tags">
@@ -567,7 +548,7 @@
             <div class="card-body">
               <div class="compact-card__header">
                 <h3>Local SEO Playbook</h3>
-                <span class="status-badge status-live">● LIVE</span>
+                <span class="status-badge status-free">FREE</span>
               </div>
               <p>Battle-tested guide for dominating local search — GBP optimization, citations, and reviews.</p>
               <div class="tags">
@@ -583,7 +564,7 @@
             <div class="card-body">
               <div class="compact-card__header">
                 <h3>GHL Automation Services</h3>
-                <span class="status-badge status-live">● LIVE</span>
+                <span class="status-badge status-service">SERVICE</span>
               </div>
               <p>Speed-to-lead, appointment automation, review requests, and full pipeline setup — built to your process.</p>
               <div class="tags">
@@ -602,21 +583,24 @@
     <!-- CONTACT -->
     <section id="contact" class="fade-section section-pad" aria-labelledby="contact-heading">
       <div class="container">
-        <h2 id="contact-heading" class="section-heading">Let's Build Your System</h2>
-        <p class="section-subheading">Pick one. Stack a few. Build a system that runs without you.</p>
+        <div class="section-head">
+          <span class="section-eyebrow">03 — Contact</span>
+          <h2 id="contact-heading" class="section-heading">Let's Build Your System</h2>
+          <p class="section-subheading">Pick one. Stack a few. Build a system that runs without you.</p>
+        </div>
         <div class="contact-grid">
           <form class="contact-form" id="contact-form" novalidate aria-label="Contact form">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required autocomplete="name">
+              <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="you@example.com" required autocomplete="email">
+              <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
             </div>
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project..." required rows="5"></textarea>
+              <textarea id="message" name="message" class="form-textarea" required rows="5"></textarea>
             </div>
             <div class="cf-turnstile" data-sitekey="0x4AAAAAAC9akxfD0JJsKRt8" data-theme="dark"></div>
             <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
@@ -663,9 +647,23 @@
 
   <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
-    <div class="footer__main">
-      <p class="footer__tagline">Systems that run. Rankings that hold. Conversions that climb.</p>
-      <p class="footer__copy">© 2026 Keyvin Abillon · Built with Claude Code · <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy</a> · <a href="terms.html" style="color:inherit;text-decoration:underline">Terms</a></p>
+    <div class="footer-colophon">
+      <div class="footer-colophon__col">
+        <p class="footer-colophon__label">Location</p>
+        <p class="footer-colophon__val">Manila, PH<br>UTC+8</p>
+      </div>
+      <div class="footer-colophon__col">
+        <p class="footer-colophon__label">Typeset in</p>
+        <p class="footer-colophon__val">Space Grotesk<br>JetBrains Mono</p>
+      </div>
+      <div class="footer-colophon__col">
+        <p class="footer-colophon__label">Updated</p>
+        <p class="footer-colophon__val">May 2026<br>Built with Claude Code</p>
+      </div>
+      <div class="footer-colophon__col">
+        <p class="footer-colophon__label">© Keyvin Abillon</p>
+        <p class="footer-colophon__val"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+      </div>
     </div>
     <a href="#hero" class="back-to-top" aria-label="Back to top">
       ↑ Back to top

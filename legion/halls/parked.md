@@ -7,6 +7,15 @@
 
 ## Ideas
 
+- 2026-04-26 — Outcome-based project card copy — current cards list features ("7 workflows automated"), should pivot to outcomes ("18% reactivation, 30-day lost-lead recovery"). Same word count, 10x weight. Apply once 2-3 projects have measured results.
+- 2026-04-26 — Stat-backing pass — "3+ Years / 20+ Clients / 40% Avg ROAS" need scope ("40% avg ROAS lift across 14 Google Ads accounts"). Adds proof, kills "AI-generated" feel.
+- 2026-04-26 — 1280px breakpoint test — hero photo + 6 floating checklist cards may collide on 1280-wide laptops (fine on 1440). Verify responsive.
+
+- 2026-04-17 — Fix stale pre-emerald palette refs in `rules/rules.md` — graphify found `#0F0F23`/`#7C3AED` still referenced. Low priority, cosmetic only.
+- 2026-04-17 — Expand GHL Sniffer API Reference — currently 64 endpoints, real GHL API v2 has 468. Add remaining categories as needed.
+- 2026-04-17 — Re-run graphify with `.graphifyignore` active — will skip bundled AdsRadar JS, cleaner graph with ~165 meaningful nodes instead of 790.
+- 2026-04-17 — Reverse engineer engine.shopiator.com — Shopiator Audit Engine (Next.js/Vercel/Geist UI, Google Ads audit dashboard for managed accounts). Login-gated, need auth to see dashboard. Same concept as AdsRadar but multi-account. Could clone as upgraded AdsRadar v2.
+
 - 2026-03-22 — Blog / content section — A writing section where Keyvin publishes automation tutorials or case studies. Would position him as a thought leader and drive organic SEO traffic. Not now because the core site needs to ship first.
 - 2026-03-22 — Testimonials section — A dedicated section for client quotes/logos. Worthwhile once there are 3+ strong testimonials to show. Placeholder card exists in design language.
 - ~~2026-03-22 — Dark/light mode toggle~~ — DONE (implemented 2026-04-07)

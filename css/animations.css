@@ -14,6 +14,14 @@
   transform: translateY(0);
 }
 
+/* No-JS fallback — IntersectionObserver never fires without JS.
+   Head script flips .no-js → .js before paint; this catches no-JS users. */
+.no-js .fade-section,
+.no-js .stagger-item {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Stagger items (project cards) */
 .stagger-item {
   opacity: 0;
