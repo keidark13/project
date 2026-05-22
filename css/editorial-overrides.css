@@ -599,3 +599,101 @@ section.section-pad {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── EDITORIAL CORNERS — magazine framing (issue + date) ── */
+.editorial-corners {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 24px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.4);
+  z-index: 200;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+[data-theme="light"] .editorial-corners {
+  color: rgba(0, 0, 0, 0.5);
+  mix-blend-mode: normal;
+}
+@media (max-width: 600px) {
+  .editorial-corners { font-size: 0.58rem; padding: 10px 16px; letter-spacing: 0.1em; }
+}
+
+/* ── PROJECT NUMBERING — catalog index 001..011 ── */
+.project-num {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.32);
+  margin-right: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  vertical-align: middle;
+}
+[data-theme="light"] .project-num {
+  color: rgba(0, 0, 0, 0.32);
+}
+
+/* ── EDITORIAL FOOTER SIGNATURE — replaces bare back-to-top ── */
+.editorial-signature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: baseline;
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.75rem 1rem 2.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: 1rem;
+}
+.editorial-signature__issue { text-align: left; }
+.editorial-signature__rights { text-align: center; }
+.editorial-signature__top { text-align: right; }
+.editorial-signature a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  padding-bottom: 1px;
+  transition: border-color 0.15s ease;
+}
+.editorial-signature a:hover {
+  border-bottom-color: rgba(16, 185, 129, 0.7);
+}
+[data-theme="light"] .editorial-signature {
+  color: rgba(0, 0, 0, 0.5);
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+[data-theme="light"] .editorial-signature a { border-bottom-color: rgba(0, 0, 0, 0.18); }
+@media (max-width: 600px) {
+  .editorial-signature {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .editorial-signature__issue,
+  .editorial-signature__top { text-align: center; }
+}
+
+/* Footer override: stack colophon + signature vertically */
+.footer {
+  display: block !important;
+  padding: 1.75rem 5% 0 !important;
+}
+
+/* Old bare back-to-top → hide, replaced by signature */
+.back-to-top {
+  display: none !important;
+}
