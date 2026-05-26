@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hartwell &amp; Reed, Attorneys at Law — Personal injury counsel for serious cases</title>
+<meta name="description" content="Hartwell &amp; Reed represents seriously injured clients across the state. Free case review, settlement-first strategy, capped caseload of 40. Speak with a partner, not a screener.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter+Tight:wght@400;500;600;700&display=swap">
+
+<style>
+  :root {
+    /* palette — Variant A: navy + brass + cream (TBW canonical legal) */
+    --bg: #F5F1EA;
+    --bg-elevated: #EDE6D8;
+    --ink: #0E1B2E;
+    --ink-deep: #07101D;
+    --text: #1F2B3D;
+    --text-dim: #4A5666;
+    --text-faint: #7A8492;
+    --brass: #C8A864;
+    --brass-deep: #A78845;
+    --brass-soft: #E8D9B0;
+    --hairline: rgba(14, 27, 46, 0.10);
+    --hairline-strong: rgba(14, 27, 46, 0.20);
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4rem;
+    --space-7: 6rem;
+    --space-8: 8rem;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 14px;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.005em;
+  }
+  h1 { font-size: clamp(2.6rem, 5.6vw, 4.6rem); font-weight: 600; }
+  h2 { font-size: clamp(2rem, 3.8vw, 3.1rem); font-weight: 500; }
+  h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); font-weight: 600; }
+  h4 { font-size: 1.1rem; font-weight: 600; }
+  p { color: var(--text); margin-bottom: var(--space-2); }
+  a { color: inherit; text-decoration: none; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-3); }
+  .container-narrow { max-width: 880px; margin: 0 auto; padding: 0 var(--space-3); }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--brass-deep);
+    margin-bottom: var(--space-3);
+    display: inline-block;
+  }
+
+  /* nav */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(245, 241, 234, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: var(--space-3) 0;
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .logo .amp { color: var(--brass-deep); font-style: italic; }
+  .nav-links { display: flex; gap: var(--space-4); align-items: center; }
+  .nav-links a {
+    font-size: 0.92rem;
+    color: var(--text-dim);
+    transition: color 0.2s var(--ease-out);
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 1.6rem;
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.25s var(--ease-out);
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn-primary:hover {
+    background: var(--ink-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(14, 27, 46, 0.18);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--hairline-strong);
+  }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .btn-brass {
+    background: var(--brass);
+    color: var(--ink-deep);
+  }
+  .btn-brass:hover { background: var(--brass-deep); color: var(--bg); }
+
+  /* HERO — split-asymmetric, portrait right */
+  .hero { padding: var(--space-7) 0 var(--space-8); position: relative; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr;
+    gap: var(--space-6);
+    align-items: center;
+  }
+  .hero-copy h1 { margin-bottom: var(--space-3); }
+  .hero-copy h1 .italic { font-style: italic; color: var(--brass-deep); font-weight: 500; }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    margin-bottom: var(--space-5);
+    max-width: 540px;
+    line-height: 1.55;
+  }
+  .hero-ctas { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-5); }
+  .hero-meta {
+    display: flex; gap: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--hairline);
+  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .hero-meta-num {
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    color: var(--ink);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .hero-meta-label {
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .hero-portrait {
+    position: relative;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, #1F2B3D 0%, #0E1B2E 100%);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 30px 60px -20px rgba(14, 27, 46, 0.35);
+  }
+  .hero-portrait::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 60% 30%, rgba(200, 168, 100, 0.18) 0%, transparent 55%);
+  }
+  .hero-portrait-glyph {
+    position: absolute;
+    inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 11rem;
+    color: rgba(200, 168, 100, 0.20);
+    line-height: 1;
+  }
+  .hero-portrait-caption {
+    position: absolute;
+    bottom: var(--space-3); left: var(--space-3); right: var(--space-3);
+    padding: var(--space-3);
+    background: rgba(7, 16, 29, 0.78);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(200, 168, 100, 0.25);
+    border-radius: var(--radius-sm);
+  }
+  .hero-portrait-caption .name {
+    font-family: var(--font-display);
+    color: var(--brass-soft);
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+  .hero-portrait-caption .title {
+    color: rgba(245, 241, 234, 0.7);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* trust strip */
+  .trust { padding: var(--space-5) 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); background: var(--bg-elevated); }
+  .trust-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); }
+  .trust-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+  .trust-badges { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .trust-badge {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    padding: 0 var(--space-3);
+    border-left: 1px solid var(--hairline-strong);
+  }
+  .trust-badge:first-child { border-left: none; padding-left: 0; }
+
+  /* sections */
+  .section { padding: var(--space-8) 0; }
+  .section-head { max-width: 720px; margin-bottom: var(--space-6); }
+  .section-head h2 { margin-bottom: var(--space-3); }
+  .section-head p { font-size: 1.1rem; color: var(--text-dim); }
+
+  /* empathy / pain — 3-card */
+  .pain { background: var(--bg-elevated); }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+  .pain-card {
+    background: var(--bg);
+    padding: var(--space-5);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    border-top: 3px solid var(--brass);
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  }
+  .pain-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px -12px rgba(14, 27, 46, 0.15);
+  }
+  .pain-card h3 { margin-bottom: var(--space-2); font-size: 1.25rem; }
+  .pain-card p { color: var(--text-dim); font-size: 0.96rem; line-height: 1.6; }
+  .pain-card-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--brass-deep);
+    margin-bottom: var(--space-3);
+    display: block;
+  }
+
+  /* opportunity / mechanism */
+  .mechanism-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    align-items: center;
+  }
+  .mechanism-visual {
+    background: var(--ink);
+    color: var(--bg);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    position: relative;
+    overflow: hidden;
+  }
+  .mechanism-visual::before {
+    content: '40';
+    position: absolute;
+    top: -2rem; right: -1rem;
+    font-family: var(--font-display);
+    font-size: 18rem;
+    color: rgba(200, 168, 100, 0.10);
+    font-weight: 700;
+    line-height: 1;
+  }
+  .mechanism-visual h3 {
+    color: var(--brass-soft);
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: var(--space-3);
+    position: relative;
+  }
+  .mechanism-visual .big-num {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    color: var(--bg);
+    line-height: 1;
+    margin-bottom: var(--space-3);
+    position: relative;
+  }
+  .mechanism-visual p { color: rgba(245, 241, 234, 0.78); position: relative; }
+  .mechanism-copy p { margin-bottom: var(--space-3); font-size: 1.05rem; color: var(--text-dim); }
+  .mechanism-copy ul { list-style: none; margin-top: var(--space-4); }
+  .mechanism-copy li {
+    padding: var(--space-2) 0;
+    padding-left: var(--space-4);
+    border-bottom: 1px solid var(--hairline);
+    position: relative;
+    font-size: 0.96rem;
+    color: var(--text);
+  }
+  .mechanism-copy li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--brass-deep);
+  }
+
+  /* before / after — dark vs light */
+  .ba { background: var(--bg-elevated); }
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--hairline-strong);
+  }
+  .ba-side { padding: var(--space-6); }
+  .ba-before { background: #1F2B3D; color: var(--bg-elevated); }
+  .ba-after { background: var(--bg); color: var(--text); }
+  .ba-side .eyebrow { color: var(--brass); }
+  .ba-after .eyebrow { color: var(--brass-deep); }
+  .ba-side h3 {
+    margin-bottom: var(--space-4);
+    font-size: 1.5rem;
+    color: inherit;
+  }
+  .ba-before h3 { color: var(--brass-soft); }
+  .ba-side ul { list-style: none; }
+  .ba-side li {
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.96rem;
+  }
+  .ba-after li { border-bottom-color: var(--hairline); }
+
+  /* USP */
+  .usp { text-align: center; padding: var(--space-7) 0; }
+  .usp-statement {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.8vw, 3rem);
+    color: var(--ink);
+    line-height: 1.2;
+    max-width: 920px;
+    margin: 0 auto;
+    font-weight: 500;
+  }
+  .usp-statement .italic { font-style: italic; color: var(--brass-deep); }
+
+  /* offer stack */
+  .offer { background: var(--ink); color: var(--bg); padding: var(--space-8) 0; }
+  .offer h2 { color: var(--bg); }
+  .offer .eyebrow { color: var(--brass); }
+  .offer .section-head p { color: rgba(245, 241, 234, 0.7); }
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+    margin-top: var(--space-5);
+  }
+  .offer-item {
+    padding: var(--space-4);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200, 168, 100, 0.18);
+    border-radius: var(--radius-sm);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-3);
+    align-items: start;
+  }
+  .offer-item h4 { color: var(--bg); margin-bottom: 4px; }
+  .offer-item p { color: rgba(245, 241, 234, 0.7); font-size: 0.92rem; margin: 0; }
+  .offer-value {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--brass);
+    font-size: 1.05rem;
+    white-space: nowrap;
+  }
+  .offer-total {
+    margin-top: var(--space-4);
+    padding: var(--space-4);
+    border-top: 1px solid rgba(200, 168, 100, 0.3);
+    text-align: center;
+  }
+  .offer-total-label { color: rgba(245, 241, 234, 0.6); font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.15em; }
+  .offer-total-amt {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    color: var(--brass);
+    margin-top: 4px;
+  }
+  .offer-total-amt s { color: rgba(245, 241, 234, 0.4); font-size: 1.3rem; font-style: italic; margin-right: var(--space-2); }
+
+  /* social proof — magazine grid */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+  .proof-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    display: flex; flex-direction: column;
+  }
+  .proof-stars { color: var(--brass); font-size: 1.1rem; margin-bottom: var(--space-2); letter-spacing: 0.15em; }
+  .proof-quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: var(--space-4);
+    flex: 1;
+  }
+  .proof-meta { display: flex; align-items: center; gap: var(--space-2); padding-top: var(--space-3); border-top: 1px solid var(--hairline); }
+  .proof-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brass) 0%, var(--brass-deep) 100%);
+    color: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .proof-author { font-weight: 600; color: var(--ink); font-size: 0.95rem; }
+  .proof-case { color: var(--text-faint); font-size: 0.82rem; }
+  .proof-result {
+    margin-top: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    background: var(--brass-soft);
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    align-self: flex-start;
+  }
+  .proof-result .num { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: 0.96rem; }
+  .proof-result .lbl { color: var(--text-dim); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+  /* guarantee / risk reversal */
+  .guarantee {
+    background: var(--bg-elevated);
+    padding: var(--space-7) 0;
+  }
+  .guarantee-card {
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--bg);
+    border: 1px solid var(--brass);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-5);
+    align-items: center;
+  }
+  .guarantee-seal {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--brass);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    text-align: center;
+    line-height: 1.1;
+    border: 3px solid var(--brass);
+  }
+  .guarantee-seal .top { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .guarantee-seal .big { font-size: 1.8rem; font-style: italic; margin: 4px 0; }
+  .guarantee-seal .bot { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .guarantee-body h3 { margin-bottom: var(--space-2); font-size: 1.5rem; }
+  .guarantee-body p { color: var(--text-dim); }
+
+  /* authority — attorneys */
+  .auth-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+  }
+  .auth-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+  }
+  .auth-photo {
+    background: linear-gradient(135deg, #1F2B3D 0%, #0E1B2E 100%);
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 3.5rem;
+    color: rgba(200, 168, 100, 0.4);
+  }
+  .auth-body { padding: var(--space-4); }
+  .auth-body h3 { margin-bottom: 4px; font-size: 1.3rem; }
+  .auth-role { color: var(--brass-deep); font-style: italic; font-size: 0.92rem; margin-bottom: var(--space-3); font-family: var(--font-display); }
+  .auth-creds { list-style: none; }
+  .auth-creds li {
+    font-size: 0.84rem;
+    color: var(--text-dim);
+    padding: 4px 0;
+    padding-left: var(--space-3);
+    position: relative;
+  }
+  .auth-creds li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0.7em;
+    width: 6px; height: 1px;
+    background: var(--brass-deep);
+  }
+
+  /* FAQ */
+  .faq-grid { max-width: 880px; margin: 0 auto; }
+  .faq-item {
+    border-bottom: 1px solid var(--hairline-strong);
+    padding: var(--space-4) 0;
+  }
+  .faq-q {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: var(--space-3);
+    font-weight: 500;
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-q::after {
+    content: '+';
+    font-family: var(--font-body);
+    font-weight: 300;
+    color: var(--brass-deep);
+    font-size: 1.8rem;
+    transition: transform 0.3s var(--ease-out);
+  }
+  details[open] .faq-q::after { transform: rotate(45deg); }
+  .faq-a {
+    padding-top: var(--space-3);
+    color: var(--text-dim);
+    line-height: 1.65;
+  }
+
+  /* close */
+  .close {
+    padding: var(--space-8) 0;
+    background: var(--ink);
+    color: var(--bg);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .close::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: 50%;
+    width: 600px; height: 600px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(200, 168, 100, 0.12) 0%, transparent 60%);
+  }
+  .close h2 {
+    color: var(--bg);
+    font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+    margin-bottom: var(--space-3);
+    position: relative;
+  }
+  .close h2 .italic { font-style: italic; color: var(--brass); }
+  .close p {
+    color: rgba(245, 241, 234, 0.78);
+    font-size: 1.15rem;
+    max-width: 580px;
+    margin: 0 auto var(--space-5);
+    position: relative;
+  }
+  .close .btn-brass { position: relative; }
+
+  /* footer */
+  .footer { background: var(--ink-deep); color: rgba(245, 241, 234, 0.65); padding: var(--space-6) 0 var(--space-4); }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+  .footer h4 {
+    color: var(--brass-soft);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: var(--space-3);
+  }
+  .footer ul { list-style: none; }
+  .footer li { padding: 4px 0; font-size: 0.88rem; }
+  .footer a:hover { color: var(--brass-soft); }
+  .footer-bottom {
+    border-top: 1px solid rgba(200, 168, 100, 0.15);
+    padding-top: var(--space-4);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3);
+    font-size: 0.78rem;
+  }
+  .footer-legal {
+    color: rgba(245, 241, 234, 0.4);
+    font-style: italic;
+  }
+
+  /* responsive */
+  @media (max-width: 880px) {
+    .hero-grid, .mechanism-grid, .ba-grid, .auth-grid { grid-template-columns: 1fr; }
+    .pain-grid, .proof-grid { grid-template-columns: 1fr; }
+    .offer-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .guarantee-card { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    .nav-links { display: none; }
+    .auth-card { grid-template-columns: 1fr; }
+    .auth-photo { min-height: 160px; }
+    .section, .hero, .close, .offer { padding: var(--space-6) 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="logo">Hartwell <span class="amp">&amp;</span> Reed</div>
+    <div class="nav-links">
+      <a href="#mechanism">Approach</a>
+      <a href="#attorneys">Attorneys</a>
+      <a href="#results">Results</a>
+      <a href="#faq">FAQ</a>
+      <a href="#consult" class="btn btn-primary">Free Case Review</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO — split-asymmetric, portrait right -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Personal Injury &middot; Established 1998</span>
+      <h1>When the call comes, you want a <span class="italic">partner</span> on the line — not a screener.</h1>
+      <p class="hero-sub">Hartwell &amp; Reed represents seriously injured clients across the state. We cap our caseload at 40 so every file gets the attention a life-changing case deserves.</p>
+      <div class="hero-ctas">
+        <a href="#consult" class="btn btn-primary">Request a free case review</a>
+        <a href="#mechanism" class="btn btn-ghost">How we work</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-num">$184M</span>
+          <span class="hero-meta-label">Recovered for clients</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-num">27 yrs</span>
+          <span class="hero-meta-label">In trial practice</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-num">40</span>
+          <span class="hero-meta-label">Active case cap</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-portrait" aria-label="Founding partners portrait">
+      <span class="hero-portrait-glyph">H&amp;R</span>
+      <div class="hero-portrait-caption">
+        <div class="name">Margaret Hartwell, J.D. &middot; David Reed, J.D.</div>
+        <div class="title">Founding Partners &middot; AV Preeminent</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust">
+  <div class="container trust-inner">
+    <span class="trust-label">Recognized by</span>
+    <div class="trust-badges">
+      <span class="trust-badge">Super Lawyers</span>
+      <span class="trust-badge">AV Preeminent &middot; Martindale-Hubbell</span>
+      <span class="trust-badge">Avvo 10.0</span>
+      <span class="trust-badge">Best Lawyers in America</span>
+      <span class="trust-badge">State Bar Member</span>
+    </div>
+  </div>
+</section>
+
+<!-- EMPATHY / PAIN -->
+<section class="section pain" id="pain">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What you're up against</span>
+      <h2>The other side already has lawyers. You shouldn't be the only one without them.</h2>
+      <p>Most injured people we meet are stuck in three quiet pressures, all at once. Naming them is the first step toward a fair outcome.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <span class="pain-card-num">i.</span>
+        <h3>Insurance adjusters lowballing</h3>
+        <p>Their job is to settle low and fast. Yours is to recover. Without counsel reading the policy and citing comparable verdicts, the first offer is almost always a fraction of the case's real value.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-card-num">ii.</span>
+        <h3>Medical bills, no income</h3>
+        <p>You're not working. Bills don't pause. Liens stack up against a recovery that hasn't happened yet. The pressure to take any check &mdash; just to breathe &mdash; becomes louder than the math.</p>
+      </div>
+      <div class="pain-card">
+        <span class="pain-card-num">iii.</span>
+        <h3>A timeline you didn't choose</h3>
+        <p>Statutes of limitation, treatment gaps, recorded statements, surveillance. Every week without representation is a week the defense uses to shrink your case &mdash; quietly, on the record.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITY / MECHANISM -->
+<section class="section" id="mechanism">
+  <div class="container mechanism-grid">
+    <div class="mechanism-visual">
+      <h3>Why we cap at 40</h3>
+      <div class="big-num">40</div>
+      <p>Most firms run 200&ndash;400 active files per attorney. We don't. A capped caseload means the partner who shakes your hand is the partner who reads your medical records, drafts your demand, and sits at trial.</p>
+    </div>
+    <div class="mechanism-copy">
+      <span class="eyebrow">Our approach</span>
+      <h2>Settlement-first, trial-ready &mdash; in that order.</h2>
+      <p>Most cases should settle. The best leverage to settle them fairly is a defense team that knows we'll try them. We build every file as if it's going to a jury, then negotiate from that position of strength.</p>
+      <ul>
+        <li>Partner-led intake within 24 hours of contact</li>
+        <li>Independent medical review before any demand</li>
+        <li>Verdict-comparable demand letters, not template numbers</li>
+        <li>Quarterly progress calls &mdash; even when there's nothing new</li>
+        <li>Insurance handler of record managed in-house</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="section ba">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">The Difference</span>
+      <h2>What changes the moment a serious firm takes the file.</h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-side ba-before">
+        <span class="eyebrow">Before</span>
+        <h3>You against their machine</h3>
+        <ul>
+          <li>Recorded statement requested &mdash; off-script answers used against you</li>
+          <li>First offer lands in days; treatment isn't complete</li>
+          <li>Liens negotiated solo, often at full face value</li>
+          <li>Calls from adjusters during work hours, no buffer</li>
+          <li>No way to know if the number is fair</li>
+        </ul>
+      </div>
+      <div class="ba-side ba-after">
+        <span class="eyebrow">After</span>
+        <h3>You with counsel of record</h3>
+        <ul>
+          <li>All adjuster contact routes through the firm &mdash; nothing on the record without review</li>
+          <li>Demand built on completed treatment + comparable verdicts</li>
+          <li>Liens reduced 30&ndash;60% before disbursement</li>
+          <li>You focus on healing; we handle every call</li>
+          <li>Settlement valuation report shows the math behind the number</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USP -->
+<section class="usp">
+  <div class="container-narrow">
+    <p class="usp-statement">A capped caseload, partner-led from intake to disbursement &mdash; so the file the defense sees is <span class="italic">built for trial</span>, and the offer that arrives reflects it.</p>
+  </div>
+</section>
+
+<!-- OFFER STACK -->
+<section class="offer" id="consult">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What a free case review includes</span>
+      <h2>A 60-minute working session with a partner &mdash; not a sales call.</h2>
+      <p>You leave with a written next-steps memo and a clear sense of whether your case has merit, what it's likely worth, and how the contingency math works for your specific facts.</p>
+    </div>
+    <div class="offer-grid">
+      <div class="offer-item">
+        <div>
+          <h4>60-minute partner consultation</h4>
+          <p>Margaret or David reviews the file with you &mdash; not an intake screener.</p>
+        </div>
+        <span class="offer-value">$650 value</span>
+      </div>
+      <div class="offer-item">
+        <div>
+          <h4>Settlement valuation memo</h4>
+          <p>Range based on injury, jurisdiction, and 5+ comparable recent verdicts.</p>
+        </div>
+        <span class="offer-value">$900 value</span>
+      </div>
+      <div class="offer-item">
+        <div>
+          <h4>Insurance policy review</h4>
+          <p>We pull the at-fault policy + your UIM and identify all coverage layers.</p>
+        </div>
+        <span class="offer-value">$450 value</span>
+      </div>
+      <div class="offer-item">
+        <div>
+          <h4>Statute-of-limitations calendar</h4>
+          <p>Hard deadlines and treatment-gap risk dates, sent to you in writing.</p>
+        </div>
+        <span class="offer-value">$300 value</span>
+      </div>
+    </div>
+    <div class="offer-total">
+      <div class="offer-total-label">Total value</div>
+      <div class="offer-total-amt"><s>$2,300</s>Free &mdash; no fee unless we recover</div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF — magazine grid with case results -->
+<section class="section" id="results">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Recent outcomes</span>
+      <h2>Twenty-seven years of files. Six recent ones &mdash; in our clients' words.</h2>
+    </div>
+    <div class="proof-grid">
+      <article class="proof-card">
+        <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="proof-quote">"They told me what the case was worth, and then they got more. Margaret answered her own phone the day my employer cut my hours."</p>
+        <div class="proof-meta">
+          <div class="proof-avatar">AC</div>
+          <div>
+            <div class="proof-author">Andrea C.</div>
+            <div class="proof-case">Rear-end collision, herniated disc</div>
+          </div>
+        </div>
+        <div class="proof-result">
+          <span class="num">$1.4M</span><span class="lbl">recovered</span>
+        </div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="proof-quote">"My first lawyer treated me like a number. David read every page of my medical records and asked me how my kids were holding up. The case became real."</p>
+        <div class="proof-meta">
+          <div class="proof-avatar">MR</div>
+          <div>
+            <div class="proof-author">Marcus R.</div>
+            <div class="proof-case">Commercial trucking, wrongful death</div>
+          </div>
+        </div>
+        <div class="proof-result">
+          <span class="num">$3.8M</span><span class="lbl">verdict</span>
+        </div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="proof-quote">"They explained the contingency in plain English and didn't pressure me to sign that day. I called three other firms. Hartwell was the only one I trusted."</p>
+        <div class="proof-meta">
+          <div class="proof-avatar">JL</div>
+          <div>
+            <div class="proof-author">Janelle L.</div>
+            <div class="proof-case">Slip and fall, fractured wrist</div>
+          </div>
+        </div>
+        <div class="proof-result">
+          <span class="num">$420K</span><span class="lbl">settlement</span>
+        </div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="proof-quote">"The adjuster offered $35,000. Hartwell took the file, filed suit, and walked out with seven figures. I didn't know that gap was even possible."</p>
+        <div class="proof-meta">
+          <div class="proof-avatar">RT</div>
+          <div>
+            <div class="proof-author">Ronald T.</div>
+            <div class="proof-case">Motorcycle, traumatic brain injury</div>
+          </div>
+        </div>
+        <div class="proof-result">
+          <span class="num">$2.1M</span><span class="lbl">settlement</span>
+        </div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="proof-quote">"Quarterly calls. Not one missed. After eighteen months I knew the names of the paralegal, the lien negotiator, and the medical reviewer. That's not normal."</p>
+        <div class="proof-meta">
+          <div class="proof-avatar">DM</div>
+          <div>
+            <div class="proof-author">Denise M.</div>
+            <div class="proof-case">Premises liability, surgical injury</div>
+          </div>
+        </div>
+        <div class="proof-result">
+          <span class="num">$880K</span><span class="lbl">settlement</span>
+        </div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="proof-quote">"My husband couldn't work for two years. Margaret negotiated our medical liens from $312,000 down to $94,000. That's the money that fed our family."</p>
+        <div class="proof-meta">
+          <div class="proof-avatar">SP</div>
+          <div>
+            <div class="proof-author">Sarah P.</div>
+            <div class="proof-case">Workplace injury, lien negotiation</div>
+          </div>
+        </div>
+        <div class="proof-result">
+          <span class="num">$218K</span><span class="lbl">net to family</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE / RISK REVERSAL -->
+<section class="guarantee">
+  <div class="container">
+    <div class="guarantee-card">
+      <div class="guarantee-seal">
+        <span class="top">Hartwell</span>
+        <span class="big">No-fee</span>
+        <span class="bot">Promise</span>
+      </div>
+      <div class="guarantee-body">
+        <span class="eyebrow">Risk reversal</span>
+        <h3>You owe nothing unless we recover. That's it &mdash; in writing.</h3>
+        <p>No retainer. No hourly bills. No charges for the medical review, the demand letter, the experts, or the filing fees. If we don't recover for you, you don't owe us anything. The fee comes only out of the settlement or verdict &mdash; clearly itemized, signed by you, before disbursement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORITY -->
+<section class="section" id="attorneys">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Counsel of record</span>
+      <h2>Two partners. Twenty-seven years. Every case file, partner-signed.</h2>
+    </div>
+    <div class="auth-grid">
+      <div class="auth-card">
+        <div class="auth-photo">MH</div>
+        <div class="auth-body">
+          <h3>Margaret Hartwell, J.D.</h3>
+          <div class="auth-role">Founding Partner &middot; Trial Counsel</div>
+          <ul class="auth-creds">
+            <li>J.D., Columbia Law School, 1996 &mdash; Stone Scholar</li>
+            <li>State Bar Member, 1997 &mdash; in good standing</li>
+            <li>AV Preeminent rating, Martindale-Hubbell (12 consecutive years)</li>
+            <li>Super Lawyers, Personal Injury &mdash; Plaintiff (2014&ndash;present)</li>
+            <li>Past President, State Trial Lawyers Association</li>
+            <li>74 jury trials to verdict</li>
+          </ul>
+        </div>
+      </div>
+      <div class="auth-card">
+        <div class="auth-photo">DR</div>
+        <div class="auth-body">
+          <h3>David Reed, J.D.</h3>
+          <div class="auth-role">Founding Partner &middot; Settlement Strategy</div>
+          <ul class="auth-creds">
+            <li>J.D., University of Michigan Law School, 1998 &mdash; Order of the Coif</li>
+            <li>State Bar Member, 1999 &mdash; in good standing</li>
+            <li>Best Lawyers in America, Personal Injury Litigation (2018&ndash;present)</li>
+            <li>Avvo 10.0 &mdash; Superb rating</li>
+            <li>American Board of Trial Advocates &mdash; Advocate Level</li>
+            <li>$184M aggregate recovery for clients</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section pain" id="faq">
+  <div class="container">
+    <div class="section-head" style="text-align:center; margin-left:auto; margin-right:auto;">
+      <span class="eyebrow">Frequently asked</span>
+      <h2>The questions every injured client asks &mdash; answered plainly.</h2>
+    </div>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary class="faq-q">What does the contingency fee actually cost me?</summary>
+        <p class="faq-a">Our standard contingency is 33.3% of the gross recovery if the case settles before suit is filed, and 40% if we file and litigate. Costs (experts, filings, depositions) are advanced by the firm and reimbursed only from the recovery. If there's no recovery, you owe nothing &mdash; including costs.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How long will my case take?</summary>
+        <p class="faq-a">Most pre-suit settlements resolve within 6&ndash;14 months from the end of treatment. Cases that require filing suit typically run 14&ndash;26 months. We give you a realistic timeline at intake and update it on every quarterly call &mdash; never just "soon."</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">I already gave a recorded statement to the insurance company. Is my case ruined?</summary>
+        <p class="faq-a">Almost never. It complicates matters, but we work around it. The first thing we do is pull the transcript and identify what they'll try to use against you &mdash; then build the medical and witness record that contextualizes every quote.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Will I have to go to court?</summary>
+        <p class="faq-a">Roughly 93% of our cases settle without trial. We prepare every file as if it will go to trial &mdash; which is exactly why most settle for fair value. If trial is the right call, we tell you why, in writing, before filing.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Why a 40-case cap when most firms take hundreds?</summary>
+        <p class="faq-a">Volume firms make money on settlement velocity, not case value. We do the opposite &mdash; fewer files, deeper preparation, higher per-case outcomes. The math works for both sides: clients get more, we get repeat referrals from a quiet pipeline rather than ad spend.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What if I'm not sure my injury is "serious enough"?</summary>
+        <p class="faq-a">Call us anyway. We'll tell you honestly. About 30% of the people who reach out are referred elsewhere or told their case isn't worth pursuing &mdash; that's a fair answer too, and it costs you nothing to hear it from a partner.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Do I have to come to your office?</summary>
+        <p class="faq-a">No. Intake, document signing, and quarterly updates can be done by video or phone. We travel to clients who can't travel &mdash; hospital, home, rehab facility &mdash; at no additional cost.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How long do I have to file?</summary>
+        <p class="faq-a">It depends on the state and the type of claim &mdash; personal injury statutes typically run 1&ndash;3 years from the date of injury, with shorter notice deadlines for government defendants. Don't guess. The free case review includes a written deadline calendar specific to your facts.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close">
+  <div class="container">
+    <h2>The call is <span class="italic">free</span>. The answer is honest.</h2>
+    <p>Speak with Margaret or David directly &mdash; not an intake screener. We'll tell you whether you have a case, what it's likely worth, and what the next step looks like. No pressure, no obligation.</p>
+    <a href="tel:+15555550130" class="btn btn-brass">Call (555) 555-0130 &middot; Request a callback</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color: var(--brass-soft); margin-bottom: var(--space-3);">Hartwell <span class="amp">&amp;</span> Reed</div>
+        <p style="color: rgba(245, 241, 234, 0.55); font-size: 0.88rem; max-width: 320px;">A boutique personal injury practice. Partner-led, capped caseload, trial-ready files. Representing seriously injured clients statewide since 1998.</p>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="#">Motor vehicle</a></li>
+          <li><a href="#">Wrongful death</a></li>
+          <li><a href="#">Premises liability</a></li>
+          <li><a href="#">Commercial trucking</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Firm</h4>
+        <ul>
+          <li><a href="#attorneys">Attorneys</a></li>
+          <li><a href="#results">Recent results</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#">Speaking</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Office</h4>
+        <ul>
+          <li>1428 Ashford Street, Suite 600</li>
+          <li>Tel: (555) 555-0130</li>
+          <li>Mon&ndash;Fri 8:30&ndash;6:00</li>
+          <li>By appointment otherwise</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 1998&ndash;2026 Hartwell &amp; Reed, LLP. All rights reserved.</span>
+      <span class="footer-legal">Attorney advertising. Prior results do not guarantee a similar outcome. State Bar No. 1997-04421 &middot; 1999-08812.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

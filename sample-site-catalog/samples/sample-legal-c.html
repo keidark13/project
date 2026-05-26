@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marchetti Wealth &amp; Estate Counsel — Quiet planning for the families who can't afford the noise</title>
+<meta name="description" content="Marchetti is a boutique estate-planning and wealth-transfer firm serving families with complex assets. Discreet counsel, fixed-fee engagements, quarterly reviews. By referral and inquiry.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800,400,300&display=swap">
+
+<style>
+  :root {
+    /* palette — Variant C: bone + ink + brass editorial */
+    --bg: #F4F0E6;
+    --bg-soft: #EBE5D6;
+    --bg-paper: #FAF7EE;
+    --ink: #1A1816;
+    --ink-soft: #2A2724;
+    --text: #2A2724;
+    --text-dim: #5C5852;
+    --text-faint: #8B857C;
+    --brass: #C8A864;
+    --brass-deep: #A78845;
+    --brass-soft: #E8D9B0;
+    --rule: rgba(26, 24, 22, 0.14);
+    --rule-soft: rgba(26, 24, 22, 0.08);
+
+    --font-display: 'Cabinet Grotesk', 'Inter Tight', -apple-system, sans-serif;
+    --font-body: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4rem;
+    --space-7: 6rem;
+    --space-8: 8rem;
+
+    --radius-sm: 2px;
+    --radius-md: 6px;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  h1 { font-size: clamp(3rem, 8vw, 7rem); font-weight: 500; }
+  h2 { font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 500; }
+  h3 { font-size: clamp(1.35rem, 2.2vw, 1.7rem); font-weight: 500; }
+  h4 { font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; letter-spacing: 0; }
+  p { color: var(--text); margin-bottom: var(--space-2); }
+  a { color: inherit; text-decoration: none; }
+
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 var(--space-3); }
+  .container-narrow { max-width: 900px; margin: 0 auto; padding: 0 var(--space-3); }
+
+  /* MAGAZINE CORNERS treatment for eyebrow + section heads */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--brass-deep);
+    margin-bottom: var(--space-3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .eyebrow .num { color: var(--ink); font-weight: 500; }
+  .eyebrow .dash {
+    display: inline-block;
+    width: 24px; height: 1px;
+    background: var(--brass-deep);
+    opacity: 0.6;
+  }
+
+  .corners {
+    position: relative;
+    padding: var(--space-3) var(--space-4);
+  }
+  .corners::before, .corners::after {
+    content: '';
+    position: absolute;
+    width: 14px; height: 14px;
+    border: 1px solid var(--brass-deep);
+  }
+  .corners::before {
+    top: 0; left: 0;
+    border-right: none; border-bottom: none;
+  }
+  .corners::after {
+    bottom: 0; right: 0;
+    border-left: none; border-top: none;
+  }
+
+  /* nav */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(244, 240, 230, 0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: var(--space-3) 0;
+    gap: var(--space-4);
+  }
+  .nav-meta {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--text-faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .nav-right {
+    display: flex; gap: var(--space-3); align-items: center;
+    justify-self: end;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .nav-right a {
+    color: var(--text-dim);
+    transition: color 0.2s var(--ease-out);
+  }
+  .nav-right a:hover { color: var(--ink); }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 1.6rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.25s var(--ease-out);
+  }
+  .btn-primary { background: var(--ink); color: var(--bg); }
+  .btn-primary:hover { background: var(--ink-soft); transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .btn-ghost:hover { background: var(--ink); color: var(--bg); }
+
+  /* HERO — editorial-text-only */
+  .hero {
+    padding: var(--space-7) 0 var(--space-8);
+    position: relative;
+  }
+  .hero-meta-row {
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-faint);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-6);
+  }
+  .hero-headline-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    align-items: end;
+    margin-bottom: var(--space-6);
+  }
+  .hero h1 {
+    grid-column: 1 / -1;
+    max-width: 14ch;
+    font-weight: 500;
+    line-height: 0.96;
+    letter-spacing: -0.035em;
+  }
+  .hero h1 .italic {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--brass-deep);
+  }
+  .hero-sub-block {
+    grid-column: 2 / -1;
+    margin-top: var(--space-4);
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    line-height: 1.55;
+    max-width: 480px;
+    margin-bottom: var(--space-4);
+  }
+  .hero-ctas { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+  .hero-rule {
+    margin: var(--space-6) 0 var(--space-4);
+    border-top: 1px solid var(--rule);
+  }
+  .hero-byline {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+  }
+  .hero-byline .label {
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.7rem;
+  }
+  .hero-byline .value {
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  /* trust strip — masthead style */
+  .trust {
+    padding: var(--space-4) 0;
+    background: var(--bg-soft);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .trust-inner {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: var(--space-4);
+  }
+  .trust-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--text-faint);
+  }
+  .trust-badges {
+    display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center;
+  }
+  .trust-badge {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--ink);
+    padding: 0 var(--space-3);
+    border-left: 1px solid var(--rule);
+  }
+  .trust-badge:first-child { border-left: none; padding-left: 0; }
+
+  /* sections */
+  .section { padding: var(--space-8) 0; }
+  .section-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--rule);
+    align-items: end;
+  }
+  .section-header h2 { margin: 0; }
+  .section-header p { font-size: 1.1rem; color: var(--text-dim); margin: 0; line-height: 1.55; }
+
+  /* empathy — editorial list */
+  .pain { background: var(--bg-paper); }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .pain-card {
+    padding: var(--space-5) var(--space-4);
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .pain-card:nth-child(3n) { border-right: none; }
+  .pain-card .num {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--brass-deep);
+    letter-spacing: 0.14em;
+    margin-bottom: var(--space-3);
+    display: block;
+  }
+  .pain-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: var(--space-2);
+    line-height: 1.15;
+  }
+  .pain-card p { color: var(--text-dim); font-size: 0.96rem; margin: 0; }
+
+  /* mechanism / opportunity */
+  .mechanism-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-7);
+    align-items: start;
+  }
+  .mechanism-display {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 5.4vw, 4.4rem);
+    line-height: 1.0;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    font-weight: 500;
+  }
+  .mechanism-display .italic { font-style: italic; color: var(--brass-deep); font-weight: 400; }
+  .mechanism-display .small-meta {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--text-faint);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-top: var(--space-3);
+    font-weight: 500;
+  }
+  .mechanism-list { display: flex; flex-direction: column; gap: var(--space-3); }
+  .mechanism-list h4 { color: var(--ink); margin-bottom: 0.4rem; font-size: 1.1rem; }
+  .mechanism-list p { color: var(--text-dim); font-size: 0.96rem; margin: 0; }
+  .mechanism-item {
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: var(--space-2);
+  }
+  .mechanism-item:last-child { border-bottom: none; }
+  .mechanism-item-num {
+    font-family: var(--font-mono);
+    color: var(--brass-deep);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    padding-top: 0.4em;
+  }
+
+  /* before / after — magazine slider treatment, single article block */
+  .ba { background: var(--bg-soft); }
+  .ba-spread {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--bg-paper);
+    border: 1px solid var(--rule);
+  }
+  .ba-side { padding: var(--space-6); }
+  .ba-side + .ba-side { border-left: 1px solid var(--rule); }
+  .ba-side .label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--brass-deep);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-3);
+    display: block;
+  }
+  .ba-side h3 {
+    font-size: 1.6rem;
+    margin-bottom: var(--space-3);
+    line-height: 1.15;
+  }
+  .ba-side p { color: var(--text-dim); font-size: 0.98rem; }
+  .ba-side ul { list-style: none; margin-top: var(--space-3); }
+  .ba-side li {
+    padding: var(--space-2) 0;
+    border-bottom: 1px dotted var(--rule);
+    color: var(--text);
+    font-size: 0.94rem;
+    display: grid;
+    grid-template-columns: 1.4rem 1fr;
+    gap: var(--space-2);
+  }
+  .ba-side li::before {
+    content: '·';
+    color: var(--brass-deep);
+    font-size: 1.4rem;
+    line-height: 0.8;
+    text-align: center;
+  }
+
+  /* USP — masthead statement */
+  .usp {
+    padding: var(--space-8) 0;
+    background: var(--bg-paper);
+    text-align: center;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .usp-mark {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--brass-deep);
+    margin-bottom: var(--space-3);
+  }
+  .usp-statement {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    color: var(--ink);
+    line-height: 1.15;
+    max-width: 980px;
+    margin: 0 auto;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  .usp-statement .italic { font-style: italic; color: var(--brass-deep); font-weight: 400; }
+
+  /* offer — magazine line items */
+  .offer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-7);
+    align-items: start;
+  }
+  .offer-headline { }
+  .offer-headline h2 { margin-bottom: var(--space-3); }
+  .offer-headline p { color: var(--text-dim); font-size: 1.05rem; margin-bottom: var(--space-4); }
+  .offer-headline .btn { margin-top: var(--space-3); }
+  .offer-list {
+    border-top: 1px solid var(--ink);
+  }
+  .offer-item {
+    display: grid;
+    grid-template-columns: 3rem 1fr auto;
+    gap: var(--space-3);
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .offer-item-num {
+    font-family: var(--font-mono);
+    color: var(--brass-deep);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    padding-top: 0.4em;
+  }
+  .offer-item h4 { margin-bottom: 0.3rem; font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; }
+  .offer-item p { color: var(--text-dim); font-size: 0.92rem; margin: 0; }
+  .offer-item-val {
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    color: var(--ink);
+    text-align: right;
+    padding-top: 0.3em;
+    font-weight: 500;
+  }
+  .offer-total {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .offer-total .label {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-faint);
+  }
+  .offer-total .val {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--ink);
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  /* social proof — magazine 3-row spread */
+  .proof { background: var(--bg-paper); }
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .proof-card {
+    padding: var(--space-5) var(--space-4);
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+  }
+  .proof-card:nth-child(3n) { border-right: none; }
+  .proof-card:nth-child(n+4) { border-top: 1px solid var(--rule); }
+  .proof-meta {
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-3);
+  }
+  .proof-meta .brass { color: var(--brass-deep); }
+  .proof-quote {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: var(--space-3);
+    flex: 1;
+    font-weight: 400;
+  }
+  .proof-quote::before {
+    content: '"';
+    font-size: 2rem;
+    color: var(--brass-deep);
+    margin-right: 4px;
+    line-height: 0.6;
+    vertical-align: -0.2em;
+    font-style: italic;
+  }
+  .proof-author {
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 0.88rem;
+  }
+  .proof-author-name { color: var(--ink); font-weight: 600; }
+  .proof-author-role { color: var(--text-faint); font-family: var(--font-mono); font-size: 0.74rem; }
+
+  /* guarantee */
+  .guarantee {
+    padding: var(--space-7) 0;
+    background: var(--bg);
+  }
+  .guarantee-card {
+    max-width: 980px; margin: 0 auto;
+    background: var(--bg-paper);
+    border: 1px solid var(--rule);
+    padding: var(--space-6);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-5);
+    position: relative;
+  }
+  .guarantee-card::before, .guarantee-card::after {
+    content: '';
+    position: absolute;
+    width: 22px; height: 22px;
+    border: 1px solid var(--brass-deep);
+  }
+  .guarantee-card::before {
+    top: -1px; left: -1px;
+    border-right: none; border-bottom: none;
+  }
+  .guarantee-card::after {
+    bottom: -1px; right: -1px;
+    border-left: none; border-top: none;
+  }
+  .guarantee-mono {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--brass-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    line-height: 1.6;
+  }
+  .guarantee-mono .big {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 2.6rem;
+    color: var(--ink);
+    display: block;
+    margin: var(--space-2) 0;
+    letter-spacing: -0.01em;
+    line-height: 1;
+    font-weight: 500;
+  }
+  .guarantee-body h3 { margin-bottom: var(--space-3); font-size: 1.6rem; line-height: 1.2; }
+  .guarantee-body p { color: var(--text-dim); }
+
+  /* authority — partner masthead */
+  .auth-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+    margin-top: var(--space-4);
+  }
+  .auth-card {
+    border-top: 1px solid var(--ink);
+    padding-top: var(--space-3);
+  }
+  .auth-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--rule);
+  }
+  .auth-header h3 { font-size: 1.6rem; line-height: 1.1; }
+  .auth-header .badge {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--brass-deep);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .auth-role {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--brass-deep);
+    font-size: 1rem;
+    margin-bottom: var(--space-3);
+    font-weight: 400;
+  }
+  .auth-bio {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-3);
+    line-height: 1.55;
+  }
+  .auth-creds {
+    list-style: none;
+    border-top: 1px solid var(--rule);
+    padding-top: var(--space-2);
+  }
+  .auth-creds li {
+    padding: 0.3rem 0;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+  }
+  .auth-creds li::before { content: '— '; color: var(--brass-deep); }
+
+  /* FAQ — definition list editorial */
+  .faq-list {
+    max-width: 980px; margin: 0 auto;
+    border-top: 1px solid var(--ink);
+  }
+  .faq-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-5);
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .faq-num {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--brass-deep);
+    letter-spacing: 0.14em;
+    padding-top: 0.4em;
+    width: 3rem;
+  }
+  .faq-content { }
+  .faq-q {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    display: flex; justify-content: space-between; align-items: start;
+    gap: var(--space-3);
+    font-weight: 500;
+    line-height: 1.25;
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-q::after {
+    content: '+';
+    font-family: var(--font-mono);
+    color: var(--brass-deep);
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform 0.3s var(--ease-out);
+    flex-shrink: 0;
+    font-weight: 400;
+  }
+  details[open] .faq-q::after { transform: rotate(45deg); }
+  .faq-a {
+    padding-top: var(--space-3);
+    color: var(--text-dim);
+    line-height: 1.65;
+    font-size: 0.98rem;
+  }
+
+  /* close — editorial closer */
+  .close {
+    padding: var(--space-8) 0;
+    background: var(--ink);
+    color: var(--bg);
+    text-align: left;
+    position: relative;
+  }
+  .close-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    align-items: end;
+  }
+  .close .eyebrow { color: var(--brass); }
+  .close .eyebrow .num { color: var(--bg); }
+  .close .eyebrow .dash { background: var(--brass); }
+  .close h2 {
+    color: var(--bg);
+    font-size: clamp(2.4rem, 5.4vw, 4.6rem);
+    line-height: 1.0;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+  }
+  .close h2 .italic { font-style: italic; color: var(--brass); font-weight: 400; }
+  .close-right {
+    border-left: 1px solid rgba(232, 217, 176, 0.18);
+    padding-left: var(--space-5);
+  }
+  .close-right p { color: rgba(244, 240, 230, 0.78); margin-bottom: var(--space-4); }
+  .close-right .btn-primary { background: var(--brass); color: var(--ink); }
+  .close-right .btn-primary:hover { background: var(--brass-deep); color: var(--bg); }
+  .close-meta {
+    margin-top: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: rgba(244, 240, 230, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* footer */
+  .footer { background: var(--bg-soft); color: var(--text-dim); padding: var(--space-6) 0 var(--space-4); border-top: 1px solid var(--rule); }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+  .footer h4 {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--brass-deep);
+    margin-bottom: var(--space-3);
+  }
+  .footer ul { list-style: none; }
+  .footer li { padding: 4px 0; font-size: 0.92rem; color: var(--text-dim); }
+  .footer a:hover { color: var(--ink); }
+  .footer-bottom {
+    border-top: 1px solid var(--rule);
+    padding-top: var(--space-3);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3);
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--text-faint);
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 880px) {
+    .hero-headline-block, .mechanism-grid, .ba-spread, .offer-grid, .close-grid, .guarantee-card { grid-template-columns: 1fr; }
+    .auth-grid, .pain-grid, .proof-grid { grid-template-columns: 1fr; }
+    .pain-card, .proof-card { border-right: none !important; }
+    .ba-side + .ba-side { border-left: none; border-top: 1px solid var(--rule); }
+    .hero-byline { grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+    .section-header { grid-template-columns: 1fr; }
+    .nav-inner { grid-template-columns: 1fr auto; }
+    .nav-meta { display: none; }
+    .nav-right a:not(.btn) { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .close-right { border-left: none; padding-left: 0; border-top: 1px solid rgba(232, 217, 176, 0.18); padding-top: var(--space-4); }
+    .section, .hero, .close { padding: var(--space-6) 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="nav-meta">Vol. xxvii &mdash; By appointment</div>
+    <div class="logo">Marchetti</div>
+    <div class="nav-right">
+      <a href="#practice">Practice</a>
+      <a href="#partners">Partners</a>
+      <a href="#process">Process</a>
+      <a href="#inquire" class="btn btn-ghost" style="margin-left: var(--space-2);">Inquire</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO — editorial-text-only -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-meta-row">
+      <span>Issue 27 &middot; Estate &amp; Wealth Counsel</span>
+      <span>Est. 1989 &middot; By referral and inquiry</span>
+    </div>
+    <div class="hero-headline-block">
+      <h1>Quiet planning for the families who can't afford the <span class="italic">noise.</span></h1>
+      <div class="hero-sub-block">
+        <p class="hero-sub">Marchetti is a boutique estate-planning and wealth-transfer practice serving families with complex assets, multigenerational holdings, and the privacy concerns that come with both.</p>
+        <div class="hero-ctas">
+          <a href="#inquire" class="btn btn-primary">Request a discreet inquiry</a>
+          <a href="#process" class="btn btn-ghost">Read our process</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-rule"></div>
+    <div class="hero-byline">
+      <div>
+        <span class="label">Counsel</span>
+        <span class="value">Elena Marchetti, J.D., LL.M. &middot; Thomas Park, J.D.</span>
+      </div>
+      <div>
+        <span class="label">Practice</span>
+        <span class="value">Trusts, estates, wealth transfer</span>
+      </div>
+      <div>
+        <span class="label">Engagement</span>
+        <span class="value">Fixed-fee, by referral</span>
+      </div>
+      <div>
+        <span class="label">Active families</span>
+        <span class="value">62</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="container trust-inner">
+    <span class="trust-label">Recognized in</span>
+    <div class="trust-badges">
+      <span class="trust-badge">Chambers HNW</span>
+      <span class="trust-badge">Best Lawyers in America</span>
+      <span class="trust-badge">Super Lawyers &mdash; Estate Planning</span>
+      <span class="trust-badge">AV Preeminent</span>
+      <span class="trust-badge">ACTEC Fellow</span>
+    </div>
+  </div>
+</section>
+
+<!-- EMPATHY -->
+<section class="section pain">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow"><span class="num">01</span><span class="dash"></span>What's quietly going wrong</span>
+        <h2>Three patterns we see in nearly every family that arrives late.</h2>
+      </div>
+      <p>Most affluent families have a will, a trust, and an advisor &mdash; on paper. The gaps show up at exactly the moment they shouldn't: in transition. We meet families before that moment. Sometimes we meet them at it.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <span class="num">No. 01 &mdash; Drift</span>
+        <h3>The plan was drafted twelve years ago.</h3>
+        <p>The trust was solid in 2014. Since then: a new business, a divorce, two grandchildren, a tax-law overhaul, and three property purchases. The plan no longer matches the family. The plan is the gap.</p>
+      </div>
+      <div class="pain-card">
+        <span class="num">No. 02 &mdash; Silence</span>
+        <h3>The next generation doesn't know what's coming.</h3>
+        <p>Stewardship is taught, not inherited. When the documents arrive without context, the family conversation happens through lawyers &mdash; usually in conflict, usually too late, almost always with regret.</p>
+      </div>
+      <div class="pain-card">
+        <span class="num">No. 03 &mdash; Surface</span>
+        <h3>Three advisors, none of them talking.</h3>
+        <p>Accountant, financial advisor, attorney &mdash; each with a slice. No one holds the full picture. Decisions get made in isolation, compounding small misalignments into estate-level exposure no single advisor can see alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MECHANISM -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow"><span class="num">02</span><span class="dash"></span>Our process</span>
+        <h2>One counsel of record. Quarterly reviews. The full picture, held in one place.</h2>
+      </div>
+      <p>Marchetti is a fixed-fee practice. We work with a limited number of families &mdash; sixty-two as of this writing &mdash; so that every plan can be reviewed, restructured, and rehearsed on the schedule the family actually needs.</p>
+    </div>
+    <div class="mechanism-grid">
+      <div>
+        <div class="mechanism-display">
+          A <span class="italic">capped</span> book of families &mdash; so the counsel who signed your trust is the counsel who reviews it.
+          <span class="small-meta">62 of 75 maximum &middot; By referral or formal inquiry</span>
+        </div>
+      </div>
+      <div class="mechanism-list">
+        <div class="mechanism-item">
+          <span class="mechanism-item-num">i</span>
+          <div>
+            <h4>Discovery audit (first 30 days)</h4>
+            <p>We read every document &mdash; trusts, agreements, policies, business filings, tax returns &mdash; and produce a written gap analysis before any plan changes are proposed.</p>
+          </div>
+        </div>
+        <div class="mechanism-item">
+          <span class="mechanism-item-num">ii</span>
+          <div>
+            <h4>Advisor convening</h4>
+            <p>We bring your CPA, financial advisor, and trust officer into one room (or one Zoom). Decisions are made with full context, not piecemeal.</p>
+          </div>
+        </div>
+        <div class="mechanism-item">
+          <span class="mechanism-item-num">iii</span>
+          <div>
+            <h4>Plan restructure or draft</h4>
+            <p>Fixed-fee, fully scoped, signed before drafting begins. No hourly surprises, no charge for revisions inside scope.</p>
+          </div>
+        </div>
+        <div class="mechanism-item">
+          <span class="mechanism-item-num">iv</span>
+          <div>
+            <h4>Family meeting facilitation</h4>
+            <p>We sit with the next generation &mdash; with the principals' permission &mdash; to explain the plan, the reasoning, and the responsibilities. No surprises at inheritance.</p>
+          </div>
+        </div>
+        <div class="mechanism-item">
+          <span class="mechanism-item-num">v</span>
+          <div>
+            <h4>Quarterly reviews, indefinitely</h4>
+            <p>Calendar-set every 90 days. Tax changes, life events, business shifts &mdash; the plan adjusts before the family has to ask.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="section ba">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow"><span class="num">03</span><span class="dash"></span>The contrast</span>
+        <h2>What changes when one firm holds the full picture.</h2>
+      </div>
+      <p>Most families don't notice the cost of fragmentation until something happens. Below is what shifts in the first ninety days of a Marchetti engagement &mdash; quietly, and on the family's existing calendar.</p>
+    </div>
+    <div class="ba-spread">
+      <div class="ba-side">
+        <span class="label">A &mdash; Before engagement</span>
+        <h3>Documents in three places. Decisions in four.</h3>
+        <p>Plan drafted years ago. Advisors operating from partial information. Family conversations deferred to "when the time comes."</p>
+        <ul>
+          <li>Trust documents stored across multiple firms, last updated in 2014</li>
+          <li>CPA filing returns without sight of estate planning intent</li>
+          <li>No written family governance &mdash; verbal understandings only</li>
+          <li>Next generation has not been briefed on roles, structures, or expectations</li>
+          <li>Tax-law changes since 2017 not reflected in current plan</li>
+        </ul>
+      </div>
+      <div class="ba-side">
+        <span class="label">B &mdash; After engagement</span>
+        <h3>One counsel of record. One review calendar. One plan, kept current.</h3>
+        <p>Annual cadence the family can rely on. Cross-advisor convening twice a year. Family meetings, when desired, on a four-year cycle.</p>
+        <ul>
+          <li>Full document audit complete; gap memo signed and acted on</li>
+          <li>CPA + advisor + counsel meeting on shared agenda twice yearly</li>
+          <li>Written family governance, updated as the family changes</li>
+          <li>Next generation briefed in plain language with counsel present</li>
+          <li>Plan reviewed against current tax law every quarter, with summary report</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USP -->
+<section class="usp">
+  <div class="container-narrow">
+    <div class="usp-mark">&sect;</div>
+    <p class="usp-statement">A capped book of families, a fixed-fee engagement, and a counsel of record who knows every document &mdash; <span class="italic">so the plan stays current</span> instead of arriving from storage when it's needed most.</p>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="section" id="inquire">
+  <div class="container">
+    <div class="offer-grid">
+      <div class="offer-headline">
+        <span class="eyebrow"><span class="num">04</span><span class="dash"></span>What an initial inquiry includes</span>
+        <h2>The discovery audit is the engagement &mdash; not the pitch.</h2>
+        <p>By the end of week one, you have a written audit of every existing document, a gap analysis ranked by exposure, and a recommendation &mdash; whether to engage Marchetti, refer you to a firm better suited to your facts, or simply update the existing plan with your current counsel. All three are honest answers.</p>
+        <p style="color: var(--text-faint); font-size: 0.92rem;">Inquiries are reviewed by Elena or Thomas personally. Response within five business days.</p>
+        <a href="mailto:inquire@marchettilaw.example" class="btn btn-primary">Submit a private inquiry</a>
+      </div>
+      <div class="offer-list">
+        <div class="offer-item">
+          <span class="offer-item-num">i</span>
+          <div>
+            <h4>Document audit &amp; gap memo</h4>
+            <p>Every existing trust, agreement, policy, and filing &mdash; read, ranked, and reported.</p>
+          </div>
+          <span class="offer-item-val">$3,800</span>
+        </div>
+        <div class="offer-item">
+          <span class="offer-item-num">ii</span>
+          <div>
+            <h4>Advisor &amp; family interview</h4>
+            <p>One 90-minute session with the principal(s); optional with existing advisors.</p>
+          </div>
+          <span class="offer-item-val">$1,400</span>
+        </div>
+        <div class="offer-item">
+          <span class="offer-item-num">iii</span>
+          <div>
+            <h4>Tax-law currency review</h4>
+            <p>Every plan provision tested against current federal and state law.</p>
+          </div>
+          <span class="offer-item-val">$2,200</span>
+        </div>
+        <div class="offer-item">
+          <span class="offer-item-num">iv</span>
+          <div>
+            <h4>Written engagement recommendation</h4>
+            <p>Engage Marchetti, refer elsewhere, or stay with current counsel &mdash; with reasoning.</p>
+          </div>
+          <span class="offer-item-val">$900</span>
+        </div>
+        <div class="offer-item">
+          <span class="offer-item-num">v</span>
+          <div>
+            <h4>Fixed-fee restructure quote</h4>
+            <p>If we engage: every dollar quoted upfront, with revision allowance written in.</p>
+          </div>
+          <span class="offer-item-val">$700</span>
+        </div>
+        <div class="offer-total">
+          <span class="label">Discovery audit fee &mdash; flat</span>
+          <span class="val">$4,800</span>
+        </div>
+        <div style="margin-top: var(--space-2); font-size: 0.86rem; color: var(--text-faint);">Credited toward engagement should you retain Marchetti for restructuring or ongoing counsel. No further obligation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="section proof">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow"><span class="num">05</span><span class="dash"></span>From the families we serve</span>
+        <h2>Discretion is the practice. These voices are shared with permission.</h2>
+      </div>
+      <p>Names abbreviated; details adjusted with consent. Verifiable references provided privately during engagement evaluation.</p>
+    </div>
+    <div class="proof-grid">
+      <article class="proof-card">
+        <div class="proof-meta"><span>Case &mdash; Generational transfer</span><span class="brass">$28M estate</span></div>
+        <p class="proof-quote">Elena spent the first thirty days reading. Not selling, not promising &mdash; reading. The audit memo found seven things our previous firm had missed in fifteen years.</p>
+        <div class="proof-author"><span class="proof-author-name">R. &amp; M. Caldwell</span><span class="proof-author-role">Principals</span></div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-meta"><span>Case &mdash; Business succession</span><span class="brass">3rd-gen company</span></div>
+        <p class="proof-quote">The family meeting was the part I dreaded. Thomas ran it for two and a half hours and every one of my children walked out understanding why the plan was the way it was. I'd waited twenty years for that.</p>
+        <div class="proof-author"><span class="proof-author-name">D. Sato</span><span class="proof-author-role">Founder</span></div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-meta"><span>Case &mdash; International assets</span><span class="brass">Five jurisdictions</span></div>
+        <p class="proof-quote">Our CPA, our advisor in London, our trust officer in Bermuda &mdash; Marchetti got everyone on one call. Within ninety days the plan was current for the first time since my husband passed.</p>
+        <div class="proof-author"><span class="proof-author-name">A. Volkov</span><span class="proof-author-role">Surviving spouse</span></div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-meta"><span>Case &mdash; Charitable structure</span><span class="brass">$14M foundation</span></div>
+        <p class="proof-quote">I'd been told my foundation structure was "fine." Elena's memo found three exposures that would have surfaced at my passing &mdash; not before. The fix took six weeks. I sleep differently now.</p>
+        <div class="proof-author"><span class="proof-author-name">J. Whitaker</span><span class="proof-author-role">Principal</span></div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-meta"><span>Case &mdash; Trust modernization</span><span class="brass">Drafted 2009</span></div>
+        <p class="proof-quote">The fixed fee was the thing that convinced me. Every other firm wanted hourly. Marchetti scoped the restructure in writing, named the number, and didn't deviate by a dollar.</p>
+        <div class="proof-author"><span class="proof-author-name">P. Hammersmith</span><span class="proof-author-role">Trustee</span></div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-meta"><span>Case &mdash; Multigenerational</span><span class="brass">4 generations</span></div>
+        <p class="proof-quote">Quarterly reviews sound like overhead. They're not. The third one caught a tax-law change that would have cost the next generation seven figures. Worth every quarter, every year.</p>
+        <div class="proof-author"><span class="proof-author-name">L. Ofori</span><span class="proof-author-role">Family principal</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="container">
+    <div class="guarantee-card">
+      <div class="guarantee-mono">
+        Engagement<span class="big">Promise</span>
+        Fixed fee &middot; Written scope
+      </div>
+      <div class="guarantee-body">
+        <span class="eyebrow"><span class="num">06</span><span class="dash"></span>Risk reversal</span>
+        <h3>If the audit doesn't surface something material, we refund the fee in full.</h3>
+        <p>Every Marchetti engagement begins with the discovery audit. If, after thirty days, we can't identify a material gap, exposure, or improvement opportunity in your current plan &mdash; we refund the $4,800 audit fee. Not partial credit. The full fee. No conditions, no signed waiver of disagreement. We expect to find something. We've not yet refunded.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORITY -->
+<section class="section" id="partners">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow"><span class="num">07</span><span class="dash"></span>Counsel</span>
+        <h2>Two partners. Sixty-two families. Every plan partner-signed.</h2>
+      </div>
+      <p>Marchetti has never had more than seventy-five active family engagements at one time. The cap is the practice. It is what allows the work.</p>
+    </div>
+    <div class="auth-grid">
+      <div class="auth-card">
+        <div class="auth-header">
+          <h3>Elena Marchetti, J.D., LL.M.</h3>
+          <span class="badge">Founder, 1989</span>
+        </div>
+        <div class="auth-role">Estate &amp; wealth-transfer counsel</div>
+        <p class="auth-bio">Elena founded the practice in 1989 after a decade in private trust administration at a global private bank. Her LL.M. in Taxation underpins thirty-seven years of work with families across business succession, charitable structures, and international asset coordination.</p>
+        <ul class="auth-creds">
+          <li>J.D., University of Pennsylvania Law School, 1986</li>
+          <li>LL.M. in Taxation, NYU School of Law, 1988</li>
+          <li>State Bar Member, 1987 &mdash; good standing</li>
+          <li>Fellow, American College of Trust and Estate Counsel (ACTEC)</li>
+          <li>Best Lawyers in America, Trusts &amp; Estates (2003&ndash;present)</li>
+          <li>Chambers HNW, Band 1 &mdash; Private Wealth (2018&ndash;present)</li>
+        </ul>
+      </div>
+      <div class="auth-card">
+        <div class="auth-header">
+          <h3>Thomas Park, J.D.</h3>
+          <span class="badge">Partner, 2008</span>
+        </div>
+        <div class="auth-role">Business succession &amp; governance</div>
+        <p class="auth-bio">Thomas joined Marchetti in 2008 after seven years at a regional firm and a clerkship with the federal tax court. He leads engagements involving operating businesses, family governance design, and next-generation transition planning.</p>
+        <ul class="auth-creds">
+          <li>J.D., University of Michigan Law School, 2000 &mdash; magna cum laude</li>
+          <li>State Bar Member, 2001 &mdash; good standing</li>
+          <li>Former clerk, U.S. Tax Court (Hon. M. Larson, 2001&ndash;2003)</li>
+          <li>Super Lawyers &mdash; Estate Planning (2012&ndash;present)</li>
+          <li>AV Preeminent rating, Martindale-Hubbell</li>
+          <li>Adjunct lecturer, family business governance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="practice">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow"><span class="num">08</span><span class="dash"></span>Inquiries we receive</span>
+        <h2>Eight questions families ask before reaching out.</h2>
+      </div>
+      <p>If the answer you need isn't here, write to us. Inquiries are read by a partner and answered within five business days.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <span class="faq-num">No. 01</span>
+        <div class="faq-content">
+          <summary class="faq-q">How do you decide whether to take on a family?</summary>
+          <p class="faq-a">Fit. We consider complexity, scope, advisor environment, and family alignment. About one in three inquiries becomes an engagement; we refer the rest to firms whose practice fits better. The audit fee is refundable when we determine fit isn't there.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <span class="faq-num">No. 02</span>
+        <div class="faq-content">
+          <summary class="faq-q">What does ongoing counsel cost after the initial restructure?</summary>
+          <p class="faq-a">Quarterly retainer, scoped to family complexity, typically $9,000&ndash;$28,000 per year. Includes all quarterly reviews, advisor convening, document maintenance, and family meeting facilitation. Fixed, predictable, no hourly add-ons within scope.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <span class="faq-num">No. 03</span>
+        <div class="faq-content">
+          <summary class="faq-q">Do you replace our existing CPA or financial advisor?</summary>
+          <p class="faq-a">No. We coordinate with them. Marchetti is legal counsel only. We do not manage assets, prepare returns, or sell insurance products &mdash; and we have no referral relationships with firms that do. Our independence is the practice.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <span class="faq-num">No. 04</span>
+        <div class="faq-content">
+          <summary class="faq-q">How is privacy maintained?</summary>
+          <p class="faq-a">Engagement records are held in a closed-system document repository, accessed only by the partners and named paralegal on each engagement. No marketing testimonials with full names. No third-party data processors for client documents. Privacy practices are documented and audited annually.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <span class="faq-num">No. 05</span>
+        <div class="faq-content">
+          <summary class="faq-q">Why a sixty-two-family cap?</summary>
+          <p class="faq-a">A capped book allows quarterly review for every family without surrogate review by associates. The maximum is seventy-five. Above that, the practice changes character &mdash; we'd rather refer than dilute.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <span class="faq-num">No. 06</span>
+        <div class="faq-content">
+          <summary class="faq-q">Are you taking new families now?</summary>
+          <p class="faq-a">Yes &mdash; thirteen seats currently open. Inquiry intake reviewed weekly. We do not run waiting lists; if we're at capacity when you write, we'll refer you to two or three firms we trust for similar work.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <span class="faq-num">No. 07</span>
+        <div class="faq-content">
+          <summary class="faq-q">Do you litigate trust disputes?</summary>
+          <p class="faq-a">No. Marchetti is a transactional and advisory practice. If a dispute arises, we coordinate referral to trial counsel and remain available for record-keeping and substantive context. The boundary keeps our drafting work clean.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <span class="faq-num">No. 08</span>
+        <div class="faq-content">
+          <summary class="faq-q">Can we meet before submitting the audit fee?</summary>
+          <p class="faq-a">Yes. A 30-minute introductory call with Elena or Thomas is free &mdash; this is the conversation where we determine whether the audit makes sense. If we mutually decide to proceed, the engagement letter and fee follow.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close">
+  <div class="container">
+    <div class="close-grid">
+      <div>
+        <span class="eyebrow"><span class="num">09</span><span class="dash"></span>An inquiry, when you're ready</span>
+        <h2>The first conversation is <span class="italic">quiet</span>, brief, and free of obligation.</h2>
+      </div>
+      <div class="close-right">
+        <p>Submit a private inquiry and a partner will respond within five business days. Mention how you found us, the rough shape of the situation, and a window we can reach you. That is all.</p>
+        <a href="mailto:inquire@marchettilaw.example" class="btn btn-primary">Submit a private inquiry</a>
+        <div class="close-meta">By appointment &middot; By referral &middot; Five-day response</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="font-family: var(--font-display); font-size: 1.4rem; color: var(--ink); margin-bottom: var(--space-2); font-weight: 500;">Marchetti</div>
+        <p style="color: var(--text-faint); font-size: 0.88rem; max-width: 320px;">Wealth &amp; estate counsel for families with complex assets, multigenerational holdings, and the privacy concerns that follow. Boutique, fixed-fee, by referral.</p>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="#">Estate planning</a></li>
+          <li><a href="#">Wealth transfer</a></li>
+          <li><a href="#">Business succession</a></li>
+          <li><a href="#">Charitable structures</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Firm</h4>
+        <ul>
+          <li><a href="#partners">Counsel</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#practice">Inquiries</a></li>
+          <li><a href="#">Press &amp; speaking</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Office</h4>
+        <ul>
+          <li>87 Lexington, 14th Floor</li>
+          <li>inquire@marchettilaw.example</li>
+          <li>By appointment</li>
+          <li>Mon&ndash;Fri, 9&ndash;5</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 1989&ndash;2026 Marchetti &amp; Park, P.L.L.C.</span>
+      <span>Attorney advertising. State Bar Nos. 1987-08118 &middot; 2001-14209. Prior results do not guarantee a similar outcome.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

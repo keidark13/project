@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HVAC / Home Services — Catalog Entry · Variant A / B / C</title>
+<meta name="description" content="Same-day trust, no clipboard energy. Three variants built to the Gus Sins 10-PSP framework. By Keyvin Abillon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@500;600&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F5F1EB; --bg-elevated: #EDE6DA; --bg-dark: #1A1816;
+  --ink: #2D2D2D; --text: #2D2D2D; --text-dim: #5A5A5A; --text-faint: #8C8478;
+  --rule: rgba(45,45,45,0.12); --rule-strong: rgba(45,45,45,0.22);
+  --accent: #B08B5F;
+  --font-display: "Cabinet Grotesk", system-ui, sans-serif;
+  --font-body: "Inter Tight", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --space-2: 1rem; --space-3: 1.5rem; --space-4: 2rem; --space-6: 3rem; --space-8: 4rem;
+  --radius: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+.editorial-corners { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; padding: 14px 24px; font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(45,45,45,0.5); z-index: 200; pointer-events: none; }
+@media (max-width: 600px) { .editorial-corners { font-size: 0.58rem; padding: 10px 16px; } }
+
+nav.top { position: fixed; top: 32px; left: 50%; transform: translateX(-50%); z-index: 100; background: rgba(245,241,235,0.85); backdrop-filter: saturate(140%) blur(12px); -webkit-backdrop-filter: saturate(140%) blur(12px); border: 1px solid var(--rule); border-radius: 999px; padding: 8px 16px; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; display: flex; gap: 1rem; align-items: center; pointer-events: auto; }
+nav.top a { color: var(--text-dim); text-decoration: none; padding: 4px 8px; border-radius: 4px; }
+nav.top a.current { color: var(--accent); }
+nav.top a:hover { color: var(--text); }
+@media (max-width: 760px) { nav.top { display: none; } }
+
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+header.case { padding: 8rem 0 3.5rem; border-bottom: 1px solid var(--rule); }
+header.case .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+header.case h1 { font-family: var(--font-display); font-weight: 500; font-size: clamp(2.6rem, 6vw, 4.4rem); line-height: 1.04; letter-spacing: -0.02em; max-width: 22ch; }
+header.case h1 em { color: var(--accent); font-style: italic; }
+header.case .lede { font-size: clamp(1.05rem, 1.4vw, 1.2rem); color: var(--text-dim); max-width: 60ch; margin-top: 1.5rem; }
+header.case .stats { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 2.5rem; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint); }
+header.case .stats strong { color: var(--text); font-weight: 500; display: block; margin-top: 4px; font-size: 1.4rem; letter-spacing: -0.01em; text-transform: none; font-family: var(--font-display); }
+
+section.row { padding: 5rem 0 0; }
+section.row > .wrap > .head { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 1rem; border-bottom: 1px solid var(--rule); padding-bottom: 0.8rem; margin-bottom: 2.5rem; }
+section.row > .wrap > .head .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+section.row > .wrap > .head h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem, 2.8vw, 2.2rem); letter-spacing: -0.015em; }
+section.row > .wrap > .head .meta { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint); text-align: right; }
+
+.variants { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+@media (max-width: 900px) { .variants { grid-template-columns: 1fr; } }
+
+.variant { display: flex; flex-direction: column; }
+.variant .thumb { width: 100%; aspect-ratio: 1440 / 900; background: var(--bg-elevated); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; transition: box-shadow 220ms ease-out, border-color 220ms ease-out; }
+.variant a:hover .thumb { box-shadow: 0 16px 32px -14px rgba(45,45,45,0.22); border-color: var(--rule-strong); }
+.variant .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.variant a { text-decoration: none; color: inherit; display: block; }
+.variant a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: var(--radius); }
+.variant .label { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); margin-top: 0.8rem; display: flex; justify-content: space-between; }
+.variant .label .acc { color: var(--accent); }
+.variant h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.15rem; line-height: 1.4; letter-spacing: -0.01em; margin: 0.5rem 0 0.8rem; color: var(--text); }
+.variant h3 em { color: var(--accent); font-style: italic; }
+.variant .spec { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
+.variant .spec li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0.5rem; padding: 0.55rem 0; border-bottom: 1px solid var(--rule); font-size: 0.84rem; align-items: baseline; }
+.variant .spec li > span { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint); padding-top: 2px; }
+.variant .spec li > div { color: var(--text); }
+.variant .pal-row { display: flex; gap: 0.4rem; align-items: center; margin-top: 0.4rem; }
+.swatch { width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--rule); display: inline-block; }
+.variant .fit { font-size: 0.88rem; color: var(--text-dim); margin-top: 0.9rem; font-style: italic; }
+
+.psp { background: var(--bg-elevated); border: 1px solid var(--rule); border-radius: 6px; padding: 2.5rem; margin-top: 2rem; }
+.psp h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.4rem; letter-spacing: -0.015em; margin-bottom: 0.5rem; }
+.psp p.sub { color: var(--text-dim); margin-bottom: 1.8rem; font-size: 0.94rem; max-width: 60ch; }
+.psp ol { list-style: none; counter-reset: psp-counter; padding: 0; }
+.psp ol li { counter-increment: psp-counter; display: grid; grid-template-columns: 2rem 13rem 1fr; gap: 1rem; padding: 0.7rem 0; border-top: 1px solid var(--rule); align-items: baseline; }
+.psp ol li:first-child { border-top: none; padding-top: 0; }
+.psp ol li::before { content: "0" counter(psp-counter); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; color: var(--accent); font-variant-numeric: tabular-nums; }
+.psp ol li strong { font-family: var(--font-display); font-weight: 500; font-size: 0.96rem; color: var(--text); }
+.psp ol li span { font-size: 0.92rem; color: var(--text-dim); }
+@media (max-width: 760px) { .psp ol li { grid-template-columns: 2rem 1fr; } .psp ol li span { grid-column: 2; } }
+
+.refs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 3rem; }
+@media (max-width: 760px) { .refs { grid-template-columns: 1fr; } }
+.refs .ref { border-top: 1px solid var(--rule); padding-top: 1rem; }
+.refs .ref a { font-family: var(--font-display); color: var(--text); font-weight: 500; text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+.refs .ref a:hover { color: var(--accent); }
+.refs .ref .url { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; color: var(--text-faint); margin-top: 0.3rem; }
+.refs .ref .note { font-size: 0.92rem; color: var(--text-dim); margin-top: 0.5rem; }
+.refs .blocked { grid-column: 1 / -1; padding-top: 1rem; border-top: 1px solid var(--rule); margin-top: 1rem; font-size: 0.85rem; color: var(--text-faint); font-style: italic; }
+
+footer.case { margin-top: 6rem; padding: 3rem 0 4rem; border-top: 1px solid var(--rule); }
+.editorial-signature { display: grid; grid-template-columns: 1fr 1fr; align-items: baseline; gap: 1rem; font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(45,45,45,0.5); }
+.editorial-signature a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(45,45,45,0.18); padding-bottom: 1px; }
+@media (max-width: 600px) { .editorial-signature { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; } }
+.between { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; font-size: 0.9rem; }
+.between a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+.between a:hover { color: var(--text); border-color: var(--text); }
+</style>
+</head>
+<body id="top">
+
+<div class="editorial-corners" aria-hidden="true">
+  <span>Catalog Entry N°06 · HVAC / Home Services</span>
+  <span>May 2026</span>
+</div>
+
+<nav class="top" aria-label="Niche navigation">
+  <a href="../index.html">⌂ Gallery</a>
+  <a href="dental.html">Dental Clinic</a>
+  <a href="real-estate.html">Real Estate</a>
+  <a href="legal.html">Legal</a>
+  <a href="coaching.html">Coaching / Consulting</a>
+  <a href="med-spa.html">Med Spa / Beauty</a>
+  <a href="hvac.html" class="current">HVAC / Home Services</a>
+</nav>
+
+<header class="case">
+  <div class="wrap">
+    <div class="eyebrow">Catalog Entry N°06 · ROI Rank #6</div>
+    <h1>Same-day trust, no clipboard energy.</h1>
+    <p class="lede">Local urgency-driven, lead-gen ROI clear. Canonical cream-and-fire HVAC, navy-and-yellow multi-trade, and a boutique luxury-residential variant for premium home-services markets.</p>
+    <div class="stats">
+      <div><span>Variants</span><strong>3</strong></div>
+      <div><span>Refs captured</span><strong>4</strong></div>
+      <div><span>Quality gates</span><strong>7/7</strong></div>
+      <div><span>Demographics</span><strong>35-65 year old homeowners, mixed gender</strong></div>
+    </div>
+  </div>
+</header>
+
+<section class="row">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">01 — The three directions</div>
+        <h2>Same architecture. Three design languages.</h2>
+      </div>
+      <div class="meta">Click any sample to open</div>
+    </div>
+    <div class="variants">
+      <div class="variant">
+        <a href="../samples/sample-hvac-a.html" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../thumbnails/hvac-a.png" alt="Ironclad (canonical HVAC)" loading="lazy"></div>
+          <div class="label"><span class="acc">Variant A</span><span>35 KB</span></div>
+          <h3>Cool air today. Or the <em>visit is free.</em></h3>
+        </a>
+        <ul class="spec">
+          <li><span>Palette</span><div><div class="pal-row"><span class="swatch" style="background:#F5F1EA"></span><span class="swatch" style="background:#1A1F2B"></span><span class="swatch" style="background:#E8411A"></span><span style="margin-left:0.4rem">cream · ink · fire</span></div></div></li>
+          <li><span>Type</span><div>Oswald + IBM Plex Sans</div></li>
+          <li><span>Hero</span><div>dark-bleed-photo-overlay with technician + truck photo</div></li>
+          <li><span>Eyebrow</span><div>line-prefix (28px × 2px) in fire accent</div></li>
+        </ul>
+        <p class="fit">Established HVAC company. Same-day trust positioning.</p>
+      </div>
+      <div class="variant">
+        <a href="../samples/sample-hvac-b.html" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../thumbnails/hvac-b.png" alt="Bluecrew (multi-trade)" loading="lazy"></div>
+          <div class="label"><span class="acc">Variant B</span><span>42 KB</span></div>
+          <h3>One <em>crew</em> for the home. Plumbing, heat, cool, electric - on-time or no fee.</h3>
+        </a>
+        <ul class="spec">
+          <li><span>Palette</span><div><div class="pal-row"><span class="swatch" style="background:#0F2235"></span><span class="swatch" style="background:#F4C430"></span><span class="swatch" style="background:#FFFCF5"></span><span style="margin-left:0.4rem">navy · safety yellow · paper</span></div></div></li>
+          <li><span>Type</span><div>Oswald + IBM Plex Sans</div></li>
+          <li><span>Hero</span><div>dark-bleed-photo-overlay (navy) + booking widget right</div></li>
+          <li><span>Eyebrow</span><div>square mark prefix in yellow</div></li>
+        </ul>
+        <p class="fit">Multi-trade home-services company (HVAC + plumbing + electrical).</p>
+      </div>
+      <div class="variant">
+        <a href="../samples/sample-hvac-c.html" target="_blank" rel="noopener">
+          <div class="thumb"><img src="../thumbnails/hvac-c.png" alt="Atelier Climate (luxury-residential)" loading="lazy"></div>
+          <div class="label"><span class="acc">Variant C</span><span>39 KB</span></div>
+          <h3>Climate <em>engineered</em> for the home you actually live in.</h3>
+        </a>
+        <ul class="spec">
+          <li><span>Palette</span><div><div class="pal-row"><span class="swatch" style="background:#F4F0E6"></span><span class="swatch" style="background:#1A1816"></span><span class="swatch" style="background:#B26B3C"></span><span style="margin-left:0.4rem">bone · ink · copper</span></div></div></li>
+          <li><span>Type</span><div>DM Serif Display + Inter Tight (premium, not industrial)</div></li>
+          <li><span>Hero</span><div>split-asymmetric with clean modern-home AC install photo</div></li>
+          <li><span>Eyebrow</span><div>numbered 01 /</div></li>
+        </ul>
+        <p class="fit">Premium home-services for luxury residential markets. Manual J/D engineering tier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="row" id="psp">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">02 — Conversion architecture</div>
+        <h2>The Gus Sins 10-Point Sales Page applied.</h2>
+      </div>
+      <div class="meta">Same order across all three variants</div>
+    </div>
+    <div class="psp">
+      <h3>How each variant carries the structure</h3>
+      <p class="sub">Every variant ships in the same 12-section order. Only the design vocabulary changes per niche and per direction.</p>
+      <ol>
+        <li><strong>Big Promise</strong><span>Same-day or guarantee-led promise</span></li>
+        <li><strong>Empathy / Pain</strong><span>AC dying hottest day / $1,200 bills no explanation / contractors who never call back</span></li>
+        <li><strong>Opportunity / Mechanism</strong><span>Carrier/Trane/Daikin equipment exclusivity OR 30-min on-time guarantee</span></li>
+        <li><strong>Before vs After</strong><span>Failed-contractor experience vs first-call resolution</span></li>
+        <li><strong>USP</strong><span>Same-day diagnostic + lifetime workmanship + 24/7 emergency</span></li>
+        <li><strong>Offer Stack</strong><span>$89 diagnostic credited + 12-month maintenance plan + lifetime workmanship + emergency line</span></li>
+        <li><strong>Social Proof</strong><span>Google review count + recent install photos + warranty stories</span></li>
+        <li><strong>Risk Reversal</strong><span>30-min on-time guarantee or $100 off / lifetime workmanship</span></li>
+        <li><strong>Authority</strong><span>NATE certified + BBB A+ + EPA 608 + state contractor license + years in business</span></li>
+        <li><strong>Urgency + FAQ + Close</strong><span>Today's-availability widget (real time slots) + 6-item FAQ + book/call close</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="row" id="refs">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">03 — Research</div>
+        <h2>Live sites that informed each direction.</h2>
+      </div>
+      <div class="meta">Captured via headless Playwright @ 1440×900</div>
+    </div>
+    <div class="refs">
+      <div class="ref">
+        <a href="https://www.genzryan.com/" target="_blank" rel="noopener">Genz-Ryan</a>
+        <div class="url">www.genzryan.com</div>
+        <p class="note">4 stacked instant-quote CTAs above the fold. Multi-trade nav. Navy palette.</p>
+      </div>
+      <div class="ref">
+        <a href="https://www.jacobsheating.com/" target="_blank" rel="noopener">Jacobs Heating</a>
+        <div class="url">www.jacobsheating.com</div>
+        <p class="note">70-year H1 + Public Sans body. Family-comfort framing.</p>
+      </div>
+      <div class="ref">
+        <a href="https://www.benjaminfranklinplumbing.com/" target="_blank" rel="noopener">Benjamin Franklin Plumbing</a>
+        <div class="url">www.benjaminfranklinplumbing.com</div>
+        <p class="note">$5/min guarantee-as-hero. Strongest trust mechanism in trades.</p>
+      </div>
+      <div class="ref">
+        <a href="https://www.gibbselectric.com/" target="_blank" rel="noopener">Gibbs Electric</a>
+        <div class="url">www.gibbselectric.com</div>
+        <p class="note">Premium boutique tier. Cardo + Inter. Sparse nav. Inspiration for Variant C.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="case">
+  <div class="wrap">
+    <div class="editorial-signature">
+      <span>Catalog Entry N°06 · Sample Site Catalog · ©2026 Keyvin Abillon</span>
+      <a href="#top">↑ Back to top</a>
+    </div>
+    <div class="between">
+      <a href="../index.html">← Back to gallery</a>
+      <a href="med-spa.html">← Previous: Med Spa / Beauty</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

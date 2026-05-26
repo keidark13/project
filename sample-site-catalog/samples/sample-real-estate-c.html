@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ardent &amp; Marlowe - A boutique residential atelier</title>
+<meta name="description" content="A boutique residential atelier serving 32-55 yo professional buyers and sellers. Off-market access, 7-day listing bursts, closing-cost negotiation playbook. Issue N°001, May 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@300;400;500;700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bone: #F4F0E6;
+  --bone-2: #ECE7DA;
+  --ink: #1A1816;
+  --ink-2: #2E2A26;
+  --brass: #C8A864;
+  --brass-soft: #DCC18B;
+  --text: #1A1816;
+  --text-dim: #524B43;
+  --text-faint: #8C8579;
+  --bg: #F4F0E6;
+  --bg-elevated: #FBF8EF;
+  --bg-dark: #1A1816;
+  --accent: #C8A864;
+  --line: rgba(26,24,22,0.10);
+  --line-strong: rgba(26,24,22,0.22);
+  --font-display: 'Cabinet Grotesk', Georgia, sans-serif;
+  --font-body: 'Inter Tight', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem; --space-6: 6rem;
+  --radius-1: 2px; --radius-2: 6px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-weight: 400; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height: 1.06; letter-spacing: -0.02em; color: var(--ink); }
+h1 { font-size: clamp(3rem, 7vw, 6.5rem); font-weight: 300; }
+h2 { font-size: clamp(2rem, 4.2vw, 3.6rem); font-weight: 400; }
+h3 { font-size: 1.5rem; line-height: 1.2; font-weight: 500; }
+h4 { font-size: 1.1rem; font-weight: 500; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.eyebrow { display: inline-block; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); font-weight: 500; margin-bottom: 1.25rem; }
+.eyebrow::before { content: attr(data-num) " - "; color: var(--brass); }
+
+/* Magazine corners */
+.editorial-corners { position: fixed; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; padding: 16px 28px; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); z-index: 200; pointer-events: none; }
+.editorial-corners span:first-child { color: var(--ink); }
+.editorial-corners span:last-child { color: var(--text-dim); }
+@media (max-width: 600px) { .editorial-corners { font-size: 0.62rem; padding: 12px 16px; } }
+
+/* Sticky pill nav */
+.pill-nav { position: fixed; top: 52px; left: 50%; transform: translateX(-50%); z-index: 100; background: rgba(244,240,230,0.92); backdrop-filter: blur(14px); border: 1px solid var(--line); border-radius: 99px; padding: 7px 8px 7px 20px; display: flex; align-items: center; gap: 1.5rem; }
+.pill-nav__logo { font-family: var(--font-display); font-size: 1rem; color: var(--ink); font-weight: 500; }
+.pill-nav__links { display: flex; gap: 1.4rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; }
+.pill-nav__links a:hover { color: var(--ink); }
+.pill-nav__cta { background: var(--ink); color: var(--bone); padding: 8px 16px; border-radius: 99px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; transition: background .2s var(--ease); }
+.pill-nav__cta:hover { background: var(--brass); }
+@media (max-width: 860px) { .pill-nav__links { display: none; } .pill-nav { top: 44px; } }
+
+/* HERO - editorial text-only */
+.hero { min-height: 100dvh; padding: 9rem 0 5rem; display: flex; align-items: center; position: relative; }
+.hero__top-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding-bottom: 4rem; border-bottom: 1px solid var(--line); margin-bottom: 4rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); }
+.hero__top-meta span:last-child { text-align: right; }
+.hero__copy { max-width: 1080px; }
+.hero__copy h1 { letter-spacing: -0.035em; line-height: 0.96; }
+.hero__copy h1 em { font-style: italic; font-weight: 300; color: var(--brass); }
+.hero__under { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; align-items: end; }
+.hero__sub { font-size: 1.18rem; color: var(--text-dim); max-width: 32rem; }
+.hero__ctas { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 14px 26px; border-radius: 99px; font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: all .25s var(--ease); cursor: pointer; border: none; }
+.btn--primary { background: var(--ink); color: var(--bone); }
+.btn--primary:hover { background: var(--brass); color: var(--ink); transform: translateY(-2px); }
+.btn--ghost { background: transparent; color: var(--ink); border: 1px solid var(--line-strong); padding: 13px 25px; }
+.btn--ghost:hover { background: var(--ink); color: var(--bone); border-color: var(--ink); }
+.hero__bottom-meta { position: absolute; bottom: 3rem; left: 0; right: 0; }
+.hero__bottom-meta .wrap { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); }
+.hero__bottom-meta strong { color: var(--ink); font-weight: 500; display: block; font-size: 1.5rem; font-family: var(--font-display); letter-spacing: -0.02em; margin-bottom: 4px; text-transform: none; }
+@media (max-width: 860px) {
+  .hero { padding: 7rem 0 4rem; }
+  .hero__under { grid-template-columns: 1fr; gap: 2rem; }
+  .hero__bottom-meta { position: static; margin-top: 4rem; }
+  .hero__bottom-meta .wrap { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+}
+
+/* Trust */
+.trust { padding: 2.25rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bone-2); }
+.trust__row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; align-items: center; }
+.trust__item { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); letter-spacing: 0.1em; text-transform: uppercase; text-align: center; }
+@media (max-width: 860px) { .trust__row { grid-template-columns: repeat(2, 1fr); gap: 1rem; } }
+
+/* Pain */
+.pain { padding: var(--space-6) 0; }
+.section-head { max-width: 36rem; margin-bottom: 3.5rem; }
+.section-head p { color: var(--text-dim); margin-top: 1.25rem; font-size: 1.05rem; }
+.pain__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line-strong); }
+.pain__card { padding: 2.5rem 2rem 2.5rem 0; border-bottom: 1px solid var(--line); }
+.pain__card:not(:last-child) { border-right: 1px solid var(--line); padding-right: 2rem; }
+.pain__card:not(:first-child) { padding-left: 2rem; }
+.pain__card-num { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--brass); margin-bottom: 1rem; }
+.pain__card h3 { margin-bottom: 0.75rem; font-size: 1.3rem; font-weight: 500; }
+.pain__card p { color: var(--text-dim); font-size: 0.95rem; }
+@media (max-width: 860px) { .pain__cards { grid-template-columns: 1fr; border: none; } .pain__card { padding: 2rem 0 !important; border-right: none !important; border-bottom: 1px solid var(--line); } }
+
+/* Before / After */
+.ba { padding: var(--space-6) 0; background: var(--bone-2); }
+.ba__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line-strong); }
+.ba__col { padding: 3rem 2.5rem; min-height: 380px; }
+.ba__col--before { background: var(--ink); color: var(--bone); border-right: 1px solid var(--line-strong); }
+.ba__col--after { background: var(--bone); color: var(--ink); }
+.ba__col h3 { margin-bottom: 1.75rem; font-size: 1.55rem; font-weight: 500; }
+.ba__col--before h3 { color: var(--bone); }
+.ba__col-tag { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1rem; }
+.ba__col--before .ba__col-tag { color: var(--brass-soft); }
+.ba__col--after .ba__col-tag { color: var(--brass); }
+.ba__list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+.ba__list li { display: flex; gap: 0.85rem; align-items: flex-start; font-size: 0.96rem; padding-left: 0; }
+.ba__list li::before { content: ""; flex-shrink: 0; width: 14px; height: 1px; margin-top: 13px; }
+.ba__col--before .ba__list li::before { background: rgba(244,240,230,0.32); }
+.ba__col--after .ba__list li::before { background: var(--brass); }
+.ba__col--before .ba__list li { color: rgba(244,240,230,0.78); }
+@media (max-width: 860px) { .ba__grid { grid-template-columns: 1fr; } .ba__col--before { border-right: none; border-bottom: 1px solid var(--line-strong); } }
+
+/* Mechanism */
+.mech { padding: var(--space-6) 0; }
+.mech__grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4rem; align-items: start; }
+.mech__visual { position: relative; }
+.mech__visual img { width: 100%; height: 540px; object-fit: cover; border-radius: 2px; }
+.mech__visual-caption { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint); margin-top: 1rem; display: flex; justify-content: space-between; }
+.mech__body p { color: var(--text-dim); font-size: 1.05rem; margin-top: 1.25rem; }
+.mech__steps { display: flex; flex-direction: column; gap: 0; margin-top: 2.5rem; }
+.mech__step { display: grid; grid-template-columns: 60px 1fr; gap: 1.25rem; padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+.mech__step:last-child { border-bottom: none; }
+.mech__step-num { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; color: var(--brass); padding-top: 6px; }
+.mech__step-body h4 { font-family: var(--font-display); font-weight: 500; font-size: 1.18rem; margin-bottom: 5px; color: var(--ink); }
+.mech__step-body p { font-size: 0.94rem; color: var(--text-dim); margin: 0; }
+@media (max-width: 860px) { .mech__grid { grid-template-columns: 1fr; gap: 2.5rem; } .mech__visual img { height: 380px; } }
+
+/* Benefits */
+.benefits { padding: var(--space-6) 0; background: var(--bone-2); }
+.benefits__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 4rem; margin-top: 3rem; border-top: 1px solid var(--line-strong); }
+.benefit { display: grid; grid-template-columns: 60px 1fr; gap: 1rem; padding: 1.75rem 0; border-bottom: 1px solid var(--line); }
+.benefit__num { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; color: var(--brass); padding-top: 6px; }
+.benefit h4 { font-family: var(--font-display); font-weight: 500; font-size: 1.18rem; margin-bottom: 4px; color: var(--ink); }
+.benefit p { font-size: 0.93rem; color: var(--text-dim); }
+@media (max-width: 860px) { .benefits__grid { grid-template-columns: 1fr; gap: 0; } }
+
+/* Offer */
+.offer { padding: var(--space-6) 0; }
+.offer__card { background: var(--ink); color: var(--bone); border-radius: 2px; padding: 3rem; position: relative; }
+.offer__card h2 { color: var(--bone); }
+.offer__card .eyebrow { color: var(--brass-soft); }
+.offer__card .eyebrow::before { color: var(--brass); }
+.offer__list { display: flex; flex-direction: column; gap: 0; margin: 2.5rem 0; }
+.offer__row { display: grid; grid-template-columns: 60px 1fr 120px; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid rgba(244,240,230,0.10); align-items: center; }
+.offer__row-num { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; color: var(--brass); }
+.offer__row h4 { color: var(--bone); font-family: var(--font-display); font-weight: 500; font-size: 1.18rem; margin-bottom: 5px; }
+.offer__row p { color: rgba(244,240,230,0.65); font-size: 0.9rem; }
+.offer__value { font-family: var(--font-mono); color: var(--brass); text-align: right; font-size: 0.95rem; letter-spacing: 0.04em; }
+.offer__total { display: grid; grid-template-columns: 1fr auto; align-items: center; padding-top: 2rem; border-top: 1px solid var(--brass); margin-top: 1rem; }
+.offer__total-label { color: rgba(244,240,230,0.7); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.offer__total-num { font-family: var(--font-display); font-size: 2.8rem; color: var(--bone); font-weight: 400; }
+.offer__investment { text-align: center; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px dashed rgba(244,240,230,0.18); }
+.offer__investment-tag { color: var(--brass); font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; }
+.offer__investment-num { font-family: var(--font-display); font-size: 2.8rem; color: var(--bone); margin: 0.6rem 0; font-weight: 400; }
+.offer__investment-sub { color: rgba(244,240,230,0.65); font-size: 0.92rem; }
+
+/* Mid CTA */
+.mid-cta { padding: var(--space-6) 0; text-align: center; background: var(--bone-2); }
+.mid-cta h2 { max-width: 42rem; margin: 1rem auto 1.5rem; }
+.mid-cta p { color: var(--text-dim); max-width: 32rem; margin: 0 auto 2rem; }
+
+/* Social proof */
+.proof { padding: var(--space-6) 0; }
+.proof__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+.proof__col-right { display: flex; flex-direction: column; gap: 1.5rem; }
+.t-card { border-radius: 2px; padding: 2.25rem; display: flex; flex-direction: column; }
+.t-card--dark { background: var(--ink); color: var(--bone); }
+.t-card--light { background: var(--bg-elevated); border: 1px solid var(--line); }
+.t-card__metric { display: inline-block; font-family: var(--font-mono); font-size: 0.7rem; padding: 6px 12px; border-radius: 99px; margin-bottom: 1.5rem; align-self: flex-start; letter-spacing: 0.1em; text-transform: uppercase; }
+.t-card--dark .t-card__metric { background: var(--brass); color: var(--ink); }
+.t-card--light .t-card__metric { background: var(--ink); color: var(--brass); }
+.t-card__quote { font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; line-height: 1.28; margin-bottom: 1.5rem; flex-grow: 1; letter-spacing: -0.015em; }
+.t-card--light .t-card__quote { font-size: 1.2rem; }
+.t-card__author { display: flex; align-items: center; gap: 0.75rem; margin-top: auto; }
+.t-card__avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.t-card__name { font-family: var(--font-display); font-weight: 500; font-size: 0.96rem; }
+.t-card__role { font-family: var(--font-mono); font-size: 0.7rem; opacity: 0.7; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px; }
+@media (max-width: 860px) { .proof__grid { grid-template-columns: 1fr; } }
+
+/* Bonus */
+.bonus { padding: var(--space-6) 0; background: var(--bone-2); }
+.bonus__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+.bonus__card { background: var(--bg-elevated); border: 1px solid var(--line); border-radius: 2px; padding: 2.5rem; position: relative; overflow: hidden; }
+.bonus__ghost { position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-display); font-size: 6rem; color: rgba(200,168,100,0.10); line-height: 1; font-weight: 300; }
+.bonus__tag { display: inline-block; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); margin-bottom: 1rem; }
+.bonus__card h3 { margin-bottom: 0.75rem; font-size: 1.4rem; font-weight: 500; }
+.bonus__card p { color: var(--text-dim); margin-bottom: 1.5rem; font-size: 0.95rem; }
+.bonus__value { font-family: var(--font-mono); color: var(--brass); font-size: 0.86rem; letter-spacing: 0.06em; }
+@media (max-width: 860px) { .bonus__grid { grid-template-columns: 1fr; } }
+
+/* Close */
+.close { padding: var(--space-6) 0; background: var(--ink); color: var(--bone); }
+.close h2 { color: var(--bone); }
+.close .eyebrow { color: var(--brass-soft); }
+.close .eyebrow::before { color: var(--brass); }
+.guarantee { background: var(--ink-2); border: 1px solid var(--brass); border-radius: 2px; padding: 2.5rem; margin-bottom: 3rem; display: grid; grid-template-columns: 100px 1fr; gap: 1.5rem; align-items: center; }
+.guarantee__seal { width: 100px; height: 100px; border-radius: 50%; border: 1px solid var(--brass); display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--font-mono); color: var(--brass); font-size: 0.66rem; line-height: 1.2; text-align: center; padding: 8px; letter-spacing: 0.1em; }
+.guarantee__seal strong { font-family: var(--font-display); font-size: 1.4rem; color: var(--brass); font-weight: 300; }
+.guarantee h3 { color: var(--bone); margin-bottom: 0.5rem; font-size: 1.5rem; font-weight: 500; }
+.guarantee p { color: rgba(244,240,230,0.75); font-size: 0.96rem; }
+.faq { margin-bottom: 3rem; }
+.faq details { border-bottom: 1px solid rgba(244,240,230,0.12); padding: 1.5rem 0; }
+.faq summary { cursor: pointer; font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--bone); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 1.4rem; color: var(--brass); font-weight: 300; transition: transform .25s var(--ease); }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { margin-top: 1rem; color: rgba(244,240,230,0.72); font-size: 0.95rem; }
+.urgency { text-align: center; padding-top: 2.5rem; border-top: 1px solid rgba(244,240,230,0.12); }
+.urgency p { color: rgba(244,240,230,0.7); margin: 1rem auto 2rem; max-width: 32rem; }
+.urgency .btn--primary { background: var(--brass); color: var(--ink); }
+.urgency .btn--primary:hover { background: var(--brass-soft); }
+
+/* Editorial signature footer */
+footer { background: var(--bone); padding: 3rem 0 0; border-top: 1px solid var(--line); }
+.footer__colophon { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; padding-bottom: 2.5rem; }
+.footer__col h4 { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.75rem; font-weight: 500; }
+.footer__col p, .footer__col a { font-size: 0.92rem; color: var(--text-dim); display: block; margin-bottom: 4px; }
+.footer__col a:hover { color: var(--ink); }
+.editorial-signature { display: grid; grid-template-columns: 1fr 1fr; align-items: baseline; gap: 1rem; padding: 1.75rem 0 2.5rem; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); border-top: 1px solid var(--line); }
+.editorial-signature__issue { text-align: left; }
+.editorial-signature__top { text-align: right; }
+.editorial-signature a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line-strong); padding-bottom: 1px; }
+@media (max-width: 600px) {
+  .footer__colophon { grid-template-columns: 1fr; }
+  .editorial-signature { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; }
+  .editorial-signature__issue, .editorial-signature__top { text-align: center; }
+}
+
+.reveal { opacity: 1; transform: translateY(28px); transition: transform .9s var(--ease); }
+.reveal.in { transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<div class="editorial-corners" aria-hidden="true">
+  <span>Issue N°001</span>
+  <span>May 2026</span>
+</div>
+
+<nav class="pill-nav" aria-label="Primary">
+  <a href="#hero" class="pill-nav__logo">Ardent &amp; Marlowe</a>
+  <div class="pill-nav__links">
+    <a href="#mech">Approach</a>
+    <a href="#offer">Engagement</a>
+    <a href="#proof">Closings</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="#close" class="pill-nav__cta">Request brief</a>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="wrap" style="width:100%;">
+    <div class="hero__top-meta">
+      <span>Atelier · Residential</span>
+      <span>Est. 2014 · Greater Bay Area</span>
+    </div>
+    <div class="hero__copy">
+      <h1>The house you'd <em>buy twice.</em> The listing that sells in <em>eighteen days.</em></h1>
+      <div class="hero__under">
+        <p class="hero__sub">A boutique residential atelier for 32-55 yo professional buyers and sellers. Off-market access, 7-day listing bursts, and a closing-cost negotiation playbook we wrote down so it survives us.</p>
+        <div class="hero__ctas">
+          <a href="#close" class="btn btn--primary">Request a brief →</a>
+          <a href="#mech" class="btn btn--ghost">See our approach</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero__bottom-meta">
+    <div class="wrap">
+      <div><strong>428</strong>Families placed since 2014</div>
+      <div><strong>$1.2B</strong>Closed residential volume</div>
+      <div><strong>102.8%</strong>Avg sale of list price</div>
+      <div><strong>18d</strong>Avg time on market</div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="trust__row">
+      <div class="trust__item">NAR Member</div>
+      <div class="trust__item">MLS · Top 1%</div>
+      <div class="trust__item">Featured · Wall St. Journal</div>
+      <div class="trust__item">Forbes RE Council</div>
+      <div class="trust__item">Luxury Portfolio Intl.</div>
+    </div>
+  </div>
+</section>
+
+<section class="pain" id="pain">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-num="01">The buyer-side reality</span>
+      <h2>House hunting in 2026 has become a part-time job. It shouldn't be.</h2>
+      <p>You opened a Saturday to drive 90 minutes. The listing photos didn't match the floor plan. The agent showed up late. By Sunday night the weekend's gone - and you still don't own anything.</p>
+    </div>
+    <div class="pain__cards">
+      <div class="pain__card reveal"><div class="pain__card-num">001 - Buyer side</div><h3>Hunting through 47 Zillow tabs</h3><p>Every promising listing is already pending. The new ones don't match what you actually want. You're filtering by square feet because the algorithm doesn't understand "this is where my kids will grow up."</p></div>
+      <div class="pain__card reveal"><div class="pain__card-num">002 - Tour day</div><h3>Showings that miss the wishlist</h3><p>You handed your agent a clear brief - 3-bed, walkable district, real backyard. The Saturday tour shows you 2-beds on busy streets. Then they ask you to "stay open." Open to what - wasting more weekends?</p></div>
+      <div class="pain__card reveal"><div class="pain__card-num">003 - Sell side</div><h3>Agents who ghost after the listing posts</h3><p>Sign goes in the yard, photos go up, and then radio silence for three weeks. No status, no buyer feedback, no price-adjustment plan. Just "the market's slow right now."</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ba" id="before-after">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-num="02">Before · After</span>
+      <h2>What a private buyer-side desk actually changes.</h2>
+    </div>
+    <div class="ba__grid">
+      <div class="ba__col ba__col--before">
+        <div class="ba__col-tag">Before</div>
+        <h3>Working with a volume agent</h3>
+        <ul class="ba__list">
+          <li>Refreshing Zillow at 11pm hoping a new listing dropped.</li>
+          <li>Driving across the metro to see homes that ignore your brief.</li>
+          <li>Losing every multi-offer because your agent waited 24 hours.</li>
+          <li>Selling for asking when your block was up 9% last quarter.</li>
+          <li>Walking into closing with 14 line items you've never seen.</li>
+        </ul>
+      </div>
+      <div class="ba__col ba__col--after">
+        <div class="ba__col-tag">After</div>
+        <h3>Working with Ardent &amp; Marlowe</h3>
+        <ul class="ba__list">
+          <li>3-5 hand-vetted listings emailed every Monday - including off-market.</li>
+          <li>One Saturday tour, four homes, all matching your brief on paper and in person.</li>
+          <li>Offers drafted same-day with an escalation clause priced to win.</li>
+          <li>Listing burst: 7-day pre-market warm-up, then live with 38+ pre-warmed buyers.</li>
+          <li>Closing-cost walk-through 5 days out - no line item is ever a surprise.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mech" id="mech">
+  <div class="wrap">
+    <div class="mech__grid">
+      <div class="mech__visual reveal">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1100&q=85&fit=crop" alt="Editorial interior - sun-washed living room with linen sofa and warm wood floors">
+        <div class="mech__visual-caption">
+          <span>Plate 03 - Residence at Whitfield Crescent</span>
+          <span>Sold 104.1% / list · 11 days</span>
+        </div>
+      </div>
+      <div class="mech__body">
+        <span class="eyebrow" data-num="03">Why a 7-day listing burst</span>
+        <h2>We treat every listing like an asset launch - not a sign in the yard.</h2>
+        <p>The first 7 days a listing is live determine 80% of the final outcome. Most agents post and pray. We run a pre-market warm-up to a 1,200-buyer list, then go live on a Thursday at noon with showings booked the same afternoon. By Sunday we have a feedback loop, a buyer ranking, and a pricing-adjustment ladder if needed. By Day 18 you're under contract - average.</p>
+        <div class="mech__steps">
+          <div class="mech__step"><div class="mech__step-num">PHASE 01</div><div class="mech__step-body"><h4>Pre-market warm-up</h4><p>Day -7 to Day 0 - Coming-soon teaser to 1,200-buyer broker network. Pre-bookings collected before MLS hit.</p></div></div>
+          <div class="mech__step"><div class="mech__step-num">PHASE 02</div><div class="mech__step-body"><h4>Listing burst</h4><p>Day 0 to Day 7 - Live Thursday noon. Showings pre-scheduled. Open house Sat/Sun with foot-traffic models.</p></div></div>
+          <div class="mech__step"><div class="mech__step-num">PHASE 03</div><div class="mech__step-body"><h4>Feedback &amp; ladder</h4><p>Day 7 to Day 14 - Buyer-side feedback loop processed. Pricing-adjustment ladder triggered only on data.</p></div></div>
+          <div class="mech__step"><div class="mech__step-num">PHASE 04</div><div class="mech__step-body"><h4>Contract &amp; close</h4><p>Day 14 to Day 35 - Negotiation, inspection, financing, closing-cost walk-through. Average close at 102.8% of list.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits" id="benefits">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-num="04">What changes for you</span>
+      <h2>Less hunting. Better homes. Cleaner closings.</h2>
+    </div>
+    <div class="benefits__grid">
+      <div class="benefit"><div class="benefit__num">001</div><div><h4>Your weekends back</h4><p>Avg buyer tours 4 homes total before closing - not 24.</p></div></div>
+      <div class="benefit"><div class="benefit__num">002</div><div><h4>Off-market access</h4><p>30-40% of our deals never hit Zillow. You see them first.</p></div></div>
+      <div class="benefit"><div class="benefit__num">003</div><div><h4>Win on the first offer</h4><p>76% of our buyer offers are accepted on the first round.</p></div></div>
+      <div class="benefit"><div class="benefit__num">004</div><div><h4>Listings sold above ask</h4><p>Avg seller closes at 102.8% of list within 18 days on market.</p></div></div>
+      <div class="benefit"><div class="benefit__num">005</div><div><h4>Closing-cost negotiation</h4><p>Avg seller credit recovered for buyers: $7,400.</p></div></div>
+      <div class="benefit"><div class="benefit__num">006</div><div><h4>A real human, every week</h4><p>Direct line to your principal agent - not a junior, not a chatbot.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="offer">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-num="05">What you actually get</span>
+      <h2>The Ardent &amp; Marlowe engagement - fully itemized.</h2>
+    </div>
+    <div class="offer__card">
+      <span class="eyebrow" data-num="05">Standard engagement</span>
+      <h2 style="margin-bottom:0.5rem">Everything below is included, billed at close.</h2>
+      <div class="offer__list">
+        <div class="offer__row"><div class="offer__row-num">001</div><div><h4>Personal property tour (curated Saturday)</h4><p>4 hand-vetted homes per tour day, pre-walked by your principal agent.</p></div><div class="offer__value">$0</div></div>
+        <div class="offer__row"><div class="offer__row-num">002</div><div><h4>Off-market access portal</h4><p>Private feed of pre-MLS and broker-network-only listings, refreshed weekly.</p></div><div class="offer__value">$3,400</div></div>
+        <div class="offer__row"><div class="offer__row-num">003</div><div><h4>Closing-cost negotiation playbook</h4><p>Line-by-line walk-through 5 days before close. Avg buyer recovery: $7,400.</p></div><div class="offer__value">$2,800</div></div>
+        <div class="offer__row"><div class="offer__row-num">004</div><div><h4>12-month listing strategy (sellers)</h4><p>Pre-market warm-up, photo plan, pricing model, listing burst, post-list adjustment ladder.</p></div><div class="offer__value">$4,200</div></div>
+        <div class="offer__row"><div class="offer__row-num">005</div><div><h4>Inspection + lender shortlist</h4><p>3 vetted inspectors + 3 lenders we've closed with 30+ times each.</p></div><div class="offer__value">$1,200</div></div>
+      </div>
+      <div class="offer__total">
+        <div class="offer__total-label">Stand-alone value</div>
+        <div class="offer__total-num">$11,600</div>
+      </div>
+      <div class="offer__investment">
+        <div class="offer__investment-tag">Your investment</div>
+        <div class="offer__investment-num">Standard commission</div>
+        <div class="offer__investment-sub">Paid at closing. No retainer, no upfront, no hourly. If we don't close, you don't pay.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mid-cta">
+  <div class="wrap">
+    <span class="eyebrow" data-num="06">Ready to talk</span>
+    <h2>Book a 25-minute brief intake. We'll either fit, or we'll refer you out.</h2>
+    <p>No pressure pitch. We turn down about 30% of buyer briefs that aren't a fit - and we'll tell you on the call.</p>
+    <a href="#close" class="btn btn--primary">Request your brief →</a>
+  </div>
+</section>
+
+<section class="proof" id="proof">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-num="07">Recent closings</span>
+      <h2>What clients say after we hand over the keys.</h2>
+    </div>
+    <div class="proof__grid">
+      <div class="t-card t-card--dark">
+        <span class="t-card__metric">Closed 11 days · $42K under ask</span>
+        <p class="t-card__quote">"We'd been looking on our own for eight months. Ardent sent us four homes the first Monday. We closed on the second one. They negotiated $42K off ask and walked us through every closing-cost line item five days out."</p>
+        <div class="t-card__author">
+          <img class="t-card__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop&crop=face" alt="Headshot of Mara Bennett, buyer">
+          <div><div class="t-card__name">Mara Bennett</div><div class="t-card__role">Pediatrician · Riverside</div></div>
+        </div>
+      </div>
+      <div class="proof__col-right">
+        <div class="t-card t-card--light">
+          <span class="t-card__metric">Sold 104.1% of list</span>
+          <p class="t-card__quote">"Listing burst hit different. Day 1 we had 14 showings booked."</p>
+          <div class="t-card__author">
+            <img class="t-card__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="Headshot of Daniel Kuroda, seller">
+            <div><div class="t-card__name">Daniel Kuroda</div><div class="t-card__role">Architect · Briarcliff</div></div>
+          </div>
+        </div>
+        <div class="t-card t-card--light">
+          <span class="t-card__metric">First offer accepted</span>
+          <p class="t-card__quote">"They told me to skip three houses I would have lost the weekend on. Then they showed me the one we bought."</p>
+          <div class="t-card__author">
+            <img class="t-card__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop&crop=face" alt="Headshot of Elena Vasquez, buyer">
+            <div><div class="t-card__name">Elena Vasquez</div><div class="t-card__role">VP Finance · Hillcrest</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bonus" id="bonus">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-num="08">Bonuses included</span>
+      <h2>Two extras every engaged client gets - no upsell.</h2>
+    </div>
+    <div class="bonus__grid">
+      <div class="bonus__card">
+        <div class="bonus__ghost">01</div>
+        <span class="bonus__tag">Bonus one</span>
+        <h3>Neighborhood deep-dive report</h3>
+        <p>For every shortlisted home, you get a 4-page report - comps, school score trend, commute model, 5-year appreciation curve, and known pending developments within 1 mile.</p>
+        <div class="bonus__value">BUILT IN · $480 VALUE</div>
+      </div>
+      <div class="bonus__card">
+        <div class="bonus__ghost">02</div>
+        <span class="bonus__tag">Bonus two</span>
+        <h3>First-year homeowner concierge</h3>
+        <p>The first 12 months after closing, you keep a direct line to us for contractor referrals, tax-record fixes, and a year-one home-value check-in. Most agents disappear at closing - we don't.</p>
+        <div class="bonus__value">BUILT IN · $900 VALUE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="close" id="close">
+  <div class="wrap">
+    <div class="section-head reveal" style="max-width:42rem">
+      <span class="eyebrow" data-num="09">Guarantee · FAQ · Final word</span>
+      <h2>The promise we make every client - in writing, before we list or tour.</h2>
+    </div>
+    <div class="guarantee">
+      <div class="guarantee__seal"><strong>90</strong>DAY FIT</div>
+      <div>
+        <h3>90-day fit guarantee.</h3>
+        <p>If after 90 days you don't feel the brief is being honored - wrong neighborhoods, slow communication, listings off-target - you can release us with zero obligation. We'll hand back your brief, intro you to two other agents we trust, and part friends.</p>
+      </div>
+    </div>
+    <div class="faq" id="faq">
+      <details><summary>How are you different from a typical agent at a big brokerage?</summary><p>Big-brokerage agents run a volume model - more clients, more listings, faster cycle. We cap intake at 22 active engagements per year. That's why we can pre-walk every home, draft same-day offers, and stay involved 12 months past closing.</p></details>
+      <details><summary>Do you cover both buying and selling?</summary><p>Yes. About 60% of our work is buyer-side, 40% sell-side. Many clients hire us for both - list with us, buy through us, one transition.</p></details>
+      <details><summary>What price range do you typically work in?</summary><p>$450K to $4.2M residential. Sweet spot is $700K-$1.6M. We don't take investment-property-only briefs (different muscle, different relationships).</p></details>
+      <details><summary>What does "off-market" actually mean?</summary><p>Listings we know about through our broker-to-broker network 7-30 days before they hit MLS. About 30-40% of our buyer closings are off-market sourced.</p></details>
+      <details><summary>What's the brief intake call?</summary><p>25 minutes by phone or in person. You describe what you're looking for, we ask the questions you've never been asked, and at the end either we agree to work together or we refer you out. No pitch, no sign-up.</p></details>
+      <details><summary>Are you taking new clients this quarter?</summary><p>We cap intake at 22 active engagements per year - usually 4-6 new briefs per quarter. Current quarter has 3 slots open.</p></details>
+    </div>
+    <div class="urgency">
+      <span class="eyebrow" data-num="10">Q2 intake</span>
+      <h2 style="font-size:2rem">3 buyer-side slots remain for this quarter.</h2>
+      <p>We don't run countdown timers or fake scarcity. The cap is real - 22 active engagements per year means roughly 4-6 new briefs per quarter. Q2 has 3 slots left as of this week.</p>
+      <a href="#hero" class="btn btn--primary">Request your 25-min brief →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer__colophon">
+      <div class="footer__col">
+        <h4>Atelier</h4>
+        <p>Ardent &amp; Marlowe</p>
+        <p>1640 Folger Street, Suite 4</p>
+        <p>Greater Bay Area, CA</p>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="tel:+15555550140">+1 (555) 555-0140</a>
+        <a href="mailto:hello@ardentmarlowe.com">hello@ardentmarlowe.com</a>
+        <p>Mon-Sat · By appointment</p>
+      </div>
+      <div class="footer__col">
+        <h4>Licensure</h4>
+        <p>DRE #02178432</p>
+        <p>NAR Member · MLS</p>
+        <p>Luxury Portfolio Intl.</p>
+      </div>
+    </div>
+    <div class="editorial-signature">
+      <span class="editorial-signature__issue">Issue N°001 · ©2026 Ardent &amp; Marlowe Atelier</span>
+      <a href="#hero" class="editorial-signature__top">↑ Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  if (typeof gsap === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+  // Hero load - opacity allowed on DOMContentLoaded before scroll
+  gsap.from('.hero__top-meta', { y: 16, opacity: 0, duration: 0.8, ease: 'power3.out' });
+  gsap.from('.hero__copy h1', { y: 30, opacity: 0, duration: 1.1, ease: 'power3.out', delay: 0.1 });
+  gsap.from('.hero__under > *', { y: 20, opacity: 0, stagger: 0.1, duration: 0.9, ease: 'power3.out', delay: 0.45 });
+  gsap.from('.hero__bottom-meta > .wrap > *', { y: 14, opacity: 0, stagger: 0.07, duration: 0.7, ease: 'power3.out', delay: 0.7 });
+  // Scroll reveals - y only, no opacity:0
+  document.querySelectorAll('.reveal').forEach(function(el){
+    gsap.to(el, { y: 0, duration: 0.95, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+  });
+})();
+</script>
+
+</body>
+</html>

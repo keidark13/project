@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Okafor Civil Trial Group — When the verdict matters, the preparation shows</title>
+<meta name="description" content="Okafor Civil Trial Group represents catastrophic injury and civil rights plaintiffs. Trial-ready files, partner-led, settlement-first. Free case evaluation by a lead attorney.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&display=swap">
+
+<style>
+  :root {
+    /* palette — Variant B: deep slate + deep teal + bone */
+    --bg: #F4F0E6;
+    --bg-elevated: #EBE5D5;
+    --ink: #1F2937;
+    --ink-deep: #111827;
+    --text: #2D3748;
+    --text-dim: #4B5563;
+    --text-faint: #6B7280;
+    --teal: #0F766E;
+    --teal-deep: #0B5750;
+    --teal-soft: #B7DDD7;
+    --bone: #F4F0E6;
+    --hairline: rgba(31, 41, 55, 0.10);
+    --hairline-strong: rgba(31, 41, 55, 0.20);
+
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4rem;
+    --space-7: 6rem;
+    --space-8: 8rem;
+
+    --radius-sm: 4px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+  }
+  h1 { font-size: clamp(2.8rem, 6.5vw, 5.4rem); }
+  h2 { font-size: clamp(2.2rem, 4.5vw, 3.6rem); }
+  h3 { font-size: clamp(1.35rem, 2.2vw, 1.7rem); }
+  h4 { font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; letter-spacing: 0; }
+  p { color: var(--text); margin-bottom: var(--space-2); }
+  a { color: inherit; text-decoration: none; }
+
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 var(--space-3); }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--teal);
+    margin-bottom: var(--space-3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .eyebrow .num {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--teal-deep);
+    font-size: 0.95rem;
+    letter-spacing: 0;
+  }
+  .eyebrow .slash { color: var(--teal); opacity: 0.4; }
+
+  /* nav */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(244, 240, 230, 0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: var(--space-3) 0;
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .logo .dot { color: var(--teal); }
+  .nav-links { display: flex; gap: var(--space-4); align-items: center; }
+  .nav-links a {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    transition: color 0.2s var(--ease-out);
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.9rem 1.7rem;
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.005em;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.25s var(--ease-out);
+  }
+  .btn-primary { background: var(--teal); color: var(--bone); }
+  .btn-primary:hover {
+    background: var(--teal-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(15, 118, 110, 0.28);
+  }
+  .btn-dark { background: var(--ink); color: var(--bone); }
+  .btn-dark:hover { background: var(--ink-deep); transform: translateY(-1px); }
+  .btn-ghost-light {
+    background: transparent;
+    color: var(--bone);
+    border-color: rgba(244, 240, 230, 0.35);
+  }
+  .btn-ghost-light:hover { border-color: var(--bone); background: rgba(244,240,230,0.08); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--hairline-strong);
+  }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  /* HERO — dark-bleed-photo-overlay */
+  .hero {
+    position: relative;
+    background: var(--ink-deep);
+    color: var(--bone);
+    padding: var(--space-8) 0 var(--space-7);
+    overflow: hidden;
+    min-height: 86vh;
+    display: flex; align-items: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 75% 30%, rgba(15, 118, 110, 0.28) 0%, transparent 55%),
+      radial-gradient(ellipse at 15% 85%, rgba(183, 221, 215, 0.10) 0%, transparent 50%),
+      linear-gradient(180deg, #0B1118 0%, #1F2937 100%);
+  }
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(244,240,230,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(244,240,230,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+  .hero-inner { position: relative; z-index: 2; }
+  .hero-eyebrow {
+    color: var(--teal-soft);
+  }
+  .hero-eyebrow .num { color: var(--teal-soft); opacity: 0.7; }
+  .hero h1 {
+    color: var(--bone);
+    max-width: 18ch;
+    margin-bottom: var(--space-4);
+    font-weight: 400;
+  }
+  .hero h1 .italic {
+    font-style: italic;
+    color: var(--teal-soft);
+  }
+  .hero-sub {
+    font-size: 1.2rem;
+    color: rgba(244, 240, 230, 0.78);
+    max-width: 600px;
+    margin-bottom: var(--space-5);
+    line-height: 1.55;
+  }
+  .hero-ctas { display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-6); }
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-3);
+    padding-top: var(--space-5);
+    border-top: 1px solid rgba(244, 240, 230, 0.12);
+    max-width: 880px;
+  }
+  .hero-meta-item { }
+  .hero-meta-num {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    color: var(--bone);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .hero-meta-num .italic { color: var(--teal-soft); font-style: italic; }
+  .hero-meta-label {
+    font-size: 0.76rem;
+    color: rgba(244, 240, 230, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  /* trust strip */
+  .trust { padding: var(--space-5) 0; border-bottom: 1px solid var(--hairline); background: var(--bg-elevated); }
+  .trust-inner {
+    display: flex; flex-wrap: wrap; gap: var(--space-5);
+    align-items: center; justify-content: space-between;
+  }
+  .trust-label {
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: 600;
+  }
+  .trust-badges { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+  .trust-badge {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--ink);
+    padding: 0 var(--space-3);
+    border-left: 1px solid var(--hairline-strong);
+  }
+  .trust-badge:first-child { border-left: none; padding-left: 0; }
+
+  /* sections */
+  .section { padding: var(--space-8) 0; }
+  .section-head { max-width: 760px; margin-bottom: var(--space-6); }
+  .section-head h2 { margin-bottom: var(--space-3); }
+  .section-head p { font-size: 1.1rem; color: var(--text-dim); line-height: 1.55; }
+
+  /* empathy — quote-block treatment */
+  .pain { background: var(--bg-elevated); }
+  .pain-stack { display: grid; gap: var(--space-3); max-width: 980px; margin: 0 auto; }
+  .pain-item {
+    background: var(--bg);
+    padding: var(--space-5) var(--space-5) var(--space-5) var(--space-6);
+    border-left: 4px solid var(--teal);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-4);
+    align-items: start;
+  }
+  .pain-item-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 2.6rem;
+    color: var(--teal);
+    line-height: 1;
+  }
+  .pain-item h3 { font-size: 1.35rem; margin-bottom: 0.6rem; }
+  .pain-item p { color: var(--text-dim); margin: 0; font-size: 1rem; }
+
+  /* mechanism */
+  .mechanism-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    align-items: stretch;
+  }
+  .mechanism-copy { display: flex; flex-direction: column; justify-content: center; }
+  .mechanism-copy h2 { margin-bottom: var(--space-3); }
+  .mechanism-copy p { color: var(--text-dim); font-size: 1.05rem; }
+  .mechanism-steps { background: var(--ink-deep); color: var(--bone); padding: var(--space-6); border-radius: var(--radius-md); }
+  .mechanism-steps h3 { color: var(--teal-soft); font-style: italic; font-size: 1.2rem; margin-bottom: var(--space-4); font-weight: 400; }
+  .step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+    border-top: 1px solid rgba(244, 240, 230, 0.10);
+  }
+  .step:first-of-type { border-top: none; padding-top: 0; }
+  .step-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--teal-soft);
+    font-size: 1.5rem;
+    line-height: 1;
+    padding-top: 0.2em;
+  }
+  .step h4 { color: var(--bone); margin-bottom: 0.3rem; }
+  .step p { color: rgba(244, 240, 230, 0.65); font-size: 0.92rem; margin: 0; }
+
+  /* before / after — side-by-side */
+  .ba { background: var(--bg-elevated); }
+  .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .ba-side {
+    background: var(--bg);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    border-top: 4px solid;
+  }
+  .ba-before { border-top-color: #B91C1C; }
+  .ba-after { border-top-color: var(--teal); }
+  .ba-side h3 { margin-bottom: var(--space-3); }
+  .ba-side ul { list-style: none; }
+  .ba-side li {
+    padding: var(--space-2) 0 var(--space-2) var(--space-4);
+    position: relative;
+    color: var(--text);
+    border-bottom: 1px solid var(--hairline);
+    font-size: 0.96rem;
+  }
+  .ba-before li::before {
+    content: '×';
+    position: absolute;
+    left: 0; top: 0.7em;
+    color: #B91C1C;
+    font-weight: 700;
+  }
+  .ba-after li::before {
+    content: '→';
+    position: absolute;
+    left: 0; top: 0.6em;
+    color: var(--teal);
+    font-weight: 700;
+  }
+
+  /* USP — bold statement block */
+  .usp {
+    padding: var(--space-7) 0;
+    background: var(--ink-deep);
+    color: var(--bone);
+    text-align: center;
+  }
+  .usp-statement {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.6vw, 3.6rem);
+    line-height: 1.15;
+    max-width: 980px;
+    margin: 0 auto;
+    color: var(--bone);
+  }
+  .usp-statement .italic { font-style: italic; color: var(--teal-soft); }
+  .usp-eyebrow { color: var(--teal-soft); margin-bottom: var(--space-4); }
+  .usp-eyebrow .num { color: var(--teal-soft); opacity: 0.7; }
+
+  /* offer */
+  .offer { background: var(--bg); }
+  .offer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-5);
+    margin-top: var(--space-5);
+  }
+  .offer-list { display: flex; flex-direction: column; gap: var(--space-2); }
+  .offer-item {
+    background: var(--bg-elevated);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--space-3);
+    align-items: center;
+  }
+  .offer-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--teal-deep);
+    line-height: 1;
+    width: 2rem;
+  }
+  .offer-item h4 { margin-bottom: 0.2rem; font-size: 1.05rem; }
+  .offer-item p { color: var(--text-dim); font-size: 0.9rem; margin: 0; }
+  .offer-value {
+    font-family: var(--font-display);
+    color: var(--teal-deep);
+    font-style: italic;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+  .offer-summary {
+    background: var(--ink-deep);
+    color: var(--bone);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    display: flex; flex-direction: column; justify-content: center; gap: var(--space-3);
+  }
+  .offer-summary h3 { color: var(--bone); font-size: 1.5rem; }
+  .offer-summary p { color: rgba(244, 240, 230, 0.7); font-size: 0.96rem; }
+  .offer-summary .total-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-top: var(--space-3);
+    border-top: 1px solid rgba(183, 221, 215, 0.25);
+  }
+  .offer-summary .total-label { color: rgba(244, 240, 230, 0.6); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.78rem; }
+  .offer-summary .total-amt { font-family: var(--font-display); color: var(--teal-soft); font-size: 1.6rem; font-style: italic; }
+
+  /* social proof */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+  .proof-card {
+    background: var(--bg-elevated);
+    padding: var(--space-5);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--hairline);
+    display: flex; flex-direction: column;
+  }
+  .proof-recovery {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    color: var(--teal-deep);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .proof-recovery .italic { font-style: italic; }
+  .proof-case-label {
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: var(--space-3);
+    font-weight: 600;
+  }
+  .proof-quote {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.55;
+    margin-bottom: var(--space-4);
+    flex: 1;
+  }
+  .proof-quote::before { content: '"'; font-family: var(--font-display); color: var(--teal); font-size: 1.4rem; margin-right: 2px; line-height: 0; }
+  .proof-quote::after { content: '"'; font-family: var(--font-display); color: var(--teal); font-size: 1.4rem; margin-left: 2px; line-height: 0; }
+  .proof-author {
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--hairline);
+    display: flex; align-items: center; gap: var(--space-2);
+  }
+  .proof-avatar {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: var(--bone);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .proof-author-name { font-weight: 600; color: var(--ink); font-size: 0.92rem; }
+  .proof-author-loc { color: var(--text-faint); font-size: 0.8rem; }
+
+  /* guarantee */
+  .guarantee { background: var(--bg-elevated); padding: var(--space-7) 0; }
+  .guarantee-card {
+    max-width: 920px; margin: 0 auto;
+    background: var(--ink-deep); color: var(--bone);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--teal);
+    display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-5);
+    align-items: center;
+  }
+  .guarantee-badge {
+    aspect-ratio: 1/1;
+    border: 2px solid var(--teal);
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    color: var(--teal-soft);
+    font-family: var(--font-display);
+    padding: var(--space-3);
+  }
+  .guarantee-badge .top { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-body); font-weight: 700; }
+  .guarantee-badge .big { font-style: italic; font-size: 2.2rem; line-height: 1.1; margin: 0.4rem 0; }
+  .guarantee-badge .bot { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-body); font-weight: 700; }
+  .guarantee-card h3 { color: var(--bone); margin-bottom: var(--space-2); font-size: 1.7rem; }
+  .guarantee-card p { color: rgba(244, 240, 230, 0.72); }
+
+  /* authority — attorneys */
+  .auth-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+  .auth-card {
+    background: var(--bg-elevated);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--hairline);
+    border-top: 4px solid var(--teal);
+  }
+  .auth-photo {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--ink-deep) 0%, var(--teal-deep) 100%);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 3rem;
+    color: rgba(244, 240, 230, 0.5);
+    margin-bottom: var(--space-3);
+  }
+  .auth-card h3 { font-size: 1.3rem; margin-bottom: 0.2rem; }
+  .auth-role { color: var(--teal-deep); font-style: italic; font-family: var(--font-display); margin-bottom: var(--space-3); font-size: 0.95rem; }
+  .auth-creds { list-style: none; }
+  .auth-creds li {
+    font-size: 0.84rem;
+    color: var(--text-dim);
+    padding: 0.3rem 0;
+    padding-left: var(--space-3);
+    position: relative;
+    line-height: 1.4;
+  }
+  .auth-creds li::before {
+    content: '+';
+    position: absolute; left: 0; top: 0.25em;
+    color: var(--teal); font-weight: 700;
+  }
+
+  /* FAQ — two-column */
+  .faq { background: var(--bg-elevated); }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+  .faq-item {
+    background: var(--bg);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+  }
+  .faq-q {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    display: flex; justify-content: space-between; align-items: start;
+    gap: var(--space-3);
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-q::after {
+    content: '+';
+    color: var(--teal);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform 0.3s var(--ease-out);
+    flex-shrink: 0;
+  }
+  details[open] .faq-q::after { transform: rotate(45deg); }
+  .faq-a {
+    padding-top: var(--space-2);
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* close */
+  .close {
+    background: var(--ink-deep);
+    color: var(--bone);
+    padding: var(--space-8) 0;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .close::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(15, 118, 110, 0.20) 0%, transparent 60%);
+  }
+  .close-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; }
+  .close h2 { color: var(--bone); font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: var(--space-3); }
+  .close h2 .italic { font-style: italic; color: var(--teal-soft); }
+  .close p { color: rgba(244, 240, 230, 0.78); font-size: 1.15rem; margin-bottom: var(--space-5); }
+  .close-ctas { display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap; }
+
+  /* footer */
+  .footer { background: #0B1118; color: rgba(244, 240, 230, 0.65); padding: var(--space-6) 0 var(--space-4); }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-5);
+    margin-bottom: var(--space-5);
+  }
+  .footer h4 {
+    color: var(--teal-soft);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: var(--space-3);
+  }
+  .footer ul { list-style: none; }
+  .footer li { padding: 4px 0; font-size: 0.88rem; }
+  .footer a:hover { color: var(--bone); }
+  .footer-bottom {
+    border-top: 1px solid rgba(183, 221, 215, 0.15);
+    padding-top: var(--space-4);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3);
+    font-size: 0.78rem;
+  }
+  .footer-legal { color: rgba(244, 240, 230, 0.4); font-style: italic; }
+
+  @media (max-width: 880px) {
+    .mechanism-grid, .ba-grid, .offer-grid, .guarantee-card, .faq-grid { grid-template-columns: 1fr; }
+    .auth-grid, .proof-grid { grid-template-columns: 1fr; }
+    .hero-meta { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .nav-links a.btn { display: inline-flex; }
+    .section, .hero, .close { padding: var(--space-6) 0; }
+    .pain-item { grid-template-columns: 1fr; gap: var(--space-2); padding-left: var(--space-4); }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="logo">Okafor<span class="dot">.</span> Civil Trial Group</div>
+    <div class="nav-links">
+      <a href="#approach">Approach</a>
+      <a href="#attorneys">Attorneys</a>
+      <a href="#results">Results</a>
+      <a href="#faq">FAQ</a>
+      <a href="#consult" class="btn btn-primary">Free Evaluation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO — dark-bleed-photo-overlay -->
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="eyebrow hero-eyebrow"><span class="num">01</span><span class="slash">/</span> Catastrophic injury &middot; civil rights</span>
+    <h1>The verdict isn't won at trial. It's won in the <span class="italic">preparation</span> the other side can see.</h1>
+    <p class="hero-sub">Okafor Civil Trial Group represents catastrophic injury and civil rights plaintiffs. We build files the defense reads twice &mdash; then we settle them, or we try them.</p>
+    <div class="hero-ctas">
+      <a href="#consult" class="btn btn-primary">Request a free evaluation</a>
+      <a href="#approach" class="btn btn-ghost-light">See how we work</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-num">$312<span class="italic">M</span></span>
+        <span class="hero-meta-label">Recovered to date</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-num">31</span>
+        <span class="hero-meta-label">Years combined</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-num">94%</span>
+        <span class="hero-meta-label">Settlement rate</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-num">$0</span>
+        <span class="hero-meta-label">Fees unless we win</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="container trust-inner">
+    <span class="trust-label">Credentialed &amp; recognized</span>
+    <div class="trust-badges">
+      <span class="trust-badge">Super Lawyers</span>
+      <span class="trust-badge">AV Preeminent</span>
+      <span class="trust-badge">Avvo 10.0</span>
+      <span class="trust-badge">Best Lawyers in America</span>
+      <span class="trust-badge">National Trial Lawyers Top 100</span>
+    </div>
+  </div>
+</section>
+
+<!-- EMPATHY -->
+<section class="section pain">
+  <div class="container">
+    <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+      <span class="eyebrow"><span class="num">02</span><span class="slash">/</span> What's actually happening</span>
+      <h2>You weren't ready for any of this. The other side has been ready for years.</h2>
+      <p>Three pressures are running in parallel right now. They don't slow down for grief, treatment, or learning curves.</p>
+    </div>
+    <div class="pain-stack">
+      <div class="pain-item">
+        <div class="pain-item-num">01</div>
+        <div>
+          <h3>The adjuster is building a file against you</h3>
+          <p>Every recorded statement, every social post, every gap in treatment is being logged. Their job is to find the version of events that pays you the least &mdash; and to do it before you have counsel.</p>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-item-num">02</div>
+        <div>
+          <h3>The bills are arriving on someone else's timeline</h3>
+          <p>Hospitals, providers, lienholders &mdash; all want to be paid. You can't work. The math doesn't add up. Pressure to take the first offer multiplies by the week, regardless of what the case is actually worth.</p>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-item-num">03</div>
+        <div>
+          <h3>Statutes are running while you decide</h3>
+          <p>Notice periods. Government claim deadlines. Limitations cutoffs. Every state has its own clock, and the clock doesn't pause because you weren't told it had started.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MECHANISM -->
+<section class="section" id="approach">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="num">03</span><span class="slash">/</span> How we work</span>
+      <h2>Every file is built for trial. Most settle because of it.</h2>
+    </div>
+    <div class="mechanism-grid">
+      <div class="mechanism-copy">
+        <p>Volume firms run on settlement velocity &mdash; take the file, send a demand from a template, accept the offer that comes back. That's how cases worth seven figures settle for five.</p>
+        <p>We don't do that. We build every file as if it's going to a jury, with verdict comparables, treating-physician affidavits, and damages exhibits ready before any number is discussed. Then the defense decides whether to settle fairly or try it. Most settle. We're ready for the ones that don't.</p>
+        <div style="margin-top: var(--space-4);">
+          <a href="#consult" class="btn btn-dark">Speak with a lead attorney</a>
+        </div>
+      </div>
+      <div class="mechanism-steps">
+        <h3>From intake to disbursement</h3>
+        <div class="step">
+          <div class="step-num">i</div>
+          <div>
+            <h4>Lead-attorney intake</h4>
+            <p>A founding attorney reads the file before any commitment. 60 minutes, on the phone or by video.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">ii</div>
+          <div>
+            <h4>Independent medical &amp; liability review</h4>
+            <p>We pull every record, identify gaps, retain experts. Demand letters wait until the file is complete.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">iii</div>
+          <div>
+            <h4>Verdict-comparable demand</h4>
+            <p>Number is anchored to recent jury verdicts in your jurisdiction &mdash; not industry averages.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">iv</div>
+          <div>
+            <h4>Quarterly client calls</h4>
+            <p>Lead attorney, on your calendar, every 90 days. Status, math, and what happens next &mdash; in plain English.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">v</div>
+          <div>
+            <h4>Lien reduction before disbursement</h4>
+            <p>In-house negotiation typically reduces medical liens 30&ndash;60%. That's money in your pocket, not theirs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="section ba">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="num">04</span><span class="slash">/</span> The difference</span>
+      <h2>What changes the day the firm is counsel of record.</h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-side ba-before">
+        <span class="eyebrow" style="color:#B91C1C;"><span class="num" style="color:#B91C1C; opacity:0.7;">A</span><span class="slash" style="color:#B91C1C;">/</span> Before counsel</span>
+        <h3>You handle every call yourself.</h3>
+        <ul>
+          <li>Adjuster calls during work hours; you answer to be polite</li>
+          <li>Recorded statement requested; you give one to "help things along"</li>
+          <li>First offer arrives in 10 days; treatment isn't finished</li>
+          <li>Medical liens collected at face value at disbursement</li>
+          <li>You have no idea what fair value actually looks like</li>
+        </ul>
+      </div>
+      <div class="ba-side ba-after">
+        <span class="eyebrow"><span class="num">B</span><span class="slash">/</span> After counsel</span>
+        <h3>The firm is the only point of contact.</h3>
+        <ul>
+          <li>All adjuster contact routes through our office &mdash; nothing on record without review</li>
+          <li>Recorded statements declined or supervised; you don't speak alone</li>
+          <li>Demand built after treatment ends, with comparable-verdict anchoring</li>
+          <li>Liens negotiated 30&ndash;60% lower before any check is cut</li>
+          <li>Valuation report explains the math &mdash; so the number isn't a mystery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USP -->
+<section class="usp">
+  <div class="container">
+    <span class="eyebrow usp-eyebrow"><span class="num">05</span><span class="slash">/</span> What separates us</span>
+    <p class="usp-statement">A lead-attorney intake, a trial-built file, and a quarterly call you can put on the calendar &mdash; so the offer the defense sends is the one a jury <span class="italic">would have written</span> anyway.</p>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="section offer" id="consult">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="num">06</span><span class="slash">/</span> What's included</span>
+      <h2>The free evaluation isn't a screening call. It's a working session.</h2>
+      <p>Lead attorney, 60 minutes, video or phone. You leave with a written next-steps memo, an honest case-merit assessment, and the math behind any number we'd put in a demand.</p>
+    </div>
+    <div class="offer-grid">
+      <div class="offer-list">
+        <div class="offer-item">
+          <div class="offer-num">01</div>
+          <div>
+            <h4>60-minute lead-attorney consultation</h4>
+            <p>Olu, Renata, or Vince &mdash; not a paralegal screener.</p>
+          </div>
+          <span class="offer-value">$700</span>
+        </div>
+        <div class="offer-item">
+          <div class="offer-num">02</div>
+          <div>
+            <h4>Written case-merit memo</h4>
+            <p>Honest assessment: take it, refer it, or pass &mdash; with reasoning.</p>
+          </div>
+          <span class="offer-value">$550</span>
+        </div>
+        <div class="offer-item">
+          <div class="offer-num">03</div>
+          <div>
+            <h4>Settlement valuation range</h4>
+            <p>Based on injury, jurisdiction, and 5+ recent comparable verdicts.</p>
+          </div>
+          <span class="offer-value">$900</span>
+        </div>
+        <div class="offer-item">
+          <div class="offer-num">04</div>
+          <div>
+            <h4>Insurance &amp; UIM policy stack-up</h4>
+            <p>Every coverage layer identified, including under-insured motorist.</p>
+          </div>
+          <span class="offer-value">$450</span>
+        </div>
+        <div class="offer-item">
+          <div class="offer-num">05</div>
+          <div>
+            <h4>Statute &amp; notice calendar</h4>
+            <p>Hard deadlines specific to your facts, sent in writing.</p>
+          </div>
+          <span class="offer-value">$300</span>
+        </div>
+      </div>
+      <div class="offer-summary">
+        <h3>The whole thing is free.</h3>
+        <p>If we take the case, fees are contingency only &mdash; we don't get paid unless you do. If we refer or pass, you keep the memo and the math. No retainer. No invoice. No surprise.</p>
+        <div class="total-row">
+          <div>
+            <div class="total-label">Total value</div>
+            <div class="total-amt">$2,900</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="total-label">Your cost</div>
+            <div class="total-amt">$0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="section" id="results">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="num">07</span><span class="slash">/</span> Recent results</span>
+      <h2>The cases behind the recovery number &mdash; in our clients' words.</h2>
+    </div>
+    <div class="proof-grid">
+      <article class="proof-card">
+        <div class="proof-recovery">$4.<span class="italic">2</span>M</div>
+        <div class="proof-case-label">Commercial vehicle &middot; spinal injury</div>
+        <p class="proof-quote">Olu walked me through every step. The defense offered $185,000 four months in. He told me the file wasn't ready. Fifteen months later: $4.2 million. I'm glad I waited.</p>
+        <div class="proof-author">
+          <div class="proof-avatar">JT</div>
+          <div>
+            <div class="proof-author-name">James T.</div>
+            <div class="proof-author-loc">Atlanta, GA</div>
+          </div>
+        </div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-recovery">$1.<span class="italic">8</span>M</div>
+        <div class="proof-case-label">Civil rights &middot; unlawful arrest</div>
+        <p class="proof-quote">Renata took the case three other firms had passed on. She built a record across two years &mdash; depositions, body-cam analysis, expert testimony. The municipality settled the week before trial.</p>
+        <div class="proof-author">
+          <div class="proof-avatar">DM</div>
+          <div>
+            <div class="proof-author-name">Devin M.</div>
+            <div class="proof-author-loc">Birmingham, AL</div>
+          </div>
+        </div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-recovery">$6.<span class="italic">5</span>M</div>
+        <div class="proof-case-label">Wrongful death &middot; trucking</div>
+        <p class="proof-quote">After our daughter was killed, the carrier offered policy limits within a week. The firm rejected it &mdash; said the file wasn't done. They were right. The final number was four times that.</p>
+        <div class="proof-author">
+          <div class="proof-avatar">CH</div>
+          <div>
+            <div class="proof-author-name">Carla &amp; Marcus H.</div>
+            <div class="proof-author-loc">Augusta, GA</div>
+          </div>
+        </div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-recovery">$920<span class="italic">K</span></div>
+        <div class="proof-case-label">Premises &middot; surgical complication</div>
+        <p class="proof-quote">The medical liens were $341,000 on a $920,000 recovery. I thought I'd net almost nothing. The lien team got them down to $98,000. That's the math that saved my retirement.</p>
+        <div class="proof-author">
+          <div class="proof-avatar">EW</div>
+          <div>
+            <div class="proof-author-name">Elaine W.</div>
+            <div class="proof-author-loc">Macon, GA</div>
+          </div>
+        </div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-recovery">$2.<span class="italic">3</span>M</div>
+        <div class="proof-case-label">Motorcycle &middot; traumatic brain injury</div>
+        <p class="proof-quote">My first firm wanted me to take $90,000. Vince said the file was worth twenty times that &mdash; if we did it right. We did it right. I have my brain rehab paid for, and there's still money for my kids.</p>
+        <div class="proof-author">
+          <div class="proof-avatar">RB</div>
+          <div>
+            <div class="proof-author-name">Reuben B.</div>
+            <div class="proof-author-loc">Savannah, GA</div>
+          </div>
+        </div>
+      </article>
+      <article class="proof-card">
+        <div class="proof-recovery">$1.<span class="italic">1</span>M</div>
+        <div class="proof-case-label">Workplace &middot; permanent disability</div>
+        <p class="proof-quote">Three years. Two depositions. Five expert affidavits. The firm did the work I couldn't have known to do alone. The settlement pays my mortgage for the rest of my life.</p>
+        <div class="proof-author">
+          <div class="proof-avatar">TM</div>
+          <div>
+            <div class="proof-author-name">Tonya M.</div>
+            <div class="proof-author-loc">Decatur, GA</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="container">
+    <div class="guarantee-card">
+      <div class="guarantee-badge">
+        <span class="top">No win</span>
+        <span class="big">$0</span>
+        <span class="bot">No fee</span>
+      </div>
+      <div>
+        <span class="eyebrow" style="color:var(--teal-soft);"><span class="num" style="color:var(--teal-soft); opacity:0.7;">08</span><span class="slash" style="color:var(--teal-soft);">/</span> Risk reversal</span>
+        <h3>If we don't recover, you owe nothing. Fees, costs, experts &mdash; all of it.</h3>
+        <p>No retainer at signing. No hourly billing. No bills for the medical reviewer, the demand draft, the expert testimony, the filings, or the depositions. If we recover, the contingency comes out of the recovery &mdash; itemized, signed by you, before any disbursement. If we don't, your file closes at zero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORITY -->
+<section class="section" id="attorneys">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="num">09</span><span class="slash">/</span> Counsel of record</span>
+      <h2>Three trial attorneys. Thirty-one years combined. Every file partner-signed.</h2>
+    </div>
+    <div class="auth-grid">
+      <div class="auth-card">
+        <div class="auth-photo">OO</div>
+        <h3>Olu Okafor, J.D.</h3>
+        <div class="auth-role">Founding partner</div>
+        <ul class="auth-creds">
+          <li>J.D., Howard University School of Law, 2007</li>
+          <li>State Bar Member, 2008 &mdash; good standing</li>
+          <li>Super Lawyers (2017&ndash;present)</li>
+          <li>AV Preeminent rating, Martindale-Hubbell</li>
+          <li>Member, American Association for Justice</li>
+          <li>43 jury trials to verdict</li>
+        </ul>
+      </div>
+      <div class="auth-card">
+        <div class="auth-photo">RV</div>
+        <h3>Renata Velazquez, J.D.</h3>
+        <div class="auth-role">Partner &middot; civil rights</div>
+        <ul class="auth-creds">
+          <li>J.D., NYU School of Law, 2011 &mdash; Root-Tilden-Kern Scholar</li>
+          <li>State Bar Member, 2012 &mdash; good standing</li>
+          <li>Avvo 10.0 Superb rating</li>
+          <li>Best Lawyers in America, Civil Rights (2021&ndash;present)</li>
+          <li>Past clerk, U.S. District Court</li>
+          <li>$54M aggregate recovery</li>
+        </ul>
+      </div>
+      <div class="auth-card">
+        <div class="auth-photo">VL</div>
+        <h3>Vincent Liang, J.D.</h3>
+        <div class="auth-role">Partner &middot; catastrophic injury</div>
+        <ul class="auth-creds">
+          <li>J.D., University of Georgia School of Law, 2009</li>
+          <li>State Bar Member, 2010 &mdash; good standing</li>
+          <li>National Trial Lawyers Top 100</li>
+          <li>American Board of Trial Advocates &mdash; Advocate</li>
+          <li>Adjunct, trial advocacy</li>
+          <li>61 jury trials, 47 plaintiff verdicts</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="num">10</span><span class="slash">/</span> Frequently asked</span>
+      <h2>The questions clients ask before signing &mdash; answered plainly.</h2>
+    </div>
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary class="faq-q">How does the contingency fee work?</summary>
+        <p class="faq-a">Standard is 33.3% if the case settles pre-suit, 40% if we file and litigate. Case costs (experts, filings, depositions) are advanced by the firm and reimbursed only from the recovery. No recovery means zero owed &mdash; including costs.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How long will the case take?</summary>
+        <p class="faq-a">Pre-suit settlements typically resolve in 6&ndash;14 months from the end of treatment. Filed cases run 14&ndash;26 months on average. We update the timeline at every quarterly call and never use the word "soon."</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">I already spoke to the insurance company. Did I hurt my case?</summary>
+        <p class="faq-a">Almost never permanently. We pull the recorded statement, identify what the defense will use, and build the surrounding record that contextualizes it. Don't keep talking &mdash; come in once, and let us route everything from here.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Will my case go to trial?</summary>
+        <p class="faq-a">About 94% of our cases settle. We build every one as if it won't &mdash; which is exactly why most do. If trial is the right call, we tell you why in writing before filing, and we walk you through what to expect.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Why three attorneys instead of solo counsel?</summary>
+        <p class="faq-a">Civil rights, catastrophic injury, and wrongful death require different specializations. With three founding partners, the file is signed by the attorney whose practice fits &mdash; and the other two are available for case-strategy review.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What if my case isn't strong enough?</summary>
+        <p class="faq-a">We'll tell you. About 35% of the people who reach us are referred elsewhere or told the case shouldn't be pursued. The memo we send is honest, and it costs you nothing to receive.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Do I need to come to your office?</summary>
+        <p class="faq-a">No. Intake, signing, depositions prep, and quarterly calls can all be done by video. For clients who can't travel &mdash; hospital, rehab, home &mdash; we travel to you at no cost.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How long do I have to file?</summary>
+        <p class="faq-a">Depends on state, claim type, and defendant. Personal injury statutes typically run 1&ndash;3 years; civil rights claims under federal law have specific notice periods; government defendants often require formal notice within 6 months. The free evaluation includes your specific deadlines in writing.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close">
+  <div class="container">
+    <div class="close-inner">
+      <h2>The first call is a <span class="italic">working session</span> &mdash; not a sales pitch.</h2>
+      <p>Sixty minutes with Olu, Renata, or Vince. You leave knowing whether the case has merit, what it's likely worth, and what the next step looks like. No retainer. No pressure. No invoice.</p>
+      <div class="close-ctas">
+        <a href="tel:+15555550148" class="btn btn-primary">Call (555) 555-0148</a>
+        <a href="#consult" class="btn btn-ghost-light">Request a callback</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color: var(--teal-soft); margin-bottom: var(--space-3);">Okafor<span class="dot" style="color:var(--bone);">.</span> Civil Trial Group</div>
+        <p style="color: rgba(244, 240, 230, 0.55); font-size: 0.88rem; max-width: 320px;">A civil trial firm representing catastrophic injury and civil rights plaintiffs. Trial-built files, partner-led, settlement-first &mdash; in that order.</p>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="#">Catastrophic injury</a></li>
+          <li><a href="#">Wrongful death</a></li>
+          <li><a href="#">Civil rights</a></li>
+          <li><a href="#">Commercial vehicle</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Firm</h4>
+        <ul>
+          <li><a href="#attorneys">Attorneys</a></li>
+          <li><a href="#results">Recent results</a></li>
+          <li><a href="#approach">Our approach</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Office</h4>
+        <ul>
+          <li>2200 Peachtree, Suite 1500</li>
+          <li>Tel: (555) 555-0148</li>
+          <li>Mon&ndash;Fri 8:00&ndash;6:30</li>
+          <li>After-hours: by appointment</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2014&ndash;2026 Okafor Civil Trial Group, P.C. All rights reserved.</span>
+      <span class="footer-legal">Attorney advertising. Prior results do not guarantee a similar outcome. State Bar Nos. 2008-12774 &middot; 2012-19332 &middot; 2010-15008.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hollis Strategy - Executive coaching for operators who refuse to coast</title>
+<meta name="description" content="High-conviction executive coaching for founders and operators running $2M-$20M businesses. A direct 1:1 engagement built around your numbers, not a workshop.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800,900&f[]=satoshi@400,500,700&display=swap">
+
+<style>
+  :root {
+    /* Variant B palette - off-white + deep navy + warm taupe */
+    --bg: #FAFAFA;
+    --bg-elevated: #F1EFEB;
+    --bg-dark: #0E1B2E;
+    --bg-dark-2: #14253D;
+    --ink: #0E1B2E;
+    --text: #1A2438;
+    --text-dim: #4F5A6E;
+    --text-faint: #8B96A8;
+    --accent: #A89888;
+    --accent-warm: #B8A38C;
+    --paper: #FFFFFF;
+    --hairline: rgba(14, 27, 46, 0.08);
+    --hairline-strong: rgba(14, 27, 46, 0.16);
+
+    --font-display: 'Cabinet Grotesk', -apple-system, sans-serif;
+    --font-body: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4rem;
+    --space-7: 6rem;
+    --space-8: 9rem;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 14px;
+    --radius-pill: 999px;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; border: none; background: none; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display); color: var(--ink);
+    font-weight: 800; line-height: 1.05; letter-spacing: -0.025em;
+  }
+  h1 { font-size: clamp(3.2rem, 7vw, 6rem); font-weight: 900; }
+  h2 { font-size: clamp(2.4rem, 4.5vw, 3.8rem); }
+  h3 { font-size: clamp(1.3rem, 1.8vw, 1.6rem); }
+  h4 { font-size: 1.1rem; font-weight: 700; }
+
+  .container { max-width: 1320px; margin: 0 auto; padding: 0 var(--space-4); }
+  .container-narrow { max-width: 980px; margin: 0 auto; padding: 0 var(--space-4); }
+
+  /* eyebrow - square mark prefix */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: var(--space-3);
+  }
+  .eyebrow::before {
+    content: ""; display: inline-block;
+    width: 9px; height: 9px;
+    background: var(--accent);
+  }
+  .eyebrow-light { color: rgba(255,255,255,0.6); }
+  .eyebrow-light::before { background: var(--accent); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 16px 26px;
+    border-radius: var(--radius-sm);
+    font-weight: 700; font-size: 15px;
+    transition: transform .2s var(--ease-out), background .2s, color .2s;
+    font-family: var(--font-body);
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+  .btn-on-dark { background: var(--accent); color: var(--ink); }
+  .btn-on-dark:hover { background: var(--paper); color: var(--ink); }
+  .btn .arrow { transition: transform .2s var(--ease-out); }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* NAV */
+  .nav-wrap { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,250,250,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--hairline); }
+  .nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+  .logo { font-family: var(--font-display); font-weight: 900; font-size: 1.25rem; color: var(--ink); letter-spacing: -0.03em; display: inline-flex; align-items: center; gap: 10px; }
+  .logo-mark { display: inline-block; width: 14px; height: 14px; background: var(--accent); }
+  .nav-links { display: flex; gap: 32px; align-items: center; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: var(--text-dim); transition: color .2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav .btn { padding: 12px 20px; font-size: 14px; }
+  @media (max-width: 860px) { .nav-links { display: none; } }
+
+  /* HERO - editorial-text-only with founder photo right-aligned half-bleed */
+  .hero { padding-top: 120px; min-height: 100dvh; position: relative; overflow: hidden; }
+  .hero-inner { display: grid; grid-template-columns: 1.35fr 1fr; gap: var(--space-6); align-items: end; min-height: calc(100dvh - 120px); padding-bottom: var(--space-6); }
+  .hero-text { padding: var(--space-6) 0; }
+  .hero h1 { margin-bottom: var(--space-4); }
+  .hero h1 .accent { color: var(--accent); }
+  .hero h1 .underline {
+    background-image: linear-gradient(transparent 78%, var(--accent) 78%, var(--accent) 92%, transparent 92%);
+    padding: 0 4px;
+  }
+  .hero-sub { font-size: 1.2rem; color: var(--text-dim); max-width: 560px; margin-bottom: var(--space-5); line-height: 1.5; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: var(--space-5); }
+  .hero-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); padding-top: var(--space-4); border-top: 2px solid var(--ink); max-width: 620px; }
+  .hero-metric-num { font-family: var(--font-display); font-weight: 900; font-size: 2.2rem; color: var(--ink); line-height: 1; letter-spacing: -0.03em; }
+  .hero-metric-label { font-size: 12px; color: var(--text-dim); margin-top: 6px; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  .hero-photo-wrap {
+    position: relative;
+    align-self: stretch;
+    margin-right: calc(-1 * (100vw - 1320px) / 2);
+    overflow: hidden;
+  }
+  .hero-photo {
+    width: 100%; height: 100%; min-height: 540px;
+    object-fit: cover;
+    filter: grayscale(0.15) contrast(1.05);
+  }
+  .hero-photo-tag {
+    position: absolute; bottom: 24px; left: 24px;
+    background: var(--paper);
+    padding: 14px 18px;
+    border-left: 4px solid var(--accent);
+  }
+  .hero-photo-tag-name { font-family: var(--font-display); font-weight: 800; font-size: 1rem; color: var(--ink); }
+  .hero-photo-tag-role { font-size: 12px; color: var(--text-dim); margin-top: 2px; letter-spacing: 0.04em; }
+  @media (max-width: 960px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-photo-wrap { margin-right: 0; }
+    .hero-photo { min-height: 380px; }
+    .hero-metrics { grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+  }
+
+  /* TRUST STRIP */
+  .trust { padding: var(--space-5) 0; background: var(--ink); color: var(--paper); }
+  .trust-row { display: flex; align-items: center; gap: var(--space-5); flex-wrap: wrap; justify-content: space-between; }
+  .trust-label { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+  .trust-logos { display: flex; gap: var(--space-5); flex-wrap: wrap; align-items: center; }
+  .trust-logo { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: rgba(255,255,255,0.65); letter-spacing: -0.02em; }
+
+  /* PAIN */
+  .pain { padding: var(--space-8) 0; }
+  .pain-head { max-width: 820px; margin-bottom: var(--space-6); }
+  .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--ink); }
+  .pain-card { padding: var(--space-5) var(--space-4) var(--space-5) 0; border-right: 1px solid var(--hairline-strong); }
+  .pain-card:last-child { border-right: none; }
+  .pain-num { font-family: var(--font-display); font-weight: 900; font-size: 3rem; color: var(--accent); line-height: 1; margin-bottom: var(--space-3); letter-spacing: -0.04em; }
+  .pain-card h3 { margin-bottom: var(--space-2); font-size: 1.35rem; }
+  .pain-card p { color: var(--text-dim); }
+  @media (max-width: 860px) {
+    .pain-grid { grid-template-columns: 1fr; }
+    .pain-card { border-right: none; border-bottom: 1px solid var(--hairline-strong); padding-right: 0; }
+  }
+
+  /* BEFORE / AFTER */
+  .ba { padding: var(--space-8) 0; background: var(--bg-elevated); }
+  .ba-head { max-width: 760px; margin-bottom: var(--space-6); }
+  .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .ba-col { padding: var(--space-6); }
+  .ba-before { background: var(--bg-dark); color: var(--paper); }
+  .ba-after { background: var(--ink); color: var(--paper); border-left: 3px solid var(--accent); }
+  .ba-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: var(--space-3); font-weight: 700; color: var(--accent); }
+  .ba-tag::before { content: ""; width: 8px; height: 8px; background: var(--accent); }
+  .ba-col h3 { color: var(--paper); margin-bottom: var(--space-4); font-size: 1.75rem; }
+  .ba-list { list-style: none; }
+  .ba-list li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 15px; color: rgba(255,255,255,0.85); display: flex; gap: 12px; }
+  .ba-list li:last-child { border-bottom: none; }
+  .ba-mark { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  @media (max-width: 860px) { .ba-grid { grid-template-columns: 1fr; } }
+
+  /* MECHANISM */
+  .mech { padding: var(--space-8) 0; }
+  .mech-head { max-width: 780px; margin-bottom: var(--space-6); }
+  .mech-quote {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+    line-height: 1.25; color: var(--ink);
+    letter-spacing: -0.02em; max-width: 920px;
+    padding: var(--space-5) 0;
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--hairline-strong);
+    margin-bottom: var(--space-6);
+  }
+  .mech-quote .highlight { background: var(--accent); padding: 0 6px; color: var(--paper); }
+  .mech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+  .mech-step { padding: var(--space-4); border: 1px solid var(--hairline-strong); }
+  .mech-step-num { font-family: var(--font-display); font-weight: 900; font-size: 0.9rem; color: var(--accent); letter-spacing: 0.18em; margin-bottom: var(--space-3); }
+  .mech-step h4 { margin-bottom: var(--space-2); font-size: 1.2rem; }
+  .mech-step p { color: var(--text-dim); font-size: 15px; }
+  @media (max-width: 860px) { .mech-grid { grid-template-columns: 1fr; } }
+
+  /* BENEFITS */
+  .ben { padding: var(--space-8) 0; background: var(--bg-elevated); }
+  .ben-head { max-width: 760px; margin-bottom: var(--space-6); }
+  .ben-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--hairline-strong); border: 1px solid var(--hairline-strong); }
+  .ben-item { background: var(--paper); padding: var(--space-4) var(--space-5); display: flex; gap: var(--space-3); }
+  .ben-check { flex-shrink: 0; width: 30px; height: 30px; background: var(--ink); color: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; }
+  .ben-item h4 { margin-bottom: 4px; font-size: 1.05rem; }
+  .ben-item p { font-size: 14px; color: var(--text-dim); }
+  @media (max-width: 860px) { .ben-grid { grid-template-columns: 1fr; } }
+
+  /* OFFER */
+  .offer { padding: var(--space-8) 0; background: var(--bg-dark); color: var(--paper); position: relative; }
+  .offer h2, .offer h3, .offer h4 { color: var(--paper); }
+  .offer-head { max-width: 780px; margin-bottom: var(--space-6); }
+  .offer-head p { color: rgba(255,255,255,0.7); margin-top: var(--space-3); font-size: 1.05rem; }
+  .offer-card { display: grid; grid-template-columns: 1.5fr 1fr; gap: 0; border: 1px solid rgba(255,255,255,0.12); }
+  .offer-left { padding: var(--space-6); border-right: 1px solid rgba(255,255,255,0.12); }
+  .offer-name { font-family: var(--font-display); font-weight: 900; font-size: 2rem; margin-bottom: var(--space-2); letter-spacing: -0.025em; }
+  .offer-name .accent { color: var(--accent); }
+  .offer-subname { font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: var(--space-4); }
+  .offer-items { display: flex; flex-direction: column; gap: 0; }
+  .offer-item {
+    display: grid; grid-template-columns: 1fr auto; gap: var(--space-3);
+    padding: var(--space-3) 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.14);
+  }
+  .offer-item:last-child { border-bottom: none; }
+  .offer-item h4 { font-size: 1rem; margin-bottom: 4px; }
+  .offer-item p { font-size: 14px; color: rgba(255,255,255,0.55); }
+  .offer-value { font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: 14px; white-space: nowrap; }
+  .offer-right {
+    padding: var(--space-6);
+    background: var(--ink);
+    display: flex; flex-direction: column; justify-content: center; gap: var(--space-3);
+  }
+  .offer-total-line { display: flex; justify-content: space-between; padding-bottom: var(--space-3); border-bottom: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.6); font-size: 14px; }
+  .offer-total-line span:last-child { color: var(--paper); font-family: var(--font-display); font-weight: 700; }
+  .offer-invest-label { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .offer-invest-num { font-family: var(--font-display); font-weight: 900; font-size: 3.5rem; line-height: 1; letter-spacing: -0.04em; }
+  .offer-invest-note { font-size: 13px; color: rgba(255,255,255,0.55); }
+  @media (max-width: 860px) {
+    .offer-card { grid-template-columns: 1fr; }
+    .offer-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  }
+
+  /* MID CTA */
+  .mid-cta { padding: var(--space-7) 0; }
+  .mid-cta-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-5); align-items: center; padding: var(--space-6); background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
+  .mid-cta h2 { color: var(--paper); font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: var(--space-2); }
+  .mid-cta h2 .accent { color: var(--accent); }
+  .mid-cta p { color: rgba(255,255,255,0.7); font-size: 1rem; }
+  .mid-cta-action { text-align: right; }
+  @media (max-width: 860px) {
+    .mid-cta-inner { grid-template-columns: 1fr; }
+    .mid-cta-action { text-align: left; }
+  }
+
+  /* SOCIAL PROOF */
+  .social { padding: var(--space-8) 0; background: var(--bg-elevated); }
+  .social-head { max-width: 720px; margin-bottom: var(--space-6); }
+  .social-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--space-3); }
+  .social-grid-right { display: grid; gap: var(--space-3); }
+  .testi { padding: var(--space-5); background: var(--paper); border: 1px solid var(--hairline-strong); display: flex; flex-direction: column; justify-content: space-between; min-height: 300px; }
+  .testi-featured { background: var(--ink); color: var(--paper); border: none; min-height: 100%; padding: var(--space-6); border-left: 4px solid var(--accent); }
+  .testi-metric {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px; background: var(--bg-elevated); color: var(--ink);
+    font-family: var(--font-display); font-weight: 800; font-size: 13px;
+    margin-bottom: var(--space-3);
+  }
+  .testi-metric::before { content: ""; width: 8px; height: 8px; background: var(--accent); }
+  .testi-featured .testi-metric { background: rgba(255,255,255,0.08); color: var(--accent); }
+  .testi-quote {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 1.35rem; line-height: 1.35;
+    color: inherit; margin-bottom: var(--space-4);
+    letter-spacing: -0.015em;
+  }
+  .testi-featured .testi-quote { font-size: 1.7rem; }
+  .testi-meta { display: flex; align-items: center; gap: 12px; padding-top: var(--space-3); border-top: 1px solid var(--hairline); }
+  .testi-featured .testi-meta { border-color: rgba(255,255,255,0.12); }
+  .testi-meta img { width: 44px; height: 44px; object-fit: cover; }
+  .testi-meta-name { font-weight: 700; font-size: 14px; color: inherit; }
+  .testi-meta-role { font-size: 12px; color: inherit; opacity: 0.6; }
+  @media (max-width: 860px) { .social-grid { grid-template-columns: 1fr; } }
+
+  /* BONUS */
+  .bonus { padding: var(--space-8) 0; }
+  .bonus-head { max-width: 720px; margin-bottom: var(--space-6); }
+  .bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .bonus-card {
+    position: relative; padding: var(--space-6);
+    border: 1px solid var(--hairline-strong);
+    background: var(--paper);
+    overflow: hidden;
+  }
+  .bonus-ghost {
+    position: absolute; top: -30px; right: 14px;
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 9rem; color: var(--bg-elevated);
+    line-height: 1; z-index: 0; letter-spacing: -0.05em;
+  }
+  .bonus-card > * { position: relative; z-index: 1; }
+  .bonus-tag { display: inline-block; padding: 5px 10px; background: var(--ink); color: var(--accent); font-size: 11px; letter-spacing: 0.18em; font-weight: 700; text-transform: uppercase; margin-bottom: var(--space-3); }
+  .bonus-card h3 { font-size: 1.5rem; margin-bottom: var(--space-2); }
+  .bonus-card p { color: var(--text-dim); margin-bottom: var(--space-3); }
+  .bonus-value { font-family: var(--font-display); font-weight: 800; color: var(--accent); font-size: 1.1rem; }
+  @media (max-width: 860px) { .bonus-grid { grid-template-columns: 1fr; } }
+
+  /* CLOSE - guarantee + faq */
+  .close-section { padding: var(--space-8) 0; background: var(--bg-elevated); }
+  .guarantee {
+    display: grid; grid-template-columns: 110px 1fr; gap: var(--space-4);
+    padding: var(--space-5); background: var(--paper);
+    border-left: 4px solid var(--accent);
+    margin-bottom: var(--space-7);
+  }
+  .guarantee-seal {
+    width: 100px; height: 100px; background: var(--ink); color: var(--accent);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 700; font-size: 11px; letter-spacing: 0.1em; text-align: center;
+  }
+  .guarantee-seal strong { font-size: 2.2rem; font-weight: 900; line-height: 1; }
+  .guarantee h3 { margin-bottom: 8px; font-size: 1.35rem; }
+  .guarantee p { color: var(--text-dim); }
+
+  .faq-head { max-width: 720px; margin-bottom: var(--space-5); }
+  .faq-list { display: flex; flex-direction: column; gap: 8px; }
+  .faq-item { border: 1px solid var(--hairline-strong); background: var(--paper); }
+  .faq-item summary {
+    list-style: none; cursor: pointer; padding: var(--space-4);
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--font-display); font-weight: 700; color: var(--ink); font-size: 1.05rem;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; color: var(--accent); transition: transform .2s var(--ease-out); line-height: 1; }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item-body { padding: 0 var(--space-4) var(--space-4); color: var(--text-dim); font-size: 15px; }
+
+  /* URGENCY CLOSE */
+  .urgency { padding: var(--space-8) 0; background: var(--ink); color: var(--paper); text-align: center; }
+  .urgency .eyebrow { color: var(--accent); justify-content: center; }
+  .urgency h2 { color: var(--paper); max-width: 780px; margin: 0 auto var(--space-3); font-size: clamp(2.6rem, 5vw, 4.4rem); }
+  .urgency h2 .accent { color: var(--accent); }
+  .urgency p { color: rgba(255,255,255,0.65); max-width: 560px; margin: 0 auto var(--space-4); }
+  .urgency-note { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: var(--space-3); }
+
+  /* FOOTER */
+  footer { padding: var(--space-5) 0; background: var(--bg-dark); color: rgba(255,255,255,0.6); border-top: 1px solid rgba(255,255,255,0.06); font-size: 13px; }
+  footer .container { display: flex; justify-content: space-between; gap: var(--space-3); flex-wrap: wrap; }
+
+  /* reveal */
+  .reveal { opacity: 0.1; transform: translateY(20px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <div class="container">
+    <nav class="nav">
+      <a class="logo" href="#"><span class="logo-mark"></span>HOLLIS STRATEGY</a>
+      <div class="nav-links">
+        <a href="#mechanism">The Method</a>
+        <a href="#offer">Engagement</a>
+        <a href="#results">Results</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a class="btn btn-primary" href="#apply">Request a call <span class="arrow">&rarr;</span></a>
+    </nav>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="eyebrow">1:1 Executive Coaching &middot; 2026 Roster</span>
+        <h1>The ceiling isn't the market. <span class="underline">It's the operator</span> running the company.</h1>
+        <p class="hero-sub">High-conviction executive coaching for founders and operators running $2M-$20M businesses who refuse to coast and don't have the appetite for another framework deck.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#apply">Request a private call <span class="arrow">&rarr;</span></a>
+          <a class="btn btn-ghost" href="#mechanism">See the method</a>
+        </div>
+        <div class="hero-metrics">
+          <div>
+            <div class="hero-metric-num">17yr</div>
+            <div class="hero-metric-label">Operating background</div>
+          </div>
+          <div>
+            <div class="hero-metric-num">86</div>
+            <div class="hero-metric-label">Founders coached since '19</div>
+          </div>
+          <div>
+            <div class="hero-metric-num">$340M</div>
+            <div class="hero-metric-label">Client revenue scaled</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1100&q=85&fit=crop" alt="Daniel Hollis, founder portrait" loading="eager">
+        <div class="hero-photo-tag">
+          <div class="hero-photo-tag-name">Daniel Hollis</div>
+          <div class="hero-photo-tag-role">Principal &middot; Hollis Strategy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-row">
+      <span class="trust-label">As featured in / podcast guest at</span>
+      <div class="trust-logos">
+        <span class="trust-logo">Forbes</span>
+        <span class="trust-logo">Inc.</span>
+        <span class="trust-logo">The Founder Podcast</span>
+        <span class="trust-logo">My First Million</span>
+        <span class="trust-logo">The Knowledge Project</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain reveal">
+  <div class="container">
+    <div class="pain-head">
+      <span class="eyebrow">The Honest Diagnostic</span>
+      <h2>Three things show up on every first call.</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-num">01</div>
+        <h3>Revenue stalled at the same number for three years</h3>
+        <p>You've tried new offers, new hires, new ad channels. None of it moves the line. The bottleneck is structural, not tactical.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card-num"></div>
+        <div class="pain-num">02</div>
+        <h3>Sixty-hour weeks producing twenty percent margin</h3>
+        <p>You're the most expensive employee in the company, doing the work of three roles, with nothing left over for the build.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-num">03</div>
+        <h3>Peers scaling past you with no clear playbook</h3>
+        <p>People who started after you are doing four times your numbers. You can't tell if they got lucky, got bold, or got real help.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="ba reveal">
+  <div class="container">
+    <div class="ba-head">
+      <span class="eyebrow">The 90-Day Shift</span>
+      <h2>What changes when you stop being the company.</h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-col ba-before">
+        <span class="ba-tag">Before</span>
+        <h3>Founder-as-bottleneck</h3>
+        <ul class="ba-list">
+          <li><span class="ba-mark">&times;</span> Every operational decision routes through your inbox.</li>
+          <li><span class="ba-mark">&times;</span> Revenue can't scale past your personal weekly capacity.</li>
+          <li><span class="ba-mark">&times;</span> Strategy work consistently gets pushed to weekends.</li>
+          <li><span class="ba-mark">&times;</span> You solve the same five problems on a monthly rotation.</li>
+        </ul>
+      </div>
+      <div class="ba-col ba-after">
+        <span class="ba-tag">After</span>
+        <h3>Founder-as-architect</h3>
+        <ul class="ba-list">
+          <li><span class="ba-mark">&check;</span> The system makes eighty percent of decisions without you.</li>
+          <li><span class="ba-mark">&check;</span> Revenue scales because the team owns the engine.</li>
+          <li><span class="ba-mark">&check;</span> Mondays are strategy time, not Slack triage.</li>
+          <li><span class="ba-mark">&check;</span> Problems get solved at the system layer and stay solved.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MECHANISM -->
+<section class="mech reveal" id="mechanism">
+  <div class="container">
+    <div class="mech-head">
+      <span class="eyebrow">The Method</span>
+      <h2>The Operator Diagnostic isn't a framework. It's an audit.</h2>
+    </div>
+    <blockquote class="mech-quote">
+      "The vast majority of stalled founders don't need more strategy. They need someone to <span class="highlight">tell them the truth about where the actual constraint is</span>, then sit with them while they build the system that removes it."
+    </blockquote>
+    <div class="mech-grid">
+      <div class="mech-step">
+        <div class="mech-step-num">PHASE 01</div>
+        <h4>Diagnostic week</h4>
+        <p>I read your last 4 quarters of P&L, team chart, and 12 founder hours of calendar data. By end of week one, you have a written diagnosis with one named constraint, not five.</p>
+      </div>
+      <div class="mech-step">
+        <div class="mech-step-num">PHASE 02</div>
+        <h4>Build the operating layer</h4>
+        <p>Six weeks of working sessions to install the dashboards, decision protocols, and team rhythm that removes you from the critical path. No worksheets. No theory.</p>
+      </div>
+      <div class="mech-step">
+        <div class="mech-step-num">PHASE 03</div>
+        <h4>Recalibrate quarterly</h4>
+        <p>Four 90-minute calls over the next twelve months to keep the system honest as the company compounds. Included, no upsell.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="ben reveal">
+  <div class="container">
+    <div class="ben-head">
+      <span class="eyebrow">What You Walk Away With</span>
+      <h2>Specific shifts, measured against your own numbers.</h2>
+    </div>
+    <div class="ben-grid">
+      <div class="ben-item">
+        <div class="ben-check">&check;</div>
+        <div><h4>A documented operating system</h4><p>The company runs on visible structure, not on your memory.</p></div>
+      </div>
+      <div class="ben-item">
+        <div class="ben-check">&check;</div>
+        <div><h4>15-20 hours back per week</h4><p>Measured via time tracking, not vibes.</p></div>
+      </div>
+      <div class="ben-item">
+        <div class="ben-check">&check;</div>
+        <div><h4>A 90-day revenue plan tied to capacity</h4><p>You stop selling what you cannot deliver without burning out.</p></div>
+      </div>
+      <div class="ben-item">
+        <div class="ben-check">&check;</div>
+        <div><h4>A leadership team that owns outcomes</h4><p>Direct reports stop bringing you problems and start bringing decisions.</p></div>
+      </div>
+      <div class="ben-item">
+        <div class="ben-check">&check;</div>
+        <div><h4>Pricing built on transformation, not time</h4><p>Margin doubles because you stop billing your worst asset: hours.</p></div>
+      </div>
+      <div class="ben-item">
+        <div class="ben-check">&check;</div>
+        <div><h4>Peer-bench access on call</h4><p>Quiet intros to 3 alumni operators in your stage. Not a Slack.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer reveal" id="offer">
+  <div class="container">
+    <div class="offer-head">
+      <span class="eyebrow eyebrow-light">The Engagement</span>
+      <h2>The Operator Diagnostic.</h2>
+      <p>A private ninety-day 1:1 engagement. Six working sessions. Voxer access between calls. One custom operating system built against your numbers.</p>
+    </div>
+    <div class="offer-card">
+      <div class="offer-left">
+        <div class="offer-name">The Operator <span class="accent">Diagnostic</span></div>
+        <div class="offer-subname">90 days &middot; 1:1 only &middot; 4 spring slots</div>
+        <div class="offer-items">
+          <div class="offer-item">
+            <div>
+              <h4>Six 90-minute private working sessions</h4>
+              <p>Twice monthly. Working calls, not coaching theater.</p>
+            </div>
+            <span class="offer-value">$9,000</span>
+          </div>
+          <div class="offer-item">
+            <div>
+              <h4>Voxer access Monday through Friday</h4>
+              <p>Real-time judgment-call support when something breaks.</p>
+            </div>
+            <span class="offer-value">$4,500</span>
+          </div>
+          <div class="offer-item">
+            <div>
+              <h4>Custom operating plan from your P&L</h4>
+              <p>Not a template. A written plan built against your numbers.</p>
+            </div>
+            <span class="offer-value">$3,500</span>
+          </div>
+          <div class="offer-item">
+            <div>
+              <h4>Quarterly recalibration for 12 months</h4>
+              <p>Four follow-up calls after the engagement closes. Included.</p>
+            </div>
+            <span class="offer-value">$2,000</span>
+          </div>
+          <div class="offer-item">
+            <div>
+              <h4>Private peer-bench introductions</h4>
+              <p>Three curated intros to alumni operators in your stage.</p>
+            </div>
+            <span class="offer-value">$1,500</span>
+          </div>
+        </div>
+      </div>
+      <div class="offer-right">
+        <div class="offer-total-line"><span>Total deliverable value</span><span>$20,500</span></div>
+        <div>
+          <div class="offer-invest-label">Your Investment</div>
+          <div class="offer-invest-num">$15K</div>
+          <p class="offer-invest-note">One time, or three monthly installments.</p>
+        </div>
+        <a class="btn btn-on-dark" href="#apply">Request a call <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<section class="mid-cta reveal">
+  <div class="container">
+    <div class="mid-cta-inner">
+      <div>
+        <span class="eyebrow eyebrow-light">First Step</span>
+        <h2>Skip the form. <span class="accent">Request the call.</span></h2>
+        <p>A 30-minute private conversation. We look at the actual constraint. You leave with a one-line diagnostic whether or not we work together.</p>
+      </div>
+      <div class="mid-cta-action">
+        <a class="btn btn-on-dark" href="#apply">Request a private call <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social reveal" id="results">
+  <div class="container">
+    <div class="social-head">
+      <span class="eyebrow">Client Results</span>
+      <h2>Operators who stopped trading hours for revenue.</h2>
+    </div>
+    <div class="social-grid">
+      <div class="testi testi-featured">
+        <div>
+          <span class="testi-metric">$1.8M &rarr; $4.6M ARR in 14mo</span>
+          <p class="testi-quote">"I came in convinced I had a sales problem. By the end of week one, Daniel had me looking at a delegation problem that had been wearing a sales costume for three years. We rebuilt the leadership layer, the revenue followed."</p>
+        </div>
+        <div class="testi-meta">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&crop=face" alt="Marcus Tanaka" loading="lazy">
+          <div>
+            <div class="testi-meta-name">Marcus Tanaka</div>
+            <div class="testi-meta-role">Founder, B2B SaaS (24 staff)</div>
+          </div>
+        </div>
+      </div>
+      <div class="social-grid-right">
+        <div class="testi">
+          <div>
+            <span class="testi-metric">22 hours/week back</span>
+            <p class="testi-quote">"I haven't worked a weekend in five months. Revenue is up 41% in the same window. Numbers, not vibes."</p>
+          </div>
+          <div class="testi-meta">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=96&h=96&fit=crop&crop=face" alt="Priya Sharma" loading="lazy">
+            <div>
+              <div class="testi-meta-name">Priya Sharma</div>
+              <div class="testi-meta-role">Agency operator, 14 staff</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi">
+          <div>
+            <span class="testi-metric">Margin 19% &rarr; 44%</span>
+            <p class="testi-quote">"Repriced everything in month two. Lost three accounts, made up the revenue in five weeks with the rest paying more. Should have done it years ago."</p>
+          </div>
+          <div class="testi-meta">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face" alt="James Okafor" loading="lazy">
+            <div>
+              <div class="testi-meta-name">James Okafor</div>
+              <div class="testi-meta-role">Founder, DTC e-commerce</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section class="bonus reveal">
+  <div class="container">
+    <div class="bonus-head">
+      <span class="eyebrow">Included Extras</span>
+      <h2>Two things nobody else throws in.</h2>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <span class="bonus-ghost" aria-hidden="true">01</span>
+        <span class="bonus-tag">Bonus One</span>
+        <h3>The Operator Library</h3>
+        <p>Every template, dashboard, and SOP we install with clients. Hiring, firing, repricing, weekly leadership rhythm. Lifetime access.</p>
+        <div class="bonus-value">Value: $1,800</div>
+      </div>
+      <div class="bonus-card">
+        <span class="bonus-ghost" aria-hidden="true">02</span>
+        <span class="bonus-tag">Bonus Two</span>
+        <h3>One-day on-site (optional)</h3>
+        <p>I'll fly to your office for a full working day with the leadership team. Included at travel cost only. Used by four of the last twelve clients.</p>
+        <div class="bonus-value">Value: $4,500 + travel</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close-section reveal" id="faq">
+  <div class="container-narrow">
+    <div class="guarantee">
+      <div class="guarantee-seal"><strong>30</strong>DAY EXIT</div>
+      <div>
+        <h3>The 30-day honest exit.</h3>
+        <p>If after the diagnostic month you don't have a clearer view of the actual constraint and a written plan to attack it, you can exit and recover the unused portion. No friction. No retention call.</p>
+      </div>
+    </div>
+    <div class="faq-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>The questions every founder asks on the first call.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Is this group coaching or 1:1?</summary>
+        <div class="faq-item-body">1:1 only. No cohort. No group calls. No Slack community. The peer-bench introductions are direct intros, not a shared room.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What revenue range does this work for?</summary>
+        <div class="faq-item-body">$2M to roughly $20M ARR. Below $2M your bottleneck is usually offer or distribution. Above $20M you need an operator hire, not a coach.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How much of my time does this take per week?</summary>
+        <div class="faq-item-body">Two 90-minute calls per month. Voxer is asynchronous. Most clients spend 3-5 hours per week on the work itself, including implementation with the team.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Do you guarantee a revenue outcome?</summary>
+        <div class="faq-item-body">No. Anyone who guarantees a revenue number in coaching is selling something else. I guarantee the work and the 30-day exit if it's not a fit.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What if I'm not actually stuck, just want to scale faster?</summary>
+        <div class="faq-item-body">Then this is probably the wrong engagement. The Operator Diagnostic is built for founders hitting a real ceiling. If the business already compounds, your bottleneck is elsewhere.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<section class="urgency" id="apply">
+  <div class="container-narrow">
+    <span class="eyebrow eyebrow-light">2026 Spring Roster</span>
+    <h2>Four <span class="accent">1:1 slots</span> open.</h2>
+    <p>I take six active engagements at a time. Spring openings close once filled. The application takes about six minutes.</p>
+    <a class="btn btn-on-dark" href="#">Request a private call <span class="arrow">&rarr;</span></a>
+    <p class="urgency-note">Applications reviewed within 48 hours. Calls scheduled for fit, not for closing.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>&copy; 2026 Hollis Strategy. 1:1 executive coaching for operators.</div>
+    <div>For people who'd rather build the system than be the system.</div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  (function(){
+    if (typeof gsap === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".hero h1", { y: 26, opacity: 0.1, duration: 1.1, ease: "power3.out" });
+    gsap.from(".hero-sub, .hero-ctas, .hero-metrics", { y: 18, opacity: 0.1, duration: 0.9, stagger: 0.12, delay: 0.2, ease: "power2.out" });
+    gsap.from(".hero-photo", { scale: 1.04, duration: 1.4, ease: "power3.out" });
+    gsap.from(".hero-photo-tag", { y: 20, opacity: 0.1, duration: 0.8, delay: 0.6, ease: "power3.out" });
+
+    document.querySelectorAll(".reveal").forEach(function(el){
+      ScrollTrigger.create({
+        trigger: el, start: "top 82%", once: true,
+        onEnter: function(){ el.classList.add("in"); }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

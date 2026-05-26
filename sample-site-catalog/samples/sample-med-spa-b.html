@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NORA &mdash; Bespoke cosmetic skin, in a quiet downtown room</title>
+<meta name="description" content="A boutique cosmetic clinic for the 28-55 image-conscious crowd. MD-led. Eight slots a day. A plan in writing before a needle goes near you. Book a $0 consult.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,400&f[]=satoshi@500,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    /* Variant B - bolder editorial cosmetic / dark-bleed-photo-overlay */
+    --bg: #F4F0E6;
+    --bg-soft: #ECE6D8;
+    --ink: #2D2D2D;
+    --ink-deep: #1B1B1B;
+    --text: #2D2D2D;
+    --text-dim: #5E5E58;
+    --text-faint: #95918A;
+    --accent: #B08B5F;          /* bronze */
+    --accent-soft: rgba(176, 139, 95, 0.12);
+    --accent-deep: #876A45;
+    --hairline: rgba(45, 45, 45, 0.10);
+    --hairline-strong: rgba(45, 45, 45, 0.20);
+
+    --font-display: 'Cabinet Grotesk', 'Helvetica Neue', sans-serif;
+    --font-body: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4.5rem;
+    --space-7: 6.5rem;
+    --space-8: 9rem;
+
+    --radius-sm: 4px;
+    --radius-md: 10px;
+    --radius-lg: 18px;
+    --radius-pill: 999px;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--ink-deep);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+  h1 { font-size: clamp(2.8rem, 6.2vw, 5.2rem); font-weight: 700; }
+  h2 { font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 700; }
+  h3 { font-size: clamp(1.25rem, 2vw, 1.55rem); font-weight: 500; }
+  h4 { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+  p { color: var(--text-dim); font-size: 1rem; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  section { padding: var(--space-7) var(--space-3); }
+  .wrap { max-width: 1240px; margin: 0 auto; }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--text-dim);
+    margin-bottom: var(--space-3);
+  }
+  .eyebrow::before {
+    content: attr(data-num) " /";
+    color: var(--accent);
+    font-weight: 600;
+    margin-right: 2px;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 28px;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    transition: transform .35s var(--ease-out), background .25s ease;
+    letter-spacing: -0.005em;
+  }
+  .btn-primary { background: var(--ink-deep); color: var(--bg); }
+  .btn-primary:hover { background: var(--accent-deep); transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--bg);
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+  .btn-ghost:hover { border-color: var(--bg); background: rgba(255,255,255,0.06); }
+  .btn-ghost-light {
+    background: transparent; color: var(--ink-deep);
+    border: 1px solid var(--hairline-strong);
+  }
+  .btn-ghost-light:hover { border-color: var(--ink-deep); }
+
+  /* NAV */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    padding: 18px 26px;
+    z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    mix-blend-mode: difference;
+  }
+  .nav__brand {
+    font-family: var(--font-display);
+    font-weight: 700; font-size: 1.4rem; letter-spacing: -0.02em;
+    color: #fff;
+  }
+  .nav__links { display: flex; gap: 26px; }
+  .nav__links a {
+    font-size: 0.8rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: rgba(255,255,255,0.85);
+    font-weight: 500;
+    transition: color .2s ease;
+  }
+  .nav__links a:hover { color: #fff; }
+  .nav__cta {
+    padding: 10px 22px;
+    border-radius: 4px;
+    background: #fff; color: var(--ink-deep);
+    font-size: 0.8rem; letter-spacing: 0.06em;
+    text-transform: uppercase; font-weight: 500;
+    mix-blend-mode: difference;
+  }
+  @media (max-width: 760px) {
+    .nav__links { display: none; }
+    .nav { padding: 14px 18px; }
+  }
+
+  /* HERO - dark-bleed-photo-overlay */
+  .hero {
+    min-height: 100dvh;
+    position: relative;
+    color: var(--bg);
+    padding: var(--space-8) var(--space-3) var(--space-6);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: 0;
+    background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1800&q=85&fit=crop');
+    background-size: cover; background-position: center 30%;
+    transform: scale(1.02);
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(180deg, rgba(20,20,20,0.45) 0%, rgba(20,20,20,0.25) 40%, rgba(20,20,20,0.78) 100%);
+  }
+  .hero__inner { position: relative; z-index: 2; max-width: 1240px; margin: 0 auto; width: 100%; }
+  .hero h1 {
+    color: #fff;
+    max-width: 1100px;
+    margin-bottom: var(--space-3);
+  }
+  .hero h1 .italic-accent {
+    font-style: italic; font-weight: 400; color: var(--accent-soft);
+    color: rgba(255, 235, 215, 0.95);
+  }
+  .hero__grid {
+    display: grid; grid-template-columns: 2fr 1fr;
+    gap: var(--space-5); align-items: end;
+    margin-top: var(--space-4);
+  }
+  .hero__lead {
+    color: rgba(255,255,255,0.86); font-size: 1.1rem;
+    max-width: 540px;
+  }
+  .hero__ctas {
+    display: flex; gap: 12px; margin-top: var(--space-4); flex-wrap: wrap;
+  }
+  .hero__ctas .btn-primary { background: #fff; color: var(--ink-deep); }
+  .hero__ctas .btn-primary:hover { background: var(--accent); color: #fff; }
+  .hero__meta-card {
+    background: rgba(20,20,20,0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    display: grid; gap: 14px;
+  }
+  .hero__meta-card .label {
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+  .hero__meta-card .value {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 1.3rem; color: #fff; line-height: 1.1;
+  }
+  .hero__meta-card .row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.10);
+  }
+  .hero__meta-card .row:last-child { border: 0; padding-bottom: 0; }
+  @media (max-width: 760px) {
+    .hero__grid { grid-template-columns: 1fr; }
+  }
+
+  /* TRUST */
+  .trust {
+    padding: var(--space-4) var(--space-3);
+    background: var(--ink-deep); color: rgba(255,255,255,0.7);
+  }
+  .trust__inner {
+    max-width: 1240px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: var(--space-4); flex-wrap: wrap;
+  }
+  .trust__label {
+    font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .trust__items {
+    display: flex; gap: var(--space-5); flex-wrap: wrap;
+  }
+  .trust__items span {
+    font-family: var(--font-display); font-size: 1.1rem; font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: -0.01em;
+  }
+
+  /* SECTION HEAD */
+  .sec-head { max-width: 880px; margin-bottom: var(--space-5); }
+  .sec-head h2 { margin-bottom: var(--space-2); }
+  .sec-head p { font-size: 1.08rem; }
+
+  /* PAIN */
+  .pain-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+  }
+  .pain-card {
+    background: var(--bg);
+    padding: var(--space-5) var(--space-4);
+  }
+  .pain-card h3 { margin-bottom: var(--space-2); font-weight: 700; }
+  .pain-card .num {
+    font-family: var(--font-display);
+    font-weight: 700; font-size: 0.9rem;
+    color: var(--accent); margin-bottom: var(--space-3);
+    display: block;
+  }
+  @media (max-width: 860px) { .pain-grid { grid-template-columns: 1fr; } }
+
+  /* BEFORE/AFTER */
+  .ba {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--hairline);
+    overflow: hidden;
+  }
+  .ba__col { padding: var(--space-5); min-height: 460px; display: flex; flex-direction: column; justify-content: space-between; }
+  .ba__col.dark { background: var(--ink-deep); color: var(--bg); }
+  .ba__col.light { background: var(--bg-soft); color: var(--ink-deep); }
+  .ba__col h3 { color: inherit; font-size: 1.5rem; margin-bottom: var(--space-3); font-weight: 700; }
+  .ba__col.dark h3 { color: #fff; }
+  .ba__col .tag {
+    align-self: flex-start;
+    font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: var(--space-3); font-weight: 500;
+  }
+  .ba__col.dark .tag { color: rgba(255,255,255,0.5); }
+  .ba__col.light .tag { color: var(--accent-deep); }
+  .ba__col ul { list-style: none; }
+  .ba__col li {
+    padding: 12px 0;
+    font-size: 0.96rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .ba__col.light li { border-bottom-color: var(--hairline); color: var(--text); }
+  @media (max-width: 760px) { .ba { grid-template-columns: 1fr; } }
+
+  /* MECHANISM */
+  .mech-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+  .mech__visual {
+    aspect-ratio: 4/5; overflow: hidden; border-radius: var(--radius-md);
+    background: var(--bg-soft);
+  }
+  .mech__visual img { width: 100%; height: 100%; object-fit: cover; }
+  .mech__list { list-style: none; }
+  .mech__list li {
+    display: grid; grid-template-columns: 56px 1fr;
+    gap: var(--space-3); padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .mech__list .num {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 0.85rem; color: var(--accent);
+    border: 1px solid var(--accent); border-radius: 4px;
+    height: 36px; display: grid; place-items: center;
+  }
+  .mech__list h4 { margin-bottom: 4px; font-weight: 700; }
+  .mech__list p { font-size: 0.95rem; }
+  @media (max-width: 860px) { .mech-grid { grid-template-columns: 1fr; } }
+
+  /* BENEFITS */
+  .ben-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+  .ben-card {
+    padding: var(--space-4) 0;
+    border-top: 2px solid var(--ink-deep);
+  }
+  .ben-card .ico {
+    width: 44px; height: 44px;
+    border: 1px solid var(--ink-deep);
+    border-radius: 4px;
+    display: grid; place-items: center;
+    margin-bottom: var(--space-3);
+    font-family: var(--font-display); font-weight: 700; color: var(--ink-deep);
+  }
+  .ben-card h4 { font-size: 1.1rem; margin-bottom: var(--space-2); font-weight: 700; }
+  .ben-card p { font-size: 0.96rem; }
+  @media (max-width: 860px) { .ben-grid { grid-template-columns: 1fr; } }
+
+  /* BEFORE/AFTER GALLERY */
+  .ba-gallery {
+    background: var(--ink-deep); color: var(--bg);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+  }
+  .ba-gallery h2 { color: #fff; }
+  .ba-gallery p { color: rgba(255,255,255,0.7); }
+  .ba-gallery .eyebrow { color: rgba(255,255,255,0.7); }
+  .ba-gallery__grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 12px; margin-top: var(--space-4);
+  }
+  .ba-card {
+    overflow: hidden; border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.04);
+  }
+  .ba-card__pair { display: grid; grid-template-columns: 1fr 1fr; aspect-ratio: 1.5/1; }
+  .ba-card__pair img { width: 100%; height: 100%; object-fit: cover; }
+  .ba-card__meta { padding: 12px 14px; }
+  .ba-card__meta strong {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 0.92rem; color: #fff; display: block;
+  }
+  .ba-card__meta span { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+  .ba-gallery__disclaimer { margin-top: var(--space-3); font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+  @media (max-width: 860px) {
+    .ba-gallery__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* OFFER */
+  .offer-grid {
+    display: grid; grid-template-columns: 1.3fr 1fr;
+    gap: var(--space-6);
+    align-items: start;
+  }
+  .offer-list { list-style: none; }
+  .offer-list li {
+    display: grid; grid-template-columns: 1fr auto;
+    align-items: baseline;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--hairline);
+    gap: var(--space-3);
+  }
+  .offer-list li strong {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 1.05rem; color: var(--ink-deep);
+  }
+  .offer-list .dollar {
+    font-family: var(--font-body);
+    font-size: 0.84rem;
+    color: var(--accent-deep);
+    letter-spacing: 0.04em;
+  }
+  .offer-summary {
+    background: var(--ink-deep); color: var(--bg);
+    padding: var(--space-5);
+    border-radius: var(--radius-md);
+  }
+  .offer-summary .row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.95rem; color: rgba(255,255,255,0.7); }
+  .offer-summary .row.total {
+    border-top: 1px solid rgba(255,255,255,0.18);
+    margin-top: var(--space-2); padding-top: var(--space-3);
+    font-family: var(--font-display); font-size: 1.5rem; color: #fff; font-weight: 700;
+  }
+  .offer-summary .row.invest {
+    color: #fff; font-family: var(--font-display); font-size: 2rem; font-weight: 700;
+    align-items: baseline;
+  }
+  .offer-summary .row.invest .label { font-family: var(--font-body); font-size: 0.9rem; color: rgba(255,255,255,0.65); font-weight: 400; }
+  .offer-summary .btn { width: 100%; justify-content: center; margin-top: var(--space-3); background: #fff; color: var(--ink-deep); }
+  .offer-summary .micro { font-size: 0.76rem; color: rgba(255,255,255,0.45); margin-top: 10px; text-align: center; }
+  @media (max-width: 860px) { .offer-grid { grid-template-columns: 1fr; } }
+
+  /* MID CTA */
+  .mid-cta {
+    background: var(--ink-deep); color: var(--bg);
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    display: grid; grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-5); align-items: center;
+  }
+  .mid-cta h2 { color: #fff; margin-bottom: var(--space-2); }
+  .mid-cta p { color: rgba(255,255,255,0.72); margin-bottom: 0; }
+  .mid-cta .eyebrow { color: var(--accent); }
+  .mid-cta__right { display: flex; flex-direction: column; gap: 12px; }
+  .mid-cta__right .btn-primary { background: #fff; color: var(--ink-deep); }
+  .mid-cta__right .btn-primary:hover { background: var(--accent); color: #fff; }
+  .mid-cta .sub-note { font-size: 0.84rem; color: rgba(255,255,255,0.5); }
+  @media (max-width: 860px) { .mid-cta { grid-template-columns: 1fr; } }
+
+  /* TESTIMONIALS */
+  .testi-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr;
+    gap: 12px;
+  }
+  .testi-grid__right { display: grid; grid-template-rows: 1fr 1fr; gap: 12px; }
+  .testi-card {
+    padding: var(--space-4);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    background: var(--bg);
+    display: flex; flex-direction: column; gap: var(--space-3);
+    justify-content: space-between;
+  }
+  .testi-card.featured {
+    background: var(--ink-deep); color: var(--bg); border-color: transparent;
+  }
+  .testi-card.featured h3, .testi-card.featured blockquote { color: #fff; }
+  .testi-card .stars { color: var(--accent); font-size: 0.85rem; letter-spacing: 0.08em; }
+  .testi-card.featured .stars { color: var(--accent); }
+  .testi-card blockquote {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 1.15rem; line-height: 1.4;
+    color: var(--ink-deep); letter-spacing: -0.01em;
+  }
+  .testi-card.featured blockquote {
+    font-size: 1.6rem; font-weight: 500;
+  }
+  .testi-card .person { display: flex; align-items: center; gap: 12px; }
+  .testi-card .person img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
+  .testi-card .person strong { display: block; font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--ink-deep); }
+  .testi-card.featured .person strong { color: #fff; }
+  .testi-card .person span { font-size: 0.78rem; color: var(--text-faint); }
+  .testi-card .metric {
+    align-self: flex-start;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: var(--accent-soft);
+    color: var(--accent-deep);
+    letter-spacing: 0.04em;
+  }
+  .testi-card.featured .metric { background: rgba(255,255,255,0.1); color: var(--accent); }
+  @media (max-width: 860px) {
+    .testi-grid { grid-template-columns: 1fr; }
+    .testi-grid__right { grid-template-rows: auto; }
+  }
+
+  /* BONUS */
+  .bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .bonus-card {
+    position: relative;
+    padding: var(--space-5);
+    background: var(--bg-soft);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .bonus-card .ghost-num {
+    position: absolute; right: -12px; bottom: -68px;
+    font-family: var(--font-display);
+    font-weight: 700; font-size: 15rem; line-height: 0.78;
+    color: rgba(45,45,45,0.06);
+  }
+  .bonus-card h3 { margin-bottom: var(--space-2); position: relative; z-index: 1; font-weight: 700; }
+  .bonus-card .tag {
+    display: inline-block; font-size: 0.74rem;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: var(--space-2);
+    font-weight: 600;
+  }
+  .bonus-card p { position: relative; z-index: 1; font-size: 0.96rem; }
+  .bonus-card .value {
+    margin-top: var(--space-3);
+    font-family: var(--font-display); color: var(--ink-deep);
+    font-weight: 700; position: relative; z-index: 1;
+  }
+  @media (max-width: 760px) { .bonus-grid { grid-template-columns: 1fr; } }
+
+  /* GUARANTEE + FAQ */
+  .gf-grid {
+    display: grid; grid-template-columns: 1fr 1.3fr;
+    gap: var(--space-5); align-items: start;
+  }
+  .seal {
+    background: var(--ink-deep); color: var(--bg);
+    padding: var(--space-5);
+    border-radius: var(--radius-md);
+  }
+  .seal h3 { color: #fff; margin-bottom: var(--space-2); font-weight: 700; }
+  .seal p { color: rgba(255,255,255,0.78); }
+  .seal .ico {
+    width: 56px; height: 56px;
+    border-radius: 4px;
+    background: var(--accent); color: var(--ink-deep);
+    display: grid; place-items: center;
+    margin-bottom: var(--space-3);
+    font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;
+  }
+  .faq details {
+    border-bottom: 1px solid var(--hairline);
+    padding: var(--space-3) 0;
+  }
+  .faq summary {
+    cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 1.1rem; color: var(--ink-deep);
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+"; font-size: 1.4rem; color: var(--accent);
+    transition: transform .3s var(--ease-out);
+  }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq p { padding-top: var(--space-2); font-size: 0.96rem; }
+  @media (max-width: 860px) { .gf-grid { grid-template-columns: 1fr; } }
+
+  /* FOOTER */
+  footer {
+    padding: var(--space-6) var(--space-3) var(--space-4);
+    background: var(--ink-deep); color: rgba(255,255,255,0.72);
+    margin-top: var(--space-6);
+  }
+  footer .wrap {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: var(--space-5);
+  }
+  footer h4 {
+    color: rgba(255,255,255,0.5);
+    font-family: var(--font-body); font-size: 0.74rem; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    margin-bottom: var(--space-3);
+  }
+  footer .brand-block strong {
+    font-family: var(--font-display); font-weight: 700;
+    color: #fff; font-size: 1.6rem; display: block;
+    margin-bottom: var(--space-2); letter-spacing: -0.02em;
+  }
+  footer ul { list-style: none; }
+  footer li { padding: 5px 0; font-size: 0.92rem; }
+  footer a:hover { color: #fff; }
+  footer .micro {
+    grid-column: 1/-1;
+    padding-top: var(--space-4);
+    margin-top: var(--space-3);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2);
+  }
+  @media (max-width: 860px) { footer .wrap { grid-template-columns: 1fr 1fr; } }
+
+  .reveal { opacity: 0.1; transform: translateY(24px); transition: opacity .9s var(--ease-out), transform .9s var(--ease-out); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Primary">
+  <span class="nav__brand">NORA</span>
+  <div class="nav__links">
+    <a href="#philosophy">Philosophy</a>
+    <a href="#treatments">Treatments</a>
+    <a href="#gallery">Results</a>
+    <a href="#offer">Membership</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="#offer" class="nav__cta">Book consult</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero__inner">
+    <span class="eyebrow" data-num="01" style="color: rgba(255,255,255,0.75);">A bespoke cosmetic clinic</span>
+    <h1>Refreshed. <span class="italic-accent">Never overdone.</span><br>Built around your face, on your timeline.</h1>
+    <div class="hero__grid">
+      <div>
+        <p class="hero__lead">A boutique clinic where every plan begins with a 60-minute consult, ends in a six-month roadmap you sign, and never includes "you should think about your jawline." Eight clients per injector, per day. MD on premises.</p>
+        <div class="hero__ctas">
+          <a href="#offer" class="btn btn-primary">Book $0 consult &rarr;</a>
+          <a href="#philosophy" class="btn btn-ghost">How NORA works</a>
+        </div>
+      </div>
+      <div class="hero__meta-card">
+        <div class="row">
+          <span class="label">Daily cap</span>
+          <span class="value">8 / inj.</span>
+        </div>
+        <div class="row">
+          <span class="label">Google rating</span>
+          <span class="value">4.94 &middot; 412</span>
+        </div>
+        <div class="row">
+          <span class="label">MD-led since</span>
+          <span class="value">2017</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST -->
+<section class="trust" style="padding-top: var(--space-4); padding-bottom: var(--space-4);">
+  <div class="trust__inner">
+    <span class="trust__label">Partners &amp; press</span>
+    <div class="trust__items">
+      <span>Allergan Diamond</span>
+      <span>Galderma ASPIRE</span>
+      <span>RealSelf Top Doctor</span>
+      <span>NewBeauty 100</span>
+      <span>Harper's Bazaar '25</span>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section id="pain">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-num="02">Where the relationship breaks</span>
+      <h2>You're not difficult. You were rushed.</h2>
+      <p>Three things go wrong at most clinics. Recognise any of them and you already know why you've stopped trusting the chair.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <span class="num">01 &mdash; the frozen forehead</span>
+        <h3>You went in for "refreshed." You came out unable to lift your brows.</h3>
+        <p>The injector measured the unit count, not your face. You spent the next six weeks waiting for it to wear off.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="num">02 &mdash; maintenance with no map</span>
+        <h3>Nobody can tell you what's coming next, or what it'll cost.</h3>
+        <p>Three months in, six months in, a year in. Just "see you in twelve weeks." That's not a plan. That's a subscription.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="num">03 &mdash; the judged-at-consult feeling</span>
+        <h3>The consult became a sales pitch in a white coat.</h3>
+        <p>Five treatments suggested before anyone asked what was actually bothering you. You left feeling smaller than when you arrived.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section id="contrast">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-num="03">The contrast</span>
+      <h2>Two ways to spend the next twelve months in a med spa chair.</h2>
+    </div>
+    <div class="ba reveal">
+      <div class="ba__col dark">
+        <div>
+          <span class="tag">Volume clinics</span>
+          <h3>22 clients a day. Whatever sticks.</h3>
+          <ul>
+            <li>20-minute consult, treatment same day</li>
+            <li>Different injector every visit</li>
+            <li>Photos only if you remember to ask</li>
+            <li>Membership = pre-paid units, no roadmap</li>
+            <li>12 months in: you've spent $5K and can't say what changed</li>
+          </ul>
+        </div>
+        <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem;">The reactive loop.</p>
+      </div>
+      <div class="ba__col light">
+        <div>
+          <span class="tag">NORA &middot; the bespoke alternative</span>
+          <h3>Eight clients. One face at a time.</h3>
+          <ul>
+            <li>60-min first visit + 3D scan, no needles day one</li>
+            <li>Same injector + MD on every visit</li>
+            <li>Photos every 90 days, on the schedule</li>
+            <li>Six-month plan in writing before we touch you</li>
+            <li>12 months in: you have a face you recognise &mdash; refreshed</li>
+          </ul>
+        </div>
+        <p style="color: var(--text-dim); font-size: 0.85rem;">The natural-results-first philosophy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MECHANISM -->
+<section id="philosophy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-num="04">How NORA works</span>
+      <h2>The natural-results-first philosophy &mdash; four moves we don't skip.</h2>
+      <p>This is what we argued for during residency and what we cap our day around. It's why we'll never become the volume clinic across town.</p>
+    </div>
+    <div class="mech-grid">
+      <div class="mech__visual reveal">
+        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=900&q=85&fit=crop" alt="Close-up of skin texture under clean clinical lighting" loading="lazy">
+      </div>
+      <ol class="mech__list">
+        <li class="reveal">
+          <span class="num">01</span>
+          <div>
+            <h4>Diagnose the face, not the line</h4>
+            <p>3D imaging + dermatology assessment first. We map what your face is actually doing. Half of "I hate my forehead lines" is really a brow-position conversation.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="num">02</span>
+          <div>
+            <h4>Plan in seasons, not appointments</h4>
+            <p>You leave consult with a six-month written roadmap: what we treat, what we wait on, what we never touch. Line-item cost before anything books.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="num">03</span>
+          <div>
+            <h4>Cap the day at eight</h4>
+            <p>Most injectors run 18-25 a day. We run 8. That's why we can spend forty minutes mixing a custom filler dilution instead of pushing you toward "while you're here."</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="num">04</span>
+          <div>
+            <h4>Photograph everything, quarterly</h4>
+            <p>Same lighting. Same crops. Same camera. You see what's working, what isn't, and what the next 90 days should do. We bring the receipts, not the sales pitch.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="treatments">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-num="05">What changes for you</span>
+      <h2>The end of mirror-anxiety. The start of "did you do something?"</h2>
+    </div>
+    <div class="ben-grid">
+      <div class="ben-card reveal">
+        <div class="ico">A</div>
+        <h4>A face that ages on your terms</h4>
+        <p>Plans run on a 5-year horizon, not 12-week sprints. You stop reacting. You start staying ahead.</p>
+      </div>
+      <div class="ben-card reveal">
+        <div class="ico">B</div>
+        <h4>Predictable monthly spend</h4>
+        <p>Member pricing locks 12% off every service. Year-budget in your inbox the day you sign.</p>
+      </div>
+      <div class="ben-card reveal">
+        <div class="ico">C</div>
+        <h4>MD on premises, every visit</h4>
+        <p>Dr. Park personally reviews every plan. Your injector is trained in her exact protocol &mdash; not someone she just met.</p>
+      </div>
+      <div class="ben-card reveal">
+        <div class="ico">D</div>
+        <h4>Receipts in photos</h4>
+        <p>Quarterly side-by-sides. You walk out knowing what worked, what didn't, and what the next 90 days look like.</p>
+      </div>
+      <div class="ben-card reveal">
+        <div class="ico">E</div>
+        <h4>Skin that holds the weather</h4>
+        <p>Medical-grade peels + IPL on a calendar. Texture, tone, pore size measured every 90 days.</p>
+      </div>
+      <div class="ben-card reveal">
+        <div class="ico">F</div>
+        <h4>A room you don't dread</h4>
+        <p>Warm lighting. Wood. Linen. No fluorescent-tile sales-y showroom. You're a patient, not a transaction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE/AFTER GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="ba-gallery reveal">
+      <span class="eyebrow" data-num="06" style="color: rgba(255,255,255,0.7);">Real members &middot; same camera</span>
+      <h2 style="margin-bottom: 1rem;">Six months of refreshed.<br>Photographed. Not promised.</h2>
+      <p>Every pair below is a NORA member who agreed to share. Same lighting. Same crop. No filters. Treatment plans were personalised &mdash; yours will be too.</p>
+      <div class="ba-gallery__grid">
+        <div class="ba-card">
+          <div class="ba-card__pair">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=500&q=80&fit=crop&crop=face" alt="Member before midface plan">
+            <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=500&q=80&fit=crop&crop=face" alt="Member after 6 months">
+          </div>
+          <div class="ba-card__meta">
+            <strong>Tox &middot; midface</strong>
+            <span>Member &middot; 6 mo</span>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-card__pair">
+            <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=500&q=80&fit=crop&crop=face" alt="Member before IPL">
+            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&q=80&fit=crop&crop=face" alt="Member after IPL series">
+          </div>
+          <div class="ba-card__meta">
+            <strong>IPL &middot; skincare</strong>
+            <span>Member &middot; 4 mo</span>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-card__pair">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&q=80&fit=crop&crop=face" alt="Member before micro-needling">
+            <img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=500&q=80&fit=crop&crop=face" alt="Member after micro-needling">
+          </div>
+          <div class="ba-card__meta">
+            <strong>Micro-needling</strong>
+            <span>Member &middot; 9 mo</span>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-card__pair">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80&fit=crop&crop=face" alt="Male member before tox">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&q=80&fit=crop&crop=face" alt="Male member after">
+          </div>
+          <div class="ba-card__meta">
+            <strong>Tox &middot; cheek</strong>
+            <span>Member &middot; 5 mo</span>
+          </div>
+        </div>
+      </div>
+      <p class="ba-gallery__disclaimer">Individual results vary. All photos shared with written consent. Treatment plans personalised per member.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section id="offer">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-num="07">The NORA membership</span>
+      <h2>One plan. One MD. Quarterly receipts.</h2>
+      <p>Built for the 28-55 image-conscious crowd who's done with one-off injections. Open until we hit our quarterly cap.</p>
+    </div>
+    <div class="offer-grid">
+      <div>
+        <h3 style="margin-bottom: 1.5rem; font-weight: 700;">What's included</h3>
+        <ul class="offer-list">
+          <li><strong>First-visit consult + 3D skin scan</strong><span class="dollar">$280 value</span></li>
+          <li><strong>Personalised 6-month plan, in writing</strong><span class="dollar">$450 value</span></li>
+          <li><strong>12% member pricing on every service</strong><span class="dollar">avg $620 / yr</span></li>
+          <li><strong>Quarterly photo review &amp; plan reset</strong><span class="dollar">$320 value</span></li>
+          <li><strong>Priority booking + same-week reschedule</strong><span class="dollar">$180 value</span></li>
+          <li><strong>Medical-grade skincare kit (at cost)</strong><span class="dollar">$240 value</span></li>
+        </ul>
+      </div>
+      <div class="offer-summary">
+        <div class="row"><span>Total stack value</span><span>$2,090 / yr</span></div>
+        <div class="row total"><span>Investment</span><span>$89 / mo</span></div>
+        <div class="row invest"><span class="label">First consult</span><span>$0</span></div>
+        <a href="#cta" class="btn">Reserve your consult &rarr;</a>
+        <p class="micro">Cancel anytime. No annual contract.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<section id="cta">
+  <div class="wrap">
+    <div class="mid-cta reveal">
+      <div>
+        <span class="eyebrow" data-num="08" style="color: var(--accent);">Q3 cohort &middot; 14 spots left</span>
+        <h2>If "refreshed, never overdone" is the brief, we should meet before June 30.</h2>
+        <p>Consults are free. They take an hour. You leave with a six-month plan in writing, whether or not you ever come back.</p>
+      </div>
+      <div class="mid-cta__right">
+        <a href="#offer" class="btn btn-primary">Book $0 first-visit consult &rarr;</a>
+        <p class="sub-note">Or call &middot; <a href="tel:+15555550199" style="color: #fff; text-decoration: underline;">(555) 555-0199</a> &middot; 9-7, Mon-Sat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-num="09">Members on record</span>
+      <h2>The kind of refreshed that doesn't get noticed. That's the point.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card featured reveal">
+        <div>
+          <div class="stars">&starf; &starf; &starf; &starf; &starf;</div>
+          <blockquote>"I came in after three years at a chain spa where I never met the same person twice. Six months at NORA and I look like me, just rested. My husband couldn't tell I'd had anything done. That was the goal."</blockquote>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+          <div class="person">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop&crop=face" alt="">
+            <div>
+              <strong>Priya R.</strong>
+              <span>Member since '24 &middot; finance</span>
+            </div>
+          </div>
+          <span class="metric">3 yrs of chain-spa undone in 6 mo</span>
+        </div>
+      </div>
+      <div class="testi-grid__right">
+        <div class="testi-card reveal">
+          <div>
+            <div class="stars">&starf; &starf; &starf; &starf; &starf;</div>
+            <blockquote>"First consult that wasn't a sales pitch. I didn't book a thing and they thanked me for coming."</blockquote>
+          </div>
+          <div class="person">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop&crop=face" alt="">
+            <div>
+              <strong>Marcus J.</strong>
+              <span>Member &middot; tech, age 41</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div>
+            <div class="stars">&starf; &starf; &starf; &starf; &starf;</div>
+            <blockquote>"Quarterly photos are the part I didn't know I needed. I can see what's working instead of guessing."</blockquote>
+          </div>
+          <div class="person">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=120&h=120&fit=crop&crop=face" alt="">
+            <div>
+              <strong>Helena T.</strong>
+              <span>Member &middot; physician</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section id="bonus">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-num="10">Two extras, included</span>
+      <h2>The bits that make the plan actually work.</h2>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card reveal">
+        <span class="ghost-num">01</span>
+        <span class="tag">Bonus 01</span>
+        <h3>NORA Skincare Kit</h3>
+        <p>Six medical-grade products matched to your six-month plan. No markup. You pay our cost. Replenishment auto-ships at the prescribed dose.</p>
+        <div class="value">$240 value &middot; included</div>
+      </div>
+      <div class="bonus-card reveal">
+        <span class="ghost-num">02</span>
+        <span class="tag">Bonus 02</span>
+        <h3>Private photo journal</h3>
+        <p>A 90-day photo timeline you can scroll on your phone. Year stitched together in 4 frames. Helpful for you. Awkward for the next injector who tries to sell you something you don't need.</p>
+        <div class="value">$180 value &middot; included</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE + FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-num="11">Promises &amp; common questions</span>
+      <h2>The fine print, in your favour.</h2>
+    </div>
+    <div class="gf-grid">
+      <div class="seal reveal">
+        <div class="ico">N</div>
+        <h3>The Refreshed-Not-Frozen Promise</h3>
+        <p>If, within 14 days of any treatment, you feel the result doesn't match the plan we agreed to in writing, we correct or dissolve at no charge. Tox/filler correction included.</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; color: rgba(255,255,255,0.55);">This sits in the plan you sign at consult. Not in a footer.</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>I've had bad work before. Can NORA fix it?</summary>
+          <p>Often, yes &mdash; hyaluronidase to dissolve overdone filler, time to let tox wear off, or a wait-and-watch plan. We won't promise anything we can't deliver. Your first consult tells you exactly what's possible.</p>
+        </details>
+        <details>
+          <summary>Is NORA only for women?</summary>
+          <p>No. About 28% of NORA members are men &mdash; mostly 35-55, mostly tox + medical-grade skincare. Dr. Park trained on male facial anatomy specifically.</p>
+        </details>
+        <details>
+          <summary>What does this actually cost in a typical year?</summary>
+          <p>Membership is $89/mo. Members spend an average of $2,400-$3,800/yr in treatments at member pricing. Your line-item year sits in your inbox before you book anything.</p>
+        </details>
+        <details>
+          <summary>Why cap each injector at eight per day?</summary>
+          <p>Because rushed injection is the #1 reason results look "off." At eight, every appointment gets 60 minutes of actual attention. Volume clinics need 18-25 because that's what their unit economics demand. We chose smaller on purpose.</p>
+        </details>
+        <details>
+          <summary>Do you accept insurance?</summary>
+          <p>Aesthetic treatments are not covered. We accept HSA/FSA for medical-grade skincare and certain medical-dermatology consults.</p>
+        </details>
+        <details>
+          <summary>What if I cancel my consult?</summary>
+          <p>No fee if cancelled 24 hrs ahead. Same-day no-shows are charged a $35 hold fee &mdash; this protects the eight-cap for everyone else on the schedule.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="brand-block">
+      <strong>NORA</strong>
+      <p>A bespoke cosmetic clinic. Eight clients per injector per day. Plans in writing. Receipts in photos.</p>
+      <p style="margin-top: 1rem; font-size: 0.85rem;">22 Crosby St &middot; New York, NY 10013</p>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <ul>
+        <li>Mon &mdash; Sat &middot; 9-7</li>
+        <li>Sunday &middot; closed</li>
+        <li><a href="tel:+15555550199">(555) 555-0199</a></li>
+        <li><a href="mailto:concierge@nora.example">concierge@nora.example</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Treatments</h4>
+      <ul>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#treatments">Service list</a></li>
+        <li><a href="#gallery">Results gallery</a></li>
+        <li><a href="#offer">Membership</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Credentials</h4>
+      <ul>
+        <li>Dr. Lena Park, MD &middot; ABD</li>
+        <li>Allergan Diamond partner</li>
+        <li>Galderma ASPIRE Gold</li>
+        <li>RealSelf Top Doctor '25</li>
+      </ul>
+    </div>
+    <div class="micro">
+      <span>&copy; 2026 NORA Aesthetics &middot; All medical services performed under physician supervision</span>
+      <span><a href="#">Privacy</a> &middot; <a href="#">Patient terms</a> &middot; <a href="#">HIPAA notice</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    document.querySelectorAll('.reveal').forEach((el) => {
+      ScrollTrigger.create({
+        trigger: el, start: 'top 88%',
+        onEnter: () => el.classList.add('in'),
+      });
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holloway Estates - Buy and sell with a private buyer-side desk</title>
+<meta name="description" content="A boutique residential brokerage that runs a private buyer-side desk for serious 32-55 yo professional buyers and sellers. Off-market access, 7-day listing bursts, closing-cost negotiation playbook.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --paper: #F5EFE6;
+  --paper-2: #EFE7D8;
+  --bronze: #8B6F47;
+  --bronze-soft: #C8A87A;
+  --navy: #1F2B3D;
+  --ink: #1A1816;
+  --text: #1A1816;
+  --text-dim: #5A544C;
+  --text-faint: #8B847B;
+  --bg: #F5EFE6;
+  --bg-elevated: #FBF7F0;
+  --bg-dark: #1F2B3D;
+  --accent: #8B6F47;
+  --line: rgba(26,24,22,0.10);
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Inter Tight', system-ui, sans-serif;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem; --space-6: 6rem;
+  --radius-1: 6px; --radius-2: 12px; --radius-3: 20px; --radius-4: 32px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; font-weight: 400; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height: 1.08; letter-spacing: -0.01em; color: var(--ink); }
+h1 { font-size: clamp(2.5rem, 5.5vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 3.8vw, 3.1rem); }
+h3 { font-size: 1.4rem; line-height: 1.25; }
+h4 { font-size: 1.1rem; }
+em { font-style: italic; color: var(--bronze); }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
+.eyebrow { display: inline-block; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); font-weight: 600; margin-bottom: 1rem; }
+
+/* Sticky pill nav */
+.pill-nav { position: fixed; top: 18px; left: 50%; transform: translateX(-50%); z-index: 100; background: rgba(251,247,240,0.88); backdrop-filter: blur(14px); border: 1px solid var(--line); border-radius: 99px; padding: 8px 8px 8px 22px; display: flex; align-items: center; gap: 1.5rem; box-shadow: 0 8px 30px rgba(31,43,61,0.06); }
+.pill-nav__logo { font-family: var(--font-display); font-size: 1.15rem; color: var(--ink); }
+.pill-nav__links { display: flex; gap: 1.4rem; font-size: 0.86rem; color: var(--text-dim); }
+.pill-nav__links a:hover { color: var(--ink); }
+.pill-nav__cta { background: var(--ink); color: var(--paper); padding: 9px 18px; border-radius: 99px; font-size: 0.82rem; font-weight: 500; transition: background .2s var(--ease); }
+.pill-nav__cta:hover { background: var(--bronze); }
+@media (max-width: 860px) { .pill-nav__links { display: none; } }
+
+/* HERO - split asymmetric */
+.hero { min-height: 100dvh; padding: 8rem 0 5rem; position: relative; }
+.hero__grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 4rem; align-items: center; }
+.hero__copy h1 em { display: block; }
+.hero__sub { font-size: 1.15rem; color: var(--text-dim); margin-top: 1.5rem; max-width: 32rem; }
+.hero__ctas { display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 14px 26px; border-radius: 99px; font-size: 0.92rem; font-weight: 500; transition: all .25s var(--ease); cursor: pointer; border: none; font-family: var(--font-body); }
+.btn--primary { background: var(--ink); color: var(--paper); }
+.btn--primary:hover { background: var(--bronze); transform: translateY(-2px); }
+.btn--ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.btn--ghost:hover { background: var(--bg-elevated); border-color: var(--bronze); }
+.hero__proof { display: flex; gap: 2rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); max-width: 30rem; }
+.hero__proof-item .num { font-family: var(--font-display); font-size: 1.6rem; color: var(--bronze); }
+.hero__proof-item .lbl { font-size: 0.78rem; color: var(--text-faint); margin-top: 2px; }
+.hero__visual { position: relative; }
+.hero__visual img { width: 100%; height: 600px; object-fit: cover; border-radius: 20px 20px 200px 20px; box-shadow: 0 30px 80px rgba(31,43,61,0.18); }
+.hero__chip { position: absolute; bottom: 40px; left: -28px; background: var(--bg-elevated); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; box-shadow: 0 12px 40px rgba(31,43,61,0.12); display: flex; align-items: center; gap: 12px; }
+.hero__chip-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--bronze); }
+.hero__chip-text { font-size: 0.82rem; color: var(--ink); font-weight: 500; }
+.hero__chip-text small { display: block; color: var(--text-faint); font-weight: 400; font-size: 0.74rem; margin-top: 1px; }
+@media (max-width: 860px) {
+  .hero { padding: 6rem 0 3rem; }
+  .hero__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero__visual img { height: 420px; border-radius: 16px 16px 120px 16px; }
+}
+
+/* Trust strip */
+.trust { padding: 3rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-elevated); }
+.trust__row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2rem; align-items: center; }
+.trust__item { font-size: 0.84rem; color: var(--text-faint); letter-spacing: 0.06em; text-transform: uppercase; text-align: center; font-weight: 500; }
+@media (max-width: 860px) { .trust__row { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
+
+/* Pain section */
+.pain { padding: var(--space-6) 0; }
+.section-head { max-width: 36rem; margin-bottom: 3rem; }
+.section-head p { color: var(--text-dim); margin-top: 1rem; font-size: 1.05rem; }
+.pain__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.pain__card { background: var(--bg-elevated); border: 1px solid var(--line); border-radius: var(--radius-3); padding: 2rem; }
+.pain__card-num { font-family: var(--font-display); font-size: 1.1rem; color: var(--bronze); margin-bottom: 1rem; }
+.pain__card h3 { margin-bottom: 0.75rem; font-size: 1.25rem; }
+.pain__card p { color: var(--text-dim); font-size: 0.95rem; }
+@media (max-width: 860px) { .pain__cards { grid-template-columns: 1fr; } }
+
+/* Before / After */
+.ba { padding: var(--space-6) 0; background: var(--paper-2); }
+.ba__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: var(--radius-3); overflow: hidden; box-shadow: 0 20px 60px rgba(31,43,61,0.08); }
+.ba__col { padding: 3rem 2.5rem; min-height: 380px; }
+.ba__col--before { background: var(--navy); color: var(--paper); }
+.ba__col--after { background: var(--bg-elevated); color: var(--ink); }
+.ba__col h3 { color: inherit; margin-bottom: 1.5rem; font-size: 1.6rem; }
+.ba__col--before h3 { color: var(--paper); }
+.ba__list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+.ba__list li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.96rem; }
+.ba__list li::before { content: ""; flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%; margin-top: 3px; }
+.ba__col--before .ba__list li::before { background: rgba(245,239,230,0.12); border: 1px solid rgba(245,239,230,0.25); }
+.ba__col--after .ba__list li::before { background: var(--bronze); }
+.ba__col--before .ba__list li { color: rgba(245,239,230,0.78); }
+@media (max-width: 860px) { .ba__grid { grid-template-columns: 1fr; } }
+
+/* Mechanism */
+.mech { padding: var(--space-6) 0; }
+.mech__grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4rem; align-items: center; }
+.mech__visual img { width: 100%; height: 480px; object-fit: cover; border-radius: 200px 20px 20px 20px; }
+.mech__body p { color: var(--text-dim); font-size: 1.05rem; margin-top: 1rem; }
+.mech__steps { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2.5rem; }
+.mech__step { display: grid; grid-template-columns: 44px 1fr; gap: 1rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--line); }
+.mech__step:last-child { border-bottom: none; }
+.mech__step-num { font-family: var(--font-display); font-size: 1.4rem; color: var(--bronze); }
+.mech__step-body h4 { font-family: var(--font-body); font-weight: 600; font-size: 1rem; color: var(--ink); margin-bottom: 4px; }
+.mech__step-body p { font-size: 0.9rem; color: var(--text-dim); margin: 0; }
+@media (max-width: 860px) { .mech__grid { grid-template-columns: 1fr; gap: 2.5rem; } .mech__visual img { height: 360px; border-radius: 120px 16px 16px 16px; } }
+
+/* Benefits */
+.benefits { padding: var(--space-6) 0; background: var(--bg-elevated); }
+.benefits__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem 2.5rem; margin-top: 2.5rem; }
+.benefit { display: grid; grid-template-columns: 32px 1fr; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+.benefit__check { width: 28px; height: 28px; border-radius: 50%; background: var(--bronze); display: flex; align-items: center; justify-content: center; color: var(--paper); font-size: 0.9rem; flex-shrink: 0; }
+.benefit h4 { font-family: var(--font-body); font-weight: 600; font-size: 1rem; margin-bottom: 4px; color: var(--ink); }
+.benefit p { font-size: 0.92rem; color: var(--text-dim); }
+@media (max-width: 860px) { .benefits__grid { grid-template-columns: 1fr; gap: 0; } }
+
+/* Offer stack */
+.offer { padding: var(--space-6) 0; }
+.offer__card { background: var(--ink); color: var(--paper); border-radius: var(--radius-3); padding: 3rem; box-shadow: 0 30px 80px rgba(31,43,61,0.18); }
+.offer__card h2 { color: var(--paper); }
+.offer__card .eyebrow { color: var(--bronze-soft); }
+.offer__list { display: flex; flex-direction: column; gap: 1rem; margin: 2.5rem 0; }
+.offer__row { display: grid; grid-template-columns: 1fr 100px; gap: 1.5rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(245,239,230,0.10); align-items: center; }
+.offer__row h4 { color: var(--paper); font-family: var(--font-body); font-weight: 600; font-size: 1.02rem; margin-bottom: 4px; }
+.offer__row p { color: rgba(245,239,230,0.65); font-size: 0.88rem; }
+.offer__value { font-family: var(--font-display); color: var(--bronze-soft); text-align: right; font-size: 1.1rem; }
+.offer__total { display: grid; grid-template-columns: 1fr auto; align-items: center; padding-top: 2rem; border-top: 2px solid var(--bronze); margin-top: 1rem; }
+.offer__total-label { color: rgba(245,239,230,0.7); font-size: 0.9rem; }
+.offer__total-num { font-family: var(--font-display); font-size: 2.5rem; color: var(--paper); }
+.offer__investment { text-align: center; margin-top: 2rem; }
+.offer__investment-tag { color: var(--bronze-soft); font-size: 0.84rem; text-transform: uppercase; letter-spacing: 0.14em; }
+.offer__investment-num { font-family: var(--font-display); font-size: 3rem; color: var(--paper); margin: 0.5rem 0; }
+.offer__investment-sub { color: rgba(245,239,230,0.65); font-size: 0.92rem; }
+
+/* Mid CTA */
+.mid-cta { padding: var(--space-6) 0; text-align: center; }
+.mid-cta h2 { max-width: 38rem; margin: 1rem auto 1.5rem; }
+.mid-cta p { color: var(--text-dim); max-width: 30rem; margin: 0 auto 2rem; }
+
+/* Social proof - magazine asymmetric */
+.proof { padding: var(--space-6) 0; background: var(--paper-2); }
+.proof__grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+.proof__col-right { display: flex; flex-direction: column; gap: 1.5rem; }
+.t-card { border-radius: var(--radius-3); padding: 2.25rem; display: flex; flex-direction: column; }
+.t-card--dark { background: var(--ink); color: var(--paper); }
+.t-card--light { background: var(--bg-elevated); border: 1px solid var(--line); }
+.t-card__metric { display: inline-block; font-family: var(--font-display); font-size: 0.95rem; padding: 6px 14px; border-radius: 99px; margin-bottom: 1.5rem; align-self: flex-start; }
+.t-card--dark .t-card__metric { background: var(--bronze); color: var(--paper); }
+.t-card--light .t-card__metric { background: var(--paper-2); color: var(--bronze); }
+.t-card__quote { font-family: var(--font-display); font-size: 1.55rem; line-height: 1.3; margin-bottom: 1.5rem; flex-grow: 1; }
+.t-card--light .t-card__quote { font-size: 1.15rem; }
+.t-card__author { display: flex; align-items: center; gap: 0.75rem; margin-top: auto; }
+.t-card__avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.t-card__name { font-weight: 600; font-size: 0.92rem; }
+.t-card__role { font-size: 0.8rem; opacity: 0.7; }
+@media (max-width: 860px) { .proof__grid { grid-template-columns: 1fr; } }
+
+/* Bonus stack */
+.bonus { padding: var(--space-6) 0; }
+.bonus__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+.bonus__card { background: var(--bg-elevated); border: 1px solid var(--line); border-radius: var(--radius-3); padding: 2.25rem; position: relative; overflow: hidden; }
+.bonus__ghost { position: absolute; top: 1rem; right: 1.5rem; font-family: var(--font-display); font-size: 5rem; color: rgba(139,111,71,0.10); line-height: 1; }
+.bonus__tag { display: inline-block; font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bronze); margin-bottom: 1rem; font-weight: 600; }
+.bonus__card h3 { margin-bottom: 0.75rem; font-size: 1.4rem; }
+.bonus__card p { color: var(--text-dim); margin-bottom: 1.5rem; font-size: 0.95rem; }
+.bonus__value { font-family: var(--font-display); color: var(--bronze); font-size: 1.05rem; }
+@media (max-width: 860px) { .bonus__grid { grid-template-columns: 1fr; } }
+
+/* Guarantee + FAQ + Urgency close */
+.close { padding: var(--space-6) 0; background: var(--ink); color: var(--paper); }
+.close h2 { color: var(--paper); }
+.close .eyebrow { color: var(--bronze-soft); }
+.guarantee { background: var(--navy); border: 1px solid rgba(245,239,230,0.10); border-radius: var(--radius-3); padding: 2.5rem; margin-bottom: 3rem; display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem; align-items: center; }
+.guarantee__seal { width: 80px; height: 80px; border-radius: 50%; background: var(--bronze); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); color: var(--paper); font-size: 0.78rem; line-height: 1.1; text-align: center; padding: 8px; }
+.guarantee h3 { color: var(--paper); margin-bottom: 0.5rem; font-size: 1.4rem; }
+.guarantee p { color: rgba(245,239,230,0.75); font-size: 0.95rem; }
+.faq { margin-bottom: 3rem; }
+.faq details { border-bottom: 1px solid rgba(245,239,230,0.12); padding: 1.25rem 0; }
+.faq summary { cursor: pointer; font-weight: 600; font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 1.5rem; color: var(--bronze-soft); font-family: var(--font-display); transition: transform .25s var(--ease); }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { margin-top: 1rem; color: rgba(245,239,230,0.72); font-size: 0.95rem; }
+.urgency { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(245,239,230,0.10); }
+.urgency p { color: rgba(245,239,230,0.7); margin: 1rem auto 2rem; max-width: 32rem; }
+.urgency .btn--primary { background: var(--bronze); color: var(--paper); }
+.urgency .btn--primary:hover { background: var(--bronze-soft); color: var(--ink); }
+
+/* Footer */
+footer { background: var(--paper-2); padding: 3rem 0 2rem; border-top: 1px solid var(--line); }
+.footer__grid { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.footer__logo { font-family: var(--font-display); font-size: 1.3rem; }
+.footer__meta { font-size: 0.84rem; color: var(--text-faint); }
+
+/* Reveal */
+.reveal { opacity: 1; transform: translateY(24px); transition: transform .8s var(--ease); }
+.reveal.in { transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav class="pill-nav" aria-label="Primary">
+  <a href="#hero" class="pill-nav__logo">Holloway <em style="color:var(--bronze)">Estates</em></a>
+  <div class="pill-nav__links">
+    <a href="#mech">How we work</a>
+    <a href="#offer">What's included</a>
+    <a href="#proof">Clients</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="#close" class="pill-nav__cta">Book a tour</a>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <span class="eyebrow">Boutique residential brokerage · Est. 2014</span>
+        <h1>Find the home you'd buy <em>twice.</em></h1>
+        <p class="hero__sub">For professional 32-55 yo buyers and sellers who are done hunting through 47 Zillow tabs. We run a private buyer-side desk - off-market access, 7-day listing bursts, and a closing-cost negotiation playbook nobody else writes down.</p>
+        <div class="hero__ctas">
+          <a href="#close" class="btn btn--primary">Book a private tour →</a>
+          <a href="#mech" class="btn btn--ghost">See how we work</a>
+        </div>
+        <div class="hero__proof">
+          <div class="hero__proof-item"><div class="num">428</div><div class="lbl">Families placed since 2014</div></div>
+          <div class="hero__proof-item"><div class="num">$1.2B</div><div class="lbl">In closed residential volume</div></div>
+          <div class="hero__proof-item"><div class="num">11 yrs</div><div class="lbl">Top 1% local producer</div></div>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1100&q=85&fit=crop" alt="Sunlit residential foyer with warm wood floors and curved staircase" loading="eager">
+        <div class="hero__chip">
+          <span class="hero__chip-dot"></span>
+          <div class="hero__chip-text">3 off-market listings this week<small>Buyer-desk access only</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="trust__row">
+      <div class="trust__item">NAR Member</div>
+      <div class="trust__item">MLS · Top 1%</div>
+      <div class="trust__item">Featured · Wall St. Journal</div>
+      <div class="trust__item">Forbes Real Estate Council</div>
+      <div class="trust__item">Luxury Portfolio Intl.</div>
+    </div>
+  </div>
+</section>
+
+<section class="pain" id="pain">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The buyer-side reality</span>
+      <h2>House hunting in 2026 has become a part-time job - and it shouldn't be.</h2>
+      <p>You opened a Saturday to drive 90 minutes. The listing photos didn't match the floor plan. The agent showed up late and didn't know the neighborhood. By Sunday night you've burned the weekend and still don't own anything.</p>
+    </div>
+    <div class="pain__cards">
+      <div class="pain__card reveal">
+        <div class="pain__card-num">01</div>
+        <h3>Hunting through 47 Zillow tabs</h3>
+        <p>Every promising listing is already pending. The new ones rarely match what you actually want. You're filtering for square feet because the algorithm doesn't understand "this is where my kids will grow up."</p>
+      </div>
+      <div class="pain__card reveal">
+        <div class="pain__card-num">02</div>
+        <h3>Showings that don't match the wishlist</h3>
+        <p>You gave your agent a clear brief - 3-bed, walkable district, real backyard. The Saturday tour shows you 2-beds on busy streets. Then they ask you to "stay open." Open to what - wasting more weekends?</p>
+      </div>
+      <div class="pain__card reveal">
+        <div class="pain__card-num">03</div>
+        <h3>Agents who ghost after the listing posts</h3>
+        <p>On the sell side it's worse. Sign goes in the yard, photos go up, and then radio silence for three weeks. No status, no buyer feedback, no price-adjustment plan. Just "the market's slow right now."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ba" id="before-after">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Before · After</span>
+      <h2>What a private buyer-side desk actually changes.</h2>
+    </div>
+    <div class="ba__grid">
+      <div class="ba__col ba__col--before">
+        <h3>Before working with Holloway</h3>
+        <ul class="ba__list">
+          <li>Refreshing Zillow at 11pm hoping a new listing dropped.</li>
+          <li>Driving across the metro to see homes that ignore your brief.</li>
+          <li>Losing every multi-offer because your agent waited 24 hours.</li>
+          <li>Selling for asking when your block was up 9% last quarter.</li>
+          <li>Walking into closing with 14 line items you've never seen.</li>
+        </ul>
+      </div>
+      <div class="ba__col ba__col--after">
+        <h3>After working with Holloway</h3>
+        <ul class="ba__list">
+          <li>3-5 hand-vetted listings emailed to you every Monday - including off-market.</li>
+          <li>One Saturday tour, four homes, all matching your brief on paper and in person.</li>
+          <li>Offers drafted same-day with a clean escalation clause priced to win.</li>
+          <li>Listing burst: 7-day pre-market warm-up, then live with 38+ pre-warmed buyers.</li>
+          <li>Closing-cost walk-through 5 days out - no line item is ever a surprise.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mech" id="mech">
+  <div class="wrap">
+    <div class="mech__grid">
+      <div class="mech__visual reveal">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1100&q=85&fit=crop" alt="Modern residential exterior at golden hour with manicured landscaping">
+      </div>
+      <div class="mech__body">
+        <span class="eyebrow">Why a private desk</span>
+        <h2>We built a buyer-side desk because the old model rewards transactions, not fit.</h2>
+        <p>Most agents run a volume model - they take any client, push any listing, and close on the path of least resistance. We do the opposite. Every buyer gets a written brief, a private off-market feed, and a desk that says no to listings that don't match. That's why 84% of our buyers close on the second or third home shown.</p>
+        <div class="mech__steps">
+          <div class="mech__step"><div class="mech__step-num">01</div><div class="mech__step-body"><h4>Brief intake (90 min)</h4><p>Lifestyle, commute, budget ceiling, hard "no" list, school zone target. Written, not assumed.</p></div></div>
+          <div class="mech__step"><div class="mech__step-num">02</div><div class="mech__step-body"><h4>Private feed (weekly)</h4><p>3-5 listings per Monday, including off-market and pre-MLS through our broker network.</p></div></div>
+          <div class="mech__step"><div class="mech__step-num">03</div><div class="mech__step-body"><h4>Curated Saturday tour</h4><p>4 homes max, all pre-walked by us. Tour day is decision day, not exploration day.</p></div></div>
+          <div class="mech__step"><div class="mech__step-num">04</div><div class="mech__step-body"><h4>Offer + close protection</h4><p>Escalation clause priced to win, closing-cost walkthrough 5 days out, no surprises at the table.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits" id="benefits">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What changes for you</span>
+      <h2>Less hunting. Better homes. Cleaner closings.</h2>
+    </div>
+    <div class="benefits__grid">
+      <div class="benefit"><div class="benefit__check">✓</div><div><h4>Your weekends back</h4><p>Average buyer tours 4 homes total before closing - not 24.</p></div></div>
+      <div class="benefit"><div class="benefit__check">✓</div><div><h4>Off-market access</h4><p>30-40% of our deals never hit Zillow. You see them first.</p></div></div>
+      <div class="benefit"><div class="benefit__check">✓</div><div><h4>Win on the first offer</h4><p>76% of our buyer offers are accepted on the first round.</p></div></div>
+      <div class="benefit"><div class="benefit__check">✓</div><div><h4>Listings sold above ask</h4><p>Avg seller closes at 102.8% of list within 18 days on market.</p></div></div>
+      <div class="benefit"><div class="benefit__check">✓</div><div><h4>Closing-cost negotiation</h4><p>Avg seller credit recovered for buyers: $7,400.</p></div></div>
+      <div class="benefit"><div class="benefit__check">✓</div><div><h4>A real human, every week</h4><p>Direct line to your agent - not a junior, not a chatbot, not a portal.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="offer">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What you actually get</span>
+      <h2>The Holloway buyer-side package - fully itemized.</h2>
+    </div>
+    <div class="offer__card">
+      <span class="eyebrow">Buyer engagement</span>
+      <h2 style="margin-bottom:0.5rem">Everything below is included, billed at close.</h2>
+      <div class="offer__list">
+        <div class="offer__row"><div><h4>Personal property tour (Saturday curated)</h4><p>4 hand-vetted homes per tour day, pre-walked by your agent.</p></div><div class="offer__value">$0</div></div>
+        <div class="offer__row"><div><h4>Off-market access portal</h4><p>Private feed of pre-MLS and broker-network-only listings, refreshed weekly.</p></div><div class="offer__value">$3,400</div></div>
+        <div class="offer__row"><div><h4>Closing-cost negotiation playbook</h4><p>Line-by-line walk-through 5 days before close. Avg buyer recovery: $7,400.</p></div><div class="offer__value">$2,800</div></div>
+        <div class="offer__row"><div><h4>12-month listing strategy (sellers)</h4><p>Pre-market warm-up, photo plan, pricing model, listing burst, post-list adjustment ladder.</p></div><div class="offer__value">$4,200</div></div>
+        <div class="offer__row"><div><h4>Inspection + lender shortlist</h4><p>3 vetted inspectors + 3 lenders we've closed with 30+ times each.</p></div><div class="offer__value">$1,200</div></div>
+      </div>
+      <div class="offer__total">
+        <div class="offer__total-label">Stand-alone value</div>
+        <div class="offer__total-num">$11,600</div>
+      </div>
+      <div class="offer__investment">
+        <div class="offer__investment-tag">Your investment</div>
+        <div class="offer__investment-num">Standard commission</div>
+        <div class="offer__investment-sub">Paid at closing. No retainer, no upfront, no hourly. If we don't close, you don't pay.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mid-cta">
+  <div class="wrap">
+    <span class="eyebrow">Ready to talk</span>
+    <h2>Book a 25-minute brief intake. We'll either fit, or we'll refer you out.</h2>
+    <p>No pressure pitch. We turn down about 30% of buyer briefs that aren't a fit - and we'll tell you on the call.</p>
+    <a href="#close" class="btn btn--primary">Book your intake →</a>
+  </div>
+</section>
+
+<section class="proof" id="proof">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Recent closings</span>
+      <h2>What clients say after we hand over the keys.</h2>
+    </div>
+    <div class="proof__grid">
+      <div class="t-card t-card--dark">
+        <span class="t-card__metric">Closed in 11 days · $42K under ask</span>
+        <p class="t-card__quote">"We'd been looking on our own for 8 months. Holloway sent us 4 homes the first Monday. We closed on the second one. They negotiated $42K off ask and walked us through every closing-cost line item five days out."</p>
+        <div class="t-card__author">
+          <img class="t-card__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop&crop=face" alt="Headshot of Mara Bennett, buyer">
+          <div><div class="t-card__name">Mara Bennett</div><div class="t-card__role">Pediatrician · bought in Riverside</div></div>
+        </div>
+      </div>
+      <div class="proof__col-right">
+        <div class="t-card t-card--light">
+          <span class="t-card__metric">Sold for 104.1% of list</span>
+          <p class="t-card__quote">"Listing burst hit different. Day 1 we had 14 showings booked."</p>
+          <div class="t-card__author">
+            <img class="t-card__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="Headshot of Daniel Kuroda, seller">
+            <div><div class="t-card__name">Daniel Kuroda</div><div class="t-card__role">Architect · sold in Briarcliff</div></div>
+          </div>
+        </div>
+        <div class="t-card t-card--light">
+          <span class="t-card__metric">First offer accepted</span>
+          <p class="t-card__quote">"They told me to skip three houses I would have lost the weekend on. Then they showed me the one we bought."</p>
+          <div class="t-card__author">
+            <img class="t-card__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&fit=crop&crop=face" alt="Headshot of Elena Vasquez, buyer">
+            <div><div class="t-card__name">Elena Vasquez</div><div class="t-card__role">VP Finance · bought in Hillcrest</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bonus" id="bonus">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Bonuses included</span>
+      <h2>Two extras every engaged client gets - no upsell.</h2>
+    </div>
+    <div class="bonus__grid">
+      <div class="bonus__card">
+        <div class="bonus__ghost">01</div>
+        <span class="bonus__tag">Bonus one</span>
+        <h3>Neighborhood deep-dive report</h3>
+        <p>For every shortlisted home, you get a 4-page report - comps, school score trend, commute model, 5-year appreciation curve, and known pending developments within 1 mile.</p>
+        <div class="bonus__value">Built in · $480 value</div>
+      </div>
+      <div class="bonus__card">
+        <div class="bonus__ghost">02</div>
+        <span class="bonus__tag">Bonus two</span>
+        <h3>First-year homeowner concierge</h3>
+        <p>The first 12 months after closing, you keep a direct line to us for contractor referrals, tax-record fixes, and a year-one home-value check-in. Most agents disappear at closing - we don't.</p>
+        <div class="bonus__value">Built in · $900 value</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="close" id="close">
+  <div class="wrap">
+    <div class="section-head reveal" style="max-width:42rem">
+      <span class="eyebrow">Guarantee · FAQ · Final word</span>
+      <h2>The promise we make every client - in writing, before we list or tour.</h2>
+    </div>
+    <div class="guarantee">
+      <div class="guarantee__seal">90-DAY<br>FIT</div>
+      <div>
+        <h3>90-day fit guarantee.</h3>
+        <p>If after 90 days you don't feel the brief is being honored - wrong neighborhoods, slow communication, listings off-target - you can release us with zero obligation. We'll hand back your brief, intro you to two other agents we trust, and part friends.</p>
+      </div>
+    </div>
+    <div class="faq" id="faq">
+      <details><summary>How are you different from a typical agent at a big brokerage?</summary><p>Big-brokerage agents run a volume model - more clients, more listings, faster cycle. We cap intake at 22 active engagements per year. That's why we can pre-walk every home, draft same-day offers, and stay involved 12 months past closing.</p></details>
+      <details><summary>Do you cover both buying and selling?</summary><p>Yes. About 60% of our work is buyer-side, 40% sell-side. Many clients hire us for both - list with us, buy through us, one transition.</p></details>
+      <details><summary>What price range do you typically work in?</summary><p>$450K to $4.2M residential. Sweet spot is $700K-$1.6M. We don't take investment-property-only briefs (different muscle, different relationships).</p></details>
+      <details><summary>What does "off-market" actually mean?</summary><p>Listings we know about through our broker-to-broker network 7-30 days before they hit MLS. About 30-40% of our buyer closings are off-market sourced.</p></details>
+      <details><summary>What's the brief intake call?</summary><p>25 minutes by phone or in person. You describe what you're looking for, we ask the questions you've never been asked, and at the end either we agree to work together or we refer you out. No pitch, no sign-up.</p></details>
+      <details><summary>Are you taking new clients this quarter?</summary><p>We cap intake at 22 active engagements per year - usually 4-6 new briefs per quarter. Current quarter has 3 slots open.</p></details>
+    </div>
+    <div class="urgency">
+      <span class="eyebrow">Q2 intake</span>
+      <h2 style="font-size:2rem">3 buyer-side slots remain for this quarter.</h2>
+      <p>We don't run countdown timers or fake scarcity. The cap is real - 22 active engagements per year means roughly 4-6 new briefs per quarter. Q2 has 3 slots left as of this week.</p>
+      <a href="#hero" class="btn btn--primary">Book your 25-min brief intake →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__logo">Holloway <em style="color:var(--bronze)">Estates</em></div>
+      <div class="footer__meta">Licensed brokerage · DRE #02178432 · NAR member · © 2026 Holloway Estates LLC</div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  if (typeof gsap === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+  // Hero load - opacity OK here, fires on DOMContentLoaded before LCP scroll
+  gsap.from('.hero__copy > *', { y: 20, opacity: 0, stagger: 0.08, duration: 0.9, ease: 'power3.out' });
+  gsap.from('.hero__visual', { x: 30, duration: 1.1, ease: 'power3.out', delay: 0.2 });
+  gsap.from('.hero__chip', { y: 14, scale: 0.96, duration: 0.7, ease: 'power3.out', delay: 0.9 });
+  // Scroll reveals - y only, no opacity:0
+  document.querySelectorAll('.reveal').forEach(function(el){
+    gsap.to(el, { y: 0, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
+  });
+})();
+</script>
+
+</body>
+</html>

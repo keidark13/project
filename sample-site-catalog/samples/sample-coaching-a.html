@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitfield Coaching - Scale past the revenue ceiling without the 60-hour weeks</title>
+<meta name="description" content="A 90-day 1:1 coaching intensive for founders stuck at the same revenue ceiling. Build the systems that scale the business without scaling your hours.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Karla:wght@400;500;600;700&display=swap">
+
+<style>
+  :root {
+    /* Variant A palette - warm mono cream + ink + earth-coral */
+    --bg: #F8F4ED;
+    --bg-elevated: #EFE9DD;
+    --bg-dark: #1A1816;
+    --ink: #1A1816;
+    --text: #25221F;
+    --text-dim: #5C5852;
+    --text-faint: #8C8780;
+    --accent: #C8754A;
+    --accent-soft: #ECDACB;
+    --paper: #FBF8F2;
+    --hairline: rgba(26, 24, 22, 0.08);
+    --hairline-strong: rgba(26, 24, 22, 0.18);
+
+    --font-display: 'Lora', Georgia, serif;
+    --font-body: 'Karla', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4rem;
+    --space-7: 6rem;
+    --space-8: 8rem;
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-pill: 999px;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--bg);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; border: none; background: none; }
+
+  h1, h2, h3, h4 { font-family: var(--font-display); color: var(--ink); font-weight: 600; line-height: 1.12; letter-spacing: -0.012em; }
+  h1 { font-size: clamp(2.6rem, 5vw, 4.2rem); }
+  h2 { font-size: clamp(2.1rem, 3.6vw, 3rem); }
+  h3 { font-size: clamp(1.25rem, 1.8vw, 1.5rem); }
+  h4 { font-size: 1.05rem; }
+
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 var(--space-4); }
+  .container-narrow { max-width: 880px; margin: 0 auto; padding: 0 var(--space-4); }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: var(--space-2);
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 24px;
+    border-radius: var(--radius-pill);
+    font-weight: 600; font-size: 15px;
+    transition: transform .25s var(--ease-out), background .2s, color .2s;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--hairline-strong); }
+  .btn-ghost:hover { border-color: var(--ink); background: var(--bg-elevated); }
+  .btn .arrow { transition: transform .25s var(--ease-out); }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  /* 1. NAV - floating-pill-nav */
+  .nav-wrap { position: fixed; top: 20px; left: 0; right: 0; z-index: 100; pointer-events: none; }
+  .nav {
+    pointer-events: auto;
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 12px 12px 24px;
+    background: rgba(248, 244, 237, 0.85);
+    backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-pill);
+  }
+  .logo { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; color: var(--ink); letter-spacing: -0.01em; }
+  .logo em { font-style: italic; color: var(--accent); }
+  .nav-links { display: flex; gap: 28px; align-items: center; font-size: 14px; font-weight: 500; }
+  .nav-links a { color: var(--text-dim); transition: color .2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav .btn { padding: 10px 18px; font-size: 14px; }
+  @media (max-width: 860px) { .nav-links { display: none; } }
+
+  /* 2. HERO - split-asymmetric */
+  .hero { padding: 140px 0 100px; min-height: 100dvh; display: flex; align-items: center; position: relative; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: var(--space-7); align-items: center; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .lede { font-size: 1.18rem; color: var(--text-dim); margin: var(--space-3) 0 var(--space-5); max-width: 540px; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: var(--space-5); }
+  .hero-proof { display: flex; align-items: center; gap: 18px; padding-top: var(--space-4); border-top: 1px solid var(--hairline); }
+  .hero-proof-avatars { display: flex; }
+  .hero-proof-avatars img {
+    width: 44px; height: 44px; border-radius: 50%; object-fit: cover;
+    border: 2px solid var(--bg); margin-left: -10px;
+  }
+  .hero-proof-avatars img:first-child { margin-left: 0; }
+  .hero-proof-text { font-size: 14px; color: var(--text-dim); }
+  .hero-proof-text strong { color: var(--ink); font-weight: 600; }
+
+  .hero-photo-wrap { position: relative; padding: var(--space-3); }
+  .hero-photo {
+    width: 100%; height: 580px; object-fit: cover;
+    border-radius: 200px 22px 22px 22px;
+  }
+  .hero-stat-card {
+    position: absolute; bottom: 40px; left: -30px;
+    background: var(--paper); padding: 18px 22px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 50px rgba(26,24,22,0.12);
+    border: 1px solid var(--hairline);
+    max-width: 220px;
+  }
+  .hero-stat-num { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--ink); }
+  .hero-stat-num em { font-style: italic; color: var(--accent); }
+  .hero-stat-label { font-size: 12px; color: var(--text-dim); margin-top: 4px; letter-spacing: 0.04em; }
+  .hero-bg-mark {
+    position: absolute; top: 60px; right: -40px;
+    font-family: var(--font-display); font-style: italic;
+    font-size: 14rem; color: var(--accent-soft); opacity: 0.5;
+    z-index: -1; line-height: 1; pointer-events: none;
+  }
+  @media (max-width: 960px) {
+    .hero-grid { grid-template-columns: 1fr; gap: var(--space-5); }
+    .hero-photo { height: 420px; border-radius: 22px; }
+    .hero-stat-card { left: 10px; }
+    .hero-bg-mark { display: none; }
+  }
+
+  /* 3. TRUST STRIP - as featured in */
+  .trust { padding: var(--space-5) 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); background: var(--bg-elevated); }
+  .trust-row { display: flex; align-items: center; gap: var(--space-5); flex-wrap: wrap; justify-content: space-between; }
+  .trust-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--text-dim);
+  }
+  .trust-logos { display: flex; gap: var(--space-5); flex-wrap: wrap; align-items: center; }
+  .trust-logo { font-family: var(--font-display); font-style: italic; font-size: 1.3rem; color: var(--text-dim); font-weight: 600; }
+
+  /* 4. PAIN - empathy block */
+  .pain { padding: var(--space-8) 0; }
+  .pain-head { max-width: 760px; margin-bottom: var(--space-6); }
+  .pain-head h2 em { font-style: italic; color: var(--accent); }
+  .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+  .pain-card {
+    background: var(--paper); padding: var(--space-5);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--hairline);
+  }
+  .pain-card-num {
+    font-family: var(--font-display); font-style: italic;
+    font-size: 1.8rem; color: var(--accent); margin-bottom: var(--space-2);
+  }
+  .pain-card h3 { margin-bottom: var(--space-2); font-size: 1.2rem; }
+  .pain-card p { color: var(--text-dim); font-size: 15px; }
+  @media (max-width: 860px) { .pain-grid { grid-template-columns: 1fr; } }
+
+  /* 5. BEFORE / AFTER - sensory contrast */
+  .ba { padding: var(--space-8) 0; }
+  .ba-head { text-align: left; max-width: 720px; margin-bottom: var(--space-6); }
+  .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: var(--radius-lg); overflow: hidden; }
+  .ba-col { padding: var(--space-6); }
+  .ba-before { background: var(--bg-dark); color: var(--paper); }
+  .ba-after { background: var(--accent-soft); color: var(--ink); }
+  .ba-tag {
+    display: inline-block; padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: var(--space-3); font-weight: 600;
+  }
+  .ba-before .ba-tag { background: rgba(255,255,255,0.08); color: var(--paper); }
+  .ba-after .ba-tag { background: var(--accent); color: var(--paper); }
+  .ba-col h3 { color: inherit; margin-bottom: var(--space-3); font-size: 1.5rem; }
+  .ba-before h3 { color: var(--paper); }
+  .ba-list { list-style: none; }
+  .ba-list li { padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 12px; font-size: 15px; }
+  .ba-after .ba-list li { border-color: rgba(26,24,22,0.12); }
+  .ba-list li:first-child { border-top: none; }
+  .ba-mark { flex-shrink: 0; font-family: var(--font-display); font-style: italic; }
+  @media (max-width: 860px) { .ba-grid { grid-template-columns: 1fr; } }
+
+  /* 6. MECHANISM */
+  .mech { padding: var(--space-8) 0; background: var(--bg-elevated); }
+  .mech-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--space-7); align-items: center; }
+  .mech h2 em { font-style: italic; color: var(--accent); }
+  .mech-lede { color: var(--text-dim); margin-top: var(--space-3); font-size: 1.05rem; }
+  .mech-steps { display: flex; flex-direction: column; gap: var(--space-3); }
+  .mech-step {
+    display: grid; grid-template-columns: 60px 1fr; gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--paper);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--hairline);
+  }
+  .mech-step-num {
+    font-family: var(--font-display); font-style: italic;
+    font-size: 2rem; color: var(--accent); line-height: 1;
+  }
+  .mech-step h4 { margin-bottom: 6px; font-family: var(--font-body); font-weight: 700; font-size: 1.05rem; color: var(--ink); }
+  .mech-step p { font-size: 14px; color: var(--text-dim); }
+  @media (max-width: 860px) { .mech-grid { grid-template-columns: 1fr; } }
+
+  /* 7. BENEFITS */
+  .ben { padding: var(--space-8) 0; }
+  .ben-head { max-width: 720px; margin-bottom: var(--space-6); }
+  .ben-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+  .ben-item {
+    display: flex; gap: var(--space-3); padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--hairline);
+    background: var(--paper);
+  }
+  .ben-check {
+    flex-shrink: 0; width: 36px; height: 36px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px;
+  }
+  .ben-item h4 { margin-bottom: 4px; font-family: var(--font-body); font-weight: 700; color: var(--ink); }
+  .ben-item p { font-size: 14px; color: var(--text-dim); }
+  @media (max-width: 860px) { .ben-grid { grid-template-columns: 1fr; } }
+
+  /* 8. OFFER STACK */
+  .offer { padding: var(--space-8) 0; background: var(--bg-dark); color: var(--paper); }
+  .offer h2, .offer h3, .offer h4 { color: var(--paper); }
+  .offer .eyebrow { color: var(--accent); }
+  .offer-head { max-width: 720px; margin-bottom: var(--space-6); }
+  .offer-head p { color: rgba(251,248,242,0.7); margin-top: var(--space-3); font-size: 1.05rem; }
+  .offer-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+  .offer-title-row { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-5); padding-bottom: var(--space-4); border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .offer-name { font-family: var(--font-display); font-size: 1.8rem; }
+  .offer-name em { font-style: italic; color: var(--accent); }
+  .offer-tier { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(251,248,242,0.5); }
+  .offer-items { display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-5); }
+  .offer-item { display: grid; grid-template-columns: 1fr auto; gap: var(--space-3); align-items: start; padding: var(--space-3) 0; border-bottom: 1px dashed rgba(255,255,255,0.1); }
+  .offer-item:last-child { border-bottom: none; }
+  .offer-item h4 { font-family: var(--font-body); font-weight: 600; margin-bottom: 4px; font-size: 1rem; }
+  .offer-item p { font-size: 14px; color: rgba(251,248,242,0.6); }
+  .offer-value {
+    padding: 4px 12px; background: rgba(200,117,74,0.15); color: var(--accent);
+    border-radius: var(--radius-pill); font-size: 12px; font-weight: 600; white-space: nowrap;
+  }
+  .offer-totals { display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-4); border-top: 1px solid rgba(255,255,255,0.12); margin-bottom: var(--space-4); }
+  .offer-total-label { font-size: 13px; color: rgba(251,248,242,0.6); letter-spacing: 0.06em; }
+  .offer-total-num { font-family: var(--font-display); font-size: 1.4rem; }
+  .offer-invest {
+    background: var(--accent); color: var(--ink);
+    padding: var(--space-4); border-radius: var(--radius-md);
+    text-align: center;
+  }
+  .offer-invest-label { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.7; }
+  .offer-invest-num { font-family: var(--font-display); font-size: 2.4rem; font-weight: 600; margin: 6px 0 14px; }
+  .offer-invest .btn { background: var(--ink); color: var(--paper); }
+  .offer-invest .btn:hover { background: var(--paper); color: var(--ink); }
+
+  /* 9. MID CTA */
+  .mid-cta { padding: var(--space-7) 0; background: var(--bg-elevated); text-align: center; }
+  .mid-cta h2 { max-width: 720px; margin: 0 auto var(--space-3); }
+  .mid-cta h2 em { font-style: italic; color: var(--accent); }
+  .mid-cta p { color: var(--text-dim); max-width: 560px; margin: 0 auto var(--space-4); }
+
+  /* 10. SOCIAL PROOF - magazine asymmetric */
+  .social { padding: var(--space-8) 0; }
+  .social-head { max-width: 720px; margin-bottom: var(--space-6); }
+  .social-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-4); }
+  .social-grid-right { display: grid; gap: var(--space-4); }
+  .testi {
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--hairline);
+    background: var(--paper);
+    display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 280px;
+  }
+  .testi-featured { background: var(--bg-dark); color: var(--paper); min-height: 100%; padding: var(--space-6); }
+  .testi-quote { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.35; color: inherit; margin-bottom: var(--space-4); }
+  .testi-featured .testi-quote { font-size: 1.9rem; }
+  .testi-quote em { font-style: italic; color: var(--accent); }
+  .testi-meta { display: flex; align-items: center; gap: 14px; }
+  .testi-meta img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+  .testi-meta-name { font-weight: 700; color: inherit; font-size: 15px; }
+  .testi-meta-role { font-size: 13px; color: inherit; opacity: 0.65; }
+  .testi-metric {
+    display: inline-block; padding: 4px 12px;
+    background: var(--accent-soft); color: var(--accent);
+    border-radius: var(--radius-pill);
+    font-size: 12px; font-weight: 700; margin-bottom: var(--space-3);
+  }
+  .testi-featured .testi-metric { background: rgba(200,117,74,0.2); color: var(--accent); }
+  @media (max-width: 860px) { .social-grid { grid-template-columns: 1fr; } }
+
+  /* 11. BONUS STACK */
+  .bonus { padding: var(--space-8) 0; background: var(--bg-elevated); }
+  .bonus-head { max-width: 720px; margin-bottom: var(--space-6); }
+  .bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  .bonus-card {
+    position: relative;
+    padding: var(--space-6); padding-top: var(--space-7);
+    background: var(--paper);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--hairline);
+    overflow: hidden;
+  }
+  .bonus-ghost {
+    position: absolute; top: -20px; right: 10px;
+    font-family: var(--font-display); font-style: italic;
+    font-size: 9rem; font-weight: 600;
+    color: var(--bg-elevated);
+    line-height: 1; pointer-events: none; z-index: 0;
+  }
+  .bonus-card > * { position: relative; z-index: 1; }
+  .bonus-tag {
+    display: inline-block; padding: 5px 12px;
+    background: var(--accent); color: var(--paper);
+    border-radius: var(--radius-pill);
+    font-size: 11px; letter-spacing: 0.14em; font-weight: 700; text-transform: uppercase;
+    margin-bottom: var(--space-3);
+  }
+  .bonus-card h3 { font-size: 1.4rem; margin-bottom: var(--space-2); }
+  .bonus-card p { color: var(--text-dim); font-size: 15px; margin-bottom: var(--space-3); }
+  .bonus-value { font-family: var(--font-display); font-style: italic; color: var(--accent); font-size: 1.1rem; font-weight: 600; }
+  @media (max-width: 860px) { .bonus-grid { grid-template-columns: 1fr; } }
+
+  /* 12. GUARANTEE + FAQ + URGENCY */
+  .close-section { padding: var(--space-8) 0; }
+  .guarantee {
+    display: grid; grid-template-columns: 100px 1fr; gap: var(--space-4);
+    padding: var(--space-5);
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-7);
+  }
+  .guarantee-seal {
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: 11px;
+    text-align: center; padding: 8px;
+  }
+  .guarantee-seal strong { font-size: 1.6rem; font-style: normal; font-weight: 600; line-height: 1; }
+  .guarantee h3 { margin-bottom: 8px; font-size: 1.3rem; }
+  .guarantee p { color: var(--text-dim); font-size: 15px; }
+
+  .faq-head { max-width: 720px; margin-bottom: var(--space-5); }
+  .faq-list { display: flex; flex-direction: column; gap: 10px; }
+  .faq-item {
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    background: var(--paper);
+    overflow: hidden;
+  }
+  .faq-item summary {
+    list-style: none; cursor: pointer;
+    padding: var(--space-4);
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: 1.05rem;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: "+"; font-size: 1.5rem; color: var(--accent); transition: transform .25s var(--ease-out); }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item-body { padding: 0 var(--space-4) var(--space-4); color: var(--text-dim); font-size: 15px; }
+
+  /* URGENCY CLOSE */
+  .urgency { padding: var(--space-8) 0 var(--space-7); background: var(--bg-dark); color: var(--paper); text-align: center; }
+  .urgency .eyebrow { color: var(--accent); }
+  .urgency h2 { color: var(--paper); max-width: 760px; margin: 0 auto var(--space-3); }
+  .urgency h2 em { font-style: italic; color: var(--accent); }
+  .urgency p { color: rgba(251,248,242,0.7); max-width: 560px; margin: 0 auto var(--space-4); }
+  .urgency-note { font-size: 13px; color: rgba(251,248,242,0.5); margin-top: var(--space-3); }
+  .urgency .btn-primary { background: var(--accent); color: var(--ink); }
+  .urgency .btn-primary:hover { background: var(--paper); }
+
+  /* FOOTER */
+  footer { padding: var(--space-6) 0 var(--space-5); background: var(--bg-dark); color: rgba(251,248,242,0.6); border-top: 1px solid rgba(255,255,255,0.06); font-size: 14px; }
+  footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); }
+
+  /* reveal */
+  .reveal { opacity: 0.1; transform: translateY(20px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav class="nav container">
+    <a class="logo" href="#">Whitfield <em>&</em> Co.</a>
+    <div class="nav-links">
+      <a href="#mechanism">Method</a>
+      <a href="#offer">The Intensive</a>
+      <a href="#results">Client Results</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="btn btn-primary" href="#apply">Apply <span class="arrow">&rarr;</span></a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">1:1 Coaching for Founders</p>
+        <h1>Stop trading hours for the same <em>revenue ceiling</em> you hit three years ago.</h1>
+        <p class="lede">A 90-day private intensive for founders running $500K-$3M businesses who are working 60-hour weeks for 20% margin and watching peers scale past them with no idea how.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#apply">Apply for a strategy call <span class="arrow">&rarr;</span></a>
+          <a class="btn btn-ghost" href="#mechanism">See the method</a>
+        </div>
+        <div class="hero-proof">
+          <div class="hero-proof-avatars">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=88&h=88&fit=crop&crop=face" alt="Past client portrait" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=88&h=88&fit=crop&crop=face" alt="Past client portrait" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=88&h=88&fit=crop&crop=face" alt="Past client portrait" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=88&h=88&fit=crop&crop=face" alt="Past client portrait" loading="lazy">
+          </div>
+          <div class="hero-proof-text"><strong>140+ founders coached</strong><br>across SaaS, agency, and ecom.</div>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <span class="hero-bg-mark" aria-hidden="true">&</span>
+        <img class="hero-photo" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80&fit=crop" alt="Coach Eleanor Whitfield at her studio desk" loading="eager">
+        <div class="hero-stat-card">
+          <div class="hero-stat-num"><em>2.4x</em></div>
+          <div class="hero-stat-label">AVG REVENUE LIFT IN 12 MO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST STRIP -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-row">
+      <span class="trust-label">As Featured In</span>
+      <div class="trust-logos">
+        <span class="trust-logo">Forbes</span>
+        <span class="trust-logo">Inc.</span>
+        <span class="trust-logo">Entrepreneur</span>
+        <span class="trust-logo">Fast Company</span>
+        <span class="trust-logo">The Knowledge Project</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PAIN -->
+<section class="pain reveal">
+  <div class="container">
+    <div class="pain-head">
+      <p class="eyebrow">Where You Probably Are</p>
+      <h2>If you've built something real but it now <em>runs you</em>, you're not alone.</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-card-num">01</div>
+        <h3>Stuck at the same ceiling three years running</h3>
+        <p>Revenue plateaus at the same number every year. You've tried hiring, new offers, new channels. Nothing breaks through.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card-num">02</div>
+        <h3>Working 60-hour weeks for 20% margin</h3>
+        <p>The business depends on you for every decision. You can't take a Friday off without something quietly breaking.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-card-num">03</div>
+        <h3>Watching peers scale past you</h3>
+        <p>People who started after you are doing 4x your numbers. You can't tell if they got lucky, got bold, or got a coach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. BEFORE / AFTER -->
+<section class="ba reveal">
+  <div class="container">
+    <div class="ba-head">
+      <p class="eyebrow">The 90-Day Shift</p>
+      <h2>What changes when you stop being the bottleneck.</h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-col ba-before">
+        <span class="ba-tag">Before</span>
+        <h3>Founder-as-everything</h3>
+        <ul class="ba-list">
+          <li><span class="ba-mark">&times;</span> Every decision routes through you, slowing the team.</li>
+          <li><span class="ba-mark">&times;</span> Revenue flatlines because you can't scale your own hours.</li>
+          <li><span class="ba-mark">&times;</span> Strategic work gets pushed to weekends, every week.</li>
+          <li><span class="ba-mark">&times;</span> You keep solving the same five problems on rotation.</li>
+        </ul>
+      </div>
+      <div class="ba-col ba-after">
+        <span class="ba-tag">After</span>
+        <h3>Founder-as-architect</h3>
+        <ul class="ba-list">
+          <li><span class="ba-mark">&check;</span> Operating system makes 80% of decisions without you.</li>
+          <li><span class="ba-mark">&check;</span> Revenue scales because the team owns the engine, not you.</li>
+          <li><span class="ba-mark">&check;</span> You spend Mondays on strategy, not on Slack triage.</li>
+          <li><span class="ba-mark">&check;</span> Problems get solved at the system layer and stay solved.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. MECHANISM -->
+<section class="mech reveal" id="mechanism">
+  <div class="container">
+    <div class="mech-grid">
+      <div>
+        <p class="eyebrow">The Method</p>
+        <h2>Why we ditched the <em>standard coaching playbook</em>.</h2>
+        <p class="mech-lede">Most coaching is generic frameworks delivered on weekly calls. The Whitfield Operator Method is the opposite. We start with your live numbers, find the actual constraint, and rebuild the operating layer around it. No worksheets. No homework. No "what's your why" sessions.</p>
+      </div>
+      <div class="mech-steps">
+        <div class="mech-step">
+          <div class="mech-step-num">01</div>
+          <div>
+            <h4>Diagnose the actual constraint</h4>
+            <p>We audit your last 4 quarters of revenue, ops, and team data. The bottleneck is rarely what you think it is.</p>
+          </div>
+        </div>
+        <div class="mech-step">
+          <div class="mech-step-num">02</div>
+          <div>
+            <h4>Rebuild the operating layer</h4>
+            <p>We design the decision systems, dashboards, and accountability structures that let the team run without you.</p>
+          </div>
+        </div>
+        <div class="mech-step">
+          <div class="mech-step-num">03</div>
+          <div>
+            <h4>Recalibrate every 30 days</h4>
+            <p>Quarterly recalibration calls keep the system honest as the business compounds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. BENEFITS -->
+<section class="ben reveal">
+  <div class="container">
+    <div class="ben-head">
+      <p class="eyebrow">What You Walk Away With</p>
+      <h2>Specific shifts, measured in real money and reclaimed hours.</h2>
+    </div>
+    <div class="ben-grid">
+      <div class="ben-item">
+        <div class="ben-check">&check;</div>
+        <div>
+          <h4>A documented operating system</h4>
+          <p>Your business runs on visible systems, not on your memory.</p>
+        </div>
+      </div>
+      <div class="ben-item">
+        <div class="ben-check">&check;</div>
+        <div>
+          <h4>15-20 hours back per week</h4>
+          <p>Measured by time tracking, not by vibe.</p>
+        </div>
+      </div>
+      <div class="ben-item">
+        <div class="ben-check">&check;</div>
+        <div>
+          <h4>A 90-day revenue plan tied to capacity</h4>
+          <p>You stop selling what you can't deliver without burning out.</p>
+        </div>
+      </div>
+      <div class="ben-item">
+        <div class="ben-check">&check;</div>
+        <div>
+          <h4>A leadership team that owns outcomes</h4>
+          <p>Direct reports stop bringing you problems and start bringing decisions.</p>
+        </div>
+      </div>
+      <div class="ben-item">
+        <div class="ben-check">&check;</div>
+        <div>
+          <h4>Pricing built on transformation, not time</h4>
+          <p>Margin doubles because you stop billing your worst asset: hours.</p>
+        </div>
+      </div>
+      <div class="ben-item">
+        <div class="ben-check">&check;</div>
+        <div>
+          <h4>A peer bench you actually call</h4>
+          <p>Quiet access to 14 other operators who've been where you are.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. OFFER -->
+<section class="offer reveal" id="offer">
+  <div class="container-narrow">
+    <div class="offer-head">
+      <p class="eyebrow">The Intensive</p>
+      <h2>The Whitfield 90-Day Operator Intensive.</h2>
+      <p>A private 1:1 engagement. Twelve weeks. Two strategic calls per month. Voxer access between calls. One custom operating plan built around your numbers.</p>
+    </div>
+    <div class="offer-card">
+      <div class="offer-title-row">
+        <span class="offer-name">The <em>Operator</em> Intensive</span>
+        <span class="offer-tier">90 days &middot; 1:1 only</span>
+      </div>
+      <div class="offer-items">
+        <div class="offer-item">
+          <div>
+            <h4>Six 90-minute private strategy calls</h4>
+            <p>Twice monthly. Working sessions, not coaching theater.</p>
+          </div>
+          <span class="offer-value">$9,000 value</span>
+        </div>
+        <div class="offer-item">
+          <div>
+            <h4>Voxer access Monday-Friday</h4>
+            <p>Real-time decision support when something breaks.</p>
+          </div>
+          <span class="offer-value">$4,500 value</span>
+        </div>
+        <div class="offer-item">
+          <div>
+            <h4>Custom operating plan built around your numbers</h4>
+            <p>Not a template. A document built from your P&L and team chart.</p>
+          </div>
+          <span class="offer-value">$3,500 value</span>
+        </div>
+        <div class="offer-item">
+          <div>
+            <h4>Quarterly recalibration call (12 months)</h4>
+            <p>Four follow-up calls after the intensive ends, free.</p>
+          </div>
+          <span class="offer-value">$2,000 value</span>
+        </div>
+        <div class="offer-item">
+          <div>
+            <h4>Private peer bench introduction</h4>
+            <p>Curated intros to 3 alumni operators in your stage.</p>
+          </div>
+          <span class="offer-value">$1,500 value</span>
+        </div>
+      </div>
+      <div class="offer-totals">
+        <span class="offer-total-label">TOTAL VALUE</span>
+        <span class="offer-total-num">$20,500</span>
+      </div>
+      <div class="offer-invest">
+        <div class="offer-invest-label">Your Investment</div>
+        <div class="offer-invest-num">$12,000</div>
+        <a class="btn btn-primary" href="#apply">Apply for a strategy call <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. MID CTA -->
+<section class="mid-cta reveal">
+  <div class="container">
+    <p class="eyebrow">First Step</p>
+    <h2>Start with one <em>honest conversation</em>.</h2>
+    <p>A 30-minute strategy call. We look at where you are, where the constraint actually is, and whether this intensive is right for you. Zero pressure.</p>
+    <a class="btn btn-primary" href="#apply">Book your strategy call <span class="arrow">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- 10. SOCIAL PROOF -->
+<section class="social reveal" id="results">
+  <div class="container">
+    <div class="social-head">
+      <p class="eyebrow">Client Results</p>
+      <h2>Founders who stopped trading hours for revenue.</h2>
+    </div>
+    <div class="social-grid">
+      <div class="testi testi-featured">
+        <div>
+          <span class="testi-metric">$340K &rarr; $880K in 11 months</span>
+          <p class="testi-quote">"I came in thinking I had a marketing problem. Eleanor showed me in week one I had a <em>delegation problem</em> that was masquerading as a marketing problem. We rebuilt the team layer and revenue more than doubled without me adding hours."</p>
+        </div>
+        <div class="testi-meta">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&crop=face" alt="Marcus Tanaka portrait" loading="lazy">
+          <div>
+            <div class="testi-meta-name">Marcus Tanaka</div>
+            <div class="testi-meta-role">Founder, B2B SaaS (12 staff)</div>
+          </div>
+        </div>
+      </div>
+      <div class="social-grid-right">
+        <div class="testi">
+          <div>
+            <span class="testi-metric">Reclaimed 22 hrs/week</span>
+            <p class="testi-quote">"I haven't worked a weekend in four months. The revenue is up 38% in the same window."</p>
+          </div>
+          <div class="testi-meta">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=96&h=96&fit=crop&crop=face" alt="Priya Sharma portrait" loading="lazy">
+            <div>
+              <div class="testi-meta-name">Priya Sharma</div>
+              <div class="testi-meta-role">Agency owner, 8 staff</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi">
+          <div>
+            <span class="testi-metric">Margin: 19% &rarr; 41%</span>
+            <p class="testi-quote">"We repriced everything in month two. Cost us two clients. Made up the revenue in five weeks with the remaining clients paying more."</p>
+          </div>
+          <div class="testi-meta">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face" alt="James Okafor portrait" loading="lazy">
+            <div>
+              <div class="testi-meta-name">James Okafor</div>
+              <div class="testi-meta-role">Founder, e-commerce (DTC)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. BONUS STACK -->
+<section class="bonus reveal">
+  <div class="container">
+    <div class="bonus-head">
+      <p class="eyebrow">Included Bonuses</p>
+      <h2>Two extras nobody else throws in.</h2>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <span class="bonus-ghost" aria-hidden="true">01</span>
+        <span class="bonus-tag">Bonus One</span>
+        <h3>The Operator Library</h3>
+        <p>Every template, dashboard, and decision tree we use with clients. SOPs for hiring, firing, repricing, and weekly leadership rhythm. Lifetime access.</p>
+        <div class="bonus-value">Value: $1,800</div>
+      </div>
+      <div class="bonus-card">
+        <span class="bonus-ghost" aria-hidden="true">02</span>
+        <span class="bonus-tag">Bonus Two</span>
+        <h3>One-day on-site (optional)</h3>
+        <p>If you want to fly Eleanor to your office for a full team working day, it's included at cost. No coaching fee on top. Used by 4 of the last 12 clients.</p>
+        <div class="bonus-value">Value: $4,500 + travel</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. CLOSE - guarantee + faq + urgency -->
+<section class="close-section reveal" id="faq">
+  <div class="container-narrow">
+    <div class="guarantee">
+      <div class="guarantee-seal">
+        <strong>30</strong>
+        DAY EXIT
+      </div>
+      <div>
+        <h3>The 30-day honest exit.</h3>
+        <p>If after the first 30 days you don't have a clearer view of the constraint and a working plan to attack it, you can step out and get the unused portion back. No friction. No survey. No call to retain you.</p>
+      </div>
+    </div>
+
+    <div class="faq-head">
+      <p class="eyebrow">FAQ</p>
+      <h2>The questions every founder asks on call one.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Is this group coaching or 1:1?</summary>
+        <div class="faq-item-body">1:1 only. There is no group cohort, no group calls, and no shared community. The peer bench introductions are direct, not a Slack.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What revenue range do you work with?</summary>
+        <div class="faq-item-body">$500K to roughly $3M ARR. Below that, the constraint is usually offer or acquisition, which is a different specialty. Above $3M, you usually need an operator hire, not a coach.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How much time does this take from me per week?</summary>
+        <div class="faq-item-body">Two 90-minute calls per month. Voxer is asynchronous - reply when you can. Most clients spend 3-4 hours total on the work per week, including implementation.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Do you guarantee a revenue outcome?</summary>
+        <div class="faq-item-body">No. Anyone who guarantees a specific revenue number in coaching is lying to you. We guarantee the work, the framework, and the 30-day exit if it isn't a fit.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What if I'm not actually stuck - I just want to scale faster?</summary>
+        <div class="faq-item-body">Then this probably isn't the right fit. The Operator Intensive is built for founders hitting a ceiling. If the business is already compounding, your bottleneck is somewhere else.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY CLOSE -->
+<section class="urgency" id="apply">
+  <div class="container-narrow">
+    <p class="eyebrow">Apply Now</p>
+    <h2>Four <em>1:1 slots</em> open for the spring cohort.</h2>
+    <p>The intensive is capped at six active clients at any time. Spring openings close once filled. Application takes about 6 minutes.</p>
+    <a class="btn btn-primary" href="#">Apply for a strategy call <span class="arrow">&rarr;</span></a>
+    <p class="urgency-note">Applications reviewed within 48 hours. Strategy calls scheduled for fit, not for closing.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>&copy; 2026 Whitfield & Co. Coaching. All rights reserved.</div>
+    <div>Built for founders who'd rather build the system than be the system.</div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  (function(){
+    if (typeof gsap === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    // hero load
+    gsap.from(".hero h1", { y: 24, opacity: 0.1, duration: 1.1, ease: "power3.out" });
+    gsap.from(".hero .lede, .hero-ctas, .hero-proof", { y: 16, opacity: 0.1, duration: 0.9, stagger: 0.12, delay: 0.25, ease: "power2.out" });
+    gsap.from(".hero-photo", { scale: 0.96, duration: 1.3, ease: "power3.out" });
+    gsap.from(".hero-stat-card", { y: 30, opacity: 0.1, duration: 0.9, delay: 0.6, ease: "power3.out" });
+
+    // reveal sections on scroll
+    document.querySelectorAll(".reveal").forEach(function(el){
+      ScrollTrigger.create({
+        trigger: el, start: "top 82%", once: true,
+        onEnter: function(){ el.classList.add("in"); }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

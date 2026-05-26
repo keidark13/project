@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Halo Dental Co. - Digital-first cosmetic and implant dentistry</title>
+<meta name="description" content="A boutique dental practice rebuilt around digital scanning, same-day planning, and single-visit placement. Implants, cosmetic, and digital workflows for adults who want fewer appointments and better outcomes." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" />
+
+<style>
+  /* ------------ Tokens ------------ */
+  :root {
+    --bg: #0A0A0A;
+    --bg-elevated: #141414;
+    --bg-dark: #050505;
+    --text: #FAFAFA;
+    --text-dim: #A8A8A8;
+    --text-faint: #6B6B6B;
+    --border: #2A2A2A;
+    --accent: #1082EC;        /* primary electric blue */
+    --accent-warm: #FF5E2B;   /* secondary, single-word highlights + main CTA only */
+
+    --font-display: "Geist", system-ui, sans-serif;
+    --font-body: "DM Sans", system-ui, sans-serif;
+
+    --space-1: 6px;
+    --space-2: 12px;
+    --space-3: 20px;
+    --space-4: 32px;
+    --space-5: 56px;
+    --space-6: 96px;
+    --space-7: 140px;
+
+    --radius-1: 6px;
+    --radius-2: 12px;
+    --radius-3: 20px;
+    --radius-pill: 999px;
+
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+
+  /* ------------ Reset ------------ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+  /* Focus state - Emil polish */
+  a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: var(--radius-1);
+  }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  /* ------------ Typography ------------ */
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.05;
+    color: var(--text);
+  }
+  h1 { font-size: clamp(48px, 7.2vw, 96px); letter-spacing: -0.02em; font-weight: 600; }
+  h2 { font-size: clamp(32px, 4.4vw, 56px); letter-spacing: -0.015em; font-weight: 500; }
+  h3 { font-size: clamp(20px, 1.6vw, 24px); letter-spacing: -0.01em; font-weight: 500; }
+  h4 { font-size: 16px; font-weight: 500; }
+  p  { color: var(--text-dim); }
+
+  .container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ------------ Eyebrow (square mark) ------------ */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  .text-accent { color: var(--accent-warm); font-style: normal; }
+
+  /* ------------ Buttons ------------ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 26px;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-display);
+    font-size: 14.5px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    transition: transform 120ms var(--ease), background 120ms var(--ease), color 120ms var(--ease);
+    white-space: nowrap;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { transform: translateY(-1px); background: #2792f7; }
+  .btn-warm { background: var(--accent-warm); color: #fff; }
+  .btn-warm:hover { transform: translateY(-1px); background: #ff7349; }
+  .btn-ghost {
+    border: 1px solid var(--border);
+    color: var(--text);
+    background: transparent;
+  }
+  .btn-ghost:hover { background: var(--bg-elevated); border-color: #3a3a3a; }
+  .btn .arrow {
+    width: 14px; height: 14px;
+    display: inline-block;
+    transition: transform 120ms var(--ease);
+  }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  /* ------------ Nav ------------ */
+  .nav {
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 10px 12px 10px 22px;
+    background: rgba(20, 20, 20, 0.78);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    transition: top 200ms var(--ease);
+  }
+  .nav__logo {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .nav__logo::before {
+    content: "";
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .nav__links { display: flex; gap: 22px; }
+  .nav__links a {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    transition: color 120ms var(--ease);
+  }
+  .nav__links a:hover { color: var(--text); }
+  .nav__cta {
+    background: var(--accent-warm);
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 120ms var(--ease);
+  }
+  .nav__cta:hover { background: #ff7349; color: #fff; }
+
+  @media (max-width: 860px) {
+    .nav { gap: 12px; padding: 8px 10px 8px 18px; }
+    .nav__links { display: none; }
+  }
+
+  /* ------------ Hero ------------ */
+  .hero {
+    position: relative;
+    min-height: 100dvh;
+    padding: 160px 0 80px;
+    overflow: hidden;
+    background: var(--bg-dark);
+    isolation: isolate;
+  }
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+  .hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    filter: grayscale(20%) contrast(105%);
+  }
+  .hero__bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(10,10,10,0.4) 0%, rgba(5,5,5,0.95) 80%),
+      linear-gradient(to bottom, rgba(10,10,10,0.6), rgba(5,5,5,0.85) 100%);
+  }
+  .hero .container { position: relative; z-index: 2; }
+
+  .hero__eyebrow { margin-bottom: 28px; }
+  .hero h1 {
+    max-width: 14ch;
+    margin-bottom: 30px;
+  }
+  .hero h1 .letter { display: inline-block; }
+  .hero__sub {
+    max-width: 56ch;
+    font-size: clamp(16px, 1.4vw, 19px);
+    color: var(--text-dim);
+    line-height: 1.55;
+    margin-bottom: 44px;
+  }
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 88px;
+  }
+  .hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 720px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+  }
+  .hero__stat-num {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .hero__stat-num .text-accent { color: var(--accent-warm); }
+  .hero__stat-label {
+    font-size: 13px;
+    color: var(--text-faint);
+    line-height: 1.4;
+  }
+
+  @media (max-width: 860px) {
+    .hero { padding: 130px 0 60px; }
+    .hero__stats { grid-template-columns: 1fr; gap: 22px; padding-top: 28px; }
+    .hero__cta { margin-bottom: 56px; }
+  }
+
+  /* ------------ Trusted strip ------------ */
+  .trusted {
+    padding: 70px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .trusted__label {
+    text-align: center;
+    color: var(--text-faint);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+  .trusted__row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    gap: 36px;
+  }
+  .trusted__logo {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    color: var(--text-dim);
+    text-align: center;
+    opacity: 0.7;
+    transition: opacity 150ms var(--ease);
+  }
+  .trusted__logo:hover { opacity: 1; }
+  .trusted__logo span { color: var(--text-faint); font-weight: 400; }
+  @media (max-width: 860px) {
+    .trusted__row { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  }
+
+  /* ------------ Section base ------------ */
+  section { padding: var(--space-7) 0; }
+  .section-head { margin-bottom: var(--space-5); max-width: 760px; }
+  .section-head .eyebrow { margin-bottom: 20px; }
+  .section-head p { margin-top: 18px; max-width: 56ch; font-size: 17px; }
+
+  /* ------------ Pain (Empathy) cards ------------ */
+  .pain { background: var(--bg); }
+  .pain__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .pain__card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-3);
+    padding: 36px 30px;
+    transition: transform 180ms var(--ease), border-color 180ms var(--ease), background 180ms var(--ease);
+  }
+  .pain__card:hover {
+    transform: translateY(-4px);
+    border-color: #383838;
+    background: #1a1a1a;
+  }
+  .pain__card .num {
+    font-family: var(--font-display);
+    font-size: 12px;
+    color: var(--text-faint);
+    letter-spacing: 0.16em;
+    margin-bottom: 28px;
+    display: block;
+  }
+  .pain__card h3 { margin-bottom: 14px; }
+  .pain__card p { font-size: 15px; line-height: 1.6; }
+  @media (max-width: 860px) {
+    .pain__grid { grid-template-columns: 1fr; }
+  }
+
+  /* ------------ Before / After ------------ */
+  .ba { background: var(--bg-dark); }
+  .ba__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-3);
+    overflow: hidden;
+  }
+  .ba__col {
+    padding: 56px 48px;
+  }
+  .ba__col--before { background: #0c0c0c; border-right: 1px solid var(--border); }
+  .ba__col--after { background: var(--bg-elevated); }
+  .ba__tag {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+    margin-bottom: 24px;
+  }
+  .ba__tag--before { color: #FF5555; border: 1px solid rgba(255,85,85,0.3); }
+  .ba__tag--after { color: var(--accent-warm); border: 1px solid rgba(255,94,43,0.35); }
+  .ba__col h3 { margin-bottom: 24px; max-width: 24ch; line-height: 1.15; }
+  .ba__list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .ba__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15.5px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+  .ba__icon {
+    flex-shrink: 0;
+    margin-top: 3px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ba__icon--x { color: #FF5555; }
+  .ba__icon--y { color: var(--accent-warm); }
+  @media (max-width: 860px) {
+    .ba__grid { grid-template-columns: 1fr; }
+    .ba__col--before { border-right: none; border-bottom: 1px solid var(--border); }
+    .ba__col { padding: 40px 28px; }
+  }
+
+  /* ------------ Mechanism ------------ */
+  .mech { background: var(--bg); }
+  .mech__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    counter-reset: stepnum;
+  }
+  .mech__step {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-3);
+    padding: 40px 32px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 180ms var(--ease), border-color 180ms var(--ease);
+  }
+  .mech__step:hover { transform: translateY(-4px); border-color: #383838; }
+  .mech__num {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .mech__num::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .mech__step h3 { margin-bottom: 12px; font-size: 22px; }
+  .mech__step p { font-size: 15px; }
+  @media (max-width: 860px) {
+    .mech__steps { grid-template-columns: 1fr; }
+  }
+
+  /* ------------ Benefits ------------ */
+  .benefits { background: var(--bg-dark); }
+  .benefits__wrap { display: grid; grid-template-columns: 380px 1fr; gap: 80px; }
+  .benefits__list { display: flex; flex-direction: column; }
+  .benefit {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 22px;
+    align-items: flex-start;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .benefit:last-child { border-bottom: none; }
+  .benefit__check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  .benefit h3 { font-size: 20px; margin-bottom: 6px; }
+  .benefit p { font-size: 15px; }
+  @media (max-width: 860px) {
+    .benefits__wrap { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* ------------ Offer / Pricing ------------ */
+  .offer { background: var(--bg); }
+  .offer__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    align-items: stretch;
+  }
+  .offer__card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-3);
+    padding: 40px 32px 36px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 180ms var(--ease), border-color 180ms var(--ease);
+  }
+  .offer__card:hover { transform: translateY(-4px); border-color: #3a3a3a; }
+  .offer__card--featured {
+    background: color-mix(in srgb, var(--accent) 8%, var(--bg-elevated));
+    border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--border));
+    position: relative;
+  }
+  .offer__featured-tag {
+    position: absolute;
+    top: -12px;
+    left: 32px;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+  }
+  .offer__name {
+    font-family: var(--font-display);
+    font-size: 13px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .offer__price {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .offer__price-note {
+    font-size: 13px;
+    color: var(--text-faint);
+    margin-bottom: 28px;
+  }
+  .offer__sep {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 24px;
+  }
+  .offer__features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex: 1;
+  }
+  .offer__features li {
+    font-size: 14.5px;
+    color: var(--text-dim);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .offer__features li::before {
+    content: "+";
+    color: var(--accent);
+    font-weight: 500;
+    margin-top: -1px;
+  }
+  .offer__cta {
+    width: 100%;
+    justify-content: center;
+  }
+  @media (max-width: 860px) {
+    .offer__grid { grid-template-columns: 1fr; }
+  }
+
+  /* ------------ Mid CTA band ------------ */
+  .midcta {
+    padding: 110px 0;
+    background: var(--bg-dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .midcta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(16,130,236,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .midcta__eyebrow { margin-bottom: 24px; }
+  .midcta h2 { max-width: 22ch; margin: 0 auto 30px; }
+  .midcta p { max-width: 50ch; margin: 0 auto 38px; font-size: 17px; }
+
+  /* ------------ Social proof ------------ */
+  .proof { background: var(--bg); }
+  .proof__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 18px;
+    min-height: 540px;
+  }
+  .proof__card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-3);
+    padding: 36px 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .proof__card--featured {
+    grid-row: 1 / 3;
+    background: linear-gradient(165deg, #1a1a1a 0%, #0c0c0c 100%);
+    border: 1px solid #303030;
+    padding: 44px 40px;
+  }
+  .proof__metric {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-warm);
+    background: rgba(255,94,43,0.08);
+    border: 1px solid rgba(255,94,43,0.2);
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+    align-self: flex-start;
+    margin-bottom: 24px;
+  }
+  .proof__quote {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1.3;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    margin-bottom: 28px;
+  }
+  .proof__card:not(.proof__card--featured) .proof__quote {
+    font-size: 17px;
+    line-height: 1.45;
+  }
+  .proof__author {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+  }
+  .proof__avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .proof__name { font-family: var(--font-display); font-size: 14.5px; font-weight: 500; }
+  .proof__role { font-size: 13px; color: var(--text-faint); margin-top: 2px; }
+
+  @media (max-width: 860px) {
+    .proof__grid { grid-template-columns: 1fr; grid-template-rows: auto; min-height: 0; }
+    .proof__card--featured { grid-row: auto; }
+  }
+
+  /* ------------ Bonus stack ------------ */
+  .bonus { background: var(--bg-dark); }
+  .bonus__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .bonus__card {
+    position: relative;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-3);
+    padding: 44px 36px;
+    overflow: hidden;
+    transition: transform 180ms var(--ease), border-color 180ms var(--ease);
+  }
+  .bonus__card:hover { transform: translateY(-4px); border-color: #3a3a3a; }
+  .bonus__ghost {
+    position: absolute;
+    top: -20px;
+    right: 18px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 200px;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,94,43,0.18);
+    pointer-events: none;
+    user-select: none;
+  }
+  .bonus__tag {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-warm);
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .bonus__card h3 { font-size: 24px; margin-bottom: 14px; position: relative; max-width: 22ch; }
+  .bonus__card p { font-size: 15px; max-width: 36ch; position: relative; }
+  .bonus__value {
+    display: inline-block;
+    margin-top: 22px;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    position: relative;
+  }
+  .bonus__value strike { color: var(--text-faint); text-decoration: line-through; margin-right: 6px; }
+  @media (max-width: 860px) {
+    .bonus__grid { grid-template-columns: 1fr; }
+  }
+
+  /* ------------ Guarantee + FAQ + close ------------ */
+  .close { background: var(--bg); padding-bottom: 80px; }
+  .guarantee {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-3);
+    padding: 48px 44px;
+    background: var(--bg-elevated);
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  .guarantee__seal {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--accent) 15%, var(--bg-dark));
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--accent);
+  }
+  .guarantee h3 { font-size: 24px; margin-bottom: 8px; }
+  .guarantee p { font-size: 15.5px; max-width: 60ch; }
+
+  .faq__head { margin-bottom: 48px; max-width: 700px; }
+  .faq__list { border-top: 1px solid var(--border); margin-bottom: 80px; }
+  details.faq__item {
+    border-bottom: 1px solid var(--border);
+    padding: 26px 4px;
+  }
+  details.faq__item summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    color: var(--text);
+  }
+  details.faq__item summary::-webkit-details-marker { display: none; }
+  details.faq__item .faq__icon {
+    width: 22px; height: 22px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+    color: var(--accent);
+    transition: transform 180ms var(--ease);
+  }
+  details[open] .faq__icon { transform: rotate(45deg); }
+  details.faq__item p {
+    margin-top: 16px;
+    font-size: 15.5px;
+    color: var(--text-dim);
+    max-width: 70ch;
+  }
+
+  /* Urgency */
+  .urgency {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 36px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-3);
+    margin-bottom: 32px;
+  }
+  .urgency__left {
+    display: flex; align-items: center; gap: 16px;
+  }
+  .urgency__dot {
+    width: 10px; height: 10px;
+    background: var(--accent-warm);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,94,43,0.18);
+    animation: pulse 2s var(--ease) infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(255,94,43,0.18); }
+    50%      { box-shadow: 0 0 0 8px rgba(255,94,43,0.06); }
+  }
+  .urgency__text {
+    font-family: var(--font-display);
+    font-size: 16px;
+    color: var(--text);
+  }
+  .urgency__text span { color: var(--text-dim); font-weight: 400; }
+
+  /* Footer */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 64px 0 40px;
+    background: var(--bg-dark);
+  }
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 56px;
+  }
+  .footer__logo {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 16px;
+  }
+  .footer__logo::before {
+    content: "";
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .footer__byline { font-size: 13.5px; color: var(--text-faint); max-width: 36ch; line-height: 1.5; }
+  .footer__col h4 {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer__col a { font-size: 14px; color: var(--text-dim); transition: color 120ms var(--ease); }
+  .footer__col a:hover { color: var(--text); }
+  .footer__bar {
+    display: flex; justify-content: space-between; gap: 18px;
+    padding-top: 28px; border-top: 1px solid var(--border);
+    font-size: 12.5px; color: var(--text-faint);
+  }
+  @media (max-width: 860px) {
+    .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer__bar { flex-direction: column; }
+  }
+
+  /* Reveal helper - uses transform/scale, never opacity:0 */
+  .reveal { will-change: transform; }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <a class="nav__logo" href="#hero">Halo Dental Co.</a>
+  <div class="nav__links">
+    <a href="#mechanism">Method</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a class="nav__cta" href="#pricing">Schedule a scan</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1600&q=80&fit=crop" alt="" />
+  </div>
+  <div class="container">
+    <span class="eyebrow hero__eyebrow">Dental, Reengineered</span>
+    <h1 id="heroH1">Your smile, <span class="text-accent">rebuilt</span> in fewer visits.</h1>
+    <p class="hero__sub">A boutique practice built around digital scanning, same-day planning, and single-visit placement. Skip the back-and-forth between specialists, the temporary crowns, and the treatment plans that change halfway through.</p>
+    <div class="hero__cta">
+      <a class="btn btn-primary" href="#pricing">
+        Schedule your digital scan
+        <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#mechanism">See the Halo-Method</a>
+    </div>
+    <div class="hero__stats">
+      <div>
+        <div class="hero__stat-num">98<span class="text-accent">%</span></div>
+        <div class="hero__stat-label">Patient retention across the last 4 years</div>
+      </div>
+      <div>
+        <div class="hero__stat-num">12<span style="font-size: 0.65em; color: var(--text-dim);">yr</span></div>
+        <div class="hero__stat-label">Median patient tenure with our lead clinician</div>
+      </div>
+      <div>
+        <div class="hero__stat-num">Same-<span class="text-accent">week</span></div>
+        <div class="hero__stat-label">Start dates for new implant and cosmetic cases</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TRUSTED STRIP ============ -->
+<section class="trusted" aria-label="Trusted by">
+  <div class="container">
+    <p class="trusted__label">Networks, partners, and lab credentials</p>
+    <div class="trusted__row">
+      <div class="trusted__logo">Delta Dental</div>
+      <div class="trusted__logo">Aetna<span> / PPO</span></div>
+      <div class="trusted__logo">iTero<span> Element 5D</span></div>
+      <div class="trusted__logo">Invisalign<span> Diamond+</span></div>
+      <div class="trusted__logo">ADA<span> Member</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EMPATHY / PAIN ============ -->
+<section class="pain" id="problem">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">The Problem</span>
+      <h2 class="reveal">The dental experience hasn't kept up with the rest of your life.</h2>
+      <p>You shouldn't need eight visits and three offices to fix one tooth. Most patients arrive here after one of these three exact frustrations.</p>
+    </div>
+    <div class="pain__grid">
+      <article class="pain__card reveal">
+        <span class="num">01</span>
+        <h3>Bouncing between three specialists</h3>
+        <p>Your general dentist refers you out. The implant surgeon refers you back. Your records sit in four portals and nothing lines up. The whole case takes nine months.</p>
+      </article>
+      <article class="pain__card reveal">
+        <span class="num">02</span>
+        <h3>Crowns that don't fit the first try</h3>
+        <p>You take half a day off work, get numb, sit through the prep, and the crown either feels high or pops off in two weeks. You're booked back in for a refit you weren't supposed to need.</p>
+      </article>
+      <article class="pain__card reveal">
+        <span class="num">03</span>
+        <h3>Treatment plans that change halfway through</h3>
+        <p>The original quote was $2,400. After scans, it's $4,800. After the first appointment, it's $6,200. By the time you reach the end of the plan, the trust is already gone.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section class="ba">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our Shift</span>
+      <h2 class="reveal">From multi-visit guesswork to single-visit precision.</h2>
+    </div>
+    <div class="ba__grid">
+      <div class="ba__col ba__col--before">
+        <span class="ba__tag ba__tag--before">Before / Traditional clinic</span>
+        <h3>Eight visits across nine months, with the bill rising each step.</h3>
+        <ul class="ba__list">
+          <li><span class="ba__icon ba__icon--x">x</span> Putty impressions, gag reflex, redo at least once</li>
+          <li><span class="ba__icon ba__icon--x">x</span> Temporary crowns for 3-6 weeks while the lab works</li>
+          <li><span class="ba__icon ba__icon--x">x</span> Three providers, three quotes, three opinions</li>
+          <li><span class="ba__icon ba__icon--x">x</span> Surprise charges added at each new appointment</li>
+          <li><span class="ba__icon ba__icon--x">x</span> No visibility into what the final result will look like</li>
+        </ul>
+      </div>
+      <div class="ba__col ba__col--after">
+        <span class="ba__tag ba__tag--after">After / Halo Dental Co.</span>
+        <h3>One scan, one plan, one visit for placement in most cases.</h3>
+        <ul class="ba__list">
+          <li><span class="ba__icon ba__icon--y">+</span> Digital intraoral scan in under 4 minutes, no putty</li>
+          <li><span class="ba__icon ba__icon--y">+</span> Same-day milled crowns and onlays where suitable</li>
+          <li><span class="ba__icon ba__icon--y">+</span> One lead clinician owns the case start to finish</li>
+          <li><span class="ba__icon ba__icon--y">+</span> Flat-fee plan locked in writing before you start</li>
+          <li><span class="ba__icon ba__icon--y">+</span> 3D smile preview shown before any drilling</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MECHANISM ============ -->
+<section class="mech" id="mechanism">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why Halo-Method</span>
+      <h2 class="reveal">Three steps. One outcome.</h2>
+      <p>We rebuilt the dental workflow around modern intraoral scanning, in-house CAD/CAM milling, and a single lead clinician per patient. The old multi-office handoff is the source of most of the bad experiences. We removed it.</p>
+    </div>
+    <div class="mech__steps">
+      <div class="mech__step reveal">
+        <span class="mech__num">Step 01</span>
+        <h3>Scan once</h3>
+        <p>iTero Element 5D scan of your full arch in 4 minutes. No putty trays, no gag reflex, no follow-up impression appointments. Your model is digital and shareable from the first visit.</p>
+      </div>
+      <div class="mech__step reveal">
+        <span class="mech__num">Step 02</span>
+        <h3>Plan in 24 hours</h3>
+        <p>Your case is mapped by the lead clinician inside 24 hours. You see a 3D preview of the outcome, the fixed-fee quote, and the timeline before you commit to anything.</p>
+      </div>
+      <div class="mech__step reveal">
+        <span class="mech__num">Step 03</span>
+        <h3>Place in one visit</h3>
+        <p>For most single-tooth implants and crowns, the placement happens in one appointment, with the final restoration milled in-house the same day. No temporaries, no second numbing visit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS ============ -->
+<section class="benefits">
+  <div class="container">
+    <div class="benefits__wrap">
+      <div class="section-head" style="margin-bottom: 0;">
+        <span class="eyebrow">Outcomes</span>
+        <h2 class="reveal">What changes for you, in plain terms.</h2>
+        <p>The technology only matters because of what it lets you skip.</p>
+      </div>
+      <div class="benefits__list">
+        <div class="benefit reveal">
+          <span class="benefit__check">+</span>
+          <div>
+            <h3>One office. One clinician. One fee.</h3>
+            <p>You stop being passed between three providers who each charge their own consult fee.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <span class="benefit__check">+</span>
+          <div>
+            <h3>See the result before you commit.</h3>
+            <p>Every cosmetic and implant plan includes a 3D outcome preview before drilling starts.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <span class="benefit__check">+</span>
+          <div>
+            <h3>Flat quote, no mid-plan price creep.</h3>
+            <p>The number we send after scan day is the number on the final invoice. In writing.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <span class="benefit__check">+</span>
+          <div>
+            <h3>In-house lab, same-week turnaround.</h3>
+            <p>Crowns and onlays are milled on site, so you skip the 3-week temp-crown window most clinics need.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <span class="benefit__check">+</span>
+          <div>
+            <h3>Insurance reconciled before your second visit.</h3>
+            <p>We pre-auth with your carrier and hand you the EOB breakdown before any placement work begins.</p>
+          </div>
+        </div>
+        <div class="benefit reveal">
+          <span class="benefit__check">+</span>
+          <div>
+            <h3>Records you actually own.</h3>
+            <p>Your scans, plans, and EOBs live in a patient portal you can share with any future provider in one click.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFFER / PRICING ============ -->
+<section class="offer" id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Pricing</span>
+      <h2 class="reveal">Three clear paths in. Flat fees. No surprises.</h2>
+      <p>Most patients start with one of these three plans. We confirm the final number after the digital scan, in writing, before any work begins.</p>
+    </div>
+    <div class="offer__grid">
+      <article class="offer__card reveal">
+        <span class="offer__name">Diagnostic Only</span>
+        <div class="offer__price">$250</div>
+        <div class="offer__price-note">One-time, applied to treatment if you proceed</div>
+        <div class="offer__sep"></div>
+        <ul class="offer__features">
+          <li>Full intraoral digital scan</li>
+          <li>Comprehensive exam with the lead clinician</li>
+          <li>3D outcome preview and treatment timeline</li>
+          <li>Written fixed-fee proposal within 24 hours</li>
+          <li>Insurance pre-authorization report</li>
+        </ul>
+        <a class="btn btn-ghost offer__cta" href="#book">Book your scan</a>
+      </article>
+
+      <article class="offer__card offer__card--featured reveal">
+        <span class="offer__featured-tag">Most chosen</span>
+        <span class="offer__name">Premium Implant Package</span>
+        <div class="offer__price">$4,800</div>
+        <div class="offer__price-note">Per implant, all-inclusive, no add-ons</div>
+        <div class="offer__sep"></div>
+        <ul class="offer__features">
+          <li>Surgical placement and final restoration</li>
+          <li>Same-day milled crown where suitable</li>
+          <li>Bone graft included if indicated</li>
+          <li>All follow-ups and adjustments for 12 months</li>
+          <li>5-year fit and function warranty</li>
+        </ul>
+        <a class="btn btn-primary offer__cta" href="#book">Reserve a placement date</a>
+      </article>
+
+      <article class="offer__card reveal">
+        <span class="offer__name">Cosmetic Refresh</span>
+        <div class="offer__price">$3,200</div>
+        <div class="offer__price-note">6-8 unit cosmetic redesign, complete</div>
+        <div class="offer__sep"></div>
+        <ul class="offer__features">
+          <li>Digital smile design preview</li>
+          <li>Whitening + bonding or veneer combination</li>
+          <li>In-house lab milling, no third-party delay</li>
+          <li>Bite calibration and refinement included</li>
+          <li>2-year shade and adhesion warranty</li>
+        </ul>
+        <a class="btn btn-ghost offer__cta" href="#book">Plan your refresh</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MID CTA ============ -->
+<section class="midcta" id="book">
+  <div class="container">
+    <span class="eyebrow midcta__eyebrow">Book</span>
+    <h2 class="reveal">See your case mapped before you spend a dollar on treatment.</h2>
+    <p>The $250 diagnostic includes the scan, the 3D outcome preview, the fixed-fee proposal, and the insurance pre-auth. If you proceed, it comes off your final invoice.</p>
+    <a class="btn btn-warm" href="#book">
+      Claim a diagnostic slot
+      <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ SOCIAL PROOF ============ -->
+<section class="proof">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Proof</span>
+      <h2 class="reveal">What patients say after their first full plan.</h2>
+    </div>
+    <div class="proof__grid">
+      <article class="proof__card proof__card--featured reveal">
+        <div>
+          <span class="proof__metric">Saved $4,100 vs other quote</span>
+          <p class="proof__quote">"Two other offices quoted me eight visits and around nine grand for two implants. Halo did the scan, sent the plan the next morning, and finished the whole thing in three appointments. The final invoice matched the proposal to the dollar."</p>
+        </div>
+        <div class="proof__author">
+          <img class="proof__avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&fit=crop&crop=face" alt="" />
+          <div>
+            <div class="proof__name">David Rosenthal</div>
+            <div class="proof__role">Architect, 52 · two implants + crown</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proof__card reveal">
+        <span class="proof__metric">3 visits, not 8</span>
+        <p class="proof__quote">"I genuinely didn't believe the single-visit crown thing until I sat in the chair. Walked in at 9, walked out with the final crown by lunch."</p>
+        <div class="proof__author">
+          <img class="proof__avatar" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=120&h=120&fit=crop&crop=face" alt="" />
+          <div>
+            <div class="proof__name">Marisol Tan</div>
+            <div class="proof__role">Marketing Director, 41</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proof__card reveal">
+        <span class="proof__metric">Plan locked in 24hr</span>
+        <p class="proof__quote">"The 3D preview before any drilling was the part that sold me. I knew exactly what my smile would look like. The fixed quote held."</p>
+        <div class="proof__author">
+          <img class="proof__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face" alt="" />
+          <div>
+            <div class="proof__name">Henrik Pereira</div>
+            <div class="proof__role">Senior Engineer, 47 · cosmetic refresh</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BONUS STACK ============ -->
+<section class="bonus">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Extras</span>
+      <h2 class="reveal">Two things included that other clinics charge for.</h2>
+    </div>
+    <div class="bonus__grid">
+      <article class="bonus__card reveal">
+        <span class="bonus__ghost" aria-hidden="true">01</span>
+        <span class="bonus__tag">Bonus 01 / Included</span>
+        <h3>Free Digital Smile Preview</h3>
+        <p>See a photo-real 3D render of your finished smile before any drilling, bonding, or commitment. Most cosmetic practices bill this as a separate "design fee."</p>
+        <span class="bonus__value"><strike>$400</strike> Included with diagnostic</span>
+      </article>
+      <article class="bonus__card reveal">
+        <span class="bonus__ghost" aria-hidden="true">02</span>
+        <span class="bonus__tag">Bonus 02 / Included</span>
+        <h3>Insurance Pre-Auth Report</h3>
+        <p>We file the pre-authorization with your carrier and send you the EOB breakdown before any placement work starts, so the final number is never a surprise.</p>
+        <span class="bonus__value"><strike>$200</strike> Included with diagnostic</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE + FAQ + URGENCY + FOOTER ============ -->
+<section class="close" id="faq">
+  <div class="container">
+    <div class="guarantee reveal">
+      <div class="guarantee__seal">+</div>
+      <div>
+        <span class="eyebrow" style="margin-bottom: 12px;">Promise</span>
+        <h3>If your fit isn't perfect in 30 days, we redo it at no cost.</h3>
+        <p>Implant placements include a 5-year fit and function warranty. Crowns and veneers carry a 30-day fit guarantee: if anything feels off, we redo the unit with no second invoice.</p>
+      </div>
+    </div>
+
+    <div class="faq__head">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="reveal" style="margin-top: 18px;">Questions we hear in the first call.</h2>
+    </div>
+
+    <div class="faq__list">
+      <details class="faq__item">
+        <summary>Will the fixed-fee quote really not change?<span class="faq__icon">+</span></summary>
+        <p>Yes, and we put it in writing before you book a placement. The only situation that changes the price is one you'd approve in advance: adding a second site to the same surgical visit, for example. Standard add-ons that other clinics surprise-bill (bone graft, sedation, follow-up adjustments) are already inside the package.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Do you accept my insurance?<span class="faq__icon">+</span></summary>
+        <p>We're in-network with Delta Dental and Aetna PPO, and we file out-of-network claims for most other major carriers. The $250 diagnostic includes a full pre-authorization report so you see your actual out-of-pocket cost before any work starts.</p>
+      </details>
+      <details class="faq__item">
+        <summary>How is a single-visit crown actually possible?<span class="faq__icon">+</span></summary>
+        <p>Two pieces of equipment most clinics don't keep in-house: a high-resolution intraoral scanner and a chairside CAD/CAM mill. We capture the prep, design the restoration on screen, and the mill carves it from a ceramic block in about 15-20 minutes while you wait.</p>
+      </details>
+      <details class="faq__item">
+        <summary>What if I need a procedure you don't offer in-house?<span class="faq__icon">+</span></summary>
+        <p>For the small set of cases that need orthognathic surgery or full-mouth reconstruction beyond our scope, we coordinate with two vetted specialists and stay the lead on your case so you're not stranded between offices.</p>
+      </details>
+      <details class="faq__item">
+        <summary>How long does a typical implant placement appointment take?<span class="faq__icon">+</span></summary>
+        <p>Single-site implant with same-day crown: 90-120 minutes from numbing to final fit. Multi-site cases are planned across two sessions, scheduled in the same week.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Do you offer payment plans?<span class="faq__icon">+</span></summary>
+        <p>Yes. We work with CareCredit and Sunbit for 0% APR plans on 6, 12, and 18-month terms for cases over $1,200. The diagnostic visit covers all the paperwork.</p>
+      </details>
+    </div>
+
+    <div class="urgency reveal">
+      <div class="urgency__left">
+        <span class="urgency__dot" aria-hidden="true"></span>
+        <span class="urgency__text">4 first-week slots open this month <span>· Implant cases booking 2-3 weeks out</span></span>
+      </div>
+      <a class="btn btn-primary" href="#book">
+        Hold a slot
+        <svg class="arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__logo">Halo Dental Co.</div>
+          <p class="footer__byline">A boutique digital-first dental practice. Implants, cosmetic, and same-visit restorative care.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon-Thu · 8:00am - 6:00pm</li>
+            <li>Fri · 8:00am - 4:00pm</li>
+            <li>Sat · By appointment</li>
+            <li>Sun · Closed</li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Visit</h4>
+          <ul>
+            <li>412 Northbridge Ave, Suite 3B</li>
+            <li>Portland, OR 97209</li>
+            <li><a href="tel:+15035550182">+1 (503) 555-0182</a></li>
+            <li><a href="mailto:care@halo-dental.co">care@halo-dental.co</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Credentials</h4>
+          <ul>
+            <li>OR Lic. #DDS-44827</li>
+            <li>ADA Member · 2014</li>
+            <li>Invisalign Diamond+</li>
+            <li>AAID Associate Fellow</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bar">
+        <span>© 2026 Halo Dental Co. · All rights reserved.</span>
+        <span>Privacy · Accessibility · HIPAA Notice</span>
+      </div>
+    </div>
+  </footer>
+</section>
+
+<!-- ============ SCRIPTS ============ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
+
+<script>
+  (function () {
+    if (typeof gsap === 'undefined') return;
+    if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
+
+    /* ---------- Lenis smooth scroll ---------- */
+    if (typeof Lenis !== 'undefined') {
+      var lenis = new Lenis({
+        duration: 1.05,
+        easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+        smoothWheel: true
+      });
+      lenis.on('scroll', function () { if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.update(); });
+      gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    /* ---------- Hero H1 per-letter reveal (load-time, opacity OK pre-scroll) ---------- */
+    var heroH1 = document.getElementById('heroH1');
+    if (heroH1) {
+      try {
+        if (typeof SplitText !== 'undefined') {
+          var split = new SplitText(heroH1, { type: 'chars' });
+          gsap.from(split.chars, {
+            yPercent: 110,
+            opacity: 0,
+            duration: 0.7,
+            stagger: 0.018,
+            ease: 'power3.out',
+            delay: 0.15
+          });
+        }
+      } catch (e) {}
+    }
+
+    /* ---------- Hero stats fade-up (load-time) ---------- */
+    gsap.from('.hero__sub, .hero__cta, .hero__stats', {
+      y: 24,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.12,
+      ease: 'power2.out',
+      delay: 0.55
+    });
+
+    /* ---------- Scroll reveals - scale + y only, NEVER opacity:0 start ---------- */
+    if (typeof ScrollTrigger !== 'undefined') {
+      var reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(function (el) {
+        gsap.fromTo(el,
+          { y: 36, scale: 0.985 },
+          {
+            y: 0,
+            scale: 1,
+            duration: 0.85,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 88%',
+              once: true
+            }
+          }
+        );
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

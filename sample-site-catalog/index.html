@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Site Catalog — 18 sample websites across 6 niches</title>
+<meta name="description" content="Premium website samples built by Keyvin Abillon. Six niches, three design directions each, mapped to the Gus Sins 10-Point Sales Page framework.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@500;600&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F5F1EB;
+  --bg-elevated: #EDE6DA;
+  --bg-dark: #1A1816;
+  --ink: #2D2D2D;
+  --text: #2D2D2D;
+  --text-dim: #5A5A5A;
+  --text-faint: #8C8478;
+  --rule: rgba(45,45,45,0.12);
+  --rule-strong: rgba(45,45,45,0.22);
+  --accent: #B08B5F;
+  --font-display: "Cabinet Grotesk", system-ui, sans-serif;
+  --font-body: "Inter Tight", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2rem; --space-6: 3rem; --space-8: 4rem; --space-12: 6rem;
+  --radius: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.65;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+.editorial-corners {
+  position: fixed; top: 0; left: 0; right: 0;
+  display: flex; justify-content: space-between;
+  padding: 14px 24px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(45,45,45,0.5);
+  z-index: 200; pointer-events: none;
+}
+@media (max-width: 600px) { .editorial-corners { font-size: 0.58rem; padding: 10px 16px; } }
+
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+header.site {
+  padding: 7rem 0 4rem;
+  border-bottom: 1px solid var(--rule);
+}
+header.site h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 22ch;
+}
+header.site h1 em { color: var(--accent); font-style: italic; }
+header.site .lede {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  color: var(--text-dim);
+  max-width: 60ch;
+  margin-top: 1.5rem;
+  line-height: 1.65;
+}
+header.site .meta-row {
+  margin-top: 2.5rem;
+  display: flex; flex-wrap: wrap; gap: 2.5rem;
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-faint);
+}
+header.site .meta-row strong { color: var(--text); font-weight: 500; display: block; margin-top: 4px; font-size: 1.4rem; letter-spacing: -0.01em; text-transform: none; font-family: var(--font-display); }
+
+.section { padding: 5rem 0 2rem; }
+.section-head {
+  display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 1rem;
+  border-bottom: 1px solid var(--rule); padding-bottom: 1rem; margin-bottom: 2.5rem;
+}
+.section-head .eyebrow {
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem;
+}
+.section-head h2 { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.6rem, 2.8vw, 2.2rem); letter-spacing: -0.015em; }
+.section-head .meta { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint); text-align: right; }
+.section-head .blurb { grid-column: 1 / -1; color: var(--text-dim); max-width: 70ch; margin-top: 0.5rem; font-size: 0.98rem; }
+
+.grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+.card {
+  display: flex; flex-direction: column;
+  background: transparent;
+  text-decoration: none; color: inherit;
+  transition: transform 220ms ease-out;
+}
+.card:hover { transform: translateY(-3px); }
+.card:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 6px; border-radius: var(--radius);
+}
+.thumb {
+  width: 100%; aspect-ratio: 1440 / 900;
+  background: var(--bg-elevated);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(45,45,45,0.04);
+  transition: box-shadow 220ms ease-out, border-color 220ms ease-out;
+}
+.card:hover .thumb { box-shadow: 0 18px 36px -16px rgba(45,45,45,0.22); border-color: var(--rule-strong); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+
+.card-meta {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 0.75rem; align-items: baseline;
+  padding-top: 0.9rem;
+  font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-faint);
+}
+.card-num { color: var(--accent); font-variant-numeric: tabular-nums; }
+.card-tag { justify-self: end; }
+.card h3 {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: 1.1rem; line-height: 1.4; letter-spacing: -0.01em;
+  margin-top: 0.5rem;
+  color: var(--text);
+}
+.card h3 em { color: var(--accent); font-style: italic; }
+.card .pal {
+  margin-top: 0.7rem;
+  display: flex; gap: 0.4rem; align-items: center;
+  font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text-faint);
+}
+.swatch { width: 14px; height: 14px; border-radius: 50%; border: 1px solid var(--rule); display: inline-block; }
+
+footer.site {
+  margin-top: 6rem; padding: 3rem 0 4rem;
+  border-top: 1px solid var(--rule);
+}
+.editorial-signature {
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: baseline; gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem; letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(45,45,45,0.5);
+}
+.editorial-signature a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(45,45,45,0.18); padding-bottom: 1px; }
+@media (max-width: 600px) {
+  .editorial-signature { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; }
+}
+footer.site .small {
+  margin-top: 1.4rem;
+  font-family: var(--font-body); font-size: 0.88rem; color: var(--text-dim); max-width: 60ch;
+}
+.cta-row {
+  margin-top: 2rem;
+  display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center;
+}
+.btn-text {
+  color: var(--accent); text-decoration: none;
+  font-family: var(--font-display); font-size: 1rem; font-weight: 500;
+  border-bottom: 1px solid var(--accent); padding-bottom: 2px;
+  transition: color 220ms ease-out;
+}
+.btn-text:hover { color: var(--text); border-color: var(--text); }
+</style>
+</head>
+<body>
+
+<div class="editorial-corners" aria-hidden="true">
+  <span>Issue N°001 · Sample Site Catalog</span>
+  <span>May 2026</span>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <h1>Eighteen sample sites, six niches, <em>one pattern that converts.</em></h1>
+    <p class="lede">Each site below was built to a fixed conversion architecture (the Gus Sins 10-Point Sales Page), then dressed in a niche-authentic design language. Three directions per niche so the right client can see themselves before the call.</p>
+    <div class="meta-row">
+      <div><span>Samples</span><strong>18</strong></div>
+      <div><span>Niches</span><strong>6</strong></div>
+      <div><span>Variants per niche</span><strong>3</strong></div>
+      <div><span>Quality gates</span><strong>7/7 each</strong></div>
+      <div><span>Built by</span><strong>Keyvin Abillon</strong></div>
+    </div>
+    <div class="cta-row">
+      <a class="btn-text" href="per-niche/dental.html">Per-niche case studies →</a>
+      <a class="btn-text" href="README.md">How to share with clients →</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section" id="dental">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">01 — Dental Clinic</div>
+        <h2>Trust + calm + a booking flow that respects time.</h2>
+      </div>
+      <div class="meta">ROI rank · #1<br>$5K-$20K patient LTV</div>
+      <p class="blurb">From spa-calm family practice to tech-modern boutique to editorial cosmetic studio. Each variant uses the same 10-PSP order; only the design language shifts.</p>
+    </div>
+    <div class="grid">
+      <a class="card" href="samples/sample-dental-clinic-a.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/dental-clinic-a.png" alt="Dental Clinic, Variant A — Conservative spa-calm" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">001</span><span>Variant A · Spa</span><span class="card-tag">50 KB</span></div>
+        <h3>A calmer kind of dentist for your <em>whole family.</em></h3>
+        <div class="pal"><span class="swatch" style="background:#FAF6EF"></span><span class="swatch" style="background:#7CA993"></span><span class="swatch" style="background:#E27A5F"></span><span>Fraunces + Nunito</span></div>
+      </a>
+      <a class="card" href="samples/sample-dental-clinic-b.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/dental-clinic-b.png" alt="Dental Clinic, Variant B — Bolder tech-modern" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">002</span><span>Variant B · Tech</span><span class="card-tag">48 KB</span></div>
+        <h3>Your smile, <em>rebuilt</em> in fewer visits.</h3>
+        <div class="pal"><span class="swatch" style="background:#0A0A0A"></span><span class="swatch" style="background:#1082EC"></span><span class="swatch" style="background:#FF5E2B"></span><span>Geist + DM Sans</span></div>
+      </a>
+      <a class="card" href="samples/sample-dental-clinic-c.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/dental-clinic-c.png" alt="Dental Clinic, Variant C — Editorial magazine" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">003</span><span>Variant C · Editorial</span><span class="card-tag">41 KB</span></div>
+        <h3>A dental studio for people who treat their smile like an <em>investment.</em></h3>
+        <div class="pal"><span class="swatch" style="background:#F5F1EB"></span><span class="swatch" style="background:#2D2D2D"></span><span class="swatch" style="background:#B08B5F"></span><span>Cabinet Grotesk + Inter Tight</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="real-estate">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">02 — Real Estate</div>
+        <h2>The listing as a position, not a brochure.</h2>
+      </div>
+      <div class="meta">ROI rank · #2<br>Single-commission ROI</div>
+      <p class="blurb">Conservative residential, slate-and-gold commercial, and a magazine treatment for luxury boutique brokers.</p>
+    </div>
+    <div class="grid">
+      <a class="card" href="samples/sample-real-estate-a.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/real-estate-a.png" alt="Real Estate, Variant A — Eggshell aspirational" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">004</span><span>Variant A · Residential</span><span class="card-tag">35 KB</span></div>
+        <h3>Find the home you'd buy <em>twice.</em></h3>
+        <div class="pal"><span class="swatch" style="background:#F5EFE6"></span><span class="swatch" style="background:#8B6F47"></span><span class="swatch" style="background:#1F2B3D"></span><span>DM Serif Display + Inter Tight</span></div>
+      </a>
+      <a class="card" href="samples/sample-real-estate-b.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/real-estate-b.png" alt="Real Estate, Variant B — Slate dusk commercial" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">005</span><span>Variant B · Commercial</span><span class="card-tag">35 KB</span></div>
+        <h3>Buy and sell residential real estate <em>like an asset,</em> not a guess.</h3>
+        <div class="pal"><span class="swatch" style="background:#1F2937"></span><span class="swatch" style="background:#C9A961"></span><span class="swatch" style="background:#FAFAFA"></span><span>Fraunces + Inter Tight</span></div>
+      </a>
+      <a class="card" href="samples/sample-real-estate-c.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/real-estate-c.png" alt="Real Estate, Variant C — Bone magazine luxury" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">006</span><span>Variant C · Luxury</span><span class="card-tag">39 KB</span></div>
+        <h3>The house you'd <em>buy twice.</em> The listing that sells in <em>eighteen days.</em></h3>
+        <div class="pal"><span class="swatch" style="background:#F4F0E6"></span><span class="swatch" style="background:#1A1816"></span><span class="swatch" style="background:#C8A864"></span><span>Cabinet Grotesk + Inter Tight</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="legal">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">03 — Legal</div>
+        <h2>Authority without theater.</h2>
+      </div>
+      <div class="meta">ROI rank · #3<br>High-ticket service tier</div>
+      <p class="blurb">Boutique personal injury, civil rights and catastrophic injury trial, and a boutique estate / wealth practice with editorial restraint.</p>
+    </div>
+    <div class="grid">
+      <a class="card" href="samples/sample-legal-a.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/legal-a.png" alt="Legal, Variant A — Hartwell & Reed PI" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">007</span><span>Variant A · Hartwell &amp; Reed</span><span class="card-tag">42 KB</span></div>
+        <h3>When the call comes, you want a <em>partner</em> on the line - not a screener.</h3>
+        <div class="pal"><span class="swatch" style="background:#0E1B2E"></span><span class="swatch" style="background:#C8A864"></span><span class="swatch" style="background:#F5F1EA"></span><span>Playfair Display + Inter Tight</span></div>
+      </a>
+      <a class="card" href="samples/sample-legal-b.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/legal-b.png" alt="Legal, Variant B — Okafor Civil Trial" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">008</span><span>Variant B · Okafor Trial</span><span class="card-tag">46 KB</span></div>
+        <h3>The verdict isn't won at trial. It's won in the <em>preparation</em> the other side can see.</h3>
+        <div class="pal"><span class="swatch" style="background:#1F2937"></span><span class="swatch" style="background:#0F766E"></span><span class="swatch" style="background:#F4F0E6"></span><span>DM Serif Display + Inter Tight</span></div>
+      </a>
+      <a class="card" href="samples/sample-legal-c.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/legal-c.png" alt="Legal, Variant C — Marchetti Wealth & Estate" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">009</span><span>Variant C · Marchetti</span><span class="card-tag">50 KB</span></div>
+        <h3><em>Quiet planning</em> for the families who can't afford the noise.</h3>
+        <div class="pal"><span class="swatch" style="background:#F4F0E6"></span><span class="swatch" style="background:#1A1816"></span><span class="swatch" style="background:#C8A864"></span><span>Cabinet Grotesk + Inter Tight</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="coaching">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">04 — Coaching / Consulting</div>
+        <h2>Personal brand without the guru tax.</h2>
+      </div>
+      <div class="meta">ROI rank · #4<br>Info-product margins</div>
+      <p class="blurb">Warm authority for established coaches, founder-led for operator consultants, and a sales-letter-leaning mastermind tier for the $25K+ rooms.</p>
+    </div>
+    <div class="grid">
+      <a class="card" href="samples/sample-coaching-a.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/coaching-a.png" alt="Coaching, Variant A — Warm authority" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">010</span><span>Variant A · Warm Authority</span><span class="card-tag">40 KB</span></div>
+        <h3>Built for the operator who's <em>tired of advice</em> that scales nothing.</h3>
+        <div class="pal"><span class="swatch" style="background:#F8F4ED"></span><span class="swatch" style="background:#1A1816"></span><span class="swatch" style="background:#C8754A"></span><span>Lora + Karla</span></div>
+      </a>
+      <a class="card" href="samples/sample-coaching-b.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/coaching-b.png" alt="Coaching, Variant B — Founder bolder" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">011</span><span>Variant B · Founder</span><span class="card-tag">40 KB</span></div>
+        <h3>Operator <em>diagnostics</em> for founders who can't afford another framework.</h3>
+        <div class="pal"><span class="swatch" style="background:#FAFAFA"></span><span class="swatch" style="background:#0E1B2E"></span><span class="swatch" style="background:#A89888"></span><span>Cabinet Grotesk + Satoshi</span></div>
+      </a>
+      <a class="card" href="samples/sample-coaching-c.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/coaching-c.png" alt="Coaching, Variant C — Editorial mastermind" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">012</span><span>Variant C · Mastermind</span><span class="card-tag">44 KB</span></div>
+        <h3>A <em>compound</em> twelve months for the fourteen operators who actually compound.</h3>
+        <div class="pal"><span class="swatch" style="background:#F4F0E6"></span><span class="swatch" style="background:#1A1816"></span><span class="swatch" style="background:#C8A864"></span><span>Cormorant + Inter Tight</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="med-spa">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">05 — Med Spa / Beauty</div>
+        <h2>Beauty as wellness, not insecurity.</h2>
+      </div>
+      <div class="meta">ROI rank · #5<br>High repeat revenue</div>
+      <p class="blurb">Blush-luxury canonical, dark editorial cosmetic, and a magazine-cover treatment for the boutique cosmetic studio that wants Tatler-tier positioning.</p>
+    </div>
+    <div class="grid">
+      <a class="card" href="samples/sample-med-spa-a.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/med-spa-a.png" alt="Med Spa, Variant A — Maven Aesthetics" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">013</span><span>Variant A · Maven</span><span class="card-tag">44 KB</span></div>
+        <h3>Refreshed, not <em>frozen.</em></h3>
+        <div class="pal"><span class="swatch" style="background:#FBF3EE"></span><span class="swatch" style="background:#B89090"></span><span class="swatch" style="background:#8B6F47"></span><span>Fraunces + Nunito</span></div>
+      </a>
+      <a class="card" href="samples/sample-med-spa-b.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/med-spa-b.png" alt="Med Spa, Variant B — NORA editorial cosmetic" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">014</span><span>Variant B · NORA</span><span class="card-tag">44 KB</span></div>
+        <h3>The skin you'd <em>recognize.</em></h3>
+        <div class="pal"><span class="swatch" style="background:#F4F0E6"></span><span class="swatch" style="background:#2D2D2D"></span><span class="swatch" style="background:#B08B5F"></span><span>Cabinet Grotesk + Inter Tight</span></div>
+      </a>
+      <a class="card" href="samples/sample-med-spa-c.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/med-spa-c.png" alt="Med Spa, Variant C — Maison Derm magazine" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">015</span><span>Variant C · Maison Derm</span><span class="card-tag">48 KB</span></div>
+        <h3>A <em>maison</em> for the patient who treats her skin like a portfolio.</h3>
+        <div class="pal"><span class="swatch" style="background:#FAF8F4"></span><span class="swatch" style="background:#2D2D2D"></span><span class="swatch" style="background:#C8A864"></span><span>Editorial New + Inter Tight</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="hvac">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">06 — HVAC / Home Services</div>
+        <h2>Same-day trust, no clipboard energy.</h2>
+      </div>
+      <div class="meta">ROI rank · #6<br>Local urgency-driven</div>
+      <p class="blurb">Canonical cream-and-fire HVAC, navy-and-yellow multi-trade, and a boutique luxury-residential variant for premium home-services markets.</p>
+    </div>
+    <div class="grid">
+      <a class="card" href="samples/sample-hvac-a.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/hvac-a.png" alt="HVAC, Variant A — Ironclad canonical" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">016</span><span>Variant A · Ironclad</span><span class="card-tag">35 KB</span></div>
+        <h3>Cool air today. Or the <em>visit is free.</em></h3>
+        <div class="pal"><span class="swatch" style="background:#F5F1EA"></span><span class="swatch" style="background:#1A1F2B"></span><span class="swatch" style="background:#E8411A"></span><span>Oswald + IBM Plex Sans</span></div>
+      </a>
+      <a class="card" href="samples/sample-hvac-b.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/hvac-b.png" alt="HVAC, Variant B — Bluecrew multi-trade" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">017</span><span>Variant B · Bluecrew</span><span class="card-tag">42 KB</span></div>
+        <h3>One <em>crew</em> for the home. Plumbing, heat, cool, electric - on-time or no fee.</h3>
+        <div class="pal"><span class="swatch" style="background:#0F2235"></span><span class="swatch" style="background:#F4C430"></span><span class="swatch" style="background:#FFFCF5"></span><span>Oswald + IBM Plex Sans</span></div>
+      </a>
+      <a class="card" href="samples/sample-hvac-c.html" target="_blank" rel="noopener">
+        <div class="thumb"><img src="thumbnails/hvac-c.png" alt="HVAC, Variant C — Atelier Climate boutique" loading="lazy"></div>
+        <div class="card-meta"><span class="card-num">018</span><span>Variant C · Atelier Climate</span><span class="card-tag">39 KB</span></div>
+        <h3>Climate <em>engineered</em> for the home you actually live in.</h3>
+        <div class="pal"><span class="swatch" style="background:#F4F0E6"></span><span class="swatch" style="background:#1A1816"></span><span class="swatch" style="background:#B26B3C"></span><span>DM Serif Display + Inter Tight</span></div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="editorial-signature">
+      <span>Issue N°001 · Sample Site Catalog · ©2026 Keyvin Abillon</span>
+      <a href="#top">↑ Back to top</a>
+    </div>
+    <p class="small">Each sample was built to the same conversion architecture: pain before promise, mechanism before benefits, offer before urgency, with FAQ and guarantee carrying the close. The visual language is the only thing that changes per niche. Open any sample to see the full build.</p>
+  </div>
+</footer>
+
+</body>
+</html>

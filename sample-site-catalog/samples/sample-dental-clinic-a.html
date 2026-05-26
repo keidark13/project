@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linden Family Dental - Spa-calm dentistry for the whole family</title>
+<meta name="description" content="A calm, modern family dental practice. Same-day appointments, transparent pricing, and a care plan built around you. Book your $99 new patient visit.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Nunito:wght@400;500;600;700&display=swap">
+
+<style>
+  :root {
+    /* palette (locked Variant A) */
+    --bg: #FAF6EF;
+    --bg-elevated: #F2EBDE;
+    --ink: #1F2A24;
+    --text: #2C3A33;
+    --text-dim: #5B6962;
+    --text-faint: #8C9690;
+    --accent: #7CA993;
+    --accent-soft: #D9E7DE;
+    --accent-warm: #E27A5F;
+    --hairline: rgba(31, 42, 36, 0.08);
+    --hairline-strong: rgba(31, 42, 36, 0.16);
+
+    /* type */
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* space */
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4rem;
+    --space-7: 6rem;
+    --space-8: 8rem;
+
+    /* radius */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-pill: 999px;
+
+    /* easing */
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  h1 { font-size: clamp(2.4rem, 5.4vw, 4.2rem); font-weight: 500; }
+  h2 { font-size: clamp(1.85rem, 3.6vw, 2.85rem); }
+  h3 { font-size: 1.35rem; font-weight: 600; }
+  h4 { font-size: 1.1rem; font-weight: 600; }
+
+  p { color: var(--text); }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  /* focus rings */
+  a:focus-visible, button:focus-visible, [role="button"]:focus-visible,
+  details > summary:focus-visible, input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* layout helpers */
+  .wrap {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  section {
+    padding: clamp(4rem, 9vw, 7rem) 0;
+  }
+
+  /* eyebrow - pill style (locked) */
+  .eyebrow {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--accent-soft);
+    border-radius: var(--radius-pill);
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1.1rem;
+  }
+
+  /* buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.5rem;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.18s var(--ease-out), box-shadow 0.18s var(--ease-out), background 0.22s var(--ease-out), color 0.22s var(--ease-out);
+    will-change: transform;
+    line-height: 1;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -12px rgba(31, 42, 36, 0.4);
+  }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--hairline-strong);
+  }
+  .btn-ghost:hover {
+    background: var(--ink);
+    color: var(--bg);
+    transform: translateY(-2px);
+  }
+
+  .btn-accent {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .btn-accent:hover {
+    background: #6a987f;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -12px rgba(124, 169, 147, 0.55);
+  }
+
+  .btn .arrow {
+    display: inline-block;
+    transition: transform 0.22s var(--ease-out);
+  }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* ---------- 1. NAV ---------- */
+  .nav-wrap {
+    position: fixed;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+    pointer-events: none;
+  }
+  .nav {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.55rem 0.7rem 0.55rem 1.4rem;
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--hairline);
+    box-shadow: 0 14px 40px -22px rgba(31, 42, 36, 0.25);
+    max-width: 100%;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .nav-logo-mark {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: grid; place-items: center;
+    color: var(--bg);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .nav-links {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.92rem;
+    color: var(--text-dim);
+    font-weight: 500;
+    transition: color 0.18s var(--ease-out);
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  .nav .btn { padding: 0.55rem 1.05rem; font-size: 0.85rem; }
+
+  @media (max-width: 780px) {
+    .nav-links { display: none; }
+    .nav { gap: 0.75rem; padding: 0.45rem 0.5rem 0.45rem 1rem; }
+  }
+
+  /* ---------- 2. HERO ---------- */
+  .hero {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -200px; right: -300px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent-soft) 80%, transparent), transparent 65%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+  }
+  .hero-copy h1 .italic-accent {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    margin-top: 1.5rem;
+    max-width: 520px;
+    line-height: 1.65;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 0.85rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  .hero-trust {
+    display: flex;
+    gap: clamp(1.5rem, 4vw, 2.75rem);
+    margin-top: 2.75rem;
+    padding-top: 1.85rem;
+    border-top: 1px solid var(--hairline);
+  }
+  .hero-stat .num {
+    font-family: var(--font-display);
+    font-size: 1.85rem;
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  .hero-stat .lbl {
+    display: block;
+    color: var(--text-faint);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    margin-top: 0.2rem;
+  }
+  .hero-media {
+    position: relative;
+  }
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 20px 20px 160px 20px;
+    background: var(--bg-elevated);
+  }
+  .hero-photo-chip {
+    position: absolute;
+    left: -14px;
+    bottom: 32px;
+    background: var(--bg);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1.05rem;
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    box-shadow: 0 22px 50px -20px rgba(31, 42, 36, 0.25);
+    max-width: 240px;
+  }
+  .hero-photo-chip .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+    flex-shrink: 0;
+  }
+  .hero-photo-chip .txt {
+    font-size: 0.82rem;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .hero-photo-chip .txt strong { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 860px) {
+    .hero { padding-top: 6rem; }
+    .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-media { order: -1; max-width: 460px; }
+    .hero-photo { aspect-ratio: 5 / 4; border-radius: 20px 20px 110px 20px; }
+    .hero-trust { gap: 1.5rem; flex-wrap: wrap; }
+  }
+
+  /* ---------- 3. TRUSTED-BY ---------- */
+  .trusted {
+    padding: 2.5rem 0 1.5rem;
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    background: var(--bg);
+  }
+  .trusted-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .trusted-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--text-faint);
+    font-weight: 600;
+  }
+  .trusted-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(1.25rem, 4vw, 2.5rem);
+    opacity: 0.85;
+  }
+  .trusted-logos span {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+  }
+  .trusted-logos .sep {
+    color: var(--hairline-strong);
+    font-size: 0.7rem;
+  }
+  @media (max-width: 700px) {
+    .trusted-inner { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
+    .trusted-logos { justify-content: center; }
+  }
+
+  /* ---------- 4. EMPATHY / PAIN ---------- */
+  .empathy {
+    background: var(--bg);
+  }
+  .section-head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 3rem;
+  }
+  .section-head .lead {
+    color: var(--text-dim);
+    margin-top: 0.85rem;
+    font-size: 1.06rem;
+  }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .pain-card {
+    padding: 2rem 1.75rem;
+    background: color-mix(in srgb, var(--bg-elevated) 70%, var(--bg));
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    transition: transform 0.28s var(--ease-out), background 0.28s var(--ease-out);
+  }
+  .pain-card:hover {
+    transform: translateY(-4px);
+    background: var(--bg-elevated);
+  }
+  .pain-card .icon {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--bg);
+    display: grid; place-items: center;
+    margin-bottom: 1.25rem;
+    color: var(--accent-warm);
+    border: 1px solid var(--hairline);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 600;
+  }
+  .pain-card h3 { margin-bottom: 0.5rem; }
+  .pain-card p { color: var(--text-dim); font-size: 0.96rem; }
+
+  @media (max-width: 860px) {
+    .pain-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- 5. BEFORE / AFTER ---------- */
+  .ba {
+    background: var(--bg-elevated);
+  }
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+  .ba-col {
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-lg);
+  }
+  .ba-col.dark {
+    background: var(--ink);
+    color: color-mix(in srgb, var(--bg) 80%, transparent);
+  }
+  .ba-col.dark h3 { color: var(--bg); }
+  .ba-col.dark .ba-tag {
+    background: rgba(226, 122, 95, 0.18);
+    color: var(--accent-warm);
+  }
+  .ba-col.light {
+    background: var(--bg);
+    border: 1px solid var(--hairline);
+  }
+  .ba-col.light .ba-tag {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .ba-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .ba-col h3 {
+    font-size: 1.45rem;
+    margin-bottom: 1.5rem;
+  }
+  .ba-list { list-style: none; display: grid; gap: 0.85rem; }
+  .ba-list li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    align-items: start;
+    gap: 0.85rem;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+  .ba-mark {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .ba-col.dark .ba-mark { background: rgba(226, 122, 95, 0.18); color: var(--accent-warm); }
+  .ba-col.light .ba-mark { background: var(--accent-soft); color: var(--accent); }
+
+  @media (max-width: 860px) {
+    .ba-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- 6. OPPORTUNITY / MECHANISM ---------- */
+  .mech {
+    background: var(--bg);
+  }
+  .mech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .mech-pillar {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    background: color-mix(in srgb, var(--accent-soft) 35%, var(--bg));
+    border: 1px solid var(--hairline);
+    transition: transform 0.3s var(--ease-out);
+  }
+  .mech-pillar:hover { transform: translateY(-4px); }
+  .mech-pillar .step {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 0.65rem;
+    letter-spacing: 0.02em;
+  }
+  .mech-pillar h3 { margin-bottom: 0.6rem; font-size: 1.25rem; }
+  .mech-pillar p { color: var(--text-dim); font-size: 0.96rem; }
+
+  @media (max-width: 860px) { .mech-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- 7. BENEFITS ---------- */
+  .benefits {
+    background: var(--bg);
+    border-top: 1px solid var(--hairline);
+  }
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 2.5rem;
+    margin-top: 2.5rem;
+  }
+  .benefit {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 1rem;
+    align-items: start;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .benefit-check {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: grid; place-items: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 2px;
+  }
+  .benefit h4 { color: var(--ink); margin-bottom: 0.25rem; font-size: 1.05rem; }
+  .benefit p { color: var(--text-dim); font-size: 0.94rem; line-height: 1.55; }
+
+  @media (max-width: 720px) { .benefits-grid { grid-template-columns: 1fr; gap: 0.25rem; } }
+
+  /* ---------- 8. OFFER STACK ---------- */
+  .offer {
+    background: var(--bg-elevated);
+  }
+  .offer-card {
+    max-width: 720px;
+    margin: 3rem auto 0;
+    background: var(--bg);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 30px 80px -40px rgba(31, 42, 36, 0.3);
+  }
+  .offer-head {
+    padding: 2rem 2rem 1.4rem;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .offer-head h3 {
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+    font-weight: 500;
+  }
+  .offer-head .accent-word { font-style: italic; color: var(--accent); }
+  .offer-head p { color: var(--text-dim); margin-top: 0.4rem; font-size: 0.96rem; }
+
+  .offer-list { padding: 1rem 2rem; }
+  .offer-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px dashed var(--hairline);
+  }
+  .offer-row:last-child { border-bottom: 0; }
+  .offer-row .name {
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.98rem;
+  }
+  .offer-row .desc {
+    display: block;
+    color: var(--text-faint);
+    font-weight: 400;
+    font-size: 0.85rem;
+    margin-top: 0.15rem;
+  }
+  .offer-row .val {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: var(--radius-pill);
+    padding: 0.3rem 0.85rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+  }
+  .offer-total {
+    padding: 1.4rem 2rem;
+    background: color-mix(in srgb, var(--bg-elevated) 60%, var(--bg));
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    border-top: 1px solid var(--hairline);
+  }
+  .offer-total .lbl { color: var(--text-dim); font-size: 0.92rem; }
+  .offer-total .strike {
+    color: var(--text-faint);
+    text-decoration: line-through;
+    font-size: 1.1rem;
+    margin-right: 0.6rem;
+    font-family: var(--font-display);
+  }
+  .offer-foot {
+    padding: 1.6rem 2rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--hairline);
+  }
+  .offer-foot .price {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .offer-foot .price-sub {
+    display: block;
+    color: var(--text-faint);
+    font-size: 0.84rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+  }
+  .offer-foot .btn { width: 100%; max-width: 320px; justify-content: center; }
+
+  /* ---------- 9. MID-CTA ---------- */
+  .midcta {
+    background: var(--ink);
+    color: var(--bg);
+    text-align: center;
+  }
+  .midcta .eyebrow {
+    background: rgba(217, 231, 222, 0.14);
+    color: var(--accent-soft);
+  }
+  .midcta h2 {
+    color: var(--bg);
+    max-width: 680px;
+    margin: 0 auto 1rem;
+  }
+  .midcta h2 .italic-accent {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .midcta .sub {
+    color: color-mix(in srgb, var(--bg) 70%, transparent);
+    max-width: 520px;
+    margin: 0 auto 2rem;
+  }
+  .midcta .btn-accent { background: var(--accent); color: var(--bg); }
+  .midcta .note {
+    margin-top: 1.2rem;
+    color: var(--text-faint);
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- 10. SOCIAL PROOF ---------- */
+  .proof {
+    background: var(--bg);
+  }
+  .proof-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+  .proof-card {
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border: 1px solid var(--hairline);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .proof-card.featured {
+    grid-row: span 2;
+    background: var(--ink);
+    color: color-mix(in srgb, var(--bg) 85%, transparent);
+    border: 1px solid var(--ink);
+  }
+  .proof-card.light {
+    background: color-mix(in srgb, var(--bg-elevated) 60%, var(--bg));
+  }
+  .proof-stars { color: var(--accent-warm); letter-spacing: 0.15em; font-size: 0.9rem; }
+  .proof-card.featured .proof-stars { color: var(--accent-warm); }
+  .proof-card blockquote {
+    font-family: var(--font-display);
+    font-size: 1.18rem;
+    line-height: 1.45;
+    font-weight: 500;
+    color: var(--ink);
+    flex-grow: 1;
+  }
+  .proof-card.featured blockquote {
+    color: var(--bg);
+    font-size: 1.55rem;
+  }
+  .proof-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-top: auto;
+  }
+  .proof-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--bg-elevated);
+  }
+  .proof-meta .name {
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .proof-card.featured .proof-meta .name { color: var(--bg); }
+  .proof-meta .role {
+    color: var(--text-faint);
+    font-size: 0.82rem;
+    display: block;
+  }
+  .proof-card.featured .proof-meta .role { color: color-mix(in srgb, var(--bg) 55%, transparent); }
+  .proof-chips {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .proof-chip {
+    padding: 0.32rem 0.75rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: var(--radius-pill);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .proof-card.featured .proof-chip {
+    background: rgba(124, 169, 147, 0.22);
+    color: var(--accent-soft);
+  }
+
+  @media (max-width: 860px) {
+    .proof-grid { grid-template-columns: 1fr; }
+    .proof-card.featured { grid-row: auto; }
+  }
+
+  /* ---------- 11. BONUSES ---------- */
+  .bonuses {
+    background: var(--bg-elevated);
+  }
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+  .bonus-card {
+    position: relative;
+    padding: 2.25rem 2rem;
+    background: var(--bg);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform 0.3s var(--ease-out);
+  }
+  .bonus-card:hover { transform: translateY(-4px); }
+  .bonus-card::before {
+    content: attr(data-num);
+    position: absolute;
+    right: -10px;
+    top: -40px;
+    font-family: var(--font-display);
+    font-size: 11rem;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--accent-soft) 75%, transparent);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  .bonus-card .bonus-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent-warm);
+    background: rgba(226, 122, 95, 0.12);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+  .bonus-card h3 {
+    position: relative; z-index: 1;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+  }
+  .bonus-card .val {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+    margin-left: 0.4rem;
+  }
+  .bonus-card p {
+    position: relative; z-index: 1;
+    color: var(--text-dim);
+    font-size: 0.96rem;
+  }
+  @media (max-width: 720px) { .bonus-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- 12. GUARANTEE + FAQ + URGENCY ---------- */
+  .guarantee {
+    background: var(--bg);
+  }
+  .guarantee-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background: color-mix(in srgb, var(--accent-soft) 35%, var(--bg));
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    align-items: center;
+    max-width: 920px;
+    margin: 0 auto 4rem;
+  }
+  .guarantee-seal {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    border: 2px dashed var(--accent);
+    display: grid; place-items: center;
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: 1.15;
+    padding: 0.5rem;
+  }
+  .guarantee-row h3 { margin-bottom: 0.4rem; }
+  .guarantee-row p { color: var(--text-dim); }
+
+  .faq-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .faq-head { text-align: center; margin-bottom: 2.5rem; }
+  details.faq {
+    border-bottom: 1px solid var(--hairline);
+    padding: 1.4rem 0;
+  }
+  details.faq:first-of-type { border-top: 1px solid var(--hairline); }
+  details.faq summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--ink);
+    font-weight: 500;
+    transition: color 0.18s var(--ease-out);
+  }
+  details.faq summary::-webkit-details-marker { display: none; }
+  details.faq summary:hover { color: var(--accent); }
+  details.faq .toggle {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: grid; place-items: center;
+    font-weight: 700;
+    transition: transform 0.3s var(--ease-out), background 0.3s var(--ease-out);
+    flex-shrink: 0;
+  }
+  details.faq[open] .toggle {
+    transform: rotate(45deg);
+    background: var(--accent);
+    color: var(--bg);
+  }
+  details.faq p {
+    color: var(--text-dim);
+    margin-top: 0.85rem;
+    padding-right: 2.5rem;
+    line-height: 1.65;
+  }
+
+  .urgency {
+    margin-top: 4rem;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: var(--radius-lg);
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .urgency h3 {
+    color: var(--bg);
+    font-size: 1.65rem;
+    margin-bottom: 0.6rem;
+  }
+  .urgency h3 .italic-accent {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .urgency p {
+    color: color-mix(in srgb, var(--bg) 65%, transparent);
+    max-width: 480px;
+    margin: 0 auto 1.5rem;
+  }
+  .urgency .slots {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-pill);
+    background: rgba(124, 169, 147, 0.18);
+    color: var(--accent-soft);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+  .urgency .slots .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(124, 169, 147, 0.25);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 3rem 0 2.5rem;
+    border-top: 1px solid var(--hairline);
+    background: var(--bg);
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .foot-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+  .foot-grid p, .foot-grid a, .foot-grid li {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+  .foot-grid h4 { color: var(--ink); font-size: 0.95rem; margin-bottom: 0.6rem; font-family: var(--font-body); font-weight: 700; }
+  .foot-grid ul { list-style: none; }
+  .foot-grid a:hover { color: var(--accent); }
+  .foot-bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--hairline);
+    text-align: center;
+    color: var(--text-faint);
+    font-size: 0.82rem;
+  }
+  @media (max-width: 720px) {
+    .foot-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+
+  /* ---------- reveal (subtle, non-opacity-zero) ---------- */
+  .reveal {
+    opacity: 0.001; /* near-zero but not 0 - LCP safe + browser still ticks paint */
+    transform: translateY(28px);
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    will-change: transform, opacity;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    * { animation-duration: 0.01s !important; transition-duration: 0.01s !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. NAV -->
+<div class="nav-wrap">
+  <nav class="nav" aria-label="Primary">
+    <a href="#hero" class="nav-logo" aria-label="Linden Family Dental home">
+      <span class="nav-logo-mark" aria-hidden="true">L</span>
+      <span>Linden Family Dental</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#offer" class="btn btn-primary">Book Now <span class="arrow" aria-hidden="true">&rarr;</span></a>
+  </nav>
+</div>
+
+<!-- 2. HERO -->
+<header class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Welcome</span>
+        <h1>A calmer kind of dentist for your <span class="italic-accent">whole family</span>.</h1>
+        <p class="hero-sub">Spa-quiet rooms, transparent pricing, and a care plan built around the people you love. No rushed visits, no surprise bills, no lectures about flossing.</p>
+        <div class="hero-ctas">
+          <a href="#offer" class="btn btn-primary">Book Your Visit <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a href="#services" class="btn btn-ghost">See Services</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-stat">
+            <span class="num">4.9&#x2605;</span>
+            <span class="lbl">412 patient reviews</span>
+          </div>
+          <div class="hero-stat">
+            <span class="num">14<span style="color:var(--accent-warm);">+</span></span>
+            <span class="lbl">Years serving families</span>
+          </div>
+          <div class="hero-stat">
+            <span class="num">98%</span>
+            <span class="lbl">Same-week booking</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <img class="hero-photo"
+             src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=80&fit=crop"
+             alt="Calm modern dental clinic interior with natural light and plants">
+        <div class="hero-photo-chip" aria-hidden="true">
+          <span class="dot"></span>
+          <span class="txt"><strong>Open this week.</strong><br>Tue, Wed &amp; Fri slots available.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 3. TRUSTED-BY -->
+<section class="trusted" aria-label="Insurance partners">
+  <div class="wrap">
+    <div class="trusted-inner">
+      <span class="trusted-label">In-network with</span>
+      <div class="trusted-logos">
+        <span>Delta&nbsp;Dental</span>
+        <span class="sep">&bull;</span>
+        <span>Aetna</span>
+        <span class="sep">&bull;</span>
+        <span>MetLife</span>
+        <span class="sep">&bull;</span>
+        <span>Cigna</span>
+        <span class="sep">&bull;</span>
+        <span>Guardian</span>
+        <span class="sep">&bull;</span>
+        <span>ADA&nbsp;Member</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. EMPATHY / PAIN -->
+<section class="empathy reveal" aria-label="What we hear from new patients">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why us</span>
+      <h2>You shouldn't dread sitting in a dental chair.</h2>
+      <p class="lead">Most patients we meet are not afraid of dentistry. They are tired of how it is delivered. If any of this sounds familiar, you are exactly the kind of family we built this practice for.</p>
+    </div>
+    <div class="pain-grid">
+      <article class="pain-card">
+        <div class="icon" aria-hidden="true">!</div>
+        <h3>Putting it off again</h3>
+        <p>That nagging tooth has been on your to-do list for months. Every clinic feels too clinical, too pushy, or too booked.</p>
+      </article>
+      <article class="pain-card">
+        <div class="icon" aria-hidden="true">?</div>
+        <h3>Embarrassed by your smile</h3>
+        <p>You smile with your lips closed in photos. The first ten minutes of any visit feels like an audit of everything you missed.</p>
+      </article>
+      <article class="pain-card">
+        <div class="icon" aria-hidden="true">x</div>
+        <h3>Tired of being rushed</h3>
+        <p>Twenty minutes in the chair, an invoice you didn't expect, and the next patient is already in the hallway. You wanted care, not a conveyor belt.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 5. BEFORE / AFTER -->
+<section class="ba reveal" aria-label="Before and after">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Before &amp; After</span>
+      <h2>From dental anxiety to a visit you actually look forward to.</h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-col dark">
+        <span class="ba-tag">Old dental visit</span>
+        <h3>The way it always felt</h3>
+        <ul class="ba-list">
+          <li><span class="ba-mark" aria-hidden="true">x</span><span>Fluorescent waiting room, daytime TV, clipboard on a tired magazine.</span></li>
+          <li><span class="ba-mark" aria-hidden="true">x</span><span>Rushed 18-minute cleaning, three add-on charges you didn't agree to.</span></li>
+          <li><span class="ba-mark" aria-hidden="true">x</span><span>Insurance answer of "we'll see what they cover" and a $400 surprise.</span></li>
+          <li><span class="ba-mark" aria-hidden="true">x</span><span>Lectured about flossing, sent home with a paper bag and a guilt trip.</span></li>
+        </ul>
+      </div>
+      <div class="ba-col light">
+        <span class="ba-tag">Visiting us</span>
+        <h3>The way it should be</h3>
+        <ul class="ba-list">
+          <li><span class="ba-mark" aria-hidden="true">&check;</span><span>Quiet, plant-filled rooms with a heated chair, warm towel, and a playlist you pick.</span></li>
+          <li><span class="ba-mark" aria-hidden="true">&check;</span><span>A full 60-minute visit, every cost confirmed before we touch a tool.</span></li>
+          <li><span class="ba-mark" aria-hidden="true">&check;</span><span>Insurance verified in advance with a one-page out-of-pocket sheet.</span></li>
+          <li><span class="ba-mark" aria-hidden="true">&check;</span><span>A personal care plan, written in plain English, with zero guilt and zero upsell.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. OPPORTUNITY / MECHANISM -->
+<section class="mech reveal" id="approach" aria-label="Our approach">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our approach</span>
+      <h2>We built Linden around the <span style="font-style:italic;color:var(--accent);">spa-care model</span>.</h2>
+      <p class="lead">Dentistry doesn't have to be a conveyor belt. By slowing down, scoping every visit in advance, and treating your nervous system like part of the patient, we make care actually feel like care.</p>
+    </div>
+    <div class="mech-grid">
+      <article class="mech-pillar">
+        <div class="step">Pillar 01</div>
+        <h3>Slow rooms, full hours</h3>
+        <p>One patient per provider, per hour. No double-booking. You get the time you paid for, every single visit.</p>
+      </article>
+      <article class="mech-pillar">
+        <div class="step">Pillar 02</div>
+        <h3>Transparent before you arrive</h3>
+        <p>Insurance pre-checked, treatment plan emailed in advance, every line item explained before a tool touches your teeth.</p>
+      </article>
+      <article class="mech-pillar">
+        <div class="step">Pillar 03</div>
+        <h3>Comfort as the default</h3>
+        <p>Heated chairs, weighted blankets, noise-cancelling headphones, and a numbing protocol you approve. Anxiety is a real diagnosis here.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 7. BENEFITS -->
+<section class="benefits reveal" aria-label="What you get">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h2>Everything your family needs, under one calm roof.</h2>
+    </div>
+    <div class="benefits-grid" id="services">
+      <div class="benefit">
+        <span class="benefit-check" aria-hidden="true">&check;</span>
+        <div>
+          <h4>Preventive cleanings &amp; exams</h4>
+          <p>Full 60-minute appointments with digital x-rays and oral cancer screening included, every visit.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <span class="benefit-check" aria-hidden="true">&check;</span>
+        <div>
+          <h4>Kid-friendly dentistry</h4>
+          <p>Patient providers, sticker shelf, and gentle first-visit scripts for ages 2 to 17. No tears policy.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <span class="benefit-check" aria-hidden="true">&check;</span>
+        <div>
+          <h4>Cosmetic &amp; whitening</h4>
+          <p>Take-home and in-office whitening, veneers, and invisible aligners with 3D smile previews.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <span class="benefit-check" aria-hidden="true">&check;</span>
+        <div>
+          <h4>Restorative care</h4>
+          <p>Fillings, crowns, bridges and implants placed in our own lab with same-week turnarounds.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <span class="benefit-check" aria-hidden="true">&check;</span>
+        <div>
+          <h4>Emergency same-day</h4>
+          <p>Toothache, broken filling, knocked-out tooth: call before noon, we see you that afternoon.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <span class="benefit-check" aria-hidden="true">&check;</span>
+        <div>
+          <h4>Sleep &amp; sedation options</h4>
+          <p>Nitrous, oral conscious, or IV sedation for anxious patients. Pre-screened with your physician.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. OFFER STACK -->
+<section class="offer reveal" id="offer" aria-label="New patient offer">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Offer</span>
+      <h2>Your first visit, calmly priced.</h2>
+      <p class="lead">We bundle everything a healthy new patient needs into one transparent visit so there are zero surprises at the front desk.</p>
+    </div>
+    <div class="offer-card">
+      <div class="offer-head">
+        <h3>The <span class="accent-word">New Patient</span> Welcome Visit</h3>
+        <p>Everything you need to start fresh with us. 90 minutes, one provider, one quiet room.</p>
+      </div>
+      <div class="offer-list">
+        <div class="offer-row">
+          <div>
+            <span class="name">Comprehensive new patient exam</span>
+            <span class="desc">Full intra-oral scan, gum health check, oral cancer screening.</span>
+          </div>
+          <span class="val">$250</span>
+        </div>
+        <div class="offer-row">
+          <div>
+            <span class="name">Digital low-dose x-rays</span>
+            <span class="desc">Full mouth series, reviewed in real time on a chair-side screen.</span>
+          </div>
+          <span class="val">$180</span>
+        </div>
+        <div class="offer-row">
+          <div>
+            <span class="name">Cleaning &amp; polish</span>
+            <span class="desc">A full hygienist appointment, never rushed, never doubled up.</span>
+          </div>
+          <span class="val">$200</span>
+        </div>
+        <div class="offer-row">
+          <div>
+            <span class="name">Personal 12-month care plan</span>
+            <span class="desc">Written plan, emailed before you leave, with insurance estimates included.</span>
+          </div>
+          <span class="val">$120</span>
+        </div>
+      </div>
+      <div class="offer-total">
+        <span class="lbl">Combined value</span>
+        <span><span class="strike">$750</span></span>
+      </div>
+      <div class="offer-foot">
+        <span class="price">$99</span>
+        <span class="price-sub">Your investment today</span>
+        <a href="#urgency" class="btn btn-accent">Book Your $99 Visit <span class="arrow" aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. MID-CTA -->
+<section class="midcta reveal" aria-label="Book a visit">
+  <div class="wrap">
+    <span class="eyebrow">Ready?</span>
+    <h2>Trade dental dread for a visit you actually <span class="italic-accent">look forward to</span>.</h2>
+    <p class="sub">Pick a time that fits your week. We'll handle the insurance paperwork before you walk through the door.</p>
+    <a href="#urgency" class="btn btn-accent">Reserve Your Time <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    <div class="note">No commitment &middot; Free reschedule up to 24 hours before</div>
+  </div>
+</section>
+
+<!-- 10. SOCIAL PROOF -->
+<section class="proof reveal" id="reviews" aria-label="Patient stories">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Reviews</span>
+      <h2>What families are saying after their first visit.</h2>
+    </div>
+    <div class="proof-grid">
+      <article class="proof-card featured">
+        <div class="proof-stars" aria-label="5 out of 5 stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+        <blockquote>"I cried in the chair, not because it hurt, but because nobody had ever explained my treatment to me before. My whole family is here now."</blockquote>
+        <div class="proof-chips">
+          <span class="proof-chip">$2K saved on insurance</span>
+          <span class="proof-chip">Family of 4</span>
+        </div>
+        <div class="proof-meta">
+          <img class="proof-avatar" loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&q=80&fit=crop&crop=face" alt="">
+          <div>
+            <span class="name">Maya R.</span>
+            <span class="role">Mom of 2 &middot; Patient since 2024</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proof-card light">
+        <div class="proof-stars" aria-label="5 out of 5 stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+        <blockquote>"First clinic that treated my dental anxiety like a real diagnosis. They gave me headphones and a weighted blanket and never made me feel weird about it."</blockquote>
+        <div class="proof-chips"><span class="proof-chip">Anxious patient</span></div>
+        <div class="proof-meta">
+          <img class="proof-avatar" loading="lazy" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&q=80&fit=crop&crop=face" alt="">
+          <div>
+            <span class="name">David K.</span>
+            <span class="role">Software lead &middot; 41</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proof-card light">
+        <div class="proof-stars" aria-label="5 out of 5 stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+        <blockquote>"Twelve years and four moves later, I still drive 40 minutes to come here. Worth it for the calm rooms and zero billing surprises."</blockquote>
+        <div class="proof-chips"><span class="proof-chip">12+ years patient</span></div>
+        <div class="proof-meta">
+          <img class="proof-avatar" loading="lazy" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&h=120&q=80&fit=crop&crop=face" alt="">
+          <div>
+            <span class="name">Priya S.</span>
+            <span class="role">Architect &middot; 47</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 11. BONUSES -->
+<section class="bonuses reveal" aria-label="Free bonuses">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Bonuses</span>
+      <h2>Two welcome gifts, on the house.</h2>
+      <p class="lead">Book the $99 Welcome Visit this month and we'll add both of these at no extra charge.</p>
+    </div>
+    <div class="bonus-grid">
+      <article class="bonus-card" data-num="01">
+        <span class="bonus-tag">Bonus 01</span>
+        <h3>Free Whitening Touch-up <span class="val">($150 value)</span></h3>
+        <p>One in-office whitening session after your cleaning. Brighter smile, same visit, zero awkward upsell at the desk.</p>
+      </article>
+      <article class="bonus-card" data-num="02">
+        <span class="bonus-tag">Bonus 02</span>
+        <h3>Insurance Pre-Check Report <span class="val">($75 value)</span></h3>
+        <p>A one-page, line-item breakdown of what your plan actually covers, emailed before your visit so there are no front-desk surprises.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 12. GUARANTEE + FAQ + URGENCY -->
+<section class="guarantee reveal" id="faq" aria-label="Guarantee and FAQ">
+  <div class="wrap">
+
+    <div class="guarantee-row">
+      <div class="guarantee-seal" aria-hidden="true">No-fuss<br>reschedule</div>
+      <div>
+        <span class="eyebrow">Guarantee</span>
+        <h3>Same-day reschedule, no questions asked.</h3>
+        <p>Life happens. Cancel or move your appointment up to the morning of, with zero fee and zero guilt. We'll save your spot for next week instead.</p>
+      </div>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions families ask before booking.</h2>
+      </div>
+
+      <details class="faq">
+        <summary>Do you accept my insurance? <span class="toggle" aria-hidden="true">+</span></summary>
+        <p>We are in-network with Delta Dental, Aetna, MetLife, Cigna and Guardian, and we file out-of-network claims for almost every other major carrier. Tell us your plan when you book and we will pre-verify your benefits before your visit.</p>
+      </details>
+
+      <details class="faq">
+        <summary>What if I haven't seen a dentist in years? <span class="toggle" aria-hidden="true">+</span></summary>
+        <p>Then you are exactly who this practice was built for. There is no lecture, no shame, no judgment. We start with the Welcome Visit, build a 12-month plan around what you actually want to fix, and pace everything to your comfort and budget.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Is the $99 Welcome Visit really all-in? <span class="toggle" aria-hidden="true">+</span></summary>
+        <p>Yes. The exam, x-rays, cleaning, polish, and 12-month care plan are all included for $99 with no hidden fees. If we spot something during the visit that needs extra treatment, we will quote it before any work begins.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Can you handle anxious or fearful patients? <span class="toggle" aria-hidden="true">+</span></summary>
+        <p>About a third of our patients describe themselves as dental-anxious. We offer nitrous, oral conscious and IV sedation, plus comfort tools like noise-cancelling headphones and weighted blankets. Tell us what scares you and we will plan around it.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Do you see kids? <span class="toggle" aria-hidden="true">+</span></summary>
+        <p>From age 2 up. We use a gentle first-visit script, let kids ride the chair, and never restrain a child. If your little one is not ready, we will book a short, no-treatment "meet and greet" first.</p>
+      </details>
+
+      <details class="faq">
+        <summary>How far in advance do I need to book? <span class="toggle" aria-hidden="true">+</span></summary>
+        <p>For routine new-patient visits we are usually booking 5 to 10 days out. For dental emergencies, call before noon and we will see you the same afternoon.</p>
+      </details>
+    </div>
+
+    <div class="urgency" id="urgency">
+      <span class="slots"><span class="dot" aria-hidden="true"></span>8 new patient slots this month</span>
+      <h3>We keep our calendar small so every visit stays <span class="italic-accent">unrushed</span>.</h3>
+      <p>To protect that, we only take eight new patients per month. When the spots are gone, we open the next month's calendar.</p>
+      <a href="mailto:hello@lindendental.com?subject=Book%20my%20%2499%20Welcome%20Visit" class="btn btn-accent">Claim Your $99 Welcome Visit <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <span class="nav-logo-mark" aria-hidden="true">L</span>
+          <span>Linden Family Dental</span>
+        </div>
+        <p>A calmer kind of family dentist. Quiet rooms, transparent prices, and a care plan built around you.</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>148 Linden Avenue, Suite 3</li>
+          <li>Portland, OR 97214</li>
+          <li><a href="tel:+15035551482">(503) 555-1482</a></li>
+          <li><a href="mailto:hello@lindendental.com">hello@lindendental.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul>
+          <li>Mon - Thu &nbsp; 8a - 6p</li>
+          <li>Fri &nbsp; 8a - 4p</li>
+          <li>Sat &nbsp; 9a - 1p</li>
+          <li>Sun &nbsp; Closed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">&copy; 2026 Linden Family Dental &middot; ADA Member Practice &middot; All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  (function(){
+    if (typeof gsap === 'undefined') {
+      // graceful fallback - show all reveal blocks
+      document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    gsap.registerPlugin(ScrollTrigger);
+
+    // hero load animation (transform only - no opacity:0 on LCP)
+    var heroCopy = document.querySelector('.hero-copy');
+    var heroMedia = document.querySelector('.hero-media');
+    if (heroCopy) {
+      gsap.from(heroCopy.children, {
+        y: 22,
+        opacity: 0.15,
+        duration: 0.85,
+        ease: 'power3.out',
+        stagger: 0.08,
+        clearProps: 'all'
+      });
+    }
+    if (heroMedia) {
+      gsap.from(heroMedia, {
+        y: 30,
+        opacity: 0.2,
+        duration: 1.05,
+        ease: 'power3.out',
+        delay: 0.15,
+        clearProps: 'all'
+      });
+    }
+
+    // reveal on scroll - y-translate only, opacity stays > 0
+    var reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(function(el){
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 82%',
+        once: true,
+        onEnter: function(){
+          el.classList.add('in');
+        }
+      });
+    });
+
+    // staggered child reveal within sections (subtle)
+    document.querySelectorAll('.pain-grid, .mech-grid, .benefits-grid, .bonus-grid, .proof-grid').forEach(function(grid){
+      var kids = grid.children;
+      if (!kids.length) return;
+      gsap.set(kids, { y: 24, opacity: 0.2 });
+      ScrollTrigger.create({
+        trigger: grid,
+        start: 'top 78%',
+        once: true,
+        onEnter: function(){
+          gsap.to(kids, {
+            y: 0, opacity: 1,
+            duration: 0.7,
+            ease: 'power3.out',
+            stagger: 0.08,
+            clearProps: 'transform,opacity'
+          });
+        }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

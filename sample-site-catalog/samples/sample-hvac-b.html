@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bluecrew Mechanical — HVAC, plumbing, and electrical you can actually count on. Same-day service in [City].</title>
+<meta name="description" content="Licensed, bonded, and on-call 24/7. Same-day diagnostic for $89 (credited when you book). 30-minute on-time guarantee or $100 off your bill. NATE, EPA 608, BBB A+.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+
+<style>
+  :root {
+    /* Variant B — Bolder navy + safety yellow (TBW alt recipe) */
+    --bg: #FFFCF5;
+    --bg-elevated: #F4EFE0;
+    --bg-deep: #0F2235;
+    --bg-deeper: #0A1828;
+    --ink: #0F2235;
+    --text: #1F2C3D;
+    --text-dim: #5D6A7A;
+    --text-faint: #8D98A6;
+    --yellow: #F4C430;
+    --yellow-deep: #D6A91A;
+    --yellow-soft: rgba(244, 196, 48, 0.15);
+    --hairline: rgba(15, 34, 53, 0.10);
+    --hairline-strong: rgba(15, 34, 53, 0.20);
+
+    --font-display: 'Oswald', Impact, sans-serif;
+    --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4rem;
+    --space-7: 6rem;
+    --space-8: 8rem;
+
+    --radius-sm: 2px;
+    --radius-md: 6px;
+    --radius-lg: 10px;
+    --radius-pill: 999px;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+  }
+  h1 { font-size: clamp(2.6rem, 6.5vw, 5.2rem); font-weight: 700; }
+  h2 { font-size: clamp(2rem, 4.4vw, 3.4rem); }
+  h3 { font-size: 1.4rem; font-weight: 600; }
+  h4 { font-size: 1rem; font-weight: 600; letter-spacing: 0.04em; }
+  p { color: var(--text); }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  a:focus-visible, button:focus-visible, [role="button"]:focus-visible {
+    outline: 3px solid var(--yellow);
+    outline-offset: 2px;
+  }
+
+  .wrap { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 var(--space-3); }
+  section { padding: var(--space-7) 0; }
+  @media (max-width: 720px) { section { padding: var(--space-6) 0; } }
+
+  /* eyebrow — square mark prefix in yellow */
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: var(--space-3);
+  }
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 10px; height: 10px;
+    background: var(--yellow);
+  }
+  .eyebrow.on-dark { color: var(--yellow); }
+
+  /* buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 18px 32px;
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 0.95rem; letter-spacing: 0.08em; text-transform: uppercase;
+    border: none; border-radius: var(--radius-sm); cursor: pointer;
+    transition: all 0.2s var(--ease-out);
+  }
+  .btn-primary { background: var(--yellow); color: var(--ink); }
+  .btn-primary:hover { background: var(--yellow-deep); transform: translateY(-1px); }
+  .btn-dark { background: var(--ink); color: #fff; }
+  .btn-dark:hover { background: var(--bg-deeper); }
+  .btn-ghost-light { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); }
+  .btn-ghost-light:hover { border-color: var(--yellow); color: var(--yellow); }
+
+  /* NAV — caution-tape top bar */
+  .top-bar {
+    background: var(--ink); color: #fff; padding: 8px 0;
+    font-size: 0.78rem; letter-spacing: 0.05em;
+    border-bottom: 3px solid var(--yellow);
+  }
+  .top-bar-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .top-bar a { color: var(--yellow); font-weight: 600; }
+  .top-bar .dot { color: var(--yellow); margin: 0 12px; }
+
+  .nav {
+    background: #fff;
+    border-bottom: 1px solid var(--hairline);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+  .logo {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; color: var(--ink);
+    letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .logo-mark { width: 32px; height: 32px; background: var(--yellow); display: inline-flex; align-items: center; justify-content: center; color: var(--ink); }
+  .nav-links { display: flex; gap: 36px; }
+  .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text); }
+  .nav-links a:hover { color: var(--ink); border-bottom: 2px solid var(--yellow); }
+  .nav-cta { display: flex; gap: 12px; align-items: center; }
+  .phone-link { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--ink); }
+  @media (max-width: 860px) { .nav-links { display: none; } .phone-link { display: none; } }
+
+  /* HERO — dark navy with safety yellow accents */
+  .hero {
+    position: relative;
+    background: var(--bg-deep);
+    color: #fff;
+    overflow: hidden;
+    padding: var(--space-8) 0 var(--space-7);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(105deg, rgba(15,34,53,0.97) 0%, rgba(15,34,53,0.78) 55%, rgba(15,34,53,0.6) 100%),
+      radial-gradient(circle at 80% 35%, #243a52 0%, #0a1828 70%),
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><defs><pattern id="p" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M0 30h60M30 0v60" stroke="rgba(244,196,48,0.04)" stroke-width="1"/></pattern></defs><rect width="60" height="60" fill="url(%23p)"/></svg>');
+    background-size: cover, cover, 60px 60px;
+  }
+  /* caution stripe decoration top */
+  .hero::after {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 6px;
+    background: repeating-linear-gradient(45deg, var(--yellow) 0 20px, var(--ink) 20px 40px);
+    opacity: 0.85;
+  }
+  .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-6); align-items: center; }
+  @media (max-width: 960px) { .hero-inner { grid-template-columns: 1fr; } }
+  .hero h1 { color: #fff; margin-bottom: var(--space-3); }
+  .hero h1 .yellow { color: var(--yellow); display: inline-block; position: relative; }
+  .hero h1 .yellow::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -6px;
+    height: 4px; background: var(--yellow);
+  }
+  .hero-sub { font-size: 1.15rem; color: rgba(255,255,255,0.85); line-height: 1.55; max-width: 540px; margin-bottom: var(--space-4); }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: var(--space-4); }
+  .hero-meta { display: flex; gap: 28px; flex-wrap: wrap; padding-top: var(--space-3); border-top: 1px solid rgba(244,196,48,0.25); }
+  .hero-meta-item { font-size: 0.82rem; color: rgba(255,255,255,0.78); font-weight: 500; }
+  .hero-meta-item strong { color: var(--yellow); font-family: var(--font-display); font-size: 1.4rem; display: block; }
+
+  /* hero booking card on right */
+  .hero-booker {
+    background: #fff; color: var(--ink);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border-top: 6px solid var(--yellow);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+  }
+  .hero-booker .booker-head { display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--space-3); }
+  .hero-booker h3 { font-size: 1.25rem; margin-bottom: 4px; }
+  .hero-booker .price { font-family: var(--font-display); font-size: 1.6rem; color: var(--yellow-deep); font-weight: 700; }
+  .hero-booker .price span { font-size: 0.7rem; color: var(--text-dim); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; display: block; }
+  .hero-booker .slot-list { list-style: none; margin: var(--space-3) 0; }
+  .hero-booker .slot-list li {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 14px; margin-bottom: 8px;
+    background: var(--bg-elevated); border-radius: var(--radius-sm);
+    font-size: 0.9rem; cursor: pointer;
+    transition: all 0.15s var(--ease-out);
+  }
+  .hero-booker .slot-list li:hover { background: var(--yellow-soft); }
+  .hero-booker .slot-list .badge { background: var(--yellow); color: var(--ink); font-size: 0.7rem; font-weight: 600; padding: 3px 8px; letter-spacing: 0.05em; text-transform: uppercase; }
+  .hero-booker .btn-primary { width: 100%; justify-content: center; }
+  .hero-booker .fine { font-size: 0.75rem; color: var(--text-dim); text-align: center; margin-top: var(--space-2); }
+
+  /* Floating availability chip */
+  .avail-chip {
+    position: fixed; bottom: 24px; right: 24px; z-index: 90;
+    background: var(--ink); color: #fff;
+    padding: 12px 18px 12px 14px;
+    border: 2px solid var(--yellow);
+    border-radius: var(--radius-pill);
+    display: flex; align-items: center; gap: 10px;
+    font-size: 0.85rem; font-weight: 500;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+    cursor: pointer;
+    transition: transform 0.2s var(--ease-out);
+  }
+  .avail-chip:hover { transform: translateY(-2px); }
+  .avail-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--yellow);
+    box-shadow: 0 0 0 0 rgba(244,196,48,0.6);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(244,196,48,0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(244,196,48,0); }
+    100% { box-shadow: 0 0 0 0 rgba(244,196,48,0); }
+  }
+
+  /* TRUST STRIP */
+  .trust-strip { background: var(--bg-elevated); padding: var(--space-4) 0; border-bottom: 3px solid var(--yellow); }
+  .trust-row { display: flex; gap: var(--space-5); justify-content: space-around; align-items: center; flex-wrap: wrap; }
+  .trust-badge {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 0.95rem; color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+  .trust-badge svg { color: var(--yellow-deep); flex-shrink: 0; }
+
+  /* PAIN */
+  .pain { background: var(--bg-elevated); padding: var(--space-7) 0; }
+  .pain-head { text-align: center; max-width: 780px; margin: 0 auto var(--space-5); }
+  .pain-head .eyebrow { justify-content: center; }
+  .pain-head h2 { margin-bottom: var(--space-2); }
+  .pain-head h2 .yellow { color: var(--yellow-deep); }
+  .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+  .pain-tile {
+    background: #fff; padding: var(--space-4);
+    border-left: 4px solid var(--yellow);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+  .pain-tile .num { font-family: var(--font-display); font-size: 0.85rem; color: var(--yellow-deep); font-weight: 600; letter-spacing: 0.12em; margin-bottom: 8px; }
+  .pain-tile h3 { font-size: 1.15rem; margin-bottom: 8px; }
+  .pain-tile p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.55; }
+  @media (max-width: 860px) { .pain-grid { grid-template-columns: 1fr; } }
+
+  /* MECHANISM — split image-left, text-right */
+  .mech-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--space-6); align-items: center; }
+  .mech-visual {
+    background: var(--ink);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    aspect-ratio: 4/5;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; overflow: hidden;
+  }
+  .mech-visual::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(244,196,48,0.18) 0%, transparent 60%);
+  }
+  .mech-visual::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
+    background: repeating-linear-gradient(45deg, var(--yellow) 0 16px, var(--ink) 16px 32px);
+  }
+  .mech-tag {
+    position: relative; z-index: 1;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--yellow); color: var(--ink);
+    padding: 6px 12px; font-family: var(--font-display); font-size: 0.78rem;
+    font-weight: 700; letter-spacing: 0.1em; align-self: flex-start;
+    text-transform: uppercase;
+  }
+  .mech-big-num { position: relative; z-index: 1; font-family: var(--font-display); color: var(--yellow); font-size: 8rem; font-weight: 700; line-height: 0.9; letter-spacing: -0.02em; }
+  .mech-big-num span { display: block; color: #fff; font-size: 1rem; letter-spacing: 0.1em; margin-top: var(--space-2); font-weight: 600; }
+  .mech-list { list-style: none; margin-top: var(--space-3); }
+  .mech-list li {
+    padding: var(--space-2) 0;
+    display: flex; gap: var(--space-2); align-items: start;
+    border-bottom: 1px solid var(--hairline);
+    font-size: 1rem;
+  }
+  .mech-list li::before {
+    content: ''; width: 8px; height: 8px; background: var(--yellow);
+    flex-shrink: 0; margin-top: 8px;
+  }
+  .mech-list strong { color: var(--ink); font-weight: 600; }
+  @media (max-width: 860px) { .mech-grid { grid-template-columns: 1fr; } }
+
+  /* SERVICES — horizontal scrolling cards or grid */
+  .services { background: var(--ink); color: #fff; }
+  .services .eyebrow { color: var(--yellow); }
+  .services h2 { color: #fff; max-width: 720px; margin-bottom: var(--space-2); }
+  .services .lead { color: rgba(255,255,255,0.75); font-size: 1.05rem; margin-bottom: var(--space-5); max-width: 640px; }
+  .services-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+  .svc-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    transition: all 0.2s var(--ease-out);
+    position: relative;
+  }
+  .svc-card:hover { background: rgba(244,196,48,0.06); border-color: var(--yellow); transform: translateY(-3px); }
+  .svc-card .num {
+    position: absolute; top: var(--space-3); right: var(--space-3);
+    font-family: var(--font-display); font-size: 2.4rem; color: rgba(244,196,48,0.18); font-weight: 700; line-height: 1;
+  }
+  .svc-card h3 { color: #fff; font-size: 1.25rem; margin-bottom: 8px; max-width: 220px; }
+  .svc-card p { color: rgba(255,255,255,0.7); font-size: 0.92rem; margin-bottom: var(--space-2); }
+  .svc-card .price { font-family: var(--font-display); color: var(--yellow); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; }
+  @media (max-width: 860px) { .services-row { grid-template-columns: 1fr; } }
+
+  /* OFFER STACK */
+  .offer-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); align-items: stretch; }
+  .offer-pitch h2 .yellow { color: var(--yellow-deep); }
+  .offer-pitch p { font-size: 1.05rem; color: var(--text-dim); line-height: 1.65; margin-bottom: var(--space-3); }
+  .offer-card-b {
+    background: var(--ink); color: #fff;
+    padding: var(--space-5);
+    border-radius: var(--radius-md);
+    border-top: 6px solid var(--yellow);
+    position: relative;
+  }
+  .offer-card-b .ribbon {
+    position: absolute; top: -14px; right: var(--space-3);
+    background: var(--yellow); color: var(--ink);
+    padding: 6px 14px; font-family: var(--font-display);
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .offer-card-b h3 { color: #fff; font-size: 1.5rem; margin-bottom: 6px; }
+  .offer-card-b .sub { color: rgba(255,255,255,0.7); font-size: 0.92rem; margin-bottom: var(--space-3); }
+  .offer-stack-b { list-style: none; }
+  .offer-stack-b li {
+    display: flex; justify-content: space-between; align-items: start; gap: var(--space-2);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.94rem;
+  }
+  .offer-stack-b .item { color: rgba(255,255,255,0.85); flex: 1; }
+  .offer-stack-b .val { font-family: var(--font-display); color: var(--yellow); font-weight: 600; white-space: nowrap; }
+  .offer-stack-b .total { padding-top: var(--space-3); margin-top: var(--space-2); border-top: 2px solid var(--yellow); border-bottom: none; }
+  .offer-stack-b .total .item { font-family: var(--font-display); text-transform: uppercase; font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: 0.04em; }
+  .offer-stack-b .total .val { color: var(--yellow); font-size: 1.5rem; }
+  .offer-card-b .btn-primary { width: 100%; justify-content: center; margin-top: var(--space-3); }
+  @media (max-width: 860px) { .offer-wrap { grid-template-columns: 1fr; } }
+
+  /* TESTIMONIALS */
+  .testimonials { background: var(--bg-elevated); }
+  .testimonials-head { text-align: center; margin-bottom: var(--space-5); }
+  .testimonials-head .eyebrow { justify-content: center; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+  .tcard {
+    background: #fff;
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border-top: 4px solid var(--yellow);
+  }
+  .tcard .stars { color: var(--yellow-deep); margin-bottom: 10px; letter-spacing: 2px; }
+  .tcard blockquote { font-size: 1rem; line-height: 1.55; color: var(--text); margin-bottom: var(--space-2); }
+  .tcard .who { display: flex; align-items: center; gap: 12px; margin-top: var(--space-3); padding-top: var(--space-2); border-top: 1px solid var(--hairline); }
+  .tcard .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--yellow); color: var(--ink); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; }
+  .tcard .meta { font-size: 0.82rem; }
+  .tcard .name { font-weight: 600; color: var(--ink); }
+  .tcard .city { color: var(--text-dim); }
+  @media (max-width: 860px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+  /* GUARANTEE BAND */
+  .guarantee {
+    background: var(--ink); color: #fff;
+    padding: var(--space-7) 0;
+    border-top: 6px solid var(--yellow);
+    border-bottom: 6px solid var(--yellow);
+    position: relative;
+  }
+  .guarantee-inner { display: grid; grid-template-columns: 0.8fr 1.4fr; gap: var(--space-6); align-items: center; }
+  .guarantee-shield {
+    width: 220px; height: 220px;
+    background: var(--yellow);
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    color: var(--ink);
+    margin: 0 auto;
+  }
+  .guarantee-shield .big { font-family: var(--font-display); font-size: 3rem; font-weight: 700; line-height: 0.9; }
+  .guarantee-shield .lab { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.1em; margin-top: 6px; text-transform: uppercase; }
+  .guarantee .eyebrow { color: var(--yellow); }
+  .guarantee h2 { color: #fff; margin-bottom: var(--space-3); }
+  .guarantee p { color: rgba(255,255,255,0.85); font-size: 1.05rem; line-height: 1.6; margin-bottom: var(--space-2); }
+  .guarantee strong { color: var(--yellow); }
+  @media (max-width: 860px) { .guarantee-inner { grid-template-columns: 1fr; } }
+
+  /* FAQ */
+  .faq { background: var(--bg); }
+  .faq-head { text-align: center; margin-bottom: var(--space-5); }
+  .faq-head .eyebrow { justify-content: center; }
+  .faq-list { max-width: 860px; margin: 0 auto; }
+  details {
+    border: 1px solid var(--hairline-strong);
+    padding: var(--space-3) var(--space-4);
+    margin-bottom: 10px;
+    border-radius: var(--radius-md);
+    background: var(--bg-elevated);
+    transition: all 0.2s var(--ease-out);
+  }
+  details[open] { border-color: var(--yellow); background: #fff; }
+  details summary {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    display: flex; justify-content: space-between; align-items: center;
+    text-transform: uppercase; letter-spacing: 0.02em;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after {
+    content: '+'; font-size: 1.5rem; font-weight: 400; color: var(--yellow-deep);
+    transition: transform 0.2s var(--ease-out);
+  }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin-top: var(--space-2); color: var(--text-dim); line-height: 1.6; font-size: 0.95rem; }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: var(--yellow);
+    color: var(--ink);
+    padding: var(--space-7) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+    background: repeating-linear-gradient(45deg, var(--ink) 0 20px, var(--yellow) 20px 40px);
+  }
+  .final-cta::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
+    background: repeating-linear-gradient(45deg, var(--ink) 0 20px, var(--yellow) 20px 40px);
+  }
+  .final-cta .wrap { text-align: center; }
+  .final-cta h2 { color: var(--ink); max-width: 840px; margin: 0 auto var(--space-3); }
+  .final-cta p { color: var(--ink); font-size: 1.1rem; margin-bottom: var(--space-4); opacity: 0.85; }
+  .final-cta .btn-dark:hover { background: var(--bg-deeper); }
+  .final-cta .urgency { margin-top: var(--space-3); font-size: 0.85rem; color: var(--ink); display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+
+  /* FOOTER */
+  footer { background: var(--bg-deeper); color: rgba(255,255,255,0.7); padding: var(--space-6) 0 var(--space-4); font-size: 0.88rem; }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-5); margin-bottom: var(--space-5); }
+  .foot-col h4 { color: var(--yellow); font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: var(--space-2); }
+  .foot-col ul { list-style: none; }
+  .foot-col li { margin-bottom: 8px; }
+  .foot-col a:hover { color: var(--yellow); }
+  .foot-brand p { color: rgba(255,255,255,0.6); margin-top: var(--space-2); line-height: 1.5; max-width: 360px; }
+  .foot-license {
+    border-top: 2px solid var(--yellow);
+    padding-top: var(--space-3);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2);
+    font-size: 0.78rem; color: rgba(255,255,255,0.6);
+  }
+  .foot-license .creds { display: flex; gap: 18px; flex-wrap: wrap; }
+  .foot-license .creds span { color: var(--yellow); font-weight: 500; }
+  @media (max-width: 860px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="wrap top-bar-inner">
+    <span>24/7 emergency dispatch <span class="dot">·</span> <a href="tel:5552264738">(555) BLU-CREW</a></span>
+    <span>Licensed · Bonded · Insured <span class="dot">·</span> State Lic. #HVAC-298411</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">B</span>BLUECREW
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#mechanism">Our Standard</a>
+      <a href="#offer">Membership</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#book" class="btn btn-primary" style="padding: 12px 20px; font-size: 0.85rem;">Book Now →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow on-dark">Family-owned · Licensed since 1998</span>
+      <h1>The HVAC crew you call <span class="yellow">before</span> the unit dies. And after.</h1>
+      <p class="hero-sub">Same-day diagnostic for $89, credited back when you book the repair. 30-minute on-time guarantee, or $100 off your invoice. A real human answers — even at 2am on a Sunday.</p>
+      <div class="hero-ctas">
+        <a href="#book" class="btn btn-primary">Book Same-day Service →</a>
+        <a href="tel:5552264738" class="btn btn-ghost-light">Or call (555) BLU-CREW</a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><strong>27</strong>Years in business</div>
+        <div class="hero-meta-item"><strong>2,847</strong>5-star reviews</div>
+        <div class="hero-meta-item"><strong>30 min</strong>On-time guarantee</div>
+      </div>
+    </div>
+    <aside class="hero-booker">
+      <div class="booker-head">
+        <div>
+          <h3>Book today</h3>
+          <p style="font-size: 0.85rem; color: var(--text-dim);">Pick a slot — we&rsquo;ll confirm in 60 seconds.</p>
+        </div>
+        <div class="price" style="text-align: right;">$89<span>Diagnostic</span></div>
+      </div>
+      <ul class="slot-list">
+        <li><span>Today &middot; 2:15 PM</span> <span class="badge">Available</span></li>
+        <li><span>Today &middot; 4:45 PM</span> <span class="badge">Available</span></li>
+        <li><span>Tomorrow &middot; 8:00 AM</span> <span class="badge">Available</span></li>
+        <li><span>Tomorrow &middot; 11:30 AM</span> <span class="badge">Available</span></li>
+      </ul>
+      <a href="#" class="btn btn-primary">Reserve This Slot →</a>
+      <p class="fine">$89 credited to your repair when you book.</p>
+    </aside>
+  </div>
+</header>
+
+<!-- Floating chip -->
+<a href="#book" class="avail-chip">
+  <span class="avail-dot"></span>
+  Available today &middot; 3 slots left
+</a>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="wrap trust-row">
+    <span class="trust-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3 7h7l-5.5 4.5L18 22l-6-4-6 4 1.5-8.5L2 9h7z"/></svg> NATE CERTIFIED</span>
+    <span class="trust-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg> EPA 608 UNIVERSAL</span>
+    <span class="trust-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L3 7v6c0 5 4 9 9 10 5-1 9-5 9-10V7l-9-5z"/></svg> BBB A+ RATED</span>
+    <span class="trust-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 21v-4M8 21v-4M3 11h18"/></svg> DOT #2840115</span>
+    <span class="trust-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg> LIC. #HVAC-298411</span>
+  </div>
+</div>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="wrap">
+    <div class="pain-head">
+      <span class="eyebrow">If this sounds familiar...</span>
+      <h2>You&rsquo;ve been burned by an HVAC contractor before. <span class="yellow">We get it.</span></h2>
+      <p style="font-size: 1.05rem; color: var(--text-dim); max-width: 640px; margin: 0 auto;">Three out of four new Bluecrew customers come to us after a bad experience with someone else. Here&rsquo;s what we hear on every intake call.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-tile">
+        <div class="num">01 — Ghost Tech</div>
+        <h3>Promised &ldquo;same day&rdquo; — showed up four days later</h3>
+        <p>The dispatcher said &ldquo;between 2 and 4&rdquo; on Tuesday. You took the afternoon off. Nobody came. Nobody called. By Friday you&rsquo;d hired someone else.</p>
+      </div>
+      <div class="pain-tile">
+        <div class="num">02 — Mystery Bill</div>
+        <h3>Quote was $400. Final invoice was $1,840.</h3>
+        <p>Once they had the panel open, suddenly &ldquo;there was more to it.&rdquo; You paid because the system was already half-disassembled. You felt stuck. You were.</p>
+      </div>
+      <div class="pain-tile">
+        <div class="num">03 — Repeat Failure</div>
+        <h3>The &ldquo;fix&rdquo; lasted six weeks</h3>
+        <p>Same part, same failure, two months later. They blamed the unit. You paid again. Turned out it was a sloppy install &mdash; but proving it was your problem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MECHANISM -->
+<section id="mechanism">
+  <div class="wrap mech-grid">
+    <div class="mech-visual">
+      <span class="mech-tag">The 30-min rule</span>
+      <div class="mech-big-num">$100<span>OFF YOUR BILL IF WE&rsquo;RE LATE</span></div>
+    </div>
+    <div>
+      <span class="eyebrow">The Bluecrew way</span>
+      <h2>Why our trucks roll out faster than anyone else in the county.</h2>
+      <p style="font-size: 1.05rem; color: var(--text-dim); margin: var(--space-2) 0 var(--space-3); line-height: 1.6;">We built the operation around the appointment window — not the other way around. Smaller service radius, more trucks, GPS tracking the customer can see in real time. The result is the only on-time guarantee in the metro that we actually pay out.</p>
+      <ul class="mech-list">
+        <li><span><strong>60-minute arrival windows</strong> &mdash; not &ldquo;sometime between 8 and 5.&rdquo; You get a 60-minute window when you book and a real-time GPS tracking link.</span></li>
+        <li><span><strong>If we&rsquo;re 30 minutes late, you get $100 off the invoice.</strong> No begging, no escalation &mdash; the discount auto-applies before we even ring the bell.</span></li>
+        <li><span><strong>Flat-rate pricing locked before we touch a tool.</strong> Parts, labor, and disposal in writing. If we under-quote, we eat the difference.</span></li>
+        <li><span><strong>Carrier, Trane, and Daikin only.</strong> Higher SEER, longer manufacturer warranties (10-12 years parts), and we know the units inside-out.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="wrap">
+    <span class="eyebrow on-dark">What we fix</span>
+    <h2>HVAC, plumbing, electrical &mdash; one crew, one invoice, one warranty.</h2>
+    <p class="lead">Most homes have three trades on speed dial. We&rsquo;re trying to make it one. Every Bluecrew tech is dual- or triple-licensed.</p>
+    <div class="services-row">
+      <div class="svc-card">
+        <span class="num">01</span>
+        <h3>Heating & Cooling</h3>
+        <p>AC repair, furnace service, full system replacements, heat pump installs, ductwork, IAQ.</p>
+        <span class="price">FROM $89 DIAGNOSTIC</span>
+      </div>
+      <div class="svc-card">
+        <span class="num">02</span>
+        <h3>Plumbing & Water Heaters</h3>
+        <p>Leak repair, drain clearing, water heater installs (tank + tankless), repipe, fixture upgrades.</p>
+        <span class="price">FROM $99 SERVICE CALL</span>
+      </div>
+      <div class="svc-card">
+        <span class="num">03</span>
+        <h3>Electrical Service</h3>
+        <p>Panel upgrades, EV charger installs, whole-home surge, generator hookups, troubleshooting.</p>
+        <span class="price">FROM $119 SERVICE CALL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section id="offer">
+  <div class="wrap offer-wrap">
+    <div class="offer-pitch">
+      <span class="eyebrow">Bluecrew Total Home Plan</span>
+      <h2>One plan. Three trades. <span class="yellow">$29/month.</span></h2>
+      <p>Most home service plans cover one system. The Bluecrew Total Home Plan covers all three &mdash; HVAC, plumbing, and electrical &mdash; with priority dispatch, no diagnostic fees, and 15% off every repair across the board.</p>
+      <p>Average member saves <strong>$612 in year one.</strong> And the membership transfers if you move within our service area.</p>
+      <a href="#" class="btn btn-dark" style="margin-top: var(--space-3);">See full plan details →</a>
+    </div>
+    <div class="offer-card-b">
+      <span class="ribbon">Most popular</span>
+      <h3>Total Home Plan</h3>
+      <p class="sub">$29/month or $299 paid annually (save $49)</p>
+      <ul class="offer-stack-b">
+        <li><span class="item">Spring AC tune-up + Fall furnace inspection</span><span class="val">$358 value</span></li>
+        <li><span class="item">Annual water heater + plumbing inspection</span><span class="val">$189 value</span></li>
+        <li><span class="item">Annual electrical panel + safety check</span><span class="val">$219 value</span></li>
+        <li><span class="item">Priority dispatch (front of queue, every call)</span><span class="val">Priceless</span></li>
+        <li><span class="item">15% off every repair across all three trades</span><span class="val">$400+ avg/yr</span></li>
+        <li><span class="item">Zero diagnostic fees on covered calls</span><span class="val">$89-$119 × visits</span></li>
+        <li><span class="item">Lifetime workmanship warranty (members only)</span><span class="val">Locked-in</span></li>
+        <li class="total"><span class="item">Year-one value</span><span class="val">$1,165+</span></li>
+      </ul>
+      <a href="#" class="btn btn-primary">Join Total Home Plan →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="reviews" class="testimonials">
+  <div class="wrap">
+    <div class="testimonials-head">
+      <span class="eyebrow">2,847 verified reviews</span>
+      <h2>What the neighbors say.</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <blockquote>&ldquo;Booked online at 9pm on a Sunday. Tech showed up Monday morning at 8:02 AM &mdash; two minutes inside the window. Diagnosed the failed capacitor in 15 minutes, had the part on the truck, cool air by 9am. This is how it&rsquo;s supposed to work.&rdquo;</blockquote>
+        <div class="who">
+          <div class="avatar">MR</div>
+          <div class="meta">
+            <div class="name">Marcus R.</div>
+            <div class="city">Homeowner · Lakewood</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <blockquote>&ldquo;Had a furnace and a water heater quit within a week of each other. Bluecrew sent ONE tech who handled both jobs in a single visit. Two systems, one invoice, one warranty. My old setup would&rsquo;ve been three different contractors and a month of chaos.&rdquo;</blockquote>
+        <div class="who">
+          <div class="avatar">SK</div>
+          <div class="meta">
+            <div class="name">Sandra K.</div>
+            <div class="city">Total Home Plan member · 2yr</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <blockquote>&ldquo;They were 38 minutes late once. I didn&rsquo;t even have to ask &mdash; the dispatcher called me, apologized, and the $100 credit was already on the invoice when the tech arrived. I&rsquo;ve literally never had a contractor do that.&rdquo;</blockquote>
+        <div class="who">
+          <div class="avatar">JP</div>
+          <div class="meta">
+            <div class="name">James P.</div>
+            <div class="city">Homeowner · Brooksdale</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="wrap guarantee-inner">
+    <div class="guarantee-shield">
+      <div class="big">30</div>
+      <div class="lab">MINUTE<br>GUARANTEE</div>
+    </div>
+    <div>
+      <span class="eyebrow on-dark">The Bluecrew promise</span>
+      <h2>On time. Or it&rsquo;s <span style="color: var(--yellow);">$100 off.</span> Every time. No fine print.</h2>
+      <p>Your appointment is a 60-minute window. If we&rsquo;re more than 30 minutes late, <strong>$100 comes off your invoice automatically</strong> &mdash; before we even get out of the truck. No begging, no &ldquo;manager review,&rdquo; no exceptions for weather or traffic.</p>
+      <p>Stack that with our <strong>lifetime workmanship warranty</strong> on every install, manufacturer warranty on the equipment (10-12 years parts on Carrier/Trane/Daikin), and a 100% satisfaction promise &mdash; and you&rsquo;ve got the most ironclad service guarantee in the metro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="faq-head">
+      <span class="eyebrow">Frequently asked</span>
+      <h2>The stuff people Google before they book.</h2>
+    </div>
+    <div class="faq-list">
+      <details open>
+        <summary>How does the 30-minute on-time guarantee actually work?</summary>
+        <p>When you book, you get a 60-minute arrival window. If the tech hasn&rsquo;t knocked on the door by the end of that window plus 30 minutes, $100 is automatically credited to your invoice. You don&rsquo;t need to ask, complain, or file anything &mdash; the dispatch system flags it and our office applies the credit before the tech leaves. We paid out 41 of these credits last year. We&rsquo;d rather pay them than break the promise.</p>
+      </details>
+      <details>
+        <summary>What does the $89 diagnostic cover?</summary>
+        <p>$89 covers the trip out, the 60-minute window, and a full systems check on whichever piece of equipment is acting up &mdash; HVAC, plumbing, or electrical. You get a written flat-rate quote before any repair work begins. If you approve the quote, the $89 credits against the repair total (so the diagnostic is effectively free).</p>
+      </details>
+      <details>
+        <summary>Do you really cover all three trades with one company?</summary>
+        <p>Yes. Every Bluecrew tech holds at least two trade licenses, most hold three. Our 11 senior techs are dual-master (HVAC + plumbing or HVAC + electrical). It means one truck, one invoice, one warranty &mdash; and no &ldquo;not my department&rdquo; when the leak under the water heater turns out to be a wiring issue.</p>
+      </details>
+      <details>
+        <summary>Are you really available 24/7? Including holidays?</summary>
+        <p>Yes &mdash; 365 days a year, including Christmas. We staff our after-hours line with our own techs on rotating on-call, not a national call center. After-hours service has a $149 trip charge (also credited if you book the repair).</p>
+      </details>
+      <details>
+        <summary>What financing do you offer?</summary>
+        <p>0% APR for 18 months on jobs over $4,000 (Wells Fargo or Synchrony, approval in 5 minutes). Longer terms with low APR available on full system replacements over $10K.</p>
+      </details>
+      <details>
+        <summary>How are your techs screened?</summary>
+        <p>Federal background check + 5-panel drug screen before the first ride-along, re-screened annually. You get a photo + bio of the assigned tech via text 60 minutes before they arrive.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="book">
+  <div class="wrap">
+    <span class="eyebrow" style="color: var(--ink); justify-content: center;">Book your service</span>
+    <h2>Stop scrolling. Get the Bluecrew rolling.</h2>
+    <p>Same-day diagnostic for $89, credited when you book the repair. 30-minute on-time guarantee. Real human in 90 seconds.</p>
+    <div style="display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center;">
+      <a href="#" class="btn btn-dark">Book Online (90 seconds) →</a>
+      <a href="tel:5552264738" class="btn btn-dark" style="background: transparent; border: 2px solid var(--ink); color: var(--ink);">Or call (555) BLU-CREW</a>
+    </div>
+    <div class="urgency">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      3 same-day slots left for cooling repairs this week
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-brand">
+        <h4 style="color: var(--yellow); font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.04em;">BLUECREW MECHANICAL</h4>
+        <p>Family-owned home services since 1998. HVAC + plumbing + electrical, one crew, one invoice, lifetime workmanship warranty. The only contractor in town with a 30-minute on-time guarantee we actually pay out.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Heating & Cooling</a></li>
+          <li><a href="#">Plumbing</a></li>
+          <li><a href="#">Electrical</a></li>
+          <li><a href="#">Water Heaters</a></li>
+          <li><a href="#">Indoor Air Quality</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Bluecrew</a></li>
+          <li><a href="#">Service Area</a></li>
+          <li><a href="#">Membership</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Careers (hiring)</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:5552264738">(555) BLU-CREW</a></li>
+          <li><a href="mailto:hi@bluecrewmech.com">hi@bluecrewmech.com</a></li>
+          <li>24/7 emergency dispatch</li>
+          <li>1842 Industrial Pkwy</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-license">
+      <span>&copy; 2026 Bluecrew Mechanical LLC. All rights reserved.</span>
+      <div class="creds">
+        <span>State Lic. #HVAC-298411</span>
+        <span>Plumbing Lic. #PL-44829</span>
+        <span>Electrical Lic. #EL-19330</span>
+        <span>EPA 608 Universal</span>
+        <span>DOT #2840115</span>
+        <span>BBB A+</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
