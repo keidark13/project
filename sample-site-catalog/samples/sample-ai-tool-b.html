@@ -1,0 +1,2291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glimmer — Drop a 30-minute Zoom. Get a 90-second highlight reel.</title>
+<meta name="description" content="Glimmer is an AI video editor for creators and podcasters. Upload raw recordings, get publish-ready highlight reels with detected laughter, quotes, and key moments — automatically.">
+<meta name="keywords" content="AI video editor, highlight reel generator, podcast clip maker, AI video clipping, automatic video editing">
+<meta name="author" content="Glimmer">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Glimmer — AI video editor for creators">
+<meta property="og:description" content="Drop a 30-minute Zoom. Get a 90-second highlight reel. AI detects laughter, quotes, and key moments automatically.">
+<meta property="og:url" content="https://keidark13.github.io/project/sample-site-catalog/samples/sample-ai-tool-b.html">
+<meta property="og:image" content="https://keidark13.github.io/project/sample-site-catalog/thumbnails/ai-tool-b.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Glimmer — AI video editor for creators">
+<meta name="twitter:description" content="Drop a 30-minute Zoom. Get a 90-second highlight reel.">
+<meta name="twitter:image" content="https://keidark13.github.io/project/sample-site-catalog/thumbnails/ai-tool-b.png">
+
+<link rel="canonical" href="https://keidark13.github.io/project/sample-site-catalog/samples/sample-ai-tool-b.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Glimmer",
+  "applicationCategory": "VideoApplication",
+  "operatingSystem": "Web, macOS, Windows",
+  "description": "AI video editor that automatically turns long-form recordings into short-form highlight reels.",
+  "url": "https://keidark13.github.io/project/sample-site-catalog/samples/sample-ai-tool-b.html",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "19",
+    "highPrice": "79",
+    "offerCount": "3"
+  },
+  "priceRange": "$19 - $79 / month",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "1247"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Glimmer Labs",
+    "url": "https://keidark13.github.io/project/sample-site-catalog/samples/sample-ai-tool-b.html"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What file formats does Glimmer support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MP4, MOV, WebM, MKV, and audio-only formats including MP3, WAV, and M4A. Direct imports from Zoom, Riverside, Descript, and Loom are supported via OAuth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a maximum recording length?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Creator plan supports recordings up to 2 hours. Studio plan supports up to 4 hours. Enterprise has no length cap and supports multi-camera multitrack uploads."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What export resolutions are available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Up to 1080p on Creator, up to 4K on Studio and Enterprise. Vertical 9:16, square 1:1, and widescreen 16:9 are exported simultaneously from a single source."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will AI processing cost extra on top of my plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Render minutes are included in every plan. Creator includes 300 minutes per month, Studio 1500, Enterprise unlimited. Overage rolls to next month for 30 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is the transcript?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Word error rate sits around 4 percent on clean studio audio and 7 percent on Zoom-quality audio. You can edit the transcript inline and the clip regenerates in seconds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you train models on my uploads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your media is processed in an isolated tenant, never used for training, and encrypted at rest with AES-256. You hold the keys on Enterprise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do you keep my source files?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Source files stay for 30 days on Creator, 90 days on Studio, and 365 days on Enterprise. You can trigger immediate deletion at any time from the dashboard."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Glimmer work for non-English content?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. 38 languages are supported for transcription and highlight detection, including Spanish, Portuguese, German, French, Japanese, Hindi, and Tagalog. Auto-translated captions are included on Studio and above."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --bg: #0A0B0F;
+  --bg-elevated: #14161B;
+  --bg-card: #181A20;
+  --ink: #FAFBFC;
+  --text: #E6E8EA;
+  --muted: #8B8E93;
+  --accent: #00D9FF;
+  --accent-dim: rgba(0, 217, 255, 0.12);
+  --accent-2: #FF3D71;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 20px;
+  --shadow-glow: 0 0 32px rgba(0, 217, 255, 0.20);
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --transition: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--accent); color: var(--bg); }
+
+/* Dotted grid background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 1;
+}
+
+a { color: inherit; text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--accent); }
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+h1 { font-size: clamp(40px, 6vw, 72px); }
+h2 { font-size: clamp(32px, 4.5vw, 52px); letter-spacing: -0.025em; }
+h3 { font-size: 20px; letter-spacing: -0.01em; }
+
+p { color: var(--text); }
+
+.accent-text { color: var(--accent); }
+
+/* ============ NAV ============ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 11, 15, 0.72);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.logo-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, var(--accent), #0099CC);
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.logo-mark::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.nav-links a:hover { color: var(--ink); }
+
+.nav-cta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #001620;
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+  background: #33E3FF;
+  color: #001620;
+  transform: translateY(-1px);
+  box-shadow: 0 0 40px rgba(0, 217, 255, 0.35);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+.btn-ghost:hover {
+  background: var(--bg-elevated);
+  color: var(--ink);
+  border-color: rgba(255,255,255,0.22);
+}
+
+.btn-lg {
+  padding: 14px 28px;
+  font-size: 15px;
+}
+
+/* ============ HERO ============ */
+.hero {
+  padding: 96px 0 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(0,217,255,0.16) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--accent-dim);
+  border: 1px solid rgba(0,217,255,0.25);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.hero h1 {
+  margin-bottom: 24px;
+}
+
+.hero-sub {
+  font-size: 19px;
+  color: var(--muted);
+  margin-bottom: 36px;
+  max-width: 520px;
+  line-height: 1.55;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-meta {
+  margin-top: 32px;
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-meta-item svg { color: var(--accent); }
+
+/* ============ DASHBOARD MOCKUP ============ */
+.dashboard {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px var(--border);
+  transform: perspective(2000px) rotateY(-4deg) rotateX(2deg);
+  transform-origin: center left;
+  overflow: hidden;
+}
+
+.dash-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(0,0,0,0.2);
+}
+
+.dash-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dash-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+}
+
+.dash-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.dash-rec {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-2);
+}
+
+.rec-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 8px var(--accent-2);
+}
+
+.dash-player {
+  background: #050608;
+  aspect-ratio: 16/9;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.player-frame {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a2030 0%, #0a1015 100%);
+  display: grid;
+  place-items: center;
+}
+
+.player-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(0,217,255,0.08) 0%, transparent 50%);
+}
+
+.player-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2a3344, #1a2030);
+  border: 2px solid rgba(255,255,255,0.1);
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.player-avatar svg { color: var(--muted); }
+
+.player-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.player-tag {
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text);
+}
+
+.player-status {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(0,217,255,0.12);
+  border: 1px solid rgba(0,217,255,0.3);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+}
+
+.status-spin {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid var(--accent);
+  border-top-color: transparent;
+  border-radius: 50%;
+}
+
+/* Waveform */
+.waveform {
+  padding: 20px 24px 16px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+}
+
+.wave-bars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 48px;
+}
+
+.wave-bar {
+  flex: 1;
+  background: linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  border-radius: 1px;
+  min-width: 2px;
+}
+
+.wave-bar.active {
+  background: linear-gradient(180deg, var(--accent), rgba(0,217,255,0.4));
+}
+
+/* Timeline */
+.timeline {
+  padding: 16px 24px 20px;
+  background: var(--bg-card);
+}
+
+.timeline-track {
+  position: relative;
+  height: 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.timeline-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 38%;
+  background: linear-gradient(90deg, var(--accent), rgba(0,217,255,0.6));
+  border-radius: 4px;
+}
+
+.timeline-handle {
+  position: absolute;
+  left: 38%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 12px rgba(0,217,255,0.4);
+}
+
+.timeline-marker {
+  position: absolute;
+  top: -4px;
+  width: 3px;
+  height: 16px;
+  background: #FFD400;
+  border-radius: 1px;
+}
+
+.timeline-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.timeline-meta-right {
+  display: flex;
+  gap: 16px;
+}
+
+.timeline-marker-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: #FFD400;
+}
+
+/* ============ TRUST STRIP ============ */
+.trust {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-label {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 28px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.trust-logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.trust-logo {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--muted);
+  letter-spacing: -0.02em;
+  opacity: 0.7;
+  transition: opacity var(--transition), color var(--transition);
+  font-family: var(--font-sans);
+}
+
+.trust-logo:hover {
+  opacity: 1;
+  color: var(--ink);
+}
+
+/* ============ SECTION SCAFFOLD ============ */
+section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 64px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.section-sub {
+  font-size: 18px;
+  color: var(--muted);
+  margin-top: 16px;
+  line-height: 1.55;
+}
+
+/* ============ EMPATHY ============ */
+.empathy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.pain-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: all var(--transition);
+}
+
+.pain-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
+}
+
+.pain-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--accent-dim);
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.pain-card h3 {
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+.pain-card p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ============ HOW IT WORKS ============ */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.step {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  position: relative;
+  transition: all var(--transition);
+}
+
+.step:hover { border-color: var(--accent); }
+
+.step-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  margin-bottom: 18px;
+  letter-spacing: 0.04em;
+}
+
+.step-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 18px;
+  color: var(--accent);
+}
+
+.step h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.step p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* ============ WHAT GLIMMER DETECTS ============ */
+.detect-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.detect-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all var(--transition);
+}
+
+.detect-card:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-card);
+}
+
+.detect-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--accent-dim);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.detect-content { flex: 1; }
+
+.detect-content h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.detect-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0,217,255,0.08);
+  color: var(--accent);
+  margin-top: 6px;
+}
+
+.detect-pill::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ============ OUTPUT GALLERY ============ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.clip-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.clip-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,217,255,0.1);
+}
+
+.clip-thumb {
+  aspect-ratio: 9/16;
+  background: linear-gradient(135deg, #1a2030, #0a1015);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.clip-thumb.variant-2 { background: linear-gradient(135deg, #2a1830, #150a15); }
+.clip-thumb.variant-3 { background: linear-gradient(135deg, #1a2a25, #050a15); }
+.clip-thumb.variant-4 { background: linear-gradient(135deg, #2a2020, #1a0a15); }
+.clip-thumb.variant-5 { background: linear-gradient(135deg, #1f2830, #0a0a15); }
+.clip-thumb.variant-6 { background: linear-gradient(135deg, #28201a, #15100a); }
+
+.clip-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.clip-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 2px solid rgba(255,255,255,0.12);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  position: relative;
+  z-index: 1;
+}
+
+.clip-duration {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink);
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.clip-play {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0,217,255,0.9);
+  display: grid;
+  place-items: center;
+  color: var(--bg);
+  z-index: 2;
+}
+
+.clip-body {
+  padding: 18px;
+}
+
+.clip-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.clip-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clip-arrow { color: var(--accent); }
+
+/* ============ PRICING ============ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.tier {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  position: relative;
+  transition: all var(--transition);
+}
+
+.tier:hover {
+  border-color: var(--border-strong);
+}
+
+.tier-popular {
+  border-color: var(--accent);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-glow);
+}
+
+.tier-popular:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 48px rgba(0,217,255,0.25);
+}
+
+.tier-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.tier-name {
+  font-size: 14px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.tier-price {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+
+.tier-price-sub {
+  font-size: 14px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  margin-bottom: 24px;
+}
+
+.tier-tagline {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.tier-features {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.tier-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.tier-check {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tier .btn {
+  width: 100%;
+}
+
+/* ============ TESTIMONIALS ============ */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.quote-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-stars {
+  color: #FFD400;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 2px;
+}
+
+.quote-text {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.quote-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.quote-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #0088AA);
+  display: grid;
+  place-items: center;
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.quote-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.quote-role {
+  font-size: 12px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+
+/* ============ FOUNDERS ============ */
+.founders {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 64px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.founders::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,217,255,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.founders-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.founders-eyebrow {
+  display: inline-block;
+  padding: 6px 12px;
+  background: rgba(0,217,255,0.1);
+  border: 1px solid rgba(0,217,255,0.2);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.founders h2 {
+  margin-bottom: 20px;
+}
+
+.founders p {
+  font-size: 17px;
+  color: var(--muted);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.founder-stack {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text);
+}
+
+.founder-tag {
+  padding: 8px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.founder-tag span { color: var(--accent); }
+
+/* ============ RISK REVERSAL ============ */
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.risk-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.risk-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.risk-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--accent-dim);
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  margin: 0 auto 16px;
+}
+
+.risk-card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.risk-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ============ FAQ ============ */
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item:first-child { border-top: 1px solid var(--border); }
+
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.faq-q:hover { color: var(--accent); }
+
+.faq-icon {
+  flex-shrink: 0;
+  transition: transform var(--transition);
+  color: var(--muted);
+}
+
+.faq-item[open] .faq-icon { transform: rotate(45deg); color: var(--accent); }
+
+.faq-a {
+  padding: 0 0 24px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 720px;
+}
+
+/* ============ FINAL CTA ============ */
+.final-cta {
+  background: linear-gradient(135deg, var(--bg-elevated), var(--bg-card));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 80px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(0,217,255,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.final-cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.final-cta h2 {
+  margin-bottom: 16px;
+}
+
+.final-cta p {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.final-cta .hero-ctas {
+  justify-content: center;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  padding: 80px 0 32px;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-brand p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 16px;
+  max-width: 320px;
+}
+
+.footer-col h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li { padding: 6px 0; }
+
+.footer-col a {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.footer-bottom {
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.footer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00C896;
+  box-shadow: 0 0 8px rgba(0,200,150,0.5);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  .empathy-grid,
+  .detect-grid,
+  .gallery-grid,
+  .testimonial-grid,
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .risk-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-cta .btn-ghost { display: none; }
+
+  .hero { padding: 56px 0 80px; }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .hero-sub { font-size: 17px; }
+  .dashboard {
+    transform: none;
+    transform-origin: center;
+  }
+
+  section { padding: 72px 0; }
+
+  .empathy-grid,
+  .detect-grid,
+  .gallery-grid,
+  .testimonial-grid,
+  .pricing-grid,
+  .steps,
+  .risk-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tier-popular { transform: none; }
+
+  .founders { padding: 48px 24px; }
+  .final-cta { padding: 56px 24px; }
+
+  .trust-logos { gap: 16px; }
+  .trust-logo { font-size: 15px; }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-meta {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .dashboard { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <div class="container nav-inner">
+    <a href="#" class="logo" aria-label="Glimmer home">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span>Glimmer</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#detects">Detects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-ghost">Sign in</a>
+      <a href="#cta" class="btn btn-primary">Try free</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Now in public beta</span>
+      <h1>Drop a 30-minute Zoom. Get a <span class="accent-text">90-second</span> highlight reel.</h1>
+      <p class="hero-sub">Glimmer watches your raw recordings, detects laughter, quote-worthy lines, and key insights, then renders publish-ready clips with captions. No timeline scrubbing. No keyframes. Just clips.</p>
+      <div class="hero-ctas">
+        <a href="#cta" class="btn btn-primary btn-lg">
+          Try free
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#gallery" class="btn btn-ghost btn-lg">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          Watch demo
+        </a>
+      </div>
+      <div class="hero-meta">
+        <span class="hero-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          14-day trial
+        </span>
+        <span class="hero-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          No credit card
+        </span>
+        <span class="hero-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          4K supported
+        </span>
+      </div>
+    </div>
+
+    <!-- Dashboard mockup -->
+    <div class="dashboard" role="img" aria-label="Glimmer editor showing detected highlight markers on a video timeline">
+      <div class="dash-titlebar">
+        <div class="dash-dots" aria-hidden="true">
+          <span class="dash-dot"></span>
+          <span class="dash-dot"></span>
+          <span class="dash-dot"></span>
+        </div>
+        <div class="dash-title">glimmer / acquired-ep-218.mp4</div>
+        <div class="dash-rec"><span class="rec-pulse"></span> LIVE</div>
+      </div>
+
+      <div class="dash-player">
+        <div class="player-frame">
+          <div class="player-overlay">
+            <span class="player-tag">EN · 1080p</span>
+            <span class="player-tag">2 speakers</span>
+          </div>
+          <div class="player-avatar" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="player-status">
+            <span class="status-spin" aria-hidden="true"></span>
+            Generating clip 03 of 06
+          </div>
+        </div>
+      </div>
+
+      <!-- Waveform -->
+      <div class="waveform" aria-hidden="true">
+        <div class="wave-bars">
+          <span class="wave-bar" style="height:20%"></span>
+          <span class="wave-bar" style="height:35%"></span>
+          <span class="wave-bar" style="height:50%"></span>
+          <span class="wave-bar active" style="height:75%"></span>
+          <span class="wave-bar active" style="height:90%"></span>
+          <span class="wave-bar active" style="height:65%"></span>
+          <span class="wave-bar" style="height:40%"></span>
+          <span class="wave-bar" style="height:25%"></span>
+          <span class="wave-bar" style="height:55%"></span>
+          <span class="wave-bar" style="height:80%"></span>
+          <span class="wave-bar" style="height:95%"></span>
+          <span class="wave-bar" style="height:70%"></span>
+          <span class="wave-bar" style="height:45%"></span>
+          <span class="wave-bar" style="height:30%"></span>
+          <span class="wave-bar" style="height:60%"></span>
+          <span class="wave-bar" style="height:85%"></span>
+          <span class="wave-bar" style="height:50%"></span>
+          <span class="wave-bar" style="height:38%"></span>
+          <span class="wave-bar" style="height:72%"></span>
+          <span class="wave-bar" style="height:90%"></span>
+          <span class="wave-bar" style="height:48%"></span>
+          <span class="wave-bar" style="height:25%"></span>
+          <span class="wave-bar" style="height:55%"></span>
+          <span class="wave-bar" style="height:78%"></span>
+          <span class="wave-bar" style="height:42%"></span>
+          <span class="wave-bar" style="height:30%"></span>
+          <span class="wave-bar" style="height:65%"></span>
+          <span class="wave-bar" style="height:88%"></span>
+          <span class="wave-bar" style="height:50%"></span>
+          <span class="wave-bar" style="height:35%"></span>
+          <span class="wave-bar" style="height:22%"></span>
+          <span class="wave-bar" style="height:58%"></span>
+          <span class="wave-bar" style="height:82%"></span>
+          <span class="wave-bar" style="height:45%"></span>
+          <span class="wave-bar" style="height:28%"></span>
+          <span class="wave-bar" style="height:68%"></span>
+          <span class="wave-bar" style="height:90%"></span>
+          <span class="wave-bar" style="height:52%"></span>
+          <span class="wave-bar" style="height:33%"></span>
+          <span class="wave-bar" style="height:75%"></span>
+          <span class="wave-bar" style="height:60%"></span>
+          <span class="wave-bar" style="height:42%"></span>
+          <span class="wave-bar" style="height:28%"></span>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline">
+        <div class="timeline-track" aria-hidden="true">
+          <div class="timeline-progress"></div>
+          <span class="timeline-marker" style="left:14%"></span>
+          <span class="timeline-marker" style="left:27%"></span>
+          <span class="timeline-marker" style="left:52%"></span>
+          <span class="timeline-marker" style="left:68%"></span>
+          <span class="timeline-marker" style="left:81%"></span>
+          <span class="timeline-marker" style="left:93%"></span>
+          <span class="timeline-handle"></span>
+        </div>
+        <div class="timeline-meta">
+          <span>12:08 / 32:14</span>
+          <div class="timeline-meta-right">
+            <span class="timeline-marker-legend">
+              <span class="legend-dot"></span>
+              6 highlights detected
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ TRUST ============ -->
+<section class="trust" aria-label="Used by">
+  <div class="container">
+    <p class="trust-label">Trusted by creators behind</p>
+    <div class="trust-logos">
+      <span class="trust-logo">Lex Fridman</span>
+      <span class="trust-logo">Acquired</span>
+      <span class="trust-logo">YC Podcast</span>
+      <span class="trust-logo">Founders</span>
+      <span class="trust-logo">Modern Wisdom</span>
+      <span class="trust-logo">Huberman Lab</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EMPATHY ============ -->
+<section id="empathy" aria-labelledby="empathy-head">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Why Glimmer</span>
+      <h2 id="empathy-head">You record once. Then post-production eats your week.</h2>
+      <p class="section-sub">Every long-form recording hides 6 to 12 publish-worthy moments. Finding them is the work nobody warned you about.</p>
+    </div>
+    <div class="empathy-grid">
+      <article class="pain-card">
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Hours editing post-recording</h3>
+        <p>Your two-hour episode took six hours to cut. Multiply that by every clip you needed for Reels, Shorts, and Twitter and the math stops working.</p>
+      </article>
+      <article class="pain-card">
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <h3>Missing best moments</h3>
+        <p>The line that lit up the room at minute 47 never gets clipped because by the time you scrub back to find it, you have already moved on to the next project.</p>
+      </article>
+      <article class="pain-card">
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Manual clip selection burnout</h3>
+        <p>Watching your own footage in 0.5x speed to mark in-points kills the energy you brought to the recording. You stop publishing. The audience drifts.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how" aria-labelledby="how-head">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">How it works</span>
+      <h2 id="how-head">From raw recording to ready-to-post in under 10 minutes</h2>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <div class="step-num">01 / Upload</div>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <h3>Upload your raw cut</h3>
+        <p>Drag in MP4, MOV, or direct-import from Zoom, Riverside, or Descript. Up to 4 hours per file.</p>
+      </article>
+      <article class="step">
+        <div class="step-num">02 / Analyze</div>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        <h3>AI scans the timeline</h3>
+        <p>Multimodal models analyze speech, sentiment, and facial cues to score every second on highlight potential.</p>
+      </article>
+      <article class="step">
+        <div class="step-num">03 / Edit</div>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <h3>Tune in the dashboard</h3>
+        <p>Inline transcript edits, b-roll suggestions, and caption styles. Every change re-renders in seconds, not hours.</p>
+      </article>
+      <article class="step">
+        <div class="step-num">04 / Export</div>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><polyline points="7 11 12 16 17 11"/><line x1="12" y1="4" x2="12" y2="16"/></svg>
+        <h3>Export everywhere</h3>
+        <p>9:16, 1:1, and 16:9 generated from one source. Direct publish to Reels, Shorts, TikTok, and X.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT GLIMMER DETECTS ============ -->
+<section id="detects" aria-labelledby="detects-head">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Detection engine</span>
+      <h2 id="detects-head">What Glimmer detects, automatically</h2>
+      <p class="section-sub">Six signal layers run in parallel on every upload. No rules to configure. No prompts to write.</p>
+    </div>
+    <div class="detect-grid">
+      <article class="detect-card">
+        <div class="detect-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="9.01" y2="10"/><line x1="15" y1="10" x2="15.01" y2="10"/></svg>
+        </div>
+        <div class="detect-content">
+          <h3>Laughter</h3>
+          <p style="font-size:13px;color:var(--muted);line-height:1.5">Group laughter, single bursts, and reactions get scored separately so authentic moments rise.</p>
+          <span class="detect-pill">Audio model</span>
+        </div>
+      </article>
+      <article class="detect-card">
+        <div class="detect-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        </div>
+        <div class="detect-content">
+          <h3>Key insights</h3>
+          <p style="font-size:13px;color:var(--muted);line-height:1.5">Sentences that compress an argument into a single, postable idea — the takeaway clips.</p>
+          <span class="detect-pill">LLM ranker</span>
+        </div>
+      </article>
+      <article class="detect-card">
+        <div class="detect-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        </div>
+        <div class="detect-content">
+          <h3>Quote-worthy lines</h3>
+          <p style="font-size:13px;color:var(--muted);line-height:1.5">Phrasing that screenshots well on X, with attribution, timing, and pull-quote framing ready.</p>
+          <span class="detect-pill">Semantic scoring</span>
+        </div>
+      </article>
+      <article class="detect-card">
+        <div class="detect-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><polyline points="17 5 12 1 7 5"/><polyline points="17 19 12 23 7 19"/></svg>
+        </div>
+        <div class="detect-content">
+          <h3>Speaker emphasis</h3>
+          <p style="font-size:13px;color:var(--muted);line-height:1.5">Volume swings, pacing shifts, and stress markers signal where the speaker leaned in.</p>
+          <span class="detect-pill">Prosody analysis</span>
+        </div>
+      </article>
+      <article class="detect-card">
+        <div class="detect-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="detect-content">
+          <h3>Topic shifts</h3>
+          <p style="font-size:13px;color:var(--muted);line-height:1.5">Conversation chapter markers auto-detected. Each chapter becomes a candidate clip with context.</p>
+          <span class="detect-pill">Embeddings</span>
+        </div>
+      </article>
+      <article class="detect-card">
+        <div class="detect-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="detect-content">
+          <h3>Audience reactions</h3>
+          <p style="font-size:13px;color:var(--muted);line-height:1.5">For multi-cam Zoom and Riverside, guest reaction shots are queued as B-roll on the right beat.</p>
+          <span class="detect-pill">Vision model</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OUTPUT GALLERY ============ -->
+<section id="gallery" aria-labelledby="gallery-head">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Output gallery</span>
+      <h2 id="gallery-head">Real clips from real recordings</h2>
+      <p class="section-sub">A 32-minute interview becomes six vertical clips, three horizontal cutdowns, and one full episode with chapters. Generated in a single pass.</p>
+    </div>
+    <div class="gallery-grid">
+      <article class="clip-card">
+        <div class="clip-thumb">
+          <div class="clip-thumb-overlay"></div>
+          <div class="clip-avatar" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <span class="clip-duration">1:24</span>
+          <span class="clip-play" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </div>
+        <div class="clip-body">
+          <p class="clip-title">"The thing nobody told me about scaling support…"</p>
+          <p class="clip-meta">From 32min <span class="clip-arrow">→</span> 1min 24s</p>
+        </div>
+      </article>
+
+      <article class="clip-card">
+        <div class="clip-thumb variant-2">
+          <div class="clip-thumb-overlay"></div>
+          <div class="clip-avatar" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <span class="clip-duration">0:47</span>
+          <span class="clip-play" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </div>
+        <div class="clip-body">
+          <p class="clip-title">"Why we killed our second product on a Tuesday"</p>
+          <p class="clip-meta">From 58min <span class="clip-arrow">→</span> 0min 47s</p>
+        </div>
+      </article>
+
+      <article class="clip-card">
+        <div class="clip-thumb variant-3">
+          <div class="clip-thumb-overlay"></div>
+          <div class="clip-avatar" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <span class="clip-duration">2:08</span>
+          <span class="clip-play" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </div>
+        <div class="clip-body">
+          <p class="clip-title">"How I rewrote the onboarding in 36 hours"</p>
+          <p class="clip-meta">From 1h 18min <span class="clip-arrow">→</span> 2min 08s</p>
+        </div>
+      </article>
+
+      <article class="clip-card">
+        <div class="clip-thumb variant-4">
+          <div class="clip-thumb-overlay"></div>
+          <div class="clip-avatar" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <span class="clip-duration">0:58</span>
+          <span class="clip-play" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </div>
+        <div class="clip-body">
+          <p class="clip-title">"The hire that changed how I think about culture"</p>
+          <p class="clip-meta">From 41min <span class="clip-arrow">→</span> 0min 58s</p>
+        </div>
+      </article>
+
+      <article class="clip-card">
+        <div class="clip-thumb variant-5">
+          <div class="clip-thumb-overlay"></div>
+          <div class="clip-avatar" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <span class="clip-duration">1:42</span>
+          <span class="clip-play" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </div>
+        <div class="clip-body">
+          <p class="clip-title">"What I would do differently raising the seed"</p>
+          <p class="clip-meta">From 2h 04min <span class="clip-arrow">→</span> 1min 42s</p>
+        </div>
+      </article>
+
+      <article class="clip-card">
+        <div class="clip-thumb variant-6">
+          <div class="clip-thumb-overlay"></div>
+          <div class="clip-avatar" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <span class="clip-duration">1:13</span>
+          <span class="clip-play" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </div>
+        <div class="clip-body">
+          <p class="clip-title">"The framework I use to say no to deals"</p>
+          <p class="clip-meta">From 52min <span class="clip-arrow">→</span> 1min 13s</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing" aria-labelledby="pricing-head">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Pricing</span>
+      <h2 id="pricing-head">Pay for output, not seats</h2>
+      <p class="section-sub">Render minutes included on every tier. No per-export fees. No watermarks. Cancel from the dashboard.</p>
+    </div>
+    <div class="pricing-grid">
+      <article class="tier">
+        <p class="tier-name">Creator</p>
+        <div class="tier-price">$19<span style="font-size:18px;color:var(--muted);font-weight:500">/mo</span></div>
+        <p class="tier-price-sub">billed monthly</p>
+        <p class="tier-tagline">For solo creators publishing weekly on one or two channels.</p>
+        <ul class="tier-features">
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> 300 render minutes / month</li>
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Up to 1080p exports</li>
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> 9:16, 1:1, 16:9 in one pass</li>
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Auto-captions in 38 languages</li>
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Up to 2-hour uploads</li>
+        </ul>
+        <a href="#cta" class="btn btn-ghost">Start free trial</a>
+      </article>
+
+      <article class="tier tier-popular">
+        <span class="tier-badge">Most popular</span>
+        <p class="tier-name">Studio</p>
+        <div class="tier-price">$79<span style="font-size:18px;color:var(--muted);font-weight:500">/mo</span></div>
+        <p class="tier-price-sub">billed monthly</p>
+        <p class="tier-tagline">For podcast teams, creator studios, and agencies running multiple shows.</p>
+        <ul class="tier-features">
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> 1500 render minutes / month</li>
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Up to 4K exports</li>
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Multi-cam multitrack support</li>
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Brand kit, fonts, lower-thirds</li>
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Up to 4-hour uploads</li>
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Direct publish to 6 platforms</li>
+        </ul>
+        <a href="#cta" class="btn btn-primary">Start free trial</a>
+      </article>
+
+      <article class="tier">
+        <p class="tier-name">Enterprise</p>
+        <div class="tier-price">Custom</div>
+        <p class="tier-price-sub">annual billing</p>
+        <p class="tier-tagline">For media networks, broadcasters, and global content operations.</p>
+        <ul class="tier-features">
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Unlimited render minutes</li>
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> SSO, audit logs, BYO keys</li>
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Custom model fine-tuning</li>
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> 365-day source retention</li>
+          <li><svg class="tier-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Dedicated success engineer</li>
+        </ul>
+        <a href="#cta" class="btn btn-ghost">Contact sales</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="proof" aria-labelledby="proof-head">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Social proof</span>
+      <h2 id="proof-head">Creators publishing more, editing less</h2>
+    </div>
+    <div class="testimonial-grid">
+      <article class="quote-card">
+        <div class="quote-stars" aria-label="5 out of 5 stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="quote-text">"My editor was spending 9 hours a week pulling clips. Glimmer does it in 12 minutes per episode. We re-routed that headcount into research."</p>
+        <div class="quote-author">
+          <div class="quote-avatar" aria-hidden="true">MR</div>
+          <div>
+            <p class="quote-name">Marcus Reeve</p>
+            <p class="quote-role">Host, Founders Notebook</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card">
+        <div class="quote-stars" aria-label="5 out of 5 stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="quote-text">"The highlight detection finds moments I would have skipped on a rewatch. Three of our top-performing Shorts this year came straight from Glimmer auto-picks."</p>
+        <div class="quote-author">
+          <div class="quote-avatar" aria-hidden="true">PL</div>
+          <div>
+            <p class="quote-name">Priya Lim</p>
+            <p class="quote-role">Producer, Modern Operators</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card">
+        <div class="quote-stars" aria-label="5 out of 5 stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="quote-text">"We tested four AI clipping tools across one season. Glimmer was the only one whose picks lined up with what our human editors would have chosen."</p>
+        <div class="quote-author">
+          <div class="quote-avatar" aria-hidden="true">DK</div>
+          <div>
+            <p class="quote-name">Dani Khan</p>
+            <p class="quote-role">Head of Video, Stratechery Media</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card">
+        <div class="quote-stars" aria-label="5 out of 5 stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="quote-text">"I record interviews in three languages. Glimmer is the first tool that handles Spanish and Tagalog without sending me back to clean up subtitles."</p>
+        <div class="quote-author">
+          <div class="quote-avatar" aria-hidden="true">AC</div>
+          <div>
+            <p class="quote-name">Andrea Cabral</p>
+            <p class="quote-role">Creator, Lateral Thinking</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card">
+        <div class="quote-stars" aria-label="5 out of 5 stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="quote-text">"Cut my editing bill by $4,200 a month in the first quarter. The Shorts engagement actually went up, which I did not expect."</p>
+        <div class="quote-author">
+          <div class="quote-avatar" aria-hidden="true">JT</div>
+          <div>
+            <p class="quote-name">Jordan Tan</p>
+            <p class="quote-role">Founder, Builders Bureau</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card">
+        <div class="quote-stars" aria-label="5 out of 5 stars">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="quote-text">"The waveform plus transcript edit loop is the cleanest UX I have used in three years of testing AI editors. Feels like a real tool, not a wrapper."</p>
+        <div class="quote-author">
+          <div class="quote-avatar" aria-hidden="true">EM</div>
+          <div>
+            <p class="quote-name">Emil Moreno</p>
+            <p class="quote-role">Solo creator, 380K subs</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUNDERS ============ -->
+<section aria-labelledby="founders-head">
+  <div class="container">
+    <div class="founders">
+      <div class="founders-content">
+        <span class="founders-eyebrow">Built by founders who shipped editors before</span>
+        <h2 id="founders-head">We have shipped this stack before. At companies you know.</h2>
+        <p>The two of us spent the last six years building the playback engine inside YouTube Studio and the silence-cut feature inside Descript. Glimmer is what we wanted to build when we still had to ship inside a meeting room.</p>
+        <div class="founder-stack">
+          <span class="founder-tag"><span>Ex-</span>YouTube Studio</span>
+          <span class="founder-tag"><span>Ex-</span>Descript</span>
+          <span class="founder-tag"><span>YC</span> W26</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RISK REVERSAL ============ -->
+<section aria-labelledby="risk-head">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">No-risk start</span>
+      <h2 id="risk-head">Try the entire stack, on us</h2>
+    </div>
+    <div class="risk-grid">
+      <article class="risk-card">
+        <div class="risk-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>Free 14-day trial</h3>
+        <p>Every feature unlocked. No credit card. Cancel anytime from the dashboard.</p>
+      </article>
+      <article class="risk-card">
+        <div class="risk-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <h3>Export all originals</h3>
+        <p>Source files, transcripts, and clip metadata download anytime in standard formats.</p>
+      </article>
+      <article class="risk-card">
+        <div class="risk-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3>GPU-accelerated</h3>
+        <p>A 60-minute episode renders all formats in roughly 4 minutes on our default cluster.</p>
+      </article>
+      <article class="risk-card">
+        <div class="risk-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <h3>4K supported</h3>
+        <p>Up to 4K source ingest and 4K output on Studio and Enterprise. ProRes available.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" aria-labelledby="faq-head">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">FAQ</span>
+      <h2 id="faq-head">Questions creators always ask</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span>What file formats does Glimmer support?</span>
+          <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="faq-a">MP4, MOV, WebM, MKV, and audio-only formats including MP3, WAV, and M4A. Direct imports from Zoom, Riverside, Descript, and Loom are supported via OAuth. We auto-detect frame rate, audio sample rate, and channel layout — nothing to configure on your end.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span>Is there a maximum recording length?</span>
+          <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="faq-a">Creator plan supports recordings up to 2 hours per file. Studio plan supports up to 4 hours. Enterprise has no length cap and adds multi-camera multitrack uploads so you can ingest a full live show with separate guest tracks.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span>What export resolutions are available?</span>
+          <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="faq-a">Up to 1080p on Creator, up to 4K on Studio and Enterprise. Vertical 9:16, square 1:1, and widescreen 16:9 are exported simultaneously from a single source — no separate renders required, no aspect-ratio fees.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span>Will AI processing cost extra on top of my plan?</span>
+          <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="faq-a">No. Render minutes are included in every plan. Creator includes 300 minutes per month, Studio 1500, Enterprise unlimited. Overage rolls to next month for 30 days at no additional cost. We will email you at 80 percent of quota so nothing surprises you.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span>How accurate is the transcript?</span>
+          <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="faq-a">Word error rate sits around 4 percent on clean studio audio and 7 percent on Zoom-quality audio. You can edit the transcript inline and the clip regenerates in seconds. We also keep a per-speaker vocabulary so industry terms learn over time.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span>Do you train models on my uploads?</span>
+          <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="faq-a">No. Your media is processed in an isolated tenant, never used for training, and encrypted at rest with AES-256. On Enterprise you hold your own keys. SOC 2 Type II report available on request.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span>How long do you keep my source files?</span>
+          <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="faq-a">Source files stay for 30 days on Creator, 90 days on Studio, and 365 days on Enterprise. You can trigger immediate deletion at any time from the dashboard and download a deletion receipt for your records.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <span>Does Glimmer work for non-English content?</span>
+          <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </summary>
+        <div class="faq-a">Yes. 38 languages are supported for transcription and highlight detection, including Spanish, Portuguese, German, French, Japanese, Hindi, and Tagalog. Auto-translated captions across all 38 languages are included on Studio and above so a single record can ship globally.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section id="cta" aria-labelledby="cta-head">
+  <div class="container">
+    <div class="final-cta">
+      <div class="final-cta-content">
+        <span class="section-eyebrow">Ready when you are</span>
+        <h2 id="cta-head">Drop your first Zoom</h2>
+        <p>Sign up, upload one recording, see the clips in under 10 minutes. No credit card. No sales call.</p>
+        <div class="hero-ctas">
+          <a href="#" class="btn btn-primary btn-lg">
+            Try free
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#" class="btn btn-ghost btn-lg">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Watch 90s demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span>Glimmer</span>
+        </div>
+        <p>The AI video editor that turns long-form recordings into publish-ready highlight reels. Built for creators who would rather record than edit.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#detects">Detection engine</a></li>
+          <li><a href="#gallery">Output gallery</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press kit</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">DPA</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Glimmer Labs, Inc.</span>
+      <span class="footer-status">
+        <span class="footer-status-dot" aria-hidden="true"></span>
+        All systems operational
+      </span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
