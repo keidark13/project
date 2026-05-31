@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sample Site Catalog — 18 sample websites across 6 niches</title>
-<meta name="description" content="Premium website samples built by Keyvin Abillon. Six niches, three design directions each, mapped to the Gus Sins 10-Point Sales Page framework.">
+<title>Sample Site Catalog — 24 sample websites across 8 niches</title>
+<meta name="description" content="Premium website samples built by Keyvin Abillon. Eight niches, three design directions each, mapped to the Gus Sins 10-Point Sales Page framework.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@500;600&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -114,6 +114,30 @@ header.site .meta-row strong { color: var(--text); font-weight: 500; display: bl
 .card:hover .thumb { box-shadow: 0 18px 36px -16px rgba(45,45,45,0.22); border-color: var(--rule-strong); }
 .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
 
+.thumb[data-label]::before {
+  content: attr(data-label);
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem); letter-spacing: -0.02em;
+  color: var(--text); padding: 0 1rem; text-align: center;
+  z-index: 0;
+}
+.thumb[data-label] { position: relative; }
+.thumb[data-label] img { position: relative; z-index: 1; }
+.thumb--fallback-tech-a { background: linear-gradient(135deg, #FFFFFF, #FAFAFA); }
+.thumb--fallback-tech-a::before { color: #0A0A0A; }
+.thumb--fallback-tech-b { background: linear-gradient(135deg, #0B1020, #131A2E); }
+.thumb--fallback-tech-b::before { color: #F5F7FA; font-family: "Space Grotesk", system-ui, sans-serif; }
+.thumb--fallback-tech-c { background: linear-gradient(135deg, #F5F1EB, #EDE6DA); }
+.thumb--fallback-tech-c::before { color: #1A1816; font-family: "Fraunces", "Cabinet Grotesk", serif; font-style: italic; }
+.thumb--fallback-charity-a { background: linear-gradient(135deg, #F7F3E9, #EFE8D8); }
+.thumb--fallback-charity-a::before { color: #1F2A24; font-family: "Fraunces", "Cabinet Grotesk", serif; }
+.thumb--fallback-charity-b { background: linear-gradient(135deg, #FDF8F2, #F5EBDC); }
+.thumb--fallback-charity-b::before { color: #2A1F18; font-family: "Playfair Display", "Fraunces", serif; font-style: italic; }
+.thumb--fallback-charity-c { background: linear-gradient(135deg, #FAFAF7, #F0EFEA); }
+.thumb--fallback-charity-c::before { color: #0F1419; font-family: "Source Serif Pro", "Fraunces", serif; }
+
 .card-meta {
   display: grid; grid-template-columns: auto 1fr auto; gap: 0.75rem; align-items: baseline;
   padding-top: 0.9rem;
@@ -179,11 +203,11 @@ footer.site .small {
 
 <header class="site">
   <div class="wrap">
-    <h1>Eighteen sample sites, six niches, <em>one pattern that converts.</em></h1>
+    <h1>Twenty-four sample sites, eight niches, <em>one pattern that converts.</em></h1>
     <p class="lede">Each site below was built to a fixed conversion architecture (the Gus Sins 10-Point Sales Page), then dressed in a niche-authentic design language. Three directions per niche so the right client can see themselves before the call.</p>
     <div class="meta-row">
-      <div><span>Samples</span><strong>18</strong></div>
-      <div><span>Niches</span><strong>6</strong></div>
+      <div><span>Samples</span><strong>24</strong></div>
+      <div><span>Niches</span><strong>8</strong></div>
       <div><span>Variants per niche</span><strong>3</strong></div>
       <div><span>Quality gates</span><strong>7/7 each</strong></div>
       <div><span>Built by</span><strong>Keyvin Abillon</strong></div>
@@ -379,6 +403,68 @@ footer.site .small {
         <div class="card-meta"><span class="card-num">018</span><span>Variant C · Atelier Climate</span><span class="card-tag">39 KB</span></div>
         <h3>Climate <em>engineered</em> for the home you actually live in.</h3>
         <div class="pal"><span class="swatch" style="background:#F4F0E6"></span><span class="swatch" style="background:#1A1816"></span><span class="swatch" style="background:#B26B3C"></span><span>DM Serif Display + Inter Tight</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="tech">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">07 — Tech / B2B SaaS</div>
+        <h2>Developer trust without the bro tone.</h2>
+      </div>
+      <div class="meta">ROI rank · #9<br>Variable — enterprise tier</div>
+      <p class="blurb">Monochrome AI-observability minimal, dark dashboard incident-response, and an editorial enterprise dev-productivity treatment. Three lenses for selling to engineering teams.</p>
+    </div>
+    <div class="grid">
+      <a class="card" href="samples/sample-tech-a.html" target="_blank" rel="noopener">
+        <div class="thumb thumb--fallback-tech-a" data-label="Driftlane"><img src="thumbnails/tech-a.png" alt="Tech / SaaS, Variant A — Driftlane monochrome observability" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="card-meta"><span class="card-num">019</span><span>Variant A · Monochrome</span><span class="card-tag">64 KB</span></div>
+        <h3>See every prompt. <em>Trace</em> every call.</h3>
+        <div class="pal"><span class="swatch" style="background:#FFFFFF;border:1px solid #E5E5E5"></span><span class="swatch" style="background:#0A0A0A"></span><span class="swatch" style="background:#FF4D00"></span><span>Inter (mid-weight) + JetBrains Mono</span></div>
+      </a>
+      <a class="card" href="samples/sample-tech-b.html" target="_blank" rel="noopener">
+        <div class="thumb thumb--fallback-tech-b" data-label="Throughline"><img src="thumbnails/tech-b.png" alt="Tech / SaaS, Variant B — Throughline dark dashboard" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="card-meta"><span class="card-num">020</span><span>Variant B · Dashboard</span><span class="card-tag">80 KB</span></div>
+        <h3>The on-call shift that doesn't end your <em>weekend.</em></h3>
+        <div class="pal"><span class="swatch" style="background:#0B1020"></span><span class="swatch" style="background:#7C5CFF"></span><span class="swatch" style="background:#00E5A8"></span><span>Space Grotesk + Inter</span></div>
+      </a>
+      <a class="card" href="samples/sample-tech-c.html" target="_blank" rel="noopener">
+        <div class="thumb thumb--fallback-tech-c" data-label="Linecraft"><img src="thumbnails/tech-c.png" alt="Tech / SaaS, Variant C — Linecraft editorial enterprise" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="card-meta"><span class="card-num">021</span><span>Variant C · Editorial</span><span class="card-tag">56 KB</span></div>
+        <h3>The toolchain <em>Fortune 500</em> engineering builds on.</h3>
+        <div class="pal"><span class="swatch" style="background:#F5F1EB"></span><span class="swatch" style="background:#1A1816"></span><span class="swatch" style="background:#B85C38"></span><span>Fraunces + Inter Tight</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="charity">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">08 — Charity / Nonprofit</div>
+        <h2>Hopeful, dignifying, evidence-backed.</h2>
+      </div>
+      <div class="meta">ROI rank · #10<br>Portfolio prestige tier</div>
+      <p class="blurb">Sage-and-bone community food security, warm-earth education portrait magazine, and an institutional research-foundation annual-report editorial. Three nonprofit tones — never pity-based.</p>
+    </div>
+    <div class="grid">
+      <a class="card" href="samples/sample-charity-a.html" target="_blank" rel="noopener">
+        <div class="thumb thumb--fallback-charity-a" data-label="Harvest Table"><img src="thumbnails/charity-a.png" alt="Charity, Variant A — Harvest Table sage food security" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="card-meta"><span class="card-num">022</span><span>Variant A · Community</span><span class="card-tag">60 KB</span></div>
+        <h3>Every Tuesday, <em>1,200 families.</em> Help us reach 2,000.</h3>
+        <div class="pal"><span class="swatch" style="background:#F7F3E9"></span><span class="swatch" style="background:#6B8E6F"></span><span class="swatch" style="background:#C97950"></span><span>Fraunces + Nunito</span></div>
+      </a>
+      <a class="card" href="samples/sample-charity-b.html" target="_blank" rel="noopener">
+        <div class="thumb thumb--fallback-charity-b" data-label="Light Bridge"><img src="thumbnails/charity-b.png" alt="Charity, Variant B — Light Bridge warm earth education" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="card-meta"><span class="card-num">023</span><span>Variant B · Portrait</span><span class="card-tag">60 KB</span></div>
+        <h3>Maya was the <em>first.</em> She won't be the last.</h3>
+        <div class="pal"><span class="swatch" style="background:#FDF8F2"></span><span class="swatch" style="background:#2A1F18"></span><span class="swatch" style="background:#D4621A"></span><span>Playfair Display + Source Sans</span></div>
+      </a>
+      <a class="card" href="samples/sample-charity-c.html" target="_blank" rel="noopener">
+        <div class="thumb thumb--fallback-charity-c" data-label="Meridian Institute"><img src="thumbnails/charity-c.png" alt="Charity, Variant C — Meridian Institute institutional research" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="card-meta"><span class="card-num">024</span><span>Variant C · Institutional</span><span class="card-tag">64 KB</span></div>
+        <h3>Funding the <em>trials</em> that markets won't.</h3>
+        <div class="pal"><span class="swatch" style="background:#FAFAF7"></span><span class="swatch" style="background:#0F1419"></span><span class="swatch" style="background:#0066A4"></span><span>Source Serif Pro + Inter Tight</span></div>
       </a>
     </div>
   </section>

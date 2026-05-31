@@ -1,0 +1,1761 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Driftlane — See every prompt. Trace every call. Ship with confidence.</title>
+<meta name="description" content="Driftlane is the trace-first observability platform for distributed AI agents. Capture every prompt, trace every tool call, and replay failures in production — without bolting on five different SaaS tools." />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<link rel="canonical" href="https://keidark13.github.io/project/sample-site-catalog/samples/sample-tech-a.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Driftlane" />
+<meta property="og:title" content="Driftlane — Trace-first observability for AI agents" />
+<meta property="og:description" content="See every prompt. Trace every call. Ship with confidence. Driftlane unifies traces, costs, and evals for teams running distributed AI agents in production." />
+<meta property="og:url" content="https://keidark13.github.io/project/sample-site-catalog/samples/sample-tech-a.html" />
+<meta property="og:image" content="https://keidark13.github.io/project/sample-site-catalog/thumbnails/tech-a.png" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Driftlane — Trace-first observability for AI agents" />
+<meta name="twitter:description" content="See every prompt. Trace every call. Ship with confidence." />
+<meta name="twitter:image" content="https://keidark13.github.io/project/sample-site-catalog/thumbnails/tech-a.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Driftlane",
+  "description": "Trace-first observability platform for distributed AI agents. Capture every prompt, trace every tool call, replay failures in production.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web, Linux, macOS",
+  "url": "https://keidark13.github.io/project/sample-site-catalog/samples/sample-tech-a.html",
+  "image": "https://keidark13.github.io/project/sample-site-catalog/thumbnails/tech-a.png",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "0",
+    "highPrice": "499",
+    "priceRange": "$0 - $499/mo",
+    "offerCount": "3"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "184"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I have to rewrite my agent code to use Driftlane?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The Driftlane SDK is a single import that wraps your existing LLM and tool calls. Most teams instrument their first agent in under ten minutes — typically two lines in your entrypoint plus an environment variable for your project key. You keep your framework of choice, whether that is LangGraph, CrewAI, Vercel AI SDK, or hand-rolled."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which LLM providers and frameworks does Driftlane support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Out of the box we trace OpenAI, Anthropic, Google, Mistral, Groq, Together, and any provider that follows the OpenAI-compatible chat schema. On the framework side we have first-class adapters for LangChain, LangGraph, LlamaIndex, CrewAI, Vercel AI SDK, Pydantic AI, and the Anthropic Agent SDK. Anything else can be instrumented with our generic span API."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Driftlane handle sensitive data inside prompts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Redaction happens in the SDK before the payload ever leaves your machine. You can configure regex masks, key allowlists, or run our local PII model. For regulated workloads we offer a self-hosted control plane that keeps trace bodies inside your VPC while metadata streams to our cloud for the dashboard view."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will Driftlane add latency to my production agents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tracing is fully async and batched. The SDK adds under one millisecond per span on a warm process and never blocks your main loop — even on cold start the overhead stays below five milliseconds. If our ingest is unreachable, spans buffer to disk and replay automatically once connectivity returns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I run evals and replay traces against new model versions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every captured trace is replayable. Pick any subset — failed traces, expensive traces, traces from a specific customer — and re-run them against a new prompt, a new model, or an updated tool. Diff the outputs side by side, score with built-in or custom evals, and promote the winning configuration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does pricing scale once I move past the free Solo tier?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Team is a flat forty-nine dollars per month and includes one hundred thousand spans plus seven-day retention. Scale is four hundred ninety-nine per month for two million spans and thirty-day retention. Overage is metered per ten thousand spans and never surprises you — we pause ingest at your configured cap and email you first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a self-hosted or on-prem option?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Scale tier includes a self-hosted control plane image you can deploy into your own Kubernetes cluster. It ships as a single Helm chart with Postgres and ClickHouse backends. Enterprise customers get a hardened build with SSO, audit logs, and BYOK encryption — happy to walk you through it on a call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is Driftlane actually for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Teams building production agents — not chatbots. If your system makes multiple LLM calls, hits external tools, branches on results, and needs to be debuggable at 2 a.m., Driftlane is built for you. Today our customers run customer-support agents, coding agents, research agents, and internal ops automations at companies from two-person YC startups to publicly traded fintechs."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --bg: #FFFFFF;
+  --ink: #0A0A0A;
+  --muted: #525252;
+  --muted-2: #737373;
+  --border: #E5E5E5;
+  --border-2: #F0F0F0;
+  --bg-soft: #FAFAFA;
+  --accent: #FF4D00;
+
+  --code-bg: #0A0A0A;
+  --code-fg: #E5E5E5;
+  --code-key: #8AB4F8;
+  --code-str: #A5D6A7;
+  --code-num: #F8BBD0;
+  --code-mut: #6B7280;
+
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-pill: 9999px;
+
+  --maxw: 1120px;
+  --hero-maxw: 720px;
+
+  --t-display: 60px;
+  --t-h2: 40px;
+  --t-h3: 22px;
+  --t-body: 16px;
+  --t-small: 14px;
+  --t-eyebrow: 12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: var(--t-body);
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.dl-container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--s-5);
+}
+
+.dl-eyebrow {
+  font-size: var(--t-eyebrow);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.dl-h1 {
+  font-size: var(--t-display);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--ink);
+}
+
+.dl-h1 .accent {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.dl-h2 {
+  font-size: var(--t-h2);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 var(--s-4) 0;
+  color: var(--ink);
+}
+
+.dl-h3 {
+  font-size: var(--t-h3);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--s-3) 0;
+}
+
+.dl-lead {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+.dl-muted { color: var(--muted); }
+
+.dl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  height: 40px;
+  padding: 0 18px;
+  border-radius: var(--r-pill);
+  font-family: inherit;
+  font-size: var(--t-small);
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.dl-btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.dl-btn--primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+.dl-btn--primary:hover { background: #1a1a1a; }
+.dl-btn--primary:active { transform: translateY(1px); }
+
+.dl-btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--border);
+}
+.dl-btn--ghost:hover {
+  background: var(--bg-soft);
+  border-color: #D4D4D4;
+}
+
+.dl-btn--lg { height: 46px; padding: 0 22px; font-size: 15px; }
+
+.dl-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  height: 28px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--bg);
+}
+.dl-pill .dl-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+}
+
+/* NAV */
+.dl-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--border-2);
+}
+.dl-nav__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.dl-nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.dl-nav__brand svg { display: block; }
+.dl-nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--s-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dl-nav__links a {
+  font-size: var(--t-eyebrow);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.dl-nav__links a:hover { color: var(--ink); }
+.dl-nav__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+}
+.dl-nav__toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* HERO */
+.dl-hero {
+  position: relative;
+  padding: var(--s-9) 0 var(--s-8);
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+.dl-hero__grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(circle, #D4D4D4 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: center top;
+  mask-image: radial-gradient(ellipse 60% 70% at 50% 30%, #000 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 30%, #000 40%, transparent 100%);
+  opacity: 0.7;
+}
+.dl-hero__inner {
+  max-width: var(--hero-maxw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-5);
+}
+.dl-hero__sub {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 580px;
+  margin: 0;
+}
+.dl-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin-top: var(--s-2);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.dl-hero__note {
+  font-size: 13px;
+  color: var(--muted-2);
+}
+
+/* CODE CARD */
+.dl-codecard {
+  width: 100%;
+  max-width: 880px;
+  margin: var(--s-7) auto 0;
+  background: var(--code-bg);
+  color: var(--code-fg);
+  border-radius: var(--r-lg);
+  border: 1px solid #1A1A1A;
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.25), 0 8px 20px -8px rgba(0,0,0,0.15);
+  overflow: hidden;
+  text-align: left;
+}
+.dl-codecard__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid #1A1A1A;
+  background: #0D0D0D;
+}
+.dl-codecard__dots {
+  display: inline-flex;
+  gap: 6px;
+}
+.dl-codecard__dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #262626;
+  display: inline-block;
+}
+.dl-codecard__title {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  color: #A3A3A3;
+  font-weight: 500;
+}
+.dl-codecard__body {
+  padding: var(--s-5) var(--s-5);
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--code-fg);
+  white-space: pre;
+  overflow-x: auto;
+}
+.dl-codecard__body .tk-key { color: var(--code-key); }
+.dl-codecard__body .tk-str { color: var(--code-str); }
+.dl-codecard__body .tk-num { color: var(--code-num); }
+.dl-codecard__body .tk-mut { color: var(--code-mut); }
+.dl-codecard__body .tk-tag { color: #FFB86B; }
+
+/* TRUST STRIP */
+.dl-trust {
+  border-top: 1px solid var(--border-2);
+  border-bottom: 1px solid var(--border-2);
+  padding: var(--s-6) 0;
+  background: var(--bg);
+}
+.dl-trust__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-6);
+  flex-wrap: wrap;
+}
+.dl-trust__label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  flex: 0 0 auto;
+}
+.dl-trust__logos {
+  display: flex;
+  align-items: center;
+  gap: var(--s-7);
+  flex-wrap: wrap;
+}
+.dl-trust__logos span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+/* SECTION SCAFFOLD */
+.dl-section {
+  padding: var(--s-9) 0;
+  border-bottom: 1px solid var(--border-2);
+}
+.dl-section--soft { background: var(--bg-soft); }
+.dl-section__head {
+  max-width: 720px;
+  margin: 0 auto var(--s-7);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  align-items: center;
+}
+.dl-section__head p { margin: 0; color: var(--muted); font-size: 17px; }
+
+/* EMPATHY (pain) */
+.dl-pain__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-5);
+}
+.dl-pain__card {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s-6);
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.dl-pain__card:hover { border-color: #D4D4D4; }
+.dl-pain__tag {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.dl-pain__card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
+
+/* MECHANISM */
+.dl-mech__steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-5);
+  position: relative;
+}
+.dl-mech__step {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s-6);
+  background: var(--bg);
+  position: relative;
+}
+.dl-mech__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-pill);
+  background: var(--ink);
+  color: var(--bg);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 13px;
+  margin-bottom: var(--s-3);
+}
+.dl-mech__step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* BEFORE / AFTER */
+.dl-ba {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-5);
+}
+.dl-ba__panel {
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  background: var(--bg);
+  min-height: 360px;
+}
+.dl-ba__panel--before { background: var(--bg-soft); }
+.dl-ba__panel--after { background: var(--bg); border-color: var(--ink); }
+.dl-ba__label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: var(--s-3);
+  display: block;
+}
+.dl-ba__panel--after .dl-ba__label { color: var(--accent); }
+.dl-ba__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--s-4) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.dl-ba__list li {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.55;
+}
+.dl-ba__list--before li { color: var(--muted); }
+.dl-ba__icon {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+}
+
+/* BENEFITS GRID */
+.dl-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-1);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--border);
+  overflow: hidden;
+}
+.dl-benefits__cell {
+  background: var(--bg);
+  padding: var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.dl-benefits__icon {
+  width: 28px;
+  height: 28px;
+  color: var(--ink);
+}
+.dl-benefits__title {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+.dl-benefits__cell p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* PRICING */
+.dl-price {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-5);
+}
+.dl-price__card {
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.dl-price__card--featured {
+  border-color: var(--ink);
+  box-shadow: 0 20px 40px -20px rgba(0,0,0,0.18);
+  position: relative;
+}
+.dl-price__card--featured::before {
+  content: "MOST POPULAR";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--bg);
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+.dl-price__tier {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.dl-price__amount {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.dl-price__num {
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.dl-price__per { font-size: 14px; color: var(--muted); }
+.dl-price__desc { margin: 0; font-size: 14.5px; color: var(--muted); }
+.dl-price__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  border-top: 1px solid var(--border-2);
+  padding-top: var(--s-4);
+}
+.dl-price__features li {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.dl-price__check {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+  color: var(--ink);
+}
+
+/* TESTIMONIALS */
+.dl-quotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-5);
+}
+.dl-quote {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s-6);
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.dl-quote__metric {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.dl-quote__body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0;
+}
+.dl-quote__person {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  border-top: 1px solid var(--border-2);
+  padding-top: var(--s-4);
+}
+.dl-quote__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.dl-quote__name {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.dl-quote__role {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+/* AUTHORITY */
+.dl-authority {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--s-7);
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--s-7);
+  background: var(--bg);
+}
+.dl-authority__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.dl-authority__col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--s-3);
+}
+.dl-authority__chips {
+  display: inline-flex;
+  gap: var(--s-2);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.dl-authority__chip {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+}
+
+/* RISK */
+.dl-risk {
+  text-align: center;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border-2);
+  border-bottom: 1px solid var(--border-2);
+  padding: var(--s-8) 0;
+}
+.dl-risk__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  align-items: center;
+}
+.dl-risk__badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s-3);
+}
+.dl-risk__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: 13px;
+  color: var(--ink);
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  background: var(--bg);
+}
+.dl-risk__badge svg { width: 14px; height: 14px; color: var(--accent); }
+
+/* FAQ */
+.dl-faq {
+  max-width: 800px;
+  margin: 0 auto;
+  border-top: 1px solid var(--border);
+}
+.dl-faq__item {
+  border-bottom: 1px solid var(--border);
+  padding: var(--s-4) 0;
+}
+.dl-faq__item[open] { padding-bottom: var(--s-5); }
+.dl-faq__summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+  padding: var(--s-3) 0;
+}
+.dl-faq__summary::-webkit-details-marker { display: none; }
+.dl-faq__summary::after {
+  content: "+";
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--muted);
+  transition: transform 0.2s ease;
+  flex: 0 0 auto;
+}
+.dl-faq__item[open] .dl-faq__summary::after {
+  content: "−";
+  color: var(--accent);
+}
+.dl-faq__answer {
+  margin: var(--s-2) 0 0;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+/* FINAL CTA */
+.dl-finalcta {
+  background: var(--ink);
+  color: var(--bg);
+  padding: var(--s-9) 0;
+  text-align: center;
+}
+.dl-finalcta__inner {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+  align-items: center;
+}
+.dl-finalcta h2 {
+  color: var(--bg);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.dl-finalcta p {
+  color: #A3A3A3;
+  font-size: 17px;
+  margin: 0;
+  max-width: 520px;
+}
+.dl-finalcta .dl-btn--primary {
+  background: var(--bg);
+  color: var(--ink);
+}
+.dl-finalcta .dl-btn--primary:hover { background: #F0F0F0; }
+.dl-finalcta .dl-btn--ghost {
+  color: var(--bg);
+  border-color: #262626;
+}
+.dl-finalcta .dl-btn--ghost:hover {
+  background: #1A1A1A;
+  border-color: #404040;
+}
+
+/* FOOTER */
+.dl-footer {
+  background: var(--bg);
+  padding: var(--s-8) 0 var(--s-6);
+  border-top: 1px solid var(--border-2);
+}
+.dl-footer__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: var(--s-7);
+  margin-bottom: var(--s-7);
+}
+.dl-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.dl-footer__brand p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 280px;
+  line-height: 1.55;
+}
+.dl-footer__col h4 {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 var(--s-4);
+}
+.dl-footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.dl-footer__col a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.15s ease;
+}
+.dl-footer__col a:hover { color: var(--ink); }
+.dl-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-2);
+  padding-top: var(--s-5);
+  font-size: 13px;
+  color: var(--muted-2);
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  :root { --t-display: 52px; --t-h2: 36px; }
+  .dl-authority { grid-template-columns: 1fr; text-align: center; padding: var(--s-6); }
+  .dl-authority__col { align-items: center; }
+  .dl-authority__chips { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --t-display: 40px;
+    --t-h2: 30px;
+    --t-h3: 20px;
+    --s-9: 64px;
+    --s-8: 48px;
+  }
+  .dl-container { padding: 0 var(--s-4); }
+
+  .dl-nav__links { display: none; }
+  .dl-nav__actions .dl-btn--ghost { display: none; }
+  .dl-nav__toggle { display: inline-flex; }
+
+  .dl-hero { padding: var(--s-7) 0 var(--s-7); }
+  .dl-hero__sub { font-size: 16px; }
+  .dl-codecard__body { font-size: 11.5px; padding: var(--s-4); }
+
+  .dl-trust__row { justify-content: center; text-align: center; }
+  .dl-trust__logos { gap: var(--s-5); justify-content: center; }
+  .dl-trust__logos span { font-size: 13px; }
+
+  .dl-pain__grid,
+  .dl-mech__steps,
+  .dl-benefits,
+  .dl-price,
+  .dl-quotes,
+  .dl-ba {
+    grid-template-columns: 1fr;
+  }
+
+  .dl-benefits {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    gap: 0;
+  }
+  .dl-benefits__cell { border-bottom: 1px solid var(--border-2); }
+  .dl-benefits__cell:last-child { border-bottom: none; }
+
+  .dl-finalcta h2 { font-size: 34px; }
+
+  .dl-footer__grid { grid-template-columns: 1fr 1fr; gap: var(--s-5); }
+  .dl-footer__brand { grid-column: 1 / -1; }
+
+  .dl-faq__summary { font-size: 15.5px; }
+}
+
+@media (max-width: 480px) {
+  .dl-footer__grid { grid-template-columns: 1fr; }
+  .dl-hero__cta { flex-direction: column; align-items: stretch; width: 100%; }
+  .dl-hero__cta .dl-btn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="dl-nav" role="banner">
+  <div class="dl-container dl-nav__row">
+    <a class="dl-nav__brand" href="#" aria-label="Driftlane home">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="19" height="19" rx="5" stroke="#0A0A0A" stroke-width="1.5"/>
+        <path d="M6 11h10M8 7l-2 4 2 4M14 7l2 4-2 4" stroke="#0A0A0A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Driftlane
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="dl-nav__links">
+        <li><a href="#product">Product</a></li>
+        <li><a href="#mechanism">Traces</a></li>
+        <li><a href="#benefits">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#proof">Customers</a></li>
+        <li><a href="#authority">Company</a></li>
+        <li><a href="#faq">Docs</a></li>
+        <li><a href="#faq">Changelog</a></li>
+      </ul>
+    </nav>
+
+    <div class="dl-nav__actions">
+      <a href="#" class="dl-btn dl-btn--ghost">Sign in</a>
+      <a href="#cta" class="dl-btn dl-btn--primary">Start free</a>
+      <button class="dl-nav__toggle" aria-label="Open menu" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="dl-hero" aria-labelledby="hero-h1">
+  <div class="dl-hero__grid" aria-hidden="true"></div>
+  <div class="dl-container dl-hero__inner">
+    <span class="dl-pill"><span class="dl-dot"></span>v0.8 · YC F25</span>
+
+    <h1 id="hero-h1" class="dl-h1">See every prompt. <em class="accent">Trace</em> every call.</h1>
+
+    <p class="dl-hero__sub">
+      Driftlane is the trace-first observability platform for distributed AI agents.
+      Capture every prompt, replay every failure, and ship to production without bolting on five separate dashboards.
+    </p>
+
+    <div class="dl-hero__cta">
+      <a href="#cta" class="dl-btn dl-btn--primary dl-btn--lg">Start free
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#mechanism" class="dl-btn dl-btn--ghost dl-btn--lg">See a live trace</a>
+    </div>
+
+    <p class="dl-hero__note">No credit card. SDK in 10 lines. Free forever for solo developers.</p>
+
+    <figure class="dl-codecard" aria-label="Example Driftlane trace">
+      <div class="dl-codecard__bar">
+        <span class="dl-codecard__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="dl-codecard__title">trace · run_id=trc_8f3c2a · status=ok</span>
+        <span class="dl-codecard__title">2.41s</span>
+      </div>
+      <pre class="dl-codecard__body" aria-hidden="true">{
+  <span class="tk-key">"trace_id"</span>: <span class="tk-str">"trc_8f3c2a"</span>,
+  <span class="tk-key">"agent"</span>: <span class="tk-str">"support-triage-v3"</span>,
+  <span class="tk-key">"latency_ms"</span>: <span class="tk-num">2410</span>,
+  <span class="tk-key">"cost_usd"</span>: <span class="tk-num">0.0184</span>,
+  <span class="tk-key">"spans"</span>: [
+    { <span class="tk-key">"name"</span>: <span class="tk-str">"llm.openai.gpt-4o"</span>, <span class="tk-key">"ms"</span>: <span class="tk-num">812</span>, <span class="tk-key">"tokens_in"</span>: <span class="tk-num">1284</span> },
+    { <span class="tk-key">"name"</span>: <span class="tk-str">"tool.search_kb"</span>,     <span class="tk-key">"ms"</span>: <span class="tk-num">142</span>, <span class="tk-key">"hits"</span>: <span class="tk-num">4</span> },
+    { <span class="tk-key">"name"</span>: <span class="tk-str">"llm.anthropic.claude"</span>, <span class="tk-key">"ms"</span>: <span class="tk-num">1310</span>, <span class="tk-key">"tokens_out"</span>: <span class="tk-num">412</span> },
+    { <span class="tk-key">"name"</span>: <span class="tk-str">"tool.create_ticket"</span>, <span class="tk-key">"ms"</span>: <span class="tk-num">146</span>, <span class="tk-key">"ok"</span>: <span class="tk-tag">true</span> }
+  ],
+  <span class="tk-key">"eval"</span>: { <span class="tk-key">"helpfulness"</span>: <span class="tk-num">0.92</span>, <span class="tk-key">"grounded"</span>: <span class="tk-tag">true</span> },
+  <span class="tk-mut">// replay this trace against gpt-5 with one click</span>
+}</pre>
+    </figure>
+  </div>
+</section>
+
+<section class="dl-trust" aria-label="Trusted by teams">
+  <div class="dl-container dl-trust__row">
+    <span class="dl-trust__label">Trusted by AI teams at</span>
+    <div class="dl-trust__logos" role="list">
+      <span role="listitem">Cortexa</span>
+      <span role="listitem">Lattice AI</span>
+      <span role="listitem">Northwind</span>
+      <span role="listitem">Helio Labs</span>
+      <span role="listitem">Parsec</span>
+    </div>
+  </div>
+</section>
+
+<section class="dl-section" id="product" aria-labelledby="pain-h2">
+  <div class="dl-container">
+    <div class="dl-section__head">
+      <span class="dl-eyebrow">The problem</span>
+      <h2 id="pain-h2" class="dl-h2">Why AI engineers can't sleep at night</h2>
+      <p>Three failure modes show up in every production agent stack — and traditional APM tools were never built to catch them.</p>
+    </div>
+
+    <div class="dl-pain__grid">
+      <article class="dl-pain__card">
+        <span class="dl-pain__tag">Pain · 01</span>
+        <h3 class="dl-h3">Silent failures</h3>
+        <p>Your agent returned a "completed" status — but the answer was wrong, the tool call was skipped, or the user got a polite hallucination. Nothing throws an exception. Your alerting stays green. The complaint email shows up four days later.</p>
+      </article>
+
+      <article class="dl-pain__card">
+        <span class="dl-pain__tag">Pain · 02</span>
+        <h3 class="dl-h3">Cost explosions</h3>
+        <p>A single ten-cent agent run quietly turns into a four-dollar loop. Your monthly LLM spend is a black box. By the time finance asks why the bill 4x'd, you cannot point to a single trace, customer, or prompt change as the cause.</p>
+      </article>
+
+      <article class="dl-pain__card">
+        <span class="dl-pain__tag">Pain · 03</span>
+        <h3 class="dl-h3">Hallucinations in prod</h3>
+        <p>Your evals passed in CI. Real traffic does things your fixtures never imagined. Without a way to replay actual production traces against new prompts or models, every release is a coin flip and every regression is a fire drill.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="dl-section dl-section--soft" id="mechanism" aria-labelledby="mech-h2">
+  <div class="dl-container">
+    <div class="dl-section__head">
+      <span class="dl-eyebrow">The mechanism</span>
+      <h2 id="mech-h2" class="dl-h2">Trace-first observability for agents</h2>
+      <p>One SDK, one data model, three primitives. Everything else — costs, evals, alerts — falls out of the trace.</p>
+    </div>
+
+    <div class="dl-mech__steps">
+      <article class="dl-mech__step">
+        <span class="dl-mech__num">01</span>
+        <h3 class="dl-h3">Capture</h3>
+        <p>One import wraps every LLM call, tool call, and retrieval. Driftlane records inputs, outputs, latency, and cost — with PII redaction before bytes leave your process.</p>
+      </article>
+
+      <article class="dl-mech__step">
+        <span class="dl-mech__num">02</span>
+        <h3 class="dl-h3">Trace</h3>
+        <p>Spans roll up into a single tree per agent run. See the full reasoning path, branching decisions, retries, and which tool returned the bad payload — searchable across millions of runs.</p>
+      </article>
+
+      <article class="dl-mech__step">
+        <span class="dl-mech__num">03</span>
+        <h3 class="dl-h3">Replay</h3>
+        <p>Pick any production trace and re-run it against a new prompt, a new model, or a patched tool. Diff outputs side by side, score with evals, and promote the winner — no synthetic dataset needed.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="dl-section" aria-labelledby="ba-h2">
+  <div class="dl-container">
+    <div class="dl-section__head">
+      <span class="dl-eyebrow">Before / After</span>
+      <h2 id="ba-h2" class="dl-h2">Stop stitching dashboards. Start shipping.</h2>
+      <p>What a normal day looks like before Driftlane — and what it looks like once your agents are instrumented.</p>
+    </div>
+
+    <div class="dl-ba">
+      <article class="dl-ba__panel dl-ba__panel--before" aria-labelledby="ba-before">
+        <span class="dl-ba__label" id="ba-before">Before Driftlane</span>
+        <h3 class="dl-h3">Logs scattered across five tools</h3>
+        <ul class="dl-ba__list dl-ba__list--before">
+          <li>
+            <svg class="dl-ba__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+            Prompts buried in CloudWatch, costs in OpenAI billing, traces in a Notion doc.
+          </li>
+          <li>
+            <svg class="dl-ba__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+            Customer reports a bad answer — you cannot find the actual run that produced it.
+          </li>
+          <li>
+            <svg class="dl-ba__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+            Prompt changes ship with no way to A/B against historical traffic.
+          </li>
+          <li>
+            <svg class="dl-ba__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+            On-call engineers stare at JSON dumps at 2 a.m. with no span hierarchy.
+          </li>
+          <li>
+            <svg class="dl-ba__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+            Token bills surprise you on the 1st of every month.
+          </li>
+        </ul>
+      </article>
+
+      <article class="dl-ba__panel dl-ba__panel--after" aria-labelledby="ba-after">
+        <span class="dl-ba__label" id="ba-after">With Driftlane</span>
+        <h3 class="dl-h3">One unified trace per run</h3>
+        <ul class="dl-ba__list">
+          <li>
+            <svg class="dl-ba__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Every prompt, tool call, and token in one searchable timeline.
+          </li>
+          <li>
+            <svg class="dl-ba__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Filter by user, tenant, or release tag — find the exact failing trace in seconds.
+          </li>
+          <li>
+            <svg class="dl-ba__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Replay last week's traffic against your new prompt before merging.
+          </li>
+          <li>
+            <svg class="dl-ba__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Cost dashboards by agent, tenant, model, and feature flag.
+          </li>
+          <li>
+            <svg class="dl-ba__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Slack alerts when latency, error rate, or spend cross your guardrails.
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="dl-section dl-section--soft" id="benefits" aria-labelledby="ben-h2">
+  <div class="dl-container">
+    <div class="dl-section__head">
+      <span class="dl-eyebrow">Features</span>
+      <h2 id="ben-h2" class="dl-h2">Everything you need to run agents in production</h2>
+      <p>Six primitives that replace the half-dozen tools you would otherwise stitch together.</p>
+    </div>
+
+    <div class="dl-benefits">
+      <article class="dl-benefits__cell">
+        <svg class="dl-benefits__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h10" stroke-linecap="round"/>
+          <circle cx="20" cy="17" r="1.5"/>
+        </svg>
+        <h3 class="dl-benefits__title">Structured traces</h3>
+        <p>OpenTelemetry-compatible spans roll up into a single tree per run. Search, filter, and pivot across millions of agent executions in under a second.</p>
+      </article>
+
+      <article class="dl-benefits__cell">
+        <svg class="dl-benefits__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M12 3v18M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="dl-benefits__title">Cost attribution</h3>
+        <p>Slice token spend by agent, customer, feature flag, or release tag. Get alerted before a runaway loop burns through your monthly budget.</p>
+      </article>
+
+      <article class="dl-benefits__cell">
+        <svg class="dl-benefits__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M21 12a9 9 0 11-3-6.7M21 3v6h-6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="dl-benefits__title">Trace replay</h3>
+        <p>Re-run any production trace against a new prompt, model, or tool. Diff the outputs, score with evals, and promote the winner without a synthetic dataset.</p>
+      </article>
+
+      <article class="dl-benefits__cell">
+        <svg class="dl-benefits__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M3 12l4 4 14-14" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 18h12" stroke-linecap="round"/>
+        </svg>
+        <h3 class="dl-benefits__title">Built-in evals</h3>
+        <p>Helpfulness, faithfulness, toxicity, JSON-validity — ship with a battery of LLM-as-judge scorers, or plug in your own Python function as a custom eval.</p>
+      </article>
+
+      <article class="dl-benefits__cell">
+        <svg class="dl-benefits__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M12 3l9 5-9 5-9-5 9-5z" stroke-linejoin="round"/>
+          <path d="M3 13l9 5 9-5" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="dl-benefits__title">PII redaction</h3>
+        <p>Mask emails, names, and custom regex patterns inside the SDK before payloads leave your process. Self-host the control plane for VPC-isolated workloads.</p>
+      </article>
+
+      <article class="dl-benefits__cell">
+        <svg class="dl-benefits__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke-linecap="round"/>
+        </svg>
+        <h3 class="dl-benefits__title">Live alerts</h3>
+        <p>Slack, PagerDuty, and webhook alerts when latency p95, error rate, or spend per tenant crosses your thresholds. Tied directly to the offending trace.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="dl-section" id="pricing" aria-labelledby="price-h2">
+  <div class="dl-container">
+    <div class="dl-section__head">
+      <span class="dl-eyebrow">Pricing</span>
+      <h2 id="price-h2" class="dl-h2">Honest pricing. No seat tax.</h2>
+      <p>Pay for the spans you ingest. Invite the whole team for free. Cancel any time.</p>
+    </div>
+
+    <div class="dl-price">
+      <article class="dl-price__card">
+        <span class="dl-price__tier">Solo</span>
+        <div class="dl-price__amount">
+          <span class="dl-price__num">$0</span>
+          <span class="dl-price__per">/ forever</span>
+        </div>
+        <p class="dl-price__desc">For solo developers shipping their first agent. No card required.</p>
+        <a href="#cta" class="dl-btn dl-btn--ghost">Get started</a>
+        <ul class="dl-price__features">
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            10,000 spans / month
+          </li>
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            3-day trace retention
+          </li>
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            All framework adapters
+          </li>
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Community Discord support
+          </li>
+        </ul>
+      </article>
+
+      <article class="dl-price__card dl-price__card--featured">
+        <span class="dl-price__tier">Team</span>
+        <div class="dl-price__amount">
+          <span class="dl-price__num">$49</span>
+          <span class="dl-price__per">/ month</span>
+        </div>
+        <p class="dl-price__desc">For small teams putting agents in front of real customers.</p>
+        <a href="#cta" class="dl-btn dl-btn--primary">Start free trial</a>
+        <ul class="dl-price__features">
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            100,000 spans / month
+          </li>
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            7-day trace retention
+          </li>
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Unlimited team seats
+          </li>
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Trace replay + evals
+          </li>
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Slack + email alerts
+          </li>
+        </ul>
+      </article>
+
+      <article class="dl-price__card">
+        <span class="dl-price__tier">Scale</span>
+        <div class="dl-price__amount">
+          <span class="dl-price__num">$499</span>
+          <span class="dl-price__per">/ month</span>
+        </div>
+        <p class="dl-price__desc">For teams running agents at production volume across multiple environments.</p>
+        <a href="#cta" class="dl-btn dl-btn--ghost">Book a demo</a>
+        <ul class="dl-price__features">
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            2,000,000 spans / month
+          </li>
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            30-day trace retention
+          </li>
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Self-hosted control plane
+          </li>
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            SSO, audit logs, RBAC
+          </li>
+          <li>
+            <svg class="dl-price__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Dedicated support channel
+          </li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="dl-section dl-section--soft" id="proof" aria-labelledby="proof-h2">
+  <div class="dl-container">
+    <div class="dl-section__head">
+      <span class="dl-eyebrow">Customers</span>
+      <h2 id="proof-h2" class="dl-h2">What teams ship with Driftlane</h2>
+      <p>Builders running real agents in production — not demos.</p>
+    </div>
+
+    <div class="dl-quotes">
+      <article class="dl-quote">
+        <span class="dl-quote__metric">Reduced debug time 70%</span>
+        <p class="dl-quote__body">"We used to chase agent bugs across CloudWatch, Sentry, and three Postgres tables. Now it is one trace. My on-call engineers actually sleep again."</p>
+        <div class="dl-quote__person">
+          <span class="dl-quote__avatar">MR</span>
+          <div>
+            <div class="dl-quote__name">Mira Reyes</div>
+            <div class="dl-quote__role">Staff Engineer, Brightline Ops</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dl-quote">
+        <span class="dl-quote__metric">Caught 3 prod bugs week 1</span>
+        <p class="dl-quote__body">"Within seven days of instrumenting our support agent, Driftlane surfaced two tool regressions and a silent rate-limit retry storm. The replay feature paid for itself before the trial ended."</p>
+        <div class="dl-quote__person">
+          <span class="dl-quote__avatar">JC</span>
+          <div>
+            <div class="dl-quote__name">Jonas Carver</div>
+            <div class="dl-quote__role">Founding Engineer, Quill AI</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dl-quote">
+        <span class="dl-quote__metric">42% lower token spend</span>
+        <p class="dl-quote__body">"Cost attribution by tenant let us spot two enterprise accounts looping on a bad retrieval prompt. One config change cut our OpenAI bill almost in half."</p>
+        <div class="dl-quote__person">
+          <span class="dl-quote__avatar">AT</span>
+          <div>
+            <div class="dl-quote__name">Aditi Thakur</div>
+            <div class="dl-quote__role">CTO, Northwind Robotics</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dl-quote">
+        <span class="dl-quote__metric">Ship 4x more often</span>
+        <p class="dl-quote__body">"Replaying yesterday's traffic against a new prompt before merging completely changed our release cadence. We went from one prompt change a week to four a day, with fewer regressions."</p>
+        <div class="dl-quote__person">
+          <span class="dl-quote__avatar">SL</span>
+          <div>
+            <div class="dl-quote__name">Sam Linde</div>
+            <div class="dl-quote__role">Tech Lead, Helio Labs</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dl-quote">
+        <span class="dl-quote__metric">Onboarded in 8 minutes</span>
+        <p class="dl-quote__body">"SDK in, env var set, first trace on the dashboard before my coffee finished brewing. The dev experience is the closest thing to Stripe I have seen in AI tooling."</p>
+        <div class="dl-quote__person">
+          <span class="dl-quote__avatar">PK</span>
+          <div>
+            <div class="dl-quote__name">Priya Kapoor</div>
+            <div class="dl-quote__role">Solo founder, Loopdesk</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="dl-quote">
+        <span class="dl-quote__metric">99.99% trace delivery</span>
+        <p class="dl-quote__body">"We process millions of agent runs a month. The Driftlane SDK never blocks our main loop, and the disk-buffered replay saved us during a noisy AWS week. Zero dropped traces."</p>
+        <div class="dl-quote__person">
+          <span class="dl-quote__avatar">DV</span>
+          <div>
+            <div class="dl-quote__name">Diego Vela</div>
+            <div class="dl-quote__role">Platform Lead, Parsec Systems</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="dl-section" id="authority" aria-labelledby="auth-h2">
+  <div class="dl-container">
+    <div class="dl-section__head">
+      <span class="dl-eyebrow">Who builds Driftlane</span>
+      <h2 id="auth-h2" class="dl-h2">Built by engineers from Stripe and Anthropic</h2>
+    </div>
+
+    <article class="dl-authority">
+      <div>
+        <h3 class="dl-h3" style="margin-bottom: var(--s-3);">Hi, I'm Eitan Brook — co-founder & CTO.</h3>
+        <p class="dl-muted" style="margin: 0 0 var(--s-4); font-size: 16px; line-height: 1.65;">
+          I spent four years at Stripe building the observability stack behind Radar, then two years at Anthropic
+          on the team that wrote the first internal tooling for agent evals. Driftlane is the product I kept
+          wanting at both companies and could never find on the market.
+        </p>
+        <p class="dl-muted" style="margin: 0; font-size: 16px; line-height: 1.65;">
+          We are a small, distributed engineering team — most of us have shipped production AI systems before
+          starting Driftlane. We backed by Y Combinator (F25), General Catalyst, and a handful of operators
+          from OpenAI, Vercel, and Datadog.
+        </p>
+      </div>
+      <div class="dl-authority__col">
+        <div class="dl-authority__avatar" aria-hidden="true">EB</div>
+        <div class="dl-authority__chips">
+          <span class="dl-authority__chip">YC F25</span>
+          <span class="dl-authority__chip">SOC 2 Type II</span>
+          <span class="dl-authority__chip">HIPAA-ready</span>
+          <span class="dl-authority__chip">GDPR</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="dl-risk" aria-labelledby="risk-h2">
+  <div class="dl-container dl-risk__inner">
+    <span class="dl-eyebrow">No risk</span>
+    <h2 id="risk-h2" class="dl-h2" style="margin:0;">Free 14-day trial. No credit card. Cancel any time.</h2>
+    <p class="dl-muted" style="margin:0;font-size:16px;max-width:520px;">
+      If Driftlane does not earn its place in your stack by day 14, your account quietly downgrades to the
+      free Solo tier. No clawback emails, no friction.
+    </p>
+    <div class="dl-risk__badges">
+      <span class="dl-risk__badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        No credit card
+      </span>
+      <span class="dl-risk__badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        SOC 2 Type II
+      </span>
+      <span class="dl-risk__badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Self-host on Scale
+      </span>
+      <span class="dl-risk__badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Cancel any time
+      </span>
+    </div>
+  </div>
+</section>
+
+<section class="dl-section" id="faq" aria-labelledby="faq-h2">
+  <div class="dl-container">
+    <div class="dl-section__head">
+      <span class="dl-eyebrow">FAQ</span>
+      <h2 id="faq-h2" class="dl-h2">Questions engineers actually ask</h2>
+    </div>
+
+    <div class="dl-faq">
+      <details class="dl-faq__item">
+        <summary class="dl-faq__summary">Do I have to rewrite my agent code to use Driftlane?</summary>
+        <p class="dl-faq__answer">No. The Driftlane SDK is a single import that wraps your existing LLM and tool calls. Most teams instrument their first agent in under ten minutes — typically two lines in your entrypoint plus an environment variable for your project key. You keep your framework of choice, whether that is LangGraph, CrewAI, Vercel AI SDK, or hand-rolled.</p>
+      </details>
+
+      <details class="dl-faq__item">
+        <summary class="dl-faq__summary">Which LLM providers and frameworks does Driftlane support?</summary>
+        <p class="dl-faq__answer">Out of the box we trace OpenAI, Anthropic, Google, Mistral, Groq, Together, and any provider that follows the OpenAI-compatible chat schema. On the framework side we have first-class adapters for LangChain, LangGraph, LlamaIndex, CrewAI, Vercel AI SDK, Pydantic AI, and the Anthropic Agent SDK. Anything else can be instrumented with our generic span API.</p>
+      </details>
+
+      <details class="dl-faq__item">
+        <summary class="dl-faq__summary">How does Driftlane handle sensitive data inside prompts?</summary>
+        <p class="dl-faq__answer">Redaction happens in the SDK before the payload ever leaves your machine. You can configure regex masks, key allowlists, or run our local PII model. For regulated workloads we offer a self-hosted control plane that keeps trace bodies inside your VPC while metadata streams to our cloud for the dashboard view.</p>
+      </details>
+
+      <details class="dl-faq__item">
+        <summary class="dl-faq__summary">Will Driftlane add latency to my production agents?</summary>
+        <p class="dl-faq__answer">Tracing is fully async and batched. The SDK adds under one millisecond per span on a warm process and never blocks your main loop — even on cold start the overhead stays below five milliseconds. If our ingest is unreachable, spans buffer to disk and replay automatically once connectivity returns.</p>
+      </details>
+
+      <details class="dl-faq__item">
+        <summary class="dl-faq__summary">Can I run evals and replay traces against new model versions?</summary>
+        <p class="dl-faq__answer">Yes. Every captured trace is replayable. Pick any subset — failed traces, expensive traces, traces from a specific customer — and re-run them against a new prompt, a new model, or an updated tool. Diff the outputs side by side, score with built-in or custom evals, and promote the winning configuration.</p>
+      </details>
+
+      <details class="dl-faq__item">
+        <summary class="dl-faq__summary">How does pricing scale once I move past the free Solo tier?</summary>
+        <p class="dl-faq__answer">Team is a flat forty-nine dollars per month and includes one hundred thousand spans plus seven-day retention. Scale is four hundred ninety-nine per month for two million spans and thirty-day retention. Overage is metered per ten thousand spans and never surprises you — we pause ingest at your configured cap and email you first.</p>
+      </details>
+
+      <details class="dl-faq__item">
+        <summary class="dl-faq__summary">Is there a self-hosted or on-prem option?</summary>
+        <p class="dl-faq__answer">Scale tier includes a self-hosted control plane image you can deploy into your own Kubernetes cluster. It ships as a single Helm chart with Postgres and ClickHouse backends. Enterprise customers get a hardened build with SSO, audit logs, and BYOK encryption — happy to walk you through it on a call.</p>
+      </details>
+
+      <details class="dl-faq__item">
+        <summary class="dl-faq__summary">Who is Driftlane actually for?</summary>
+        <p class="dl-faq__answer">Teams building production agents — not chatbots. If your system makes multiple LLM calls, hits external tools, branches on results, and needs to be debuggable at 2 a.m., Driftlane is built for you. Today our customers run customer-support agents, coding agents, research agents, and internal ops automations at companies from two-person YC startups to publicly traded fintechs.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="dl-finalcta" id="cta" aria-labelledby="cta-h2">
+  <div class="dl-container dl-finalcta__inner">
+    <span class="dl-eyebrow" style="color:#A3A3A3;">Ship with confidence</span>
+    <h2 id="cta-h2">Trace your first agent in ten minutes.</h2>
+    <p>Free Solo tier, no card, no sales call. Upgrade when your traffic does.</p>
+    <div class="dl-hero__cta">
+      <a href="#" class="dl-btn dl-btn--primary dl-btn--lg">Start free
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#" class="dl-btn dl-btn--ghost dl-btn--lg">Book a demo</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="dl-footer" role="contentinfo">
+  <div class="dl-container">
+    <div class="dl-footer__grid">
+      <div class="dl-footer__brand">
+        <a class="dl-nav__brand" href="#" aria-label="Driftlane home">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="19" height="19" rx="5" stroke="#0A0A0A" stroke-width="1.5"/>
+            <path d="M6 11h10M8 7l-2 4 2 4M14 7l2 4-2 4" stroke="#0A0A0A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Driftlane
+        </a>
+        <p>Trace-first observability for distributed AI agents. Built in San Francisco and remote.</p>
+      </div>
+
+      <div class="dl-footer__col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#mechanism">Traces</a></li>
+          <li><a href="#benefits">Replay</a></li>
+          <li><a href="#benefits">Evals</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">Changelog</a></li>
+        </ul>
+      </div>
+
+      <div class="dl-footer__col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#faq">Docs</a></li>
+          <li><a href="#faq">SDK reference</a></li>
+          <li><a href="#proof">Case studies</a></li>
+          <li><a href="#faq">Status</a></li>
+          <li><a href="#faq">Security</a></li>
+        </ul>
+      </div>
+
+      <div class="dl-footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#authority">About</a></li>
+          <li><a href="#authority">Careers</a></li>
+          <li><a href="#proof">Customers</a></li>
+          <li><a href="#faq">Privacy</a></li>
+          <li><a href="#faq">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dl-footer__bottom">
+      <span>&copy; 2026 Driftlane Inc. All rights reserved.</span>
+      <span>SOC 2 Type II · GDPR · HIPAA-ready</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

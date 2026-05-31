@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linecraft — The Toolchain Fortune 500 Engineering Teams Build On</title>
+<meta name="description" content="Linecraft is the enterprise developer productivity platform powering engineering organizations at Fortune 500 scale. Reduce PR cycle time, ship safer, and unify your toolchain.">
+<meta name="keywords" content="enterprise developer productivity, internal developer platform, engineering velocity, toolchain consolidation, SOC 2 developer platform">
+<meta name="author" content="Linecraft Inc.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://keidark13.github.io/project/sample-site-catalog/samples/sample-tech-c.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Linecraft — Enterprise Developer Productivity, Quarterly Issue №037">
+<meta property="og:description" content="The toolchain Fortune 500 engineering builds on. Editorial coverage of how leading platform teams cut PR cycle time by 87%.">
+<meta property="og:url" content="https://keidark13.github.io/project/sample-site-catalog/samples/sample-tech-c.html">
+<meta property="og:image" content="https://keidark13.github.io/project/sample-site-catalog/thumbnails/tech-c.png">
+<meta property="og:site_name" content="Linecraft">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Linecraft — The Toolchain Fortune 500 Engineering Builds On">
+<meta name="twitter:description" content="Enterprise developer productivity platform. SOC 2, ISO 27001, HIPAA-ready. Quarterly issue №037.">
+<meta name="twitter:image" content="https://keidark13.github.io/project/sample-site-catalog/thumbnails/tech-c.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Linecraft",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web, macOS, Linux, Windows",
+  "description": "Enterprise developer productivity platform unifying CI, code review, and deploy orchestration for Fortune 500 engineering teams.",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "description": "Custom-quoted per team size. Contact procurement."
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Linecraft Inc.",
+    "url": "https://keidark13.github.io/project/sample-site-catalog/samples/sample-tech-c.html"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "412"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does Linecraft integrate with existing CI/CD infrastructure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Linecraft sits as an orchestration layer above your existing GitHub Actions, Jenkins, Buildkite, or CircleCI pipelines. We don't ask teams to rip and replace; instead, we federate signals across runners and add deterministic merge queues, flake detection, and policy gates. Most enterprise deployments are live within fourteen days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the security and compliance posture?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Linecraft maintains SOC 2 Type II, ISO 27001, and HIPAA-ready controls. We support BYOK encryption, customer-managed cloud regions in US, EU, and APAC, and offer single-tenant deployments for regulated industries. Annual penetration tests and SBOM transparency are provided to every enterprise contract."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Linecraft run inside our private cloud or air-gapped environment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We offer a self-managed deployment that runs in any Kubernetes 1.27+ environment, including air-gapped clusters behind a hardened perimeter. Customers in defense, finance, and healthcare run Linecraft entirely inside their own VPCs with no outbound telemetry."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does pricing work for organizations with thousands of engineers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pricing is custom-quoted based on contributor count, deployment topology, and required SLAs. We do not publish per-seat rate cards because every enterprise contract includes white-glove onboarding, named architects, and dedicated infrastructure capacity. Procurement teams typically engage us through a thirty-minute scoping call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the implementation timeline actually look like?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Week one is environment provisioning and SSO federation. Week two is repository onboarding for two or three pilot teams. By week four most customers have measurable PR cycle time improvements on the pilot cohort. Full organization rollout typically completes within ninety days, paced to your release calendar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Linecraft different from a build cache or remote execution vendor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Caching and remote execution accelerate the build step. Linecraft governs the entire merge-to-production pathway: queue policy, flake quarantine, deploy gating, and rollback orchestration. We complement caching vendors rather than competing with them, and most customers run both in concert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What support model is included with the enterprise tier?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every contract includes a named technical account manager, a shared Slack Connect channel with our staff engineers, twenty-four-hour response on production incidents, and a quarterly architecture review. Premium support adds a four-hour incident response window and on-call platform engineering pairing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we trial Linecraft before signing a multi-year contract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We run a thirty-day structured pilot on one or two repositories of your choice. Success criteria are defined jointly before kickoff. Roughly nine in ten pilots convert to a paid annual contract; the remainder receive a clean offboarding with all data exported in standard formats."
+      }
+    }
+  ]
+}
+</script>
+
+<style>:root {
+  --paper: #F5F1EB;
+  --paper-elevated: #EDE6DA;
+  --ink: #1A1816;
+  --text: #2D2D2D;
+  --muted: #5A5A5A;
+  --faint: #8C8478;
+  --rule: rgba(45, 45, 45, 0.12);
+  --rule-strong: rgba(45, 45, 45, 0.28);
+  --accent: #B85C38;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter Tight", -apple-system, system-ui, sans-serif;
+  --font-eyebrow: "Cabinet Grotesk", "Inter Tight", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Menlo, monospace;
+  --max: 1280px;
+  --gutter: 32px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "ss02", "kern";
+}
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+img { max-width: 100%; display: block; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.eyebrow {
+  font-family: var(--font-eyebrow);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.mono { font-family: var(--font-mono); font-weight: 400; letter-spacing: -0.01em; }
+.italic-serif { font-family: var(--font-display); font-style: italic; font-weight: 500; }
+.rule { border-top: 1px solid var(--rule); }
+.rule-strong { border-top: 1px solid var(--rule-strong); }
+/* ============ NAV ============ */
+.nav {
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px var(--gutter);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.nav-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-family: var(--font-eyebrow);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.nav-cta {
+  font-family: var(--font-eyebrow);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  transition: background 200ms ease, color 200ms ease;
+}
+.nav-cta:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+/* ============ HERO ============ */
+.hero { padding: 60px 0 80px; border-bottom: 1px solid var(--rule); }
+.hero-corners {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 80px;
+}
+.hero-headline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  max-width: 1100px;
+  margin-bottom: 40px;
+}
+.hero-headline em { font-style: italic; font-weight: 500; }
+.hero-sub {
+  font-family: var(--font-body);
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 620px;
+  margin-bottom: 56px;
+}
+.hero-cta-row { display: flex; gap: 16px; align-items: center; margin-bottom: 96px; }
+.btn-primary {
+  font-family: var(--font-eyebrow);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 16px 28px;
+  background: var(--ink);
+  color: var(--paper);
+  transition: background 200ms ease;
+}
+.btn-primary:hover { background: var(--accent); text-decoration: none; }
+.btn-secondary {
+  font-family: var(--font-eyebrow);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 16px 28px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  transition: background 200ms ease, color 200ms ease;
+}
+.btn-secondary:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+/* Case study 3-col grid */
+.case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--rule-strong); }
+.case-card { padding: 36px 28px 32px 0; border-right: 1px solid var(--rule); }
+.case-card:last-child { border-right: none; padding-right: 0; }
+.case-card:not(:first-child) { padding-left: 28px; }
+.case-eyebrow {
+  font-family: var(--font-eyebrow);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 20px;
+}
+.case-company {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.case-outcome { font-size: 15px; line-height: 1.55; color: var(--text); margin-bottom: 28px; }
+.case-metric {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 36px;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.case-metric-label {
+  font-family: var(--font-eyebrow);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 10px;
+}
+/* ============ SECTION GENERIC ============ */
+.section { padding: 96px 0; border-bottom: 1px solid var(--rule); }
+.section-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+  margin-bottom: 72px;
+  align-items: end;
+}
+.section-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(36px, 4.5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.section-title em { font-style: italic; }
+.section-kicker { font-size: 18px; line-height: 1.55; color: var(--muted); max-width: 540px; }
+/* ============ FEATURED OUTCOMES ============ */
+.outcomes { padding: 80px 0; border-bottom: 1px solid var(--rule); background: var(--paper-elevated); }
+.outcomes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 56px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 20px;
+}
+.outcomes-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.outcomes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.outcome { padding: 0 32px; border-right: 1px solid var(--rule); }
+.outcome:first-child { padding-left: 0; }
+.outcome:last-child { border-right: none; padding-right: 0; }
+.outcome-rule-top {
+  border-top: 1px solid var(--accent);
+  padding-top: 14px;
+  font-family: var(--font-eyebrow);
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+}
+.outcome-number {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.outcome-caption {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+}
+/* ============ EMPATHY / EDITORIAL TWO-COL ============ */
+.empathy-body { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.empathy-body p { font-size: 17px; line-height: 1.7; color: var(--text); margin-bottom: 20px; }
+.dropcap::first-letter {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 78px;
+  line-height: 0.85;
+  float: left;
+  padding: 6px 10px 0 0;
+  color: var(--ink);
+}
+.empathy-pullquote {
+  margin: 64px 0 0 0;
+  padding: 32px 0;
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.3;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  text-align: center;
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ============ MECHANISM / NUMBERED LIST ============ */
+.steps { margin-top: 16px; }
+.step {
+  display: grid;
+  grid-template-columns: 80px 1fr 2fr;
+  gap: 48px;
+  padding: 36px 0;
+  border-top: 1px solid var(--rule);
+  align-items: start;
+}
+.step:last-child { border-bottom: 1px solid var(--rule); }
+.step-num {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.step-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.step-body { font-size: 16px; line-height: 1.65; color: var(--text); }
+/* ============ BEFORE / AFTER TABLE ============ */
+.compare-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+.compare-table thead th {
+  text-align: left;
+  font-family: var(--font-eyebrow);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.compare-table thead th:nth-child(1) { width: 24%; }
+.compare-table thead th:nth-child(2),
+.compare-table thead th:nth-child(3) { width: 38%; }
+.compare-table tbody td {
+  padding: 28px 24px 28px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 15px;
+  line-height: 1.6;
+  vertical-align: top;
+  color: var(--text);
+}
+.compare-table tbody tr td:first-child { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: 17px; }
+.compare-table tbody tr td:nth-child(2) { color: var(--muted); }
+.compare-table tbody tr td:last-child { color: var(--ink); padding-right: 0; }
+/* ============ BENEFITS / SIX CAPABILITIES ============ */
+.capabilities { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; }
+.capability { padding: 36px 0; border-top: 1px solid var(--rule); }
+.capability-num {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 14px;
+  display: block;
+}
+.capability-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.capability-body { font-size: 15px; line-height: 1.6; color: var(--text); }
+/* ============ OFFER ============ */
+.offer { text-align: center; padding: 120px 0; }
+.offer-eyebrow {
+  font-family: var(--font-eyebrow);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 32px;
+}
+.offer-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(40px, 5.5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+.offer-title em { font-style: italic; }
+.offer-price {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+.offer-includes {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  text-align: left;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 32px 0;
+}
+.offer-includes ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; }
+.offer-includes li {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  position: relative;
+  padding-left: 22px;
+}
+.offer-includes li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+/* ============ SOCIAL PROOF / PULLQUOTE ============ */
+.social-pullquote { padding: 120px 0 80px; text-align: center; border-bottom: 1px solid var(--rule); }
+.pq-mark {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 96px;
+  line-height: 0.6;
+  color: var(--accent);
+  margin-bottom: 32px;
+}
+.pq-quote {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(28px, 3.5vw, 44px);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  max-width: 980px;
+  margin: 0 auto 48px;
+}
+.pq-author {
+  font-family: var(--font-eyebrow);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.pq-author strong { color: var(--ink); font-weight: 600; }
+.wordmarks {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.wordmark {
+  padding: 36px 24px;
+  text-align: center;
+  border-right: 1px solid var(--rule);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: var(--muted);
+}
+.wordmark:last-child { border-right: none; }
+/* ============ AUTHORITY / TEAM ============ */
+.team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.member { padding: 40px 32px 40px 0; border-right: 1px solid var(--rule); }
+.member:nth-child(3n) { border-right: none; padding-right: 0; }
+.member:not(:nth-child(3n+1)) { padding-left: 32px; }
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--paper-elevated);
+  border: 1px solid var(--rule-strong);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 26px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.member-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.member-title {
+  font-family: var(--font-eyebrow);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.member-bio { font-size: 14px; line-height: 1.6; color: var(--text); margin-bottom: 14px; }
+.member-prev {
+  font-family: var(--font-eyebrow);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--faint);
+  padding-top: 14px;
+  border-top: 1px solid var(--rule);
+}
+/* ============ RISK REVERSAL ============ */
+.risk { text-align: center; padding: 96px 0; }
+.risk-headline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 920px;
+  margin: 0 auto 40px;
+}
+.risk-headline em { font-style: italic; }
+.risk-badges {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  border-top: 1px solid var(--rule);
+  max-width: 720px;
+  margin: 40px auto 0;
+}
+.badge {
+  font-family: var(--font-eyebrow);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.badge span { color: var(--accent); margin-right: 6px; }
+/* ============ FAQ ============ */
+.faq-list { margin-top: 16px; }
+.faq-item {
+  display: grid;
+  grid-template-columns: 80px 1fr 2fr;
+  gap: 48px;
+  padding: 36px 0;
+  border-top: 1px solid var(--rule);
+  align-items: start;
+}
+.faq-item:last-child { border-bottom: 1px solid var(--rule); }
+.faq-num {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.faq-q {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.faq-a { font-size: 15px; line-height: 1.7; color: var(--text); }
+/* ============ FINAL CTA ============ */
+.final { text-align: center; padding: 140px 0; background: var(--paper-elevated); }
+.final-eyebrow {
+  font-family: var(--font-eyebrow);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 32px;
+}
+.final-headline {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(44px, 6vw, 80px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  max-width: 1000px;
+  margin: 0 auto 48px;
+}
+.final-headline em { font-style: italic; }
+.final-sub {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 580px;
+  margin: 0 auto 56px;
+}
+.final-cta-row { display: flex; justify-content: center; gap: 16px; }
+/* ============ FOOTER ============ */
+.footer { padding: 36px 0; border-top: 1px solid var(--rule-strong); }
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.footer-row a:hover { color: var(--accent); }
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+:root { --gutter: 20px; }
+.nav-inner { padding: 14px var(--gutter); }
+.nav-links { display: none; }
+.nav-cta { padding: 8px 14px; font-size: 10px; }
+.hero { padding: 36px 0 56px; }
+.hero-corners { margin-bottom: 48px; font-size: 10px; flex-direction: column; gap: 6px; }
+.hero-headline { font-size: 40px; margin-bottom: 28px; }
+.hero-sub { font-size: 16px; margin-bottom: 36px; }
+.hero-cta-row { flex-direction: column; align-items: stretch; margin-bottom: 56px; gap: 12px; }
+.hero-cta-row a { text-align: center; }
+.case-grid { grid-template-columns: 1fr; }
+.case-card { border-right: none; border-bottom: 1px solid var(--rule); padding: 28px 0; }
+.case-card:not(:first-child) { padding-left: 0; }
+.case-card:last-child { border-bottom: none; }
+.section { padding: 64px 0; }
+.section-header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+.section-title { font-size: 32px; }
+.section-kicker { font-size: 16px; }
+.outcomes { padding: 48px 0; }
+.outcomes-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+.outcomes-grid { grid-template-columns: 1fr; }
+.outcome { padding: 28px 0; border-right: none; border-bottom: 1px solid var(--rule); }
+.outcome:last-child { border-bottom: none; }
+.outcome-number { font-size: 48px; }
+.empathy-body { grid-template-columns: 1fr; gap: 0; }
+.empathy-pullquote { font-size: 22px; margin-top: 48px; }
+.step { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
+.compare-table thead th { font-size: 10px; }
+.compare-table tbody td { display: block; padding: 12px 0; border-bottom: none; }
+.compare-table tbody tr { display: block; padding: 20px 0; border-bottom: 1px solid var(--rule); }
+.compare-table tbody tr td:first-child { font-size: 18px; margin-bottom: 4px; }
+.compare-table thead { display: none; }
+.capabilities { grid-template-columns: 1fr; gap: 0; }
+.offer { padding: 72px 0; }
+.offer-includes ul { grid-template-columns: 1fr; }
+.social-pullquote { padding: 72px 0 48px; }
+.pq-quote { font-size: 22px; }
+.wordmarks { grid-template-columns: repeat(2, 1fr); }
+.wordmark { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 24px 12px; font-size: 16px; }
+.wordmark:nth-child(2n) { border-right: none; }
+.wordmark:nth-last-child(-n+2) { border-bottom: none; }
+.team { grid-template-columns: 1fr; }
+.member { border-right: none; border-bottom: 1px solid var(--rule); padding: 32px 0; }
+.member:not(:nth-child(3n+1)) { padding-left: 0; }
+.member:last-child { border-bottom: none; }
+.risk { padding: 56px 0; }
+.risk-badges { gap: 24px; padding-top: 28px; }
+.faq-item { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
+.final { padding: 80px 0; }
+.final-headline { font-size: 36px; }
+.final-cta-row { flex-direction: column; gap: 12px; }
+.footer-row { flex-direction: column; gap: 12px; text-align: center; font-size: 10px; }
+}</style>
+</head>
+<body>
+<!-- ============ NAV ============ -->
+<nav class="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand" aria-label="Linecraft home">Linecraft</a>
+    <ul class="nav-links">
+      <li><a href="#mechanism">Platform</a></li>
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#authority">Team</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#offer">Pricing</a></li>
+    </ul>
+    <a href="#final" class="nav-cta">Procurement Call</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-corners">
+      <span>Issue №037 · Q1 2026</span>
+      <span>Filed Wednesday, 31 January 2026</span>
+    </div>
+    <h1 class="hero-headline">
+      The toolchain <em>Fortune 500</em> engineering<br>teams quietly build on.
+    </h1>
+    <p class="hero-sub">
+      Linecraft is the enterprise developer productivity platform unifying continuous integration, code review, and deploy orchestration for organizations operating thousands of engineers across dozens of repositories.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#final" class="btn-primary">Schedule procurement call</a>
+      <a href="#mechanism" class="btn-secondary">Read the brief</a>
+    </div>
+    <section class="case-grid" aria-label="Featured customer outcomes">
+      <article class="case-card">
+        <div class="case-eyebrow">Case Study · Financial Services</div>
+        <div class="case-company">Northcrest Capital</div>
+        <p class="case-outcome">Consolidated nineteen build systems across four acquired subsidiaries onto a single deterministic merge queue in eleven weeks.</p>
+        <div class="case-metric">87%</div>
+        <div class="case-metric-label">Reduction in PR cycle time</div>
+      </article>
+      <article class="case-card">
+        <div class="case-eyebrow">Case Study · Healthcare</div>
+        <div class="case-company">Belmont Health Systems</div>
+        <p class="case-outcome">Replaced a fragmented review process with policy-gated merges across 1,400 contributors operating under HIPAA controls.</p>
+        <div class="case-metric">3.2×</div>
+        <div class="case-metric-label">Deploy frequency lift</div>
+      </article>
+      <article class="case-card">
+        <div class="case-eyebrow">Case Study · Industrial</div>
+        <div class="case-company">Cordova Manufacturing</div>
+        <p class="case-outcome">Stood up a single internal developer platform spanning embedded firmware, factory ops, and customer-facing services.</p>
+        <div class="case-metric">$4.6M</div>
+        <div class="case-metric-label">Annualised engineer hours recovered</div>
+      </article>
+    </section>
+  </div>
+</header>
+
+<!-- ============ FEATURED OUTCOMES ============ -->
+<section class="outcomes" aria-label="Aggregate platform outcomes">
+  <div class="container">
+    <div class="outcomes-header">
+      <h2 class="outcomes-title">Featured outcomes, across the platform</h2>
+      <span class="eyebrow">Annual report · 2026</span>
+    </div>
+    <div class="outcomes-grid">
+      <article class="outcome">
+        <div class="outcome-rule-top">Velocity</div>
+        <div class="outcome-number">87%</div>
+        <p class="outcome-caption">Average reduction in pull-request cycle time across enterprise tier customers within the first ninety days.</p>
+      </article>
+      <article class="outcome">
+        <div class="outcome-rule-top">Reliability</div>
+        <div class="outcome-number">99.98%</div>
+        <p class="outcome-caption">Platform availability over the last twelve months, measured against the orchestration plane SLO.</p>
+      </article>
+      <article class="outcome">
+        <div class="outcome-rule-top">Scale</div>
+        <div class="outcome-number">412K</div>
+        <p class="outcome-caption">Contributors operating on Linecraft across regulated industries, sovereign deployments, and air-gapped clusters.</p>
+      </article>
+      <article class="outcome">
+        <div class="outcome-rule-top">Recovery</div>
+        <div class="outcome-number">4.6M</div>
+        <p class="outcome-caption">Annualised engineer hours returned to customers through merge queue, flake quarantine, and deterministic builds.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EMPATHY ============ -->
+<section class="section" id="empathy" aria-label="The problem">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-num">— 01 / Diagnosis</div>
+        <h2 class="section-title">The hidden tax on <em>engineering velocity</em>.</h2>
+      </div>
+      <p class="section-kicker">
+        Every additional CI vendor, code review tool, and bespoke release script compounds into invisible friction. By the time a Fortune 500 platform team notices, it has become a budget line.
+      </p>
+    </div>
+    <div class="empathy-body">
+      <div>
+        <p class="dropcap">When a platform engineering org reaches a thousand contributors, the cost of fragmentation stops being a developer-experience irritant and becomes a balance-sheet item. We have audited release pipelines at insurers, automakers, and federal contractors that had accumulated between fourteen and twenty-six distinct continuous integration vendors, each with its own pricing model, its own permissions surface, and its own theory of what a build artefact is.</p>
+        <p>The cost of that fragmentation rarely appears as a single number. It hides inside flake retries that cost three engineer-hours each. It hides inside the merge conflicts that compound while a pull request waits for a reviewer. It hides inside the eleventh hot-patch deploy on a Friday afternoon because the previous release went out without a deterministic queue gating it.</p>
+      </div>
+      <div>
+        <p>By the time the chief information officer asks for a number, the platform team has to triangulate from twelve different dashboards and answer with a margin of error wide enough to drive a fleet through. We have heard it described, more than once, as the only line item nobody ever defends and nobody ever cuts.</p>
+        <p>Linecraft exists because that situation is not inevitable. The problem is not a shortage of tools. The problem is the absence of an orchestration layer that treats the merge-to-production pathway as a single system, instruments it accordingly, and gives platform leaders one number they can actually defend in a budget review.</p>
+      </div>
+    </div>
+    <blockquote class="empathy-pullquote">
+      &ldquo;The line item nobody ever defends, and nobody ever cuts. That is exactly the problem Linecraft was built to retire.&rdquo;
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============ MECHANISM ============ -->
+<section class="section" id="mechanism" aria-label="How Linecraft works">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-num">— 02 / Mechanism</div>
+        <h2 class="section-title">How <em>Linecraft</em> works.</h2>
+      </div>
+      <p class="section-kicker">
+        Six coordinated planes sit above your existing infrastructure. We do not ask you to rip and replace; we federate, instrument, and govern.
+      </p>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <div class="step-num">01 —</div>
+        <h3 class="step-title">Signal federation</h3>
+        <div class="step-body">
+          Linecraft sits as a federation layer above your existing GitHub Actions, Jenkins, Buildkite, and CircleCI runners. Every job, every test, every deploy event flows into a single canonical event log without requiring teams to migrate off the tooling they already trust.
+        </div>
+      </article>
+      <article class="step">
+        <div class="step-num">02 —</div>
+        <h3 class="step-title">Deterministic merge queue</h3>
+        <div class="step-body">
+          A policy-driven merge queue replaces the race-to-merge that creates broken main branches at scale. Queue rules respect change-risk classification, ownership, and deploy windows, and the queue itself is auditable end-to-end for compliance review.
+        </div>
+      </article>
+      <article class="step">
+        <div class="step-num">03 —</div>
+        <h3 class="step-title">Flake intelligence</h3>
+        <div class="step-body">
+          Tests that flake more than a configurable threshold are quarantined automatically, surfaced to the responsible team with a triage workflow, and prevented from blocking unrelated pull requests. Quarantine outcomes are tracked as a first-class metric, not a footnote.
+        </div>
+      </article>
+      <article class="step">
+        <div class="step-num">04 —</div>
+        <h3 class="step-title">Policy as configuration</h3>
+        <div class="step-body">
+          Branch protection, change-management approvals, SOX-relevant separation-of-duties, and HIPAA review trails are defined as configuration that lives in your repository alongside the code. Every change to policy is reviewable, attributable, and reversible.
+        </div>
+      </article>
+      <article class="step">
+        <div class="step-num">05 —</div>
+        <h3 class="step-title">Deploy orchestration</h3>
+        <div class="step-body">
+          A deploy plane coordinates progressive rollouts across regions, fleets, and dependent services. Health gates pause the rollout automatically when a service-level objective trips, and a single rollback command unwinds the entire orchestrated change in seconds.
+        </div>
+      </article>
+      <article class="step">
+        <div class="step-num">06 —</div>
+        <h3 class="step-title">Executive instrumentation</h3>
+        <div class="step-body">
+          One canonical dashboard answers the questions a chief information officer or vice-president of engineering actually asks. PR cycle time, change-failure rate, deploy frequency, and engineer hours recovered are computed consistently and exported to your existing BI stack.
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section class="section" id="compare" aria-label="Before and after Linecraft">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-num">— 03 / Transformation</div>
+        <h2 class="section-title">Before and after, <em>by the row.</em></h2>
+      </div>
+      <p class="section-kicker">
+        A composite drawn from the first twelve enterprise rollouts, with names abstracted. Numbers are medians, not best-case anecdotes.
+      </p>
+    </div>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th scope="col">Dimension</th>
+          <th scope="col">Before Linecraft</th>
+          <th scope="col">After Linecraft</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>PR cycle time</td>
+          <td>Median 38 hours, 90th percentile beyond five business days, frequent abandonment.</td>
+          <td>Median 4.9 hours, 90th percentile inside one business day, abandonment near zero.</td>
+        </tr>
+        <tr>
+          <td>Change-failure rate</td>
+          <td>11.2% of production deploys require a follow-up corrective change inside 24 hours.</td>
+          <td>2.4% change-failure rate, with deterministic rollback completing inside ninety seconds.</td>
+        </tr>
+        <tr>
+          <td>CI vendor sprawl</td>
+          <td>Between fourteen and twenty-six distinct CI vendors per enterprise org, no unified billing.</td>
+          <td>One federation plane above existing runners; vendor count typically reduced by sixty percent.</td>
+        </tr>
+        <tr>
+          <td>Audit and compliance</td>
+          <td>Quarterly evidence collection consumes six to eight platform engineer weeks per audit cycle.</td>
+          <td>Continuous evidence stream; audit prep reduced to under two engineer days per cycle.</td>
+        </tr>
+        <tr>
+          <td>Flake burden</td>
+          <td>Engineers retry an average of 4.1 jobs per pull request; one in nine releases gated by flake.</td>
+          <td>Automatic quarantine, retries below 0.4 per PR, flake-gated releases statistically eliminated.</td>
+        </tr>
+        <tr>
+          <td>Executive reporting</td>
+          <td>Engineering metrics reconciled by hand across twelve dashboards, weeks behind reality.</td>
+          <td>One canonical dashboard refreshed continuously, exported to existing executive BI stack.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ CAPABILITIES ============ -->
+<section class="section" id="capabilities" aria-label="Core capabilities">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-num">— 04 / Capabilities</div>
+        <h2 class="section-title">Six core <em>capabilities</em>.</h2>
+      </div>
+      <p class="section-kicker">
+        Every capability is independently deployable, separately metered, and individually contracted. You can adopt the merge queue alone, or take the platform end-to-end.
+      </p>
+    </div>
+    <div class="capabilities">
+      <article class="capability">
+        <span class="capability-num">№ 01</span>
+        <h3 class="capability-title">Merge queue with risk-aware policy</h3>
+        <p class="capability-body">A deterministic queue that respects change-risk classification, ownership, deploy windows, and freeze periods. Every queued change is replayable for audit, every decision is attributable, and queue throughput is itself a first-class metric exposed to your dashboards.</p>
+      </article>
+      <article class="capability">
+        <span class="capability-num">№ 02</span>
+        <h3 class="capability-title">Federated runner orchestration</h3>
+        <p class="capability-body">Sits above existing GitHub Actions, Jenkins, Buildkite, CircleCI, and custom runners. We route jobs by cost, capacity, and locality, surface a unified billing view, and give platform teams a single configuration surface to govern across vendors.</p>
+      </article>
+      <article class="capability">
+        <span class="capability-num">№ 03</span>
+        <h3 class="capability-title">Flake quarantine and intelligence</h3>
+        <p class="capability-body">Automatic flake detection driven by statistical baseline, with quarantine workflows owned by responsible teams. Flake reports include ownership, recent failure history, and an estimated engineer-hour cost so triage prioritisation becomes a budget conversation.</p>
+      </article>
+      <article class="capability">
+        <span class="capability-num">№ 04</span>
+        <h3 class="capability-title">Policy and compliance plane</h3>
+        <p class="capability-body">SOX-relevant separation of duties, HIPAA review trails, SOC 2 evidence streams, and FedRAMP-aligned controls expressed as configuration alongside your code. Every policy change is reviewable, attributable, reversible, and exportable to your audit team without screenshots.</p>
+      </article>
+      <article class="capability">
+        <span class="capability-num">№ 05</span>
+        <h3 class="capability-title">Progressive deploy orchestration</h3>
+        <p class="capability-body">A deploy plane that coordinates region-by-region, fleet-by-fleet rollouts with health gates wired into your service-level objectives. Rollback is a single declarative action that unwinds the entire orchestrated change inside ninety seconds for the median customer.</p>
+      </article>
+      <article class="capability">
+        <span class="capability-num">№ 06</span>
+        <h3 class="capability-title">Executive instrumentation</h3>
+        <p class="capability-body">One canonical dashboard for the metrics a chief information officer actually defends: PR cycle time, change-failure rate, deploy frequency, time to restore, and engineer hours recovered. Export to Looker, Tableau, Mode, or your in-house warehouse with no transformation tax.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFFER ============ -->
+<section class="offer" id="offer" aria-label="Pricing and offer">
+  <div class="container">
+    <div class="offer-eyebrow">— Enterprise tier · Single offering —</div>
+    <h2 class="offer-title">One contract. <em>Custom-quoted.</em><br>No per-seat shelf pricing.</h2>
+    <p class="offer-price">Pricing scales with contributor count, deployment topology, and SLA.</p>
+    <div class="offer-includes">
+      <ul>
+        <li>Named technical account manager</li>
+        <li>Shared Slack Connect with staff engineers</li>
+        <li>White-glove onboarding programme</li>
+        <li>Single-tenant or multi-tenant deployment</li>
+        <li>SOC 2 Type II and ISO 27001 evidence</li>
+        <li>HIPAA-ready controls included</li>
+        <li>BYOK encryption across all data planes</li>
+        <li>US, EU, and APAC sovereign regions</li>
+        <li>Quarterly architecture review</li>
+        <li>24-hour incident response SLA</li>
+        <li>Annual penetration test deliverable</li>
+        <li>Full SBOM transparency</li>
+      </ul>
+    </div>
+    <a href="#final" class="btn-primary">Schedule a procurement call</a>
+  </div>
+</section>
+
+<!-- ============ SOCIAL PROOF / PULLQUOTE ============ -->
+<section class="social-pullquote" aria-label="Customer pull quote">
+  <div class="container">
+    <div class="pq-mark italic-serif">&ldquo;</div>
+    <blockquote class="pq-quote">
+      Linecraft is the first platform in a decade where the CFO and the platform lead point to the same number and agree on what it means.
+    </blockquote>
+    <div class="pq-author">
+      <strong>Helena Vorster</strong> &nbsp;·&nbsp; Senior Vice-President, Platform Engineering &nbsp;·&nbsp; Northcrest Capital
+    </div>
+  </div>
+</section>
+<section aria-label="Customer wordmarks">
+  <div class="container">
+    <div class="wordmarks">
+      <div class="wordmark">Northcrest</div>
+      <div class="wordmark">Belmont</div>
+      <div class="wordmark">Cordova</div>
+      <div class="wordmark">Halverson</div>
+      <div class="wordmark">Westpoint</div>
+      <div class="wordmark">Albanyx</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUTHORITY / TEAM ============ -->
+<section class="section" id="authority" aria-label="Leadership team">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-num">— 05 / Authority</div>
+        <h2 class="section-title">Built by a team that has <em>shipped at scale</em>.</h2>
+      </div>
+      <p class="section-kicker">
+        Linecraft's founding team has previously operated platform engineering organisations spanning hundreds of thousands of contributors across financial services, search infrastructure, and federated cloud.
+      </p>
+    </div>
+    <div class="team">
+      <article class="member">
+        <div class="avatar">EM</div>
+        <div class="member-name">Elena Marchetti</div>
+        <div class="member-title">Co-founder · Chief Executive</div>
+        <p class="member-bio">Previously led the developer productivity organisation responsible for the merge-to-production pathway across nineteen thousand engineers and four geographies. Co-author of the original deterministic merge queue paper.</p>
+        <div class="member-prev">Prev: Google · Stripe · MIT</div>
+      </article>
+      <article class="member">
+        <div class="avatar">JT</div>
+        <div class="member-name">Jonas Therkildsen</div>
+        <div class="member-title">Co-founder · Chief Technology</div>
+        <p class="member-bio">Architected the distributed build infrastructure powering search ranking at scale, including the federated runner orchestration model that became the operational backbone of two Fortune 50 platform teams.</p>
+        <div class="member-prev">Prev: Google · Cloudflare · DTU</div>
+      </article>
+      <article class="member">
+        <div class="avatar">PR</div>
+        <div class="member-name">Priya Ramaswamy</div>
+        <div class="member-title">Chief Security Officer</div>
+        <p class="member-bio">Built and led the security platform team responsible for SOC 2, ISO 27001, FedRAMP Moderate, and PCI-DSS evidence streams across one of the world's largest federated cloud organisations. Speaker, RSA and Black Hat.</p>
+        <div class="member-prev">Prev: AWS · Auth0 · Carnegie Mellon</div>
+      </article>
+      <article class="member">
+        <div class="avatar">KO</div>
+        <div class="member-name">Kenji Okafor</div>
+        <div class="member-title">VP · Customer Engineering</div>
+        <p class="member-bio">Spent a decade running enterprise platform rollouts inside regulated industries, including the largest healthcare migration to a continuous deployment model on record. Operates the white-glove onboarding programme.</p>
+        <div class="member-prev">Prev: GitLab · HashiCorp · Tokyo Tech</div>
+      </article>
+      <article class="member">
+        <div class="avatar">RA</div>
+        <div class="member-name">Rosalind Akingbade</div>
+        <div class="member-title">VP · Engineering</div>
+        <p class="member-bio">Led infrastructure platform engineering at a top-three financial services firm, owning the deterministic merge queue and policy plane that processed more than four hundred thousand pull requests per quarter at peak.</p>
+        <div class="member-prev">Prev: JPMC · GitHub · Imperial</div>
+      </article>
+      <article class="member">
+        <div class="avatar">MV</div>
+        <div class="member-name">Mateusz Vargas</div>
+        <div class="member-title">Head of Product</div>
+        <p class="member-bio">Product lead for the developer experience surface across multiple internal developer platforms, with a research background in human factors of large-scale codebases and reviewer cognitive load.</p>
+        <div class="member-prev">Prev: Meta · Atlassian · Stanford</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RISK REVERSAL ============ -->
+<section class="section risk" id="risk" aria-label="Risk reversal">
+  <div class="container">
+    <h2 class="risk-headline">A <em>30-day structured pilot.</em> Full white-glove onboarding. Every compliance posture your auditors will ask for, in writing, before contract signature.</h2>
+    <div class="risk-badges">
+      <div class="badge"><span>—</span>SOC 2 Type II</div>
+      <div class="badge"><span>—</span>ISO 27001</div>
+      <div class="badge"><span>—</span>HIPAA-Ready</div>
+      <div class="badge"><span>—</span>FedRAMP Aligned</div>
+      <div class="badge"><span>—</span>BYOK Encryption</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq" aria-label="Frequently asked questions">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-num">— 06 / Reference</div>
+        <h2 class="section-title">Eight <em>questions</em>, answered.</h2>
+      </div>
+      <p class="section-kicker">
+        The questions procurement, security, and platform leadership consistently bring to a Linecraft scoping call. Answered without the marketing prose.
+      </p>
+    </div>
+    <div class="faq-list">
+      <article class="faq-item">
+        <div class="faq-num">01 —</div>
+        <h3 class="faq-q">How does Linecraft integrate with existing CI/CD infrastructure?</h3>
+        <p class="faq-a">Linecraft sits as an orchestration layer above your existing GitHub Actions, Jenkins, Buildkite, or CircleCI pipelines. We do not ask teams to rip and replace; instead we federate signals across runners and add deterministic merge queues, flake detection, and policy gates. Most enterprise deployments are live within fourteen days.</p>
+      </article>
+      <article class="faq-item">
+        <div class="faq-num">02 —</div>
+        <h3 class="faq-q">What is the security and compliance posture?</h3>
+        <p class="faq-a">Linecraft maintains SOC 2 Type II, ISO 27001, and HIPAA-ready controls. We support BYOK encryption, customer-managed cloud regions in US, EU, and APAC, and offer single-tenant deployments for regulated industries. Annual penetration tests and SBOM transparency are provided to every enterprise contract.</p>
+      </article>
+      <article class="faq-item">
+        <div class="faq-num">03 —</div>
+        <h3 class="faq-q">Can Linecraft run inside our private cloud or air-gapped environment?</h3>
+        <p class="faq-a">Yes. We offer a self-managed deployment that runs in any Kubernetes 1.27 or newer environment, including air-gapped clusters behind a hardened perimeter. Customers in defense, finance, and healthcare run Linecraft entirely inside their own VPCs with no outbound telemetry.</p>
+      </article>
+      <article class="faq-item">
+        <div class="faq-num">04 —</div>
+        <h3 class="faq-q">How does pricing work for organisations with thousands of engineers?</h3>
+        <p class="faq-a">Pricing is custom-quoted based on contributor count, deployment topology, and required SLAs. We do not publish per-seat rate cards because every enterprise contract includes white-glove onboarding, named architects, and dedicated infrastructure capacity. Procurement teams typically engage us through a thirty-minute scoping call.</p>
+      </article>
+      <article class="faq-item">
+        <div class="faq-num">05 —</div>
+        <h3 class="faq-q">What does the implementation timeline actually look like?</h3>
+        <p class="faq-a">Week one is environment provisioning and SSO federation. Week two is repository onboarding for two or three pilot teams. By week four most customers have measurable PR cycle time improvements on the pilot cohort. Full organisation rollout typically completes within ninety days, paced to your release calendar.</p>
+      </article>
+      <article class="faq-item">
+        <div class="faq-num">06 —</div>
+        <h3 class="faq-q">How is Linecraft different from a build cache or remote execution vendor?</h3>
+        <p class="faq-a">Caching and remote execution accelerate the build step. Linecraft governs the entire merge-to-production pathway: queue policy, flake quarantine, deploy gating, and rollback orchestration. We complement caching vendors rather than competing with them, and most customers run both in concert.</p>
+      </article>
+      <article class="faq-item">
+        <div class="faq-num">07 —</div>
+        <h3 class="faq-q">What support model is included with the enterprise tier?</h3>
+        <p class="faq-a">Every contract includes a named technical account manager, a shared Slack Connect channel with our staff engineers, twenty-four-hour response on production incidents, and a quarterly architecture review. Premium support adds a four-hour incident response window and on-call platform engineering pairing.</p>
+      </article>
+      <article class="faq-item">
+        <div class="faq-num">08 —</div>
+        <h3 class="faq-q">Can we trial Linecraft before signing a multi-year contract?</h3>
+        <p class="faq-a">Yes. We run a thirty-day structured pilot on one or two repositories of your choice. Success criteria are defined jointly before kickoff. Roughly nine in ten pilots convert to a paid annual contract; the remainder receive a clean offboarding with all data exported in standard formats.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" id="final" aria-label="Final call to action">
+  <div class="container">
+    <div class="final-eyebrow">— Closing brief —</div>
+    <h2 class="final-headline">Open the conversation your <em>platform team</em> has been waiting to have.</h2>
+    <p class="final-sub">
+      A thirty-minute scoping call with a named architect. No deck, no demo theatre. Bring your hardest constraint and we will tell you, on the call, whether Linecraft is a fit.
+    </p>
+    <div class="final-cta-row">
+      <a href="#" class="btn-primary">Schedule procurement call</a>
+      <a href="#mechanism" class="btn-secondary">Read the platform brief</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-row">
+      <span>Issue №037 · © 2026 Linecraft Inc.</span>
+      <span>All rights reserved · Trade dress and editorial set</span>
+      <a href="#" aria-label="Back to top">↑ Back to top</a>
+    </div>
+  </div>
+</footer></body>
+</html>

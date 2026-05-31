@@ -1,0 +1,2160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Throughline — Incident Response For Engineering Teams That Sleep On Weekends</title>
+  <meta name="description" content="Throughline is an incident response platform that takes engineers from alert to root cause in under 90 seconds. Cut on-call burnout, reduce MTTR, and stop ruining Mondays." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Throughline" />
+  <link rel="canonical" href="https://keidark13.github.io/project/sample-site-catalog/samples/sample-tech-b.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://keidark13.github.io/project/sample-site-catalog/samples/sample-tech-b.html" />
+  <meta property="og:title" content="Throughline — The On-Call Shift That Doesn't End Your Weekend" />
+  <meta property="og:description" content="From alert to root cause in under 90 seconds. Built by engineers who lived through too many 3:47am pages." />
+  <meta property="og:image" content="https://keidark13.github.io/project/sample-site-catalog/thumbnails/tech-b.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Throughline — Incident Response For Modern Engineering Teams" />
+  <meta name="twitter:description" content="Detect, route, diagnose, resolve. Cut MTTR by 64% without adding headcount." />
+  <meta name="twitter:image" content="https://keidark13.github.io/project/sample-site-catalog/thumbnails/tech-b.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Throughline",
+    "operatingSystem": "Web, macOS, Linux, Windows",
+    "applicationCategory": "DeveloperApplication",
+    "description": "Incident response platform that takes engineering teams from alert to root cause in under 90 seconds.",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Starter",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Team",
+        "price": "99",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Enterprise",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Contact sales for custom pricing"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "312"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is Throughline different from PagerDuty or Opsgenie?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Legacy paging tools were built to wake you up. Throughline was built to give you the context you need before you even open your laptop. We auto-correlate alerts, surface the likely root cause, and route to the engineer who last touched the affected service — not just whoever is on rotation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the 90-second root cause claim actually mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From the moment an alert fires, Throughline correlates it against recent deploys, infrastructure changes, and historical incident patterns. In 87% of incidents across our customer base, a ranked list of probable causes is surfaced within 90 seconds. You still decide the fix — we just remove the archaeology."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which observability tools do you integrate with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Datadog, New Relic, Grafana, Prometheus, Sentry, Honeycomb, CloudWatch, Splunk, and Elastic out of the box. Custom webhooks cover the rest. Setup takes under ten minutes for the major three."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we run Throughline on our own infrastructure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Enterprise customers can deploy a self-hosted control plane inside their own VPC. The diagnosis engine runs locally, no incident data ever leaves your perimeter. We support AWS, GCP, and on-prem Kubernetes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the on-call rotation work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Schedules are defined per service, not per team, so engineers only get paged for systems they actually own. Overrides, escalation chains, and follow-the-sun handoffs are configurable. You can sync to and from Google Calendar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Throughline SOC 2 compliant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SOC 2 Type II, ISO 27001, and GDPR compliant. Our security and audit documentation is available under NDA from the Trust page. Penetration tests are run quarterly by an external firm."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens when the trial ends?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nothing breaks. You drop to the Starter plan (free, up to 3 engineers) and your data stays put. No surprise charges, no card required up front, no sales team chasing your inbox. Upgrade when you're ready."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we migrate from PagerDuty without downtime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our migration tool imports schedules, escalation policies, services, and integrations in one click. Most teams run both systems in parallel for a week, then cut over. We provide a dedicated solutions engineer for the first 30 days at no cost."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0B1020;
+      --bg-elevated: #131A2E;
+      --bg-deep: #070B17;
+      --ink: #F5F7FA;
+      --text: #E6EAF2;
+      --muted: #8892B0;
+      --muted-soft: #6B7693;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.14);
+      --accent: #7C5CFF;
+      --accent-soft: rgba(124, 92, 255, 0.14);
+      --accent-glow: rgba(124, 92, 255, 0.35);
+      --accent-2: #00E5A8;
+      --accent-2-soft: rgba(0, 229, 168, 0.14);
+      --danger: #FF5470;
+      --danger-soft: rgba(255, 84, 112, 0.16);
+      --warning: #FFB454;
+
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Menlo', monospace;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-pill: 999px;
+
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      background: rgba(11, 16, 32, 0.72);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--ink);
+    }
+
+    .nav-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background: linear-gradient(135deg, var(--accent) 0%, #4D2EE6 100%);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 16px rgba(124, 92, 255, 0.4);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: var(--muted);
+      transition: color 180ms var(--ease);
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 200ms var(--ease);
+      border: none;
+    }
+
+    .btn-ghost {
+      color: var(--text);
+      background: transparent;
+    }
+
+    .btn-ghost:hover { color: var(--ink); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 8px 24px -8px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      background: #8B6BFF;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 12px 32px -8px var(--accent-glow);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-elevated);
+      color: var(--text);
+      border: 1px solid var(--border-strong);
+    }
+
+    .btn-secondary:hover {
+      background: #1A2342;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-lg {
+      padding: 14px 24px;
+      font-size: 15px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      padding: 140px 0 100px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 70%;
+      height: 90%;
+      background: radial-gradient(circle at center, rgba(124, 92, 255, 0.18) 0%, rgba(124, 92, 255, 0.06) 35%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 60%;
+      height: 80%;
+      background: radial-gradient(circle at center, rgba(0, 229, 168, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px 6px 6px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-strong);
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .hero-pill-badge {
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 .accent-text {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 19px;
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .hero-metrics {
+      display: flex;
+      gap: 36px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+
+    .metric-num {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 24px;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    .metric-label {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ===== DASHBOARD MOCKUP ===== */
+    .mockup {
+      position: relative;
+      transform: perspective(1600px) rotateY(-8deg) rotateX(2deg);
+      transform-origin: center right;
+      box-shadow:
+        0 30px 80px -30px rgba(0, 0, 0, 0.6),
+        0 0 0 1px var(--border-strong);
+      border-radius: var(--radius-lg);
+      background: var(--bg-elevated);
+      overflow: hidden;
+    }
+
+    .mockup-titlebar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: var(--bg-deep);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mockup-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .mockup-dot-r { background: #FF5F57; }
+    .mockup-dot-y { background: #FEBC2E; }
+    .mockup-dot-g { background: #28C840; }
+
+    .mockup-url {
+      flex: 1;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .mockup-body { padding: 20px; }
+
+    .mockup-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+    }
+
+    .mockup-h-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    .mockup-h-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-2-soft);
+      color: var(--accent-2);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .mockup-h-status::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 3px rgba(0, 229, 168, 0.2);
+    }
+
+    .mockup-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .mockup-stat {
+      padding: 12px;
+      background: var(--bg-deep);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+
+    .mockup-stat-label {
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .mockup-stat-val {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--ink);
+    }
+
+    .mockup-stat-trend {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--accent-2);
+      margin-top: 2px;
+    }
+
+    .mockup-stat-trend.bad { color: var(--danger); }
+
+    .mockup-timeline-title {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 14px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-row:last-child { border-bottom: none; }
+
+    .timeline-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      position: relative;
+      margin: 0 2px;
+    }
+
+    .timeline-dot.violet { background: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    .timeline-dot.emerald { background: var(--accent-2); box-shadow: 0 0 0 3px var(--accent-2-soft); }
+    .timeline-dot.red { background: var(--danger); box-shadow: 0 0 0 3px var(--danger-soft); }
+
+    .timeline-text {
+      font-size: 13px;
+      color: var(--text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .timeline-svc {
+      font-family: var(--font-mono);
+      color: var(--accent);
+      font-size: 12px;
+    }
+
+    .timeline-time {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted-soft);
+    }
+
+    /* ===== TRUST STRIP ===== */
+    .trust {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-label {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 28px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .trust-logos {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .trust-logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 19px;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: -0.01em;
+      opacity: 0.85;
+      transition: opacity 200ms var(--ease), color 200ms var(--ease);
+    }
+
+    .trust-logo:hover { opacity: 1; color: var(--text); }
+
+    /* ===== SECTION SHELL ===== */
+    .section {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 64px;
+    }
+
+    .section-head h2 {
+      font-size: 44px;
+      margin-bottom: 18px;
+    }
+
+    .section-head p {
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ===== EMPATHY ===== */
+    .empathy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .pain-card {
+      padding: 32px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      transition: border-color 200ms var(--ease), transform 200ms var(--ease);
+    }
+
+    .pain-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-2px);
+    }
+
+    .pain-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+    }
+
+    .pain-card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .pain-card p {
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0;
+      font-size: 15px;
+    }
+
+    /* ===== MECHANISM (4-STEP FLOW) ===== */
+    .mechanism { background: var(--bg-deep); }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      position: relative;
+    }
+
+    .flow-step {
+      padding: 28px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      position: relative;
+    }
+
+    .flow-num {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+
+    .flow-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+    }
+
+    .flow-step h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .flow-step p {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    .flow-arrow {
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent);
+      z-index: 1;
+    }
+
+    .flow-step:last-child .flow-arrow { display: none; }
+
+    /* ===== BEFORE / AFTER ===== */
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .ba-card {
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ba-before {
+      background: linear-gradient(180deg, rgba(255, 84, 112, 0.08) 0%, var(--bg-elevated) 100%);
+      border: 1px solid rgba(255, 84, 112, 0.2);
+    }
+
+    .ba-after {
+      background: linear-gradient(180deg, rgba(0, 229, 168, 0.08) 0%, var(--bg-elevated) 100%);
+      border: 1px solid rgba(0, 229, 168, 0.22);
+    }
+
+    .ba-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+
+    .ba-before .ba-label { color: var(--danger); }
+    .ba-after .ba-label { color: var(--accent-2); }
+
+    .ba-card h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .ba-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ba-list li {
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .ba-list svg { flex-shrink: 0; margin-top: 3px; }
+
+    .ba-before .ba-list svg { color: var(--danger); }
+    .ba-after .ba-list svg { color: var(--accent-2); }
+
+    .ba-mini-board {
+      margin-top: auto;
+      padding: 16px;
+      background: var(--bg-deep);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .ba-mini-board .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .ba-mini-board .row + .row { border-top: 1px dashed var(--border); padding-top: 6px; margin-top: 6px; }
+
+    .text-danger { color: var(--danger); }
+    .text-accent2 { color: var(--accent-2); }
+    .text-muted { color: var(--muted); }
+
+    /* ===== BENEFITS ===== */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .benefit {
+      padding: 28px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      transition: border-color 200ms var(--ease), background 200ms var(--ease);
+    }
+
+    .benefit:hover {
+      border-color: rgba(124, 92, 255, 0.4);
+      background: #161E36;
+    }
+
+    .benefit-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+    }
+
+    .benefit h3 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .benefit p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ===== PRICING ===== */
+    .pricing { background: var(--bg-deep); }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .tier {
+      padding: 36px 32px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .tier-featured {
+      border-color: var(--accent);
+      background: linear-gradient(180deg, rgba(124, 92, 255, 0.08) 0%, var(--bg-elevated) 60%);
+      box-shadow: 0 24px 48px -24px var(--accent-glow);
+    }
+
+    .tier-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      background: var(--accent);
+      color: white;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .tier-name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .tier-featured .tier-name { color: var(--accent); }
+
+    .tier-price {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 44px;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .tier-price .per {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 400;
+      margin-left: 6px;
+    }
+
+    .tier-desc {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 14px 0 26px;
+      line-height: 1.5;
+    }
+
+    .tier-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .tier-features li {
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .tier-features svg {
+      flex-shrink: 0;
+      color: var(--accent-2);
+      margin-top: 3px;
+    }
+
+    .tier-cta {
+      margin-top: auto;
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      padding: 28px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial:nth-child(2) { margin-top: 32px; }
+    .testimonial:nth-child(5) { margin-top: 32px; }
+
+    .testimonial-quote {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text);
+      margin: 0 0 22px;
+    }
+
+    .testimonial-foot {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, #4D2EE6 100%);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .avatar.green { background: linear-gradient(135deg, var(--accent-2) 0%, #009E73 100%); }
+    .avatar.warm { background: linear-gradient(135deg, #FFB454 0%, #E66E2E 100%); }
+
+    .testimonial-name {
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--ink);
+    }
+
+    .testimonial-role {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ===== AUTHORITY ===== */
+    .authority { background: var(--bg-deep); }
+
+    .authority-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .bio {
+      padding: 36px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .bio-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--accent) 0%, #4D2EE6 100%);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 24px;
+    }
+
+    .bio-avatar.alt { background: linear-gradient(135deg, var(--accent-2) 0%, #009E73 100%); }
+
+    .bio h3 {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .bio-role {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 14px;
+      letter-spacing: 0.04em;
+    }
+
+    .bio p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0 0 14px;
+    }
+
+    .bio-creds {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .cred-tag {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--bg-deep);
+      border: 1px solid var(--border-strong);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text);
+    }
+
+    /* ===== RISK REVERSAL ===== */
+    .risk {
+      padding: 90px 0;
+    }
+
+    .risk-card {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 50px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .risk-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(124, 92, 255, 0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .risk-card h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .risk-card p {
+      font-size: 17px;
+      color: var(--muted);
+      margin: 0 0 28px;
+      position: relative;
+    }
+
+    .risk-row {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .risk-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--bg-deep);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .risk-chip svg { color: var(--accent-2); }
+
+    /* ===== FAQ ===== */
+    .faq-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+
+    .faq-q {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 0;
+      background: transparent;
+      border: none;
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 17px;
+      text-align: left;
+    }
+
+    .faq-q:hover { color: var(--accent); }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      color: var(--accent);
+      transition: transform 200ms var(--ease);
+    }
+
+    .faq-item[open] .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-item summary { list-style: none; cursor: pointer; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-a {
+      padding: 0 0 22px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+      max-width: 640px;
+    }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .final-cta::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      background: radial-gradient(circle, rgba(124, 92, 255, 0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .final-cta-inner { position: relative; }
+
+    .final-cta h2 {
+      font-size: 52px;
+      margin-bottom: 20px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-cta p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 36px;
+    }
+
+    .final-cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--bg-deep);
+      border-top: 1px solid var(--border);
+      padding: 70px 0 36px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+
+    .footer-brand p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 280px;
+      line-height: 1.6;
+      margin: 16px 0 0;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-col a {
+      color: var(--text);
+      font-size: 14px;
+      transition: color 180ms var(--ease);
+    }
+
+    .footer-col a:hover { color: var(--accent); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-socials a {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      border: 1px solid var(--border-strong);
+      color: var(--muted);
+      transition: color 200ms var(--ease), border-color 200ms var(--ease);
+    }
+
+    .footer-socials a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 968px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 60px; }
+      .mockup { transform: none; max-width: 540px; }
+      .trust-logos { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+      .empathy-grid,
+      .flow,
+      .benefits-grid,
+      .pricing-grid,
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .before-after { grid-template-columns: 1fr; }
+      .authority-grid { grid-template-columns: 1fr; }
+      .flow-arrow { display: none; }
+      .testimonial:nth-child(n) { margin-top: 0; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 110px 0 70px; }
+      .hero h1 { font-size: 40px; }
+      .hero-sub { font-size: 17px; }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .hero-metrics { flex-direction: column; gap: 16px; }
+      .section { padding: 80px 0; }
+      .section-head h2 { font-size: 32px; }
+      .nav-links { display: none; }
+      .risk-card { padding: 32px 22px; }
+      .risk-card h2 { font-size: 24px; }
+      .final-cta h2 { font-size: 34px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; gap: 16px; }
+      .mockup-stats { grid-template-columns: 1fr 1fr; }
+      .mockup-stats .mockup-stat:last-child { grid-column: span 2; }
+    }
+
+    /* Focus accessibility */
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand" aria-label="Throughline home">
+        <span class="nav-logo" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        </span>
+        Throughline
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#mechanism">Product</a></li>
+        <li><a href="#benefits">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#proof">Customers</a></li>
+        <li><a href="#authority">Company</a></li>
+        <li><a href="#faq">Docs</a></li>
+        <li><a href="#faq">Changelog</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#" class="btn btn-ghost">Sign in</a>
+        <a href="#final" class="btn btn-primary">Start free trial</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="hero-pill">
+          <span class="hero-pill-badge">NEW</span>
+          AI root-cause v2 is live — try it in your next incident
+        </div>
+        <h1>
+          The on-call shift that <span class="accent-text">doesn't end your weekend.</span>
+        </h1>
+        <p class="hero-sub">
+          Throughline is an incident response platform that takes engineers from alert to root cause in under 90 seconds — without the 3am archaeology, the manual triage, or the ten-person Slack war room.
+        </p>
+        <div class="hero-ctas">
+          <a href="#final" class="btn btn-primary btn-lg">
+            Start free 30-day trial
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#mechanism" class="btn btn-secondary btn-lg">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Watch 2-min demo
+          </a>
+        </div>
+        <div class="hero-metrics" role="list">
+          <div role="listitem">
+            <div class="metric-num">847ms</div>
+            <div class="metric-label">Median ack time</div>
+          </div>
+          <div role="listitem">
+            <div class="metric-num">64%</div>
+            <div class="metric-label">Reduction in MTTR</div>
+          </div>
+          <div role="listitem">
+            <div class="metric-num">2,400+</div>
+            <div class="metric-label">Engineering teams</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DASHBOARD MOCKUP -->
+      <div class="mockup" aria-hidden="true">
+        <div class="mockup-titlebar">
+          <span class="mockup-dot mockup-dot-r"></span>
+          <span class="mockup-dot mockup-dot-y"></span>
+          <span class="mockup-dot mockup-dot-g"></span>
+          <div class="mockup-url">app.throughline.dev/incidents</div>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-header">
+            <div class="mockup-h-title">Incident INC-2841</div>
+            <span class="mockup-h-status">Resolved</span>
+          </div>
+          <div class="mockup-stats">
+            <div class="mockup-stat">
+              <div class="mockup-stat-label">Detect</div>
+              <div class="mockup-stat-val">12s</div>
+              <div class="mockup-stat-trend">-71% vs avg</div>
+            </div>
+            <div class="mockup-stat">
+              <div class="mockup-stat-label">Diagnose</div>
+              <div class="mockup-stat-val">86s</div>
+              <div class="mockup-stat-trend">-64% vs avg</div>
+            </div>
+            <div class="mockup-stat">
+              <div class="mockup-stat-label">Resolve</div>
+              <div class="mockup-stat-val">4m 11s</div>
+              <div class="mockup-stat-trend">SLO met</div>
+            </div>
+          </div>
+          <div class="mockup-timeline-title">Timeline</div>
+          <div>
+            <div class="timeline-row">
+              <span class="timeline-dot red"></span>
+              <span class="timeline-text"><span class="timeline-svc">payments-api</span> · p99 latency spike</span>
+              <span class="timeline-time">14:32:11</span>
+            </div>
+            <div class="timeline-row">
+              <span class="timeline-dot violet"></span>
+              <span class="timeline-text">Auto-routed to on-call: <strong style="color:var(--ink)">M. Reyes</strong></span>
+              <span class="timeline-time">14:32:13</span>
+            </div>
+            <div class="timeline-row">
+              <span class="timeline-dot violet"></span>
+              <span class="timeline-text">Root cause: deploy <span class="timeline-svc">a3f9c1d</span> · DB pool</span>
+              <span class="timeline-time">14:33:39</span>
+            </div>
+            <div class="timeline-row">
+              <span class="timeline-dot emerald"></span>
+              <span class="timeline-text">Rollback executed · verifying health</span>
+              <span class="timeline-time">14:34:42</span>
+            </div>
+            <div class="timeline-row">
+              <span class="timeline-dot emerald"></span>
+              <span class="timeline-text">All services healthy · postmortem drafted</span>
+              <span class="timeline-time">14:36:22</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TRUST STRIP -->
+  <section class="trust" aria-label="Customer logos">
+    <div class="container">
+      <div class="trust-label">Trusted by engineering teams at</div>
+      <div class="trust-logos">
+        <div class="trust-logo">Linear</div>
+        <div class="trust-logo">Fathom</div>
+        <div class="trust-logo">Render</div>
+        <div class="trust-logo">Modal</div>
+        <div class="trust-logo">Resend</div>
+        <div class="trust-logo">Inkeep</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMPATHY -->
+  <section class="section" id="empathy">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">The problem</div>
+        <h2>3:47am alerts shouldn't ruin Monday.</h2>
+        <p>Most incident tooling was designed to wake people up. None of it was designed to keep them rested, focused, or productive on the other 167 hours of the week.</p>
+      </div>
+      <div class="empathy-grid">
+
+        <article class="pain-card">
+          <div class="pain-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>The 3am page that wasn't yours</h3>
+          <p>You get woken up for a service you've never touched. Forty minutes of dashboard hopping later, you find out it was a deploy from another team. Sleep is gone. Trust is bruised.</p>
+        </article>
+
+        <article class="pain-card">
+          <div class="pain-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><path d="M5 5l14 14M19 5L5 19"/></svg>
+          </div>
+          <h3>Alert storms that drown signal</h3>
+          <p>One root cause fires 47 downstream alerts. Your phone vibrates for an hour while you try to figure out which one actually matters. By the time you triage, customers have already tweeted.</p>
+        </article>
+
+        <article class="pain-card">
+          <div class="pain-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Senior engineers burning out</h3>
+          <p>The same three people end up in every war room. They're tired. They're interviewing elsewhere. And nobody else on the team has the context to take over when they leave.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MECHANISM -->
+  <section class="section mechanism" id="mechanism">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">How it works</div>
+        <h2>From alert to root cause in under 90 seconds.</h2>
+        <p>Four steps. No SQL. No grafting together six dashboards while your phone vibrates. The diagnosis engine does the archaeology so the on-call engineer can focus on the fix.</p>
+      </div>
+      <div class="flow">
+
+        <div class="flow-step">
+          <div class="flow-num">01</div>
+          <div class="flow-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3>Detect</h3>
+          <p>Ingest signals from every observability tool you already pay for. Correlate alerts across services into a single incident, not 47 notifications.</p>
+          <div class="flow-arrow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">02</div>
+          <div class="flow-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Route</h3>
+          <p>Match the incident to the engineer who last shipped to that service — not whoever happens to be on rotation. Quiet hours respected, escalation built-in.</p>
+          <div class="flow-arrow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">03</div>
+          <div class="flow-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <h3>Diagnose</h3>
+          <p>Throughline cross-references the alert against recent deploys, infra changes, and historical patterns. You get a ranked list of probable causes before you finish your coffee.</p>
+          <div class="flow-arrow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-num">04</div>
+          <div class="flow-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Resolve</h3>
+          <p>One-click rollback, runbook execution, or war-room spin-up. Postmortem draft auto-generated from the timeline — review it Monday, not Sunday night.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER -->
+  <section class="section" id="before-after">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">The difference</div>
+        <h2>Before Throughline vs. with Throughline.</h2>
+        <p>What incident response actually looks like on a Tuesday at 2pm — and on a Saturday at 3am.</p>
+      </div>
+      <div class="before-after">
+
+        <article class="ba-card ba-before">
+          <div class="ba-label">Before — the chaos</div>
+          <h3>Six dashboards, three Slack channels, one tired engineer.</h3>
+          <ul class="ba-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              47 noisy alerts for a single underlying cause
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              On-call paged for services they've never touched
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              43 minutes of dashboard hopping before root cause
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              Postmortem written Sunday night, half remembered
+            </li>
+          </ul>
+          <div class="ba-mini-board">
+            <div class="row"><span class="text-muted">incident</span><span class="text-danger">INC-2841 · OPEN</span></div>
+            <div class="row"><span class="text-muted">mttr</span><span class="text-danger">42 min</span></div>
+            <div class="row"><span class="text-muted">noise ratio</span><span class="text-danger">47:1</span></div>
+            <div class="row"><span class="text-muted">customer impact</span><span class="text-danger">SLA breach</span></div>
+          </div>
+        </article>
+
+        <article class="ba-card ba-after">
+          <div class="ba-label">After — the calm</div>
+          <h3>One incident, one engineer, one root cause surfaced.</h3>
+          <ul class="ba-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              47 alerts auto-correlated into one incident view
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Service-aware routing to the engineer who shipped it
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Root cause ranked in 86 seconds with deploy diff
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Postmortem auto-drafted, edit Monday morning
+            </li>
+          </ul>
+          <div class="ba-mini-board">
+            <div class="row"><span class="text-muted">incident</span><span class="text-accent2">INC-2841 · RESOLVED</span></div>
+            <div class="row"><span class="text-muted">mttr</span><span class="text-accent2">4m 11s</span></div>
+            <div class="row"><span class="text-muted">noise ratio</span><span class="text-accent2">1:1</span></div>
+            <div class="row"><span class="text-muted">customer impact</span><span class="text-accent2">None</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="section" id="benefits">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">What you get</div>
+        <h2>Built for the way modern teams actually ship.</h2>
+        <p>Every feature ships because it answers a 2am question we've been asked too many times to count.</p>
+      </div>
+      <div class="benefits-grid">
+
+        <article class="benefit">
+          <div class="benefit-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Smart alert correlation</h3>
+          <p>Group related signals into a single incident automatically. Cut noise by 92% on the first day, without writing a single suppression rule.</p>
+        </article>
+
+        <article class="benefit">
+          <div class="benefit-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>AI root-cause analysis</h3>
+          <p>Throughline cross-references deploys, infra events, and historical incidents to rank likely causes — with the exact commit SHA to look at first.</p>
+        </article>
+
+        <article class="benefit">
+          <div class="benefit-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3>Service-aware on-call</h3>
+          <p>Per-service schedules with follow-the-sun handoffs, overrides, and Google Calendar sync. Engineers only page for systems they own.</p>
+        </article>
+
+        <article class="benefit">
+          <div class="benefit-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3>Runbook automation</h3>
+          <p>Wire common remediations to one-click actions. Rollback, scale up, drain traffic — without context switching to a terminal at 3am.</p>
+        </article>
+
+        <article class="benefit">
+          <div class="benefit-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>Auto-drafted postmortems</h3>
+          <p>Every incident produces a structured timeline you can edit, not write from scratch. Blameless template baked in, action items tracked to closure.</p>
+        </article>
+
+        <article class="benefit">
+          <div class="benefit-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Self-hosted control plane</h3>
+          <p>Run the diagnosis engine inside your own VPC. Incident data never leaves your perimeter. SOC 2 Type II, ISO 27001, GDPR compliant.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section pricing" id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Pricing</div>
+        <h2>Pricing that respects engineering budgets.</h2>
+        <p>Per-team pricing, not per-seat. Engineers shouldn't dread inviting their teammates to the on-call rotation.</p>
+      </div>
+      <div class="pricing-grid">
+
+        <article class="tier">
+          <div class="tier-name">STARTER</div>
+          <div class="tier-price">$0<span class="per">/forever</span></div>
+          <p class="tier-desc">For solo engineers and side projects. No credit card required, no time limit.</p>
+          <ul class="tier-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Up to 3 engineers</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited services</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>SMS + email + Slack alerts</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>30-day incident history</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Community support</li>
+          </ul>
+          <a href="#final" class="btn btn-secondary tier-cta">Get started free</a>
+        </article>
+
+        <article class="tier tier-featured">
+          <div class="tier-badge">Most popular</div>
+          <div class="tier-name">TEAM</div>
+          <div class="tier-price">$99<span class="per">/team/month</span></div>
+          <p class="tier-desc">For growing engineering teams that need real incident response without the per-seat tax.</p>
+          <ul class="tier-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Up to 25 engineers</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>AI root-cause analysis</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Runbook automation</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Auto-drafted postmortems</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1-year incident history</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Priority Slack support</li>
+          </ul>
+          <a href="#final" class="btn btn-primary tier-cta">Start 30-day trial</a>
+        </article>
+
+        <article class="tier">
+          <div class="tier-name">ENTERPRISE</div>
+          <div class="tier-price">Custom</div>
+          <p class="tier-desc">For teams that need self-hosted deployment, audit logs, and a real human on Zoom in under an hour.</p>
+          <ul class="tier-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited engineers</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Self-hosted control plane</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>SAML SSO + SCIM</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Audit logs + compliance pack</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Dedicated solutions engineer</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>99.99% SLA</li>
+          </ul>
+          <a href="#final" class="btn btn-secondary tier-cta">Contact sales</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="section" id="proof">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Customer stories</div>
+        <h2>The teams that stopped dreading their on-call week.</h2>
+        <p>Real engineers, real fragments of real Slack messages.</p>
+      </div>
+      <div class="testimonials-grid">
+
+        <article class="testimonial">
+          <p class="testimonial-quote">"We cut MTTR from 38 minutes to 6 over a single quarter. The diagnosis engine pointed at the right commit on the first incident — I haven't manually grepped a deploy log since."</p>
+          <div class="testimonial-foot">
+            <div class="avatar">MR</div>
+            <div>
+              <div class="testimonial-name">Maya Reyes</div>
+              <div class="testimonial-role">STAFF SRE @ FINTECH CO</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial">
+          <p class="testimonial-quote">"Switched from PagerDuty in an afternoon. The migration tool brought in every schedule and escalation policy. Our on-call rotation went from a punishment to something engineers actually volunteered for."</p>
+          <div class="testimonial-foot">
+            <div class="avatar green">DK</div>
+            <div>
+              <div class="testimonial-name">Daniel Kowalski</div>
+              <div class="testimonial-role">ENG LEAD @ SERIES B STARTUP</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial">
+          <p class="testimonial-quote">"The first time I got paged and the auto-routed root cause turned out to be correct, I texted my co-founder. The second time, I stopped panicking. The third time, I made coffee first."</p>
+          <div class="testimonial-foot">
+            <div class="avatar warm">PS</div>
+            <div>
+              <div class="testimonial-name">Priya Sundaram</div>
+              <div class="testimonial-role">FOUNDING ENGINEER @ DEVTOOL CO</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial">
+          <p class="testimonial-quote">"We use the postmortem drafts as our actual postmortems. The timeline, the impact, the action items — already there. We just edit. It saves my Mondays."</p>
+          <div class="testimonial-foot">
+            <div class="avatar">JT</div>
+            <div>
+              <div class="testimonial-name">Jordan Tran</div>
+              <div class="testimonial-role">PLATFORM LEAD @ MARKETPLACE CO</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial">
+          <p class="testimonial-quote">"My team was about to lose two senior engineers to burnout. Six months on Throughline and the rotation finally feels sustainable. Headcount is no longer something we throw at incidents."</p>
+          <div class="testimonial-foot">
+            <div class="avatar green">AC</div>
+            <div>
+              <div class="testimonial-name">Aisha Chen</div>
+              <div class="testimonial-role">VP ENGINEERING @ HEALTHTECH CO</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial">
+          <p class="testimonial-quote">"The self-hosted control plane was the deal-breaker. Our compliance team signed off in a week instead of the usual three months. Every other vendor wanted us to ship audit data to their cloud."</p>
+          <div class="testimonial-foot">
+            <div class="avatar warm">RV</div>
+            <div>
+              <div class="testimonial-name">Ravi Verma</div>
+              <div class="testimonial-role">SECURITY ENGINEER @ FINTECH UNICORN</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHORITY -->
+  <section class="section authority" id="authority">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Who built this</div>
+        <h2>Built by engineers who lived through too many 3am pages.</h2>
+        <p>Throughline started as an internal tool at a previous job. Then it became a side project. Then it became the only thing we wanted to work on.</p>
+      </div>
+      <div class="authority-grid">
+
+        <article class="bio">
+          <div class="bio-avatar">EH</div>
+          <div>
+            <h3>Elena Harrow</h3>
+            <div class="bio-role">CO-FOUNDER & CEO</div>
+            <p>Spent six years at PagerDuty leading the incident intelligence team. Watched too many engineers burn out on rotation. Built the first version of Throughline as a Sunday-afternoon side project to fix it.</p>
+            <div class="bio-creds">
+              <span class="cred-tag">ex-PagerDuty</span>
+              <span class="cred-tag">CMU CS</span>
+              <span class="cred-tag">SRECon speaker</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="bio">
+          <div class="bio-avatar alt">NM</div>
+          <div>
+            <h3>Noah Mendoza</h3>
+            <div class="bio-role">CO-FOUNDER & CTO</div>
+            <p>Engineering lead at Datadog for the APM and incidents teams. Shipped distributed tracing to thousands of customers. Now obsessed with making root-cause analysis feel like cheating.</p>
+            <div class="bio-creds">
+              <span class="cred-tag">ex-Datadog</span>
+              <span class="cred-tag">ex-Stripe infra</span>
+              <span class="cred-tag">KubeCon speaker</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RISK REVERSAL -->
+  <section class="risk">
+    <div class="container">
+      <div class="risk-card">
+        <h2>30 days. No credit card. No sales chase.</h2>
+        <p>If Throughline doesn't cut your MTTR by half within the trial, cancel in one click. We won't email you. We promise.</p>
+        <div class="risk-row">
+          <div class="risk-chip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            30-day free trial
+          </div>
+          <div class="risk-chip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            SOC 2 Type II
+          </div>
+          <div class="risk-chip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Cancel in one click
+          </div>
+          <div class="risk-chip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            10-minute setup
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">FAQ</div>
+        <h2>Questions engineers always ask first.</h2>
+        <p>If yours isn't here, our solutions team usually replies inside 2 hours during business days.</p>
+      </div>
+      <div class="faq-wrap">
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            How is Throughline different from PagerDuty or Opsgenie?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-a">Legacy paging tools were built to wake you up. Throughline was built to give you the context you need before you even open your laptop. We auto-correlate alerts, surface the likely root cause, and route to the engineer who last touched the affected service — not just whoever is on rotation.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            What does the 90-second root cause claim actually mean?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-a">From the moment an alert fires, Throughline correlates it against recent deploys, infrastructure changes, and historical incident patterns. In 87% of incidents across our customer base, a ranked list of probable causes is surfaced within 90 seconds. You still decide the fix — we just remove the archaeology.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            Which observability tools do you integrate with?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-a">Datadog, New Relic, Grafana, Prometheus, Sentry, Honeycomb, CloudWatch, Splunk, and Elastic out of the box. Custom webhooks cover the rest. Setup takes under ten minutes for the major three.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            Can we run Throughline on our own infrastructure?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-a">Yes. Enterprise customers can deploy a self-hosted control plane inside their own VPC. The diagnosis engine runs locally, no incident data ever leaves your perimeter. We support AWS, GCP, and on-prem Kubernetes.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            How does the on-call rotation work?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-a">Schedules are defined per service, not per team, so engineers only get paged for systems they actually own. Overrides, escalation chains, and follow-the-sun handoffs are configurable. You can sync to and from Google Calendar.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            Is Throughline SOC 2 compliant?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-a">SOC 2 Type II, ISO 27001, and GDPR compliant. Our security and audit documentation is available under NDA from the Trust page. Penetration tests are run quarterly by an external firm.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            What happens when the trial ends?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-a">Nothing breaks. You drop to the Starter plan (free, up to 3 engineers) and your data stays put. No surprise charges, no card required up front, no sales team chasing your inbox. Upgrade when you're ready.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            Can we migrate from PagerDuty without downtime?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="faq-a">Yes. Our migration tool imports schedules, escalation policies, services, and integrations in one click. Most teams run both systems in parallel for a week, then cut over. We provide a dedicated solutions engineer for the first 30 days at no cost.</div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="final">
+    <div class="container final-cta-inner">
+      <h2>Stop being on-call alone.</h2>
+      <p>Two-thousand-plus engineering teams already sleep through their rotation week. Yours can be next.</p>
+      <div class="final-cta-buttons">
+        <a href="#" class="btn btn-primary btn-lg">
+          Start free 30-day trial
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#" class="btn btn-secondary btn-lg">Book a 15-min demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#" class="nav-brand" aria-label="Throughline home">
+            <span class="nav-logo" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+            </span>
+            Throughline
+          </a>
+          <p>Incident response built for engineers who want their weekends back. SOC 2 Type II compliant. Made in San Francisco and Lisbon.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul role="list">
+            <li><a href="#">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Roadmap</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul role="list">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Customers</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Press kit</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul role="list">
+            <li><a href="#">Docs</a></li>
+            <li><a href="#">API reference</a></li>
+            <li><a href="#">Trust center</a></li>
+            <li><a href="#">Status</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Throughline Labs, Inc. All rights reserved.</div>
+        <div class="footer-socials" aria-label="Social links">
+          <a href="#" aria-label="Twitter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
