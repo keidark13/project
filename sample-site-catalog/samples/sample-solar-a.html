@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helios Solar | Cut Your Power Bill, Own Your Roof</title>
+<meta name="description" content="Switch to solar and stop renting your electricity. Free savings estimate, full install, and a 25-year production guarantee. See what your roof could save before the federal credit steps down.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF; --bg-elevated:#F4F8F4; --bg-dark:#0E1A12;
+    --ink:#11201A; --text:#11201A; --text-dim:#4A5B52; --text-faint:#8A988F;
+    --paper:#F9FBF8; --line:#E2EBE3;
+    --accent:#2EA64A; --accent-soft:#E4F3E7; --accent-deep:#1E7A36;
+    --sky:#3FA7E0;
+    --font-display:'Space Grotesk',sans-serif; --font-body:'DM Sans',sans-serif;
+    --space-1:8px; --space-2:16px; --space-3:24px; --space-4:40px; --space-5:64px; --space-6:96px;
+    --radius-s:10px; --radius-m:18px; --radius-l:28px;
+    --ease:cubic-bezier(.22,1,.36,1);
+    --maxw:1160px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:var(--font-display);line-height:1.08;font-weight:600;letter-spacing:-.02em;color:var(--ink);}
+  h2{font-size:clamp(1.9rem,4vw,2.9rem);}
+  h3{font-size:1.25rem;}
+  p{color:var(--text-dim);}
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  section{padding:var(--space-6) var(--space-3);}
+  .wrap{max-width:var(--maxw);margin:0 auto;}
+  .eyebrow{display:inline-block;font-family:var(--font-body);font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-deep);background:var(--accent-soft);padding:6px 14px;border-radius:99px;margin-bottom:var(--space-2);}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:600;font-size:.98rem;padding:14px 26px;border-radius:99px;cursor:pointer;border:1.5px solid transparent;transition:transform .25s var(--ease),background .25s var(--ease),box-shadow .25s var(--ease);}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 24px -10px rgba(46,166,74,.6);}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--accent-deep);box-shadow:0 16px 30px -12px rgba(46,166,74,.7);}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent-deep);transform:translateY(-2px);}
+  .reveal{transform:translateY(24px);transition:transform .7s var(--ease);}
+  .reveal.in{transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{transform:none;transition:none;}}
+
+  /* NAV */
+  .nav{position:fixed;top:14px;left:0;right:0;z-index:100;display:flex;justify-content:center;padding:0 var(--space-3);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:var(--maxw);background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:99px;padding:10px 12px 10px 22px;box-shadow:0 8px 30px -16px rgba(17,32,26,.25);}
+  .brand{display:flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--ink);}
+  .brand-mark{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--sky),var(--accent));display:grid;place-items:center;color:#fff;font-size:14px;}
+  .nav-links{display:flex;gap:26px;font-size:.92rem;font-weight:500;color:var(--text-dim);}
+  .nav-links a:hover{color:var(--accent-deep);}
+  .nav .btn{padding:10px 20px;font-size:.9rem;}
+  @media(max-width:860px){.nav-links{display:none;}}
+
+  /* HERO */
+  .hero{position:relative;padding-top:150px;padding-bottom:var(--space-6);min-height:100dvh;display:flex;align-items:center;overflow:hidden;}
+  .hero::before{content:"";position:absolute;inset:0;background:
+     radial-gradient(120% 90% at 12% 0%, rgba(63,167,224,.16), transparent 55%),
+     radial-gradient(120% 90% at 100% 100%, rgba(46,166,74,.18), transparent 50%);
+     z-index:0;}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:var(--space-5);align-items:center;}
+  .hero h1{font-size:clamp(2.5rem,5.4vw,4rem);font-weight:700;}
+  .hero h1 .grad{background:linear-gradient(100deg,var(--sky),var(--accent-deep));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero-sub{font-size:1.12rem;margin:var(--space-3) 0 var(--space-4);max-width:34ch;}
+  .hero-cta{display:flex;gap:var(--space-2);flex-wrap:wrap;}
+  .hero-proof{display:flex;align-items:center;gap:14px;margin-top:var(--space-4);}
+  .hero-proof .stars{color:var(--accent);letter-spacing:2px;font-size:1.05rem;}
+  .hero-proof small{font-size:.86rem;color:var(--text-faint);}
+  /* savings card */
+  .calc{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-l);padding:var(--space-4);box-shadow:0 30px 60px -30px rgba(17,32,26,.32);position:relative;}
+  .calc-photo{height:150px;border-radius:var(--radius-m) var(--radius-m) 90px var(--radius-m);overflow:hidden;margin-bottom:var(--space-3);}
+  .calc-photo img{width:100%;height:100%;object-fit:cover;}
+  .calc h3{margin-bottom:4px;}
+  .calc-label{font-size:.8rem;color:var(--text-faint);margin-bottom:var(--space-3);}
+  .calc-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-2);font-size:.92rem;}
+  .calc-row span:first-child{color:var(--text-dim);}
+  .calc-range{width:100%;accent-color:var(--accent);margin:4px 0 var(--space-3);}
+  .calc-out{background:var(--accent-soft);border-radius:var(--radius-m);padding:var(--space-3);text-align:center;}
+  .calc-out .big{font-family:var(--font-display);font-weight:700;font-size:2.1rem;color:var(--accent-deep);line-height:1;}
+  .calc-out small{display:block;color:var(--text-dim);margin-top:6px;font-size:.82rem;}
+  .calc .btn{width:100%;justify-content:center;margin-top:var(--space-3);}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:var(--space-4);}.hero{padding-top:120px;}}
+
+  /* TRUST STRIP */
+  .trust{padding:var(--space-4) var(--space-3);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper);}
+  .trust .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);flex-wrap:wrap;}
+  .trust small{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);}
+  .trust-logos{display:flex;gap:var(--space-4);flex-wrap:wrap;font-family:var(--font-display);font-weight:600;color:var(--text-dim);font-size:.98rem;}
+
+  /* GENERIC SECTION HEADER */
+  .sec-head{max-width:46ch;margin-bottom:var(--space-5);}
+  .sec-head p{margin-top:var(--space-2);font-size:1.05rem;}
+
+  /* PAIN */
+  .pain{background:var(--bg);}
+  .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);}
+  .pain-card{border:1px solid var(--line);border-radius:var(--radius-m);padding:var(--space-4);background:var(--paper);}
+  .pain-card .ic{width:42px;height:42px;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center;color:var(--accent-deep);font-size:20px;margin-bottom:var(--space-2);}
+  .pain-card h3{margin-bottom:8px;font-size:1.1rem;}
+  .pain-card p{font-size:.95rem;}
+  @media(max-width:860px){.pain-grid{grid-template-columns:1fr;}}
+
+  /* BEFORE / AFTER */
+  .ba{background:var(--bg-elevated);}
+  .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);}
+  .ba-col{border-radius:var(--radius-l);padding:var(--space-5) var(--space-4);}
+  .ba-before{background:var(--bg-dark);color:#D7E0DA;}
+  .ba-before h3,.ba-before .amt{color:#fff;}
+  .ba-after{background:var(--bg);border:1px solid var(--line);}
+  .ba-col .tag{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);}
+  .ba-before .tag{color:#7E8F84;}
+  .ba-col .amt{font-family:var(--font-display);font-weight:700;font-size:2.6rem;margin:var(--space-2) 0;line-height:1;}
+  .ba-after .amt{color:var(--accent-deep);}
+  .ba-list{list-style:none;margin-top:var(--space-3);display:grid;gap:10px;}
+  .ba-list li{font-size:.95rem;padding-left:26px;position:relative;}
+  .ba-before .ba-list li{color:#AEBBB3;}
+  .ba-list li::before{content:"";position:absolute;left:0;top:9px;width:12px;height:12px;border-radius:50%;}
+  .ba-before .ba-list li::before{background:#3A4A40;}
+  .ba-after .ba-list li::before{background:var(--accent);}
+  @media(max-width:860px){.ba-grid{grid-template-columns:1fr;}}
+
+  /* OPPORTUNITY */
+  .opp .wrap{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5);align-items:center;}
+  .opp-photo{border-radius:var(--radius-l) 90px var(--radius-l) var(--radius-l);overflow:hidden;height:380px;}
+  .opp-photo img{width:100%;height:100%;object-fit:cover;}
+  .opp-steps{display:grid;gap:var(--space-3);margin-top:var(--space-3);}
+  .opp-step{display:flex;gap:var(--space-2);}
+  .opp-step .n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-family:var(--font-display);font-weight:600;display:grid;place-items:center;font-size:.95rem;}
+  .opp-step h3{font-size:1.05rem;margin-bottom:2px;}
+  .opp-step p{font-size:.92rem;}
+  @media(max-width:860px){.opp .wrap{grid-template-columns:1fr;}.opp-photo{height:260px;order:-1;}}
+
+  /* BENEFITS */
+  .ben{background:var(--bg-elevated);}
+  .ben-list{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);margin-top:var(--space-4);}
+  .ben-item{display:flex;gap:var(--space-2);background:var(--bg);border:1px solid var(--line);border-radius:var(--radius-m);padding:var(--space-3) var(--space-4);}
+  .ben-item .ck{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent-deep);display:grid;place-items:center;font-weight:700;}
+  .ben-item h3{font-size:1.02rem;margin-bottom:2px;}
+  .ben-item p{font-size:.9rem;}
+  @media(max-width:860px){.ben-list{grid-template-columns:1fr;}}
+
+  /* OFFER STACK */
+  .offer-card{background:var(--bg-dark);color:#E3EBE5;border-radius:var(--radius-l);padding:var(--space-5);max-width:780px;margin:0 auto;}
+  .offer-card h2{color:#fff;}
+  .offer-items{list-style:none;margin:var(--space-4) 0;display:grid;gap:14px;}
+  .offer-items li{display:flex;justify-content:space-between;align-items:center;gap:var(--space-3);padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.1);font-size:.98rem;}
+  .offer-items .val{font-family:var(--font-display);font-weight:600;color:#fff;background:rgba(46,166,74,.22);padding:4px 12px;border-radius:99px;font-size:.85rem;white-space:nowrap;}
+  .offer-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:var(--space-3);}
+  .offer-total .lbl{color:#9FB0A6;font-size:.9rem;}
+  .offer-total .sum{font-family:var(--font-display);font-weight:700;font-size:1.8rem;color:#fff;}
+  .offer-card .btn{margin-top:var(--space-4);width:100%;justify-content:center;}
+  .offer-card .free{text-align:center;margin-top:var(--space-2);font-size:.85rem;color:#9FB0A6;}
+
+  /* MID CTA */
+  .midcta{background:linear-gradient(120deg,var(--accent-deep),var(--accent));color:#fff;text-align:center;}
+  .midcta h2{color:#fff;max-width:18ch;margin:0 auto var(--space-2);}
+  .midcta p{color:rgba(255,255,255,.85);max-width:42ch;margin:0 auto var(--space-4);}
+  .midcta .btn-primary{background:#fff;color:var(--accent-deep);box-shadow:0 12px 30px -12px rgba(0,0,0,.4);}
+  .midcta .btn-primary:hover{background:#F0F0F0;}
+
+  /* SOCIAL PROOF */
+  .proof-grid{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:auto auto;gap:var(--space-3);margin-top:var(--space-4);}
+  .tcard{border:1px solid var(--line);border-radius:var(--radius-l);padding:var(--space-4);background:var(--bg);}
+  .tcard.feat{grid-row:span 2;background:var(--bg-dark);color:#E3EBE5;border-color:transparent;}
+  .tcard.feat h3,.tcard.feat .quote{color:#fff;}
+  .tcard .quote{font-size:1.02rem;line-height:1.55;margin-bottom:var(--space-3);}
+  .tcard.feat .quote{font-size:1.22rem;}
+  .tmeta{display:flex;align-items:center;gap:12px;}
+  .tmeta img{width:44px;height:44px;border-radius:50%;object-fit:cover;}
+  .tmeta .nm{font-family:var(--font-display);font-weight:600;font-size:.95rem;color:var(--ink);}
+  .tcard.feat .tmeta .nm{color:#fff;}
+  .tmeta .rl{font-size:.82rem;color:var(--text-faint);}
+  .chip{display:inline-block;font-family:var(--font-display);font-weight:600;font-size:.8rem;background:var(--accent-soft);color:var(--accent-deep);padding:4px 12px;border-radius:99px;margin-bottom:var(--space-3);}
+  .tcard.feat .chip{background:rgba(46,166,74,.25);color:#9FE6AC;}
+  @media(max-width:860px){.proof-grid{grid-template-columns:1fr;}.tcard.feat{grid-row:auto;}}
+
+  /* BONUS */
+  .bonus{background:var(--bg-elevated);}
+  .bonus-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);margin-top:var(--space-4);}
+  .bonus-card{position:relative;border:1px dashed var(--accent);border-radius:var(--radius-l);padding:var(--space-5) var(--space-4);background:var(--bg);overflow:hidden;}
+  .bonus-card .ghost{position:absolute;right:14px;top:-10px;font-family:var(--font-display);font-weight:700;font-size:5rem;color:var(--accent-soft);z-index:0;line-height:1;}
+  .bonus-card>*{position:relative;z-index:1;}
+  .bonus-card .free-pill{font-family:var(--font-display);font-weight:600;font-size:.78rem;color:var(--accent-deep);text-transform:uppercase;letter-spacing:.08em;}
+  .bonus-card h3{margin:8px 0;}
+  .bonus-card p{font-size:.93rem;}
+  @media(max-width:860px){.bonus-grid{grid-template-columns:1fr;}}
+
+  /* CLOSE: GUARANTEE + FAQ */
+  .close .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--space-5);align-items:start;}
+  .guar{background:var(--accent-soft);border-radius:var(--radius-l);padding:var(--space-5) var(--space-4);}
+  .guar .seal{width:60px;height:60px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:26px;margin-bottom:var(--space-3);}
+  .guar h3{font-size:1.4rem;margin-bottom:var(--space-2);}
+  .guar p{font-size:.96rem;color:var(--text-dim);}
+  details{border-bottom:1px solid var(--line);padding:var(--space-2) 0;}
+  summary{font-family:var(--font-display);font-weight:600;font-size:1.04rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--ink);}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";font-size:1.4rem;color:var(--accent);transition:transform .25s var(--ease);}
+  details[open] summary::after{transform:rotate(45deg);}
+  details p{margin-top:var(--space-2);font-size:.95rem;}
+  .urgency{margin-top:var(--space-4);background:var(--bg-dark);color:#E3EBE5;border-radius:var(--radius-m);padding:var(--space-3) var(--space-4);font-size:.94rem;}
+  .urgency strong{color:#9FE6AC;}
+  @media(max-width:860px){.close .wrap{grid-template-columns:1fr;}}
+
+  /* FOOTER */
+  footer{background:var(--bg-dark);color:#9FB0A6;padding:var(--space-5) var(--space-3) var(--space-4);}
+  .foot-grid{display:flex;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;max-width:var(--maxw);margin:0 auto;}
+  .foot-brand{display:flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;color:#fff;font-size:1.1rem;margin-bottom:var(--space-2);}
+  .foot-col h4{color:#fff;font-size:.92rem;margin-bottom:var(--space-2);font-family:var(--font-body);text-transform:uppercase;letter-spacing:.06em;}
+  .foot-col a{display:block;font-size:.9rem;margin-bottom:8px;color:#9FB0A6;}
+  .foot-col a:hover{color:var(--accent);}
+  .foot-bottom{max-width:var(--maxw);margin:var(--space-4) auto 0;padding-top:var(--space-3);border-top:1px solid rgba(255,255,255,.1);font-size:.82rem;color:#6E7E74;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="brand"><span class="brand-mark">&#9728;</span>Helios Solar</a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#benefits">Why solar</a>
+      <a href="#proof">Results</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#offer" class="btn btn-primary">Get my free estimate</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Powering homes across the Sun Belt</span>
+      <h1>Stop renting your power. <span class="grad">Own your roof.</span></h1>
+      <p class="hero-sub">Your utility raises rates every year and you have no say in it. Solar locks your cost in, pays for itself, and the credit that makes it cheapest is on a clock.</p>
+      <div class="hero-cta">
+        <a href="#offer" class="btn btn-primary">Get my free savings estimate</a>
+        <a href="#how" class="btn btn-ghost">See how it works</a>
+      </div>
+      <div class="hero-proof">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <small>4.9 from 1,300+ installs &middot; NABCEP-certified crews</small>
+      </div>
+    </div>
+
+    <aside class="calc" aria-label="Savings estimate">
+      <div class="calc-photo">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80&fit=crop" alt="Solar panels installed on a suburban home roof in sunlight" loading="lazy">
+      </div>
+      <h3>Estimate your savings</h3>
+      <p class="calc-label">Drag to match your average monthly power bill.</p>
+      <div class="calc-row"><span>Monthly bill</span><span id="billOut" style="font-weight:600;color:var(--ink)">$240</span></div>
+      <input class="calc-range" type="range" min="80" max="600" step="10" value="240" id="bill" aria-label="Average monthly electric bill">
+      <div class="calc-out">
+        <span class="big" id="saveOut">$60,480</span>
+        <small>estimated 25-year savings with solar</small>
+      </div>
+      <a href="#offer" class="btn btn-primary">Lock in this estimate</a>
+    </aside>
+  </div>
+</header>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="wrap">
+    <small>Certified &amp; trusted</small>
+    <div class="trust-logos">
+      <span>NABCEP</span><span>Tesla Powerwall&trade;</span><span>Enphase</span><span>SunPower</span><span>BBB A+</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAIN -->
+<section class="pain" id="pain">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The real cost of waiting</span>
+      <h2>Every month you wait, the meter keeps winning.</h2>
+      <p>The bill arrives, you pay it, and next year it's higher. Here's what that quietly costs you.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="ic">&#8593;</div>
+        <h3>Rates that only climb</h3>
+        <p>Residential electricity has risen most years for a decade. You're locked into whatever the utility decides next.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="ic">&#8734;</div>
+        <h3>Money you never get back</h3>
+        <p>Thirty years of rent on power adds up to six figures and leaves you with nothing to show for it.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="ic">&#9201;</div>
+        <h3>A credit on a clock</h3>
+        <p>The federal solar tax credit steps down on a set date. Wait too long and the cheapest version of solar is gone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="ba" id="ba">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Before &amp; after</span>
+      <h2>Same house. Same sun. A very different bill.</h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-col ba-before reveal">
+        <span class="tag">On the grid today</span>
+        <div class="amt">$240/mo</div>
+        <ul class="ba-list">
+          <li>Rate set by the utility, rising yearly</li>
+          <li>Zero ownership, zero equity</li>
+          <li>Powerless during outages</li>
+          <li>Bill never ends</li>
+        </ul>
+      </div>
+      <div class="ba-col ba-after reveal">
+        <span class="tag">After Helios</span>
+        <div class="amt">~$0/mo</div>
+        <ul class="ba-list">
+          <li>Cost locked in for 25+ years</li>
+          <li>You own the system and the savings</li>
+          <li>Optional battery keeps lights on</li>
+          <li>Pays itself off, then runs free</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITY / HOW IT WORKS -->
+<section class="opp" id="how">
+  <div class="wrap">
+    <div class="opp-text reveal">
+      <span class="eyebrow">Why now beats later</span>
+      <h2>The old way charges you forever. The new way pays you back.</h2>
+      <p>Buying power from the grid is the only bill that never builds anything. Solar flips it: the same money buys an asset on your own roof, then keeps paying after it's done. Going Helios takes four steps.</p>
+      <div class="opp-steps">
+        <div class="opp-step"><div class="n">1</div><div><h3>Free roof &amp; savings review</h3><p>We model your roof, sun exposure, and real bill. No pressure, no door-knock follow-ups.</p></div></div>
+        <div class="opp-step"><div class="n">2</div><div><h3>Custom design &amp; incentives</h3><p>We size the system and apply every credit and rebate you qualify for, in writing.</p></div></div>
+        <div class="opp-step"><div class="n">3</div><div><h3>Permits &amp; install</h3><p>Licensed crews handle paperwork and install, usually in a single day.</p></div></div>
+        <div class="opp-step"><div class="n">4</div><div><h3>Switch on &amp; save</h3><p>You flip to your own power and start watching the meter run the other way.</p></div></div>
+      </div>
+    </div>
+    <div class="opp-photo reveal">
+      <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=900&q=80&fit=crop" alt="Technician installing rooftop solar panels under a clear sky" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="ben" id="benefits">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What you actually get</span>
+      <h2>Lower bills are just the start.</h2>
+    </div>
+    <div class="ben-list">
+      <div class="ben-item reveal"><div class="ck">&#10003;</div><div><h3>Predictable power cost</h3><p>Lock your rate against decades of utility hikes.</p></div></div>
+      <div class="ben-item reveal"><div class="ck">&#10003;</div><div><h3>Higher home value</h3><p>Owned solar adds resale value buyers actively look for.</p></div></div>
+      <div class="ben-item reveal"><div class="ck">&#10003;</div><div><h3>Backup when it counts</h3><p>Add a battery and keep the fridge and lights on through outages.</p></div></div>
+      <div class="ben-item reveal"><div class="ck">&#10003;</div><div><h3>Cleaner footprint</h3><p>Cut your home's carbon without changing how you live.</p></div></div>
+      <div class="ben-item reveal"><div class="ck">&#10003;</div><div><h3>Every incentive captured</h3><p>We file the federal credit and local rebates so you don't leave money behind.</p></div></div>
+      <div class="ben-item reveal"><div class="ck">&#10003;</div><div><h3>25-year production guarantee</h3><p>If panels underproduce against our estimate, we make it right.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER STACK -->
+<section id="offer">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin:0 auto var(--space-4);">
+      <span class="eyebrow">Your free solar plan</span>
+      <h2>Everything in your no-cost estimate.</h2>
+    </div>
+    <div class="offer-card reveal">
+      <h2>The Helios Home Solar Plan</h2>
+      <ul class="offer-items">
+        <li><span>Satellite roof &amp; shading analysis</span><span class="val">$150 value</span></li>
+        <li><span>Custom system design + production model</span><span class="val">$300 value</span></li>
+        <li><span>25-year savings projection (in writing)</span><span class="val">$120 value</span></li>
+        <li><span>Full incentive &amp; tax-credit breakdown</span><span class="val">$200 value</span></li>
+        <li><span>Battery &amp; backup options walkthrough</span><span class="val">$100 value</span></li>
+        <li><span>Financing vs. cash comparison</span><span class="val">$130 value</span></li>
+      </ul>
+      <div class="offer-total"><span class="lbl">Total value</span><span class="sum">$1,000</span></div>
+      <a href="#offer" class="btn btn-primary">Claim my free solar plan</a>
+      <p class="free">Yours free &middot; no obligation &middot; takes about 20 minutes</p>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<section class="midcta">
+  <div class="wrap reveal">
+    <h2>See your roof's number before the credit drops.</h2>
+    <p>Most homeowners are surprised how fast solar pays for itself. Find out what yours does.</p>
+    <a href="#offer" class="btn btn-primary">Get my free estimate</a>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section id="proof">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Real homes, real numbers</span>
+      <h2>Neighbors who stopped renting their power.</h2>
+    </div>
+    <div class="proof-grid">
+      <div class="tcard feat reveal">
+        <span class="chip">$2,640 saved in year one</span>
+        <p class="quote">"Our bill went from almost $300 a month to basically nothing. Helios handled every permit and the credit paperwork. I just watched the meter spin backwards the first sunny day."</p>
+        <div class="tmeta">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=84&h=84&q=80&fit=crop&crop=face" alt="Marcus D.">
+          <div><div class="nm">Marcus D.</div><div class="rl">Phoenix, AZ &middot; installed 2025</div></div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <span class="chip">Powered through 3 outages</span>
+        <p class="quote">"We added the battery and didn't lose power once during the summer storms. Worth every cent."</p>
+        <div class="tmeta">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=84&h=84&q=80&fit=crop&crop=face" alt="Priya N.">
+          <div><div class="nm">Priya N.</div><div class="rl">Austin, TX</div></div>
+        </div>
+      </div>
+      <div class="tcard reveal">
+        <span class="chip">Paid off in 7 years</span>
+        <p class="quote">"They showed me the cash vs. finance math up front. No games. The estimate matched our real production almost exactly."</p>
+        <div class="tmeta">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=84&h=84&q=80&fit=crop&crop=face" alt="Dana R.">
+          <div><div class="nm">Dana R.</div><div class="rl">Tampa, FL</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section class="bonus">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Book this week and add</span>
+      <h2>Two extras on the house.</h2>
+    </div>
+    <div class="bonus-grid">
+      <div class="bonus-card reveal">
+        <span class="ghost" aria-hidden="true">01</span>
+        <span class="free-pill">Free bonus</span>
+        <h3>Whole-home energy audit</h3>
+        <p>Before we quote a single panel, we find the cheap fixes draining your bill so your system is sized right, not oversold.</p>
+      </div>
+      <div class="bonus-card reveal">
+        <span class="ghost" aria-hidden="true">02</span>
+        <span class="free-pill">Free bonus</span>
+        <h3>Rate-hike forecast report</h3>
+        <p>A clear projection of what your utility bill becomes over 25 years if you do nothing, so the comparison is honest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE: GUARANTEE + FAQ -->
+<section class="close" id="faq">
+  <div class="wrap">
+    <div class="guar reveal">
+      <div class="seal">&#10003;</div>
+      <h3>The 25-year production promise</h3>
+      <p>We put your savings estimate in writing. If your panels underproduce against it, we cover the difference. You don't carry the risk of our math, we do.</p>
+      <div class="urgency">
+        <strong>On the clock:</strong> the federal solar tax credit steps down on its scheduled date. Lock your design before then to capture the full amount.
+      </div>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>How much does going solar actually cost?</summary><p>It depends on your roof and usage, which is exactly what the free estimate measures. Many homeowners pay $0 down through financing and replace their utility bill with a lower fixed payment.</p></details>
+      <details><summary>What happens on cloudy days or at night?</summary><p>Your system stays connected to the grid, so you always have power. Add a battery and you store daytime production to use after dark or during outages.</p></details>
+      <details><summary>Do I really get the tax credit?</summary><p>If you owe federal tax and own the system, you typically qualify. We break down your exact eligibility in writing during the estimate, never a vague promise.</p></details>
+      <details><summary>Will solar work on my roof?</summary><p>Most roof types and orientations work. The satellite analysis tells us for sure before anyone climbs up there.</p></details>
+      <details><summary>What if I sell my house?</summary><p>Owned solar generally adds resale value and transfers with the home. We walk you through it so there are no surprises.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand"><span class="brand-mark">&#9728;</span>Helios Solar</div>
+      <p style="max-width:30ch;font-size:.9rem;">Helping homeowners own their power, one roof at a time.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <a href="#how">How it works</a>
+      <a href="#benefits">Why solar</a>
+      <a href="#proof">Results</a>
+    </div>
+    <div class="foot-col">
+      <h4>Get started</h4>
+      <a href="#offer">Free estimate</a>
+      <a href="tel:+18005550100">(800) 555-0100</a>
+      <a href="mailto:hello@heliossolar.example">hello@heliossolar.example</a>
+    </div>
+    <div class="foot-col">
+      <h4>Trust</h4>
+      <a href="#faq">FAQ</a>
+      <a href="#faq">25-year guarantee</a>
+      <a href="#">Licensed &amp; insured</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Helios Solar. Sample site for demonstration.</span>
+    <span>NABCEP-certified &middot; BBB A+ &middot; Licensed &amp; insured</span>
+  </div>
+</footer>
+
+<script>
+  // Savings calculator
+  (function(){
+    var bill = document.getElementById('bill');
+    var billOut = document.getElementById('billOut');
+    var saveOut = document.getElementById('saveOut');
+    if(!bill || !billOut || !saveOut) return;
+    function fmt(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+    function update(){
+      var v = +bill.value;
+      billOut.textContent = fmt(v);
+      // ~85% offset over 25yr (300 months), simple illustrative model
+      var savings = v * 0.85 * 300;
+      saveOut.textContent = fmt(savings);
+    }
+    bill.addEventListener('input', update);
+    update();
+  })();
+
+  // Scroll reveals - transform only, content stays visible if JS/IO unavailable
+  (function(){
+    var items = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      items.forEach(function(el){ el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin:'0px 0px -10% 0px' });
+    items.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+</body>
+</html>
