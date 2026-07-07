@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Keyvin Abillon — Automation Specialist (GoHighLevel), SEO &amp; CRO</title>
+<!-- Security: GH Pages can't set HTTP headers — meta CSP is the available fallback -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://challenges.cloudflare.com https://plausible.io 'sha256-f5lsRfP9D3IfItCArg/eFPe3u1pBW1Uh5IahkioNYEA=' 'sha256-7L3KY33lvL9fNI5PbXTvUrT7PR2xmqDupzgZvA3LQ74='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://kei-ghl-contact.abillon13.workers.dev https://plausible.io https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>Keyvin Abillon — GoHighLevel Automation, SEO &amp; CRO</title>
 <meta name="description" content="I build lead systems that run without you. GoHighLevel automation, Google Shopping / GMC feeds, SEO and CRO for global clients. Based in Manila, PH." />
 
 <link rel="canonical" href="https://keidark13.github.io/project/" />
@@ -15,6 +18,8 @@
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Keyvin Abillon — GoHighLevel Automation, SEO &amp; CRO" />
+<meta name="twitter:description" content="I build lead systems that run without you. GoHighLevel automation, Google Shopping / GMC feeds, SEO and CRO." />
 <meta name="twitter:image" content="https://keidark13.github.io/project/assets/og-image.png" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
@@ -52,7 +57,7 @@
     --surface:    #fdfdfc;
     --ink:        #17181a;      /* near-black text */
     --ink-2:      #4a4d52;      /* secondary */
-    --ink-3:      #7c8085;      /* tertiary / captions */
+    --ink-3:      #6d7176;      /* tertiary / captions — ≥4.75:1 on paper (WCAG AA) */
     --line:       #e7e6e2;      /* hairlines */
     --line-2:     #f0efec;
     --accent:     #059669;      /* deep emerald, used sparingly */
@@ -117,6 +122,12 @@
     outline-offset:3px;
     border-radius:4px;
   }
+
+  .skip-link{
+    position:absolute; left:-999px; top:0; z-index:100;
+    background:var(--ink); color:#fff;
+  }
+  .skip-link:focus{ left:1rem; top:1rem; }
 
   ::selection{ background:var(--accent-wash); color:var(--accent-ink); }
 
@@ -402,6 +413,7 @@
   }
   .field{ margin-bottom:1.1rem; }
   .field label{ display:block; font-size:.82rem; font-weight:500; color:var(--ink-2); margin-bottom:.45rem; letter-spacing:.01em; }
+  .req{ color:var(--accent-ink); }
   .field input, .field textarea{
     width:100%; font:inherit; font-size:1rem; color:var(--ink);
     background:var(--paper); border:1px solid var(--line); border-radius:10px;
@@ -435,7 +447,7 @@
 </head>
 
 <body>
-<a href="#work" class="btn" style="position:absolute;left:-999px;top:0;z-index:100;background:var(--ink);color:#fff" onfocus="this.style.left='1rem';this.style.top='1rem'" onblur="this.style.left='-999px'">Skip to content</a>
+<a href="#main" class="btn skip-link">Skip to content</a>
 
 <!-- ===================== HEADER ===================== -->
 <header id="top">
@@ -479,7 +491,7 @@
   </nav>
 </div>
 
-<main>
+<main id="main" tabindex="-1">
 <!-- ===================== HERO ===================== -->
 <section class="hero">
   <div class="wrap hero-grid">
@@ -752,15 +764,15 @@
 
     <form class="reveal" id="contactForm" novalidate>
       <div class="field">
-        <label for="cf-name">Name</label>
+        <label for="cf-name">Name <span class="req" aria-hidden="true">*</span></label>
         <input id="cf-name" name="name" type="text" placeholder="Your name" required autocomplete="name" />
       </div>
       <div class="field">
-        <label for="cf-email">Email</label>
+        <label for="cf-email">Email <span class="req" aria-hidden="true">*</span></label>
         <input id="cf-email" name="email" type="email" placeholder="you@company.com" required autocomplete="email" />
       </div>
       <div class="field">
-        <label for="cf-msg">Message</label>
+        <label for="cf-msg">Message <span class="req" aria-hidden="true">*</span></label>
         <textarea id="cf-msg" name="message" placeholder="What would you like to automate?" required></textarea>
       </div>
       <div class="cf-turnstile" data-sitekey="0x4AAAAAAC9akxfD0JJsKRt8"></div>
@@ -778,7 +790,7 @@
 <footer>
   <div class="wrap foot">
     <span class="fbrand">Keyvin Abillon</span>
-    <p>&copy; 2026 · Automation Specialist (GoHighLevel), SEO &amp; CRO · Manila, PH</p>
+    <p>&copy; 2026 · Automation Specialist (GoHighLevel), SEO &amp; CRO · Manila, PH · <a href="privacy.html" style="text-decoration:underline">Privacy</a> · <a href="terms.html" style="text-decoration:underline">Terms</a></p>
     <a class="to-top" href="#top">Back to top <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
   </div>
 </footer>
@@ -795,8 +807,8 @@
   /* Mobile menu */
   const burger = document.getElementById('hamburger');
   const menu = document.getElementById('mobileMenu');
-  const openMenu = () => { menu.classList.add('open'); menu.setAttribute('aria-hidden','false'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
-  const closeMenu = () => { menu.classList.remove('open'); menu.setAttribute('aria-hidden','true'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
+  const openMenu = () => { menu.classList.add('open'); menu.setAttribute('aria-hidden','false'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; document.getElementById('menuClose').focus(); };
+  const closeMenu = () => { menu.classList.remove('open'); menu.setAttribute('aria-hidden','true'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; burger.focus(); };
   burger.addEventListener('click', openMenu);
   document.getElementById('menuClose').addEventListener('click', closeMenu);
   menu.addEventListener('click', (e) => { if (e.target.closest('[data-close]')) closeMenu(); });

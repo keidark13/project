@@ -20,3 +20,18 @@ legion/.mempalace/
 
 # Personal project (not part of site)
 meri jeia kaye/
+
+# Internal workspace files — NEVER publish (audit 2026-07-07)
+CLAUDE.md
+DESIGN.md
+legion/
+rules/
+docs/
+tools/
+_backup_pre_redesign_*/
+_redesign/
+_research/
+css/redesign-2026-07.css
+adsradar/.graphify_detect.json
+.graphify*
+graphify-out/
