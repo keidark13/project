@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies — Google Ads &amp; Merchant Center — Keyvin Abillon</title>
+  <meta name="description" content="Real before/after results from live e-commerce accounts: 16x ad spend scale at improving ROAS, a policy-flag rescue, and a 4,547-variant feed rebuild at 99.8% eligibility." />
+  <link rel="canonical" href="https://keidark13.github.io/project/case-studies/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --paper:      #fbfbfa;
+      --surface:    #fdfdfc;
+      --ink:        #17181a;
+      --ink-2:      #4a4d52;
+      --ink-3:      #6d7176;
+      --line:       #e7e6e2;
+      --line-2:     #f0efec;
+      --accent:     #059669;
+      --accent-ink: #047857;
+      --accent-wash:#ecfdf5;
+      --serif: "Spectral", Georgia, "Times New Roman", serif;
+      --sans:  "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --mono:  "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      --radius: 14px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16.5px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 22px; }
+
+    header.bar {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(251,251,250,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .bar-inner { display: flex; align-items: center; justify-content: space-between; padding: .85rem 0; }
+    .brand { display: flex; align-items: center; gap: .6rem; color: var(--ink); text-decoration: none; font-weight: 600; }
+    .brand .mark {
+      display: grid; place-items: center; width: 30px; height: 30px;
+      border-radius: 8px; font-weight: 700; color: #fff;
+      background: var(--accent);
+    }
+    .brand small { display: block; font-size: .68rem; font-weight: 500; color: var(--ink-3); letter-spacing: .02em; }
+    .back {
+      display: inline-flex; align-items: center; gap: .4rem;
+      color: var(--accent-ink); text-decoration: none; font-size: .88rem; font-weight: 600;
+    }
+    .back:hover { text-decoration: underline; }
+
+    .hero { padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(2rem, 4vw, 3rem); }
+    .eyebrow {
+      font-family: var(--mono); font-size: .72rem; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--accent-ink);
+    }
+    h1 {
+      font-family: var(--serif); font-weight: 500; color: var(--ink);
+      font-size: clamp(2.1rem, 5vw, 3.2rem); line-height: 1.08; letter-spacing: -.015em;
+      margin-top: .9rem; max-width: 21ch;
+    }
+    .hero p.lede { margin-top: 1.1rem; max-width: 58ch; color: var(--ink-2); font-size: 1.05rem; }
+    .hero .note { margin-top: .9rem; font-size: .8rem; color: var(--ink-3); font-family: var(--mono); }
+
+    .cs {
+      border-top: 1px solid var(--line);
+      padding: clamp(2.6rem, 6vw, 4rem) 0;
+    }
+    .cs.alt { background: var(--surface); }
+    .cs-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .8rem 1.2rem; }
+    .cs-num { font-family: var(--mono); color: var(--accent-ink); font-size: .85rem; }
+    .cs h2 {
+      font-family: var(--serif); font-weight: 500; color: var(--ink);
+      font-size: clamp(1.6rem, 3.4vw, 2.3rem); letter-spacing: -.01em; line-height: 1.15;
+    }
+    .cs .headline {
+      margin-top: 1rem; font-family: var(--serif); font-style: italic; font-weight: 400;
+      color: var(--accent-ink); font-size: clamp(1.05rem, 2vw, 1.25rem); max-width: 62ch;
+    }
+    .cs-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 2rem; margin-top: 2rem; }
+    @media (max-width: 860px) { .cs-grid { grid-template-columns: 1fr; } }
+    .cs h3 {
+      font-size: .74rem; font-family: var(--mono); letter-spacing: .12em;
+      text-transform: uppercase; color: var(--ink-3); margin-bottom: .8rem;
+    }
+    .cs ul { list-style: none; display: grid; gap: .65rem; }
+    .cs ul li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; color: var(--ink-2); }
+    .cs ul li svg { flex: none; margin-top: .22rem; color: var(--accent); }
+
+    table.ba {
+      width: 100%; border-collapse: collapse; font-size: .95rem;
+      border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+      background: #fff;
+    }
+    table.ba th, table.ba td { padding: .65rem .9rem; text-align: left; border-bottom: 1px solid var(--line-2); }
+    table.ba th { font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); background: var(--line-2); }
+    table.ba td.metric { color: var(--ink-3); }
+    table.ba td.after { color: var(--accent-ink); font-weight: 700; background: var(--accent-wash); }
+    table.ba tr:last-child td { border-bottom: none; }
+
+    .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.2rem; }
+    @media (max-width: 720px) { .shots { grid-template-columns: 1fr; } }
+    .shot { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; }
+    .shot img { display: block; width: 100%; height: auto; }
+    .shot figcaption { padding: .55rem .8rem; font-family: var(--mono); font-size: .72rem; color: var(--ink-3); border-top: 1px solid var(--line-2); }
+    .shot.wide { grid-column: 1 / -1; }
+
+    .src { margin-top: 1.3rem; font-size: .78rem; color: var(--ink-3); font-family: var(--mono); }
+
+    .cta-band { border-top: 1px solid var(--line); background: var(--surface); padding: clamp(2.4rem, 5vw, 3.5rem) 0; }
+    .cta-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.4rem; }
+    .cta-band h2 { font-family: var(--serif); font-weight: 500; color: var(--ink); font-size: clamp(1.4rem, 2.6vw, 1.9rem); max-width: 26ch; letter-spacing: -.01em; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--accent); color: #fff; font-weight: 700; font-size: .95rem;
+      padding: .8rem 1.4rem; border-radius: 999px; text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .btn:hover { background: var(--accent-ink); transform: translateY(-1px); }
+
+    footer { border-top: 1px solid var(--line); padding: 1.6rem 0 2.2rem; font-size: .82rem; color: var(--ink-3); }
+    footer a { color: var(--accent-ink); }
+  </style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-inner">
+    <a class="brand" href="../index.html">
+      <span class="mark" aria-hidden="true">K</span>
+      <span>Keyvin Abillon<small>Automation · SEO · CRO</small></span>
+    </a>
+    <a class="back" href="../index.html#work">&larr; Back to portfolio</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Case studies</span>
+      <h1>Real accounts. Real before and after.</h1>
+      <p class="lede">Three engagements from my live Google Ads and Merchant Center portfolio. Every number below comes straight from the Google Ads API and account screenshots &mdash; nothing modeled, nothing projected.</p>
+      <p class="note">Client names anonymized. Screenshots blurred only where they would identify the client.</p>
+    </div>
+  </section>
+
+  <!-- ============ CASE STUDY 1 — FRAGRANCE ============ -->
+  <section class="cs alt" id="fragrance">
+    <div class="wrap">
+      <div class="cs-head">
+        <span class="cs-num">01</span>
+        <h2>US Fragrance E-Commerce Store</h2>
+      </div>
+      <p class="headline">16x ad spend scale in one month &mdash; while ROAS improved &mdash; on an account that started with counterfeit-policy disapprovals.</p>
+
+      <div class="cs-grid">
+        <div>
+          <h3>The problem</h3>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>8 products disapproved under Google's counterfeit policy, risky title patterns across the catalog</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Product titles disconnected from what shoppers actually search</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Brand-new ads account that had to scale without tripping more policy flags</li>
+          </ul>
+          <h3 style="margin-top:1.6rem">What I did</h3>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Rewrote all 8 flagged listings policy-safe, plus title rules so new products can't repeat the violation</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>5,718-keyword study filtered through honesty gates &rarr; 450-row keyword-led shopping feed covering 1.2M+ monthly searches</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Negative-keyword banks and a branded/generic split so budget scaled into the right queries</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Results &mdash; Google Ads, Jun vs Jul 2026</h3>
+          <table class="ba">
+            <tr><th></th><th>June</th><th>July 1&ndash;24</th></tr>
+            <tr><td class="metric">Ad spend</td><td>$483</td><td class="after">$8,036</td></tr>
+            <tr><td class="metric">Conversions</td><td>12</td><td class="after">380</td></tr>
+            <tr><td class="metric">Conv. value</td><td>$723</td><td class="after">$15,942</td></tr>
+            <tr><td class="metric">ROAS</td><td>1.50x</td><td class="after">1.98x</td></tr>
+          </table>
+          <p style="margin-top:1rem; font-size:.9rem; color:var(--ink-3)">Best July performers: generic PMax at 3.63x, branded Shopping at 2.84x, discovery PMax at 2.41x.</p>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure class="shot"><img src="img/fragrance-before.png" alt="Google Ads campaigns screenshot, June 2026: $482.73 spend, 12 conversions" loading="lazy" /><figcaption>BEFORE &mdash; June 2026: $483 spend &middot; 12 conversions</figcaption></figure>
+        <figure class="shot"><img src="img/fragrance-after.png" alt="Google Ads campaigns screenshot, July 2026: $8,036 spend, 380 conversions" loading="lazy" /><figcaption>AFTER &mdash; July 1&ndash;24, 2026: $8,036 spend &middot; 380 conversions</figcaption></figure>
+        <figure class="shot wide"><img src="img/fragrance-growth.png" alt="Google Ads growth chart June to July 2026: $8,326 total spend, 392 conversions" loading="lazy" /><figcaption>FULL WINDOW &mdash; Jun 1&ndash;Jul 22, 2026: $8,326 spend &middot; 392 conversions &middot; $16,650 conv. value</figcaption></figure>
+      </div>
+      <p class="src">Source: Google Ads account (screenshots) + Google Ads API pulls, Jun 1 &ndash; Jul 24, 2026.</p>
+    </div>
+  </section>
+
+  <!-- ============ CASE STUDY 2 — SUPPLEMENTS ============ -->
+  <section class="cs" id="supplements">
+    <div class="wrap">
+      <div class="cs-head">
+        <span class="cs-num">02</span>
+        <h2>Supplements Brand &mdash; 5 English-Speaking Markets</h2>
+      </div>
+      <p class="headline">From a $0 cold start to a 2x ROAS month &mdash; after rescuing the bestseller from a drug-policy flag that made it invisible in Shopping.</p>
+
+      <div class="cs-grid">
+        <div>
+          <h3>The problem</h3>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Bestselling product line kept getting flagged under Google's drug-class policies &mdash; effectively invisible in Shopping</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Cold-start ads account: no history, five markets at once (AU, CA, UK, IE, NZ)</li>
+          </ul>
+          <h3 style="margin-top:1.6rem">What I did</h3>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Root-caused the flag: a drug-class term in copy, not the brand name &mdash; rebuilt listings brand-led and policy-clean</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>1,539-row supplemental feed in two languages with search-grounded titles</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Full API account diagnostic: zero-converting products, starved budgets, compliance timebombs &rarr; prioritized fix plan + negatives pack</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Results &mdash; launch through Jul 24, 2026</h3>
+          <table class="ba">
+            <tr><th></th><th>Launch week</th><th>Latest week</th></tr>
+            <tr><td class="metric">Ad spend</td><td>$113</td><td class="after">$2,025</td></tr>
+            <tr><td class="metric">Conversions</td><td>2</td><td class="after">85</td></tr>
+            <tr><td class="metric">ROAS</td><td>0.57x</td><td class="after">2.83x</td></tr>
+          </table>
+          <p style="margin-top:1rem; font-size:.9rem; color:var(--ink-3)">July overall: $6,574 at ~2x blended ROAS while still scaling. Brand search at 7.86x. Merchant Center at 94.4% eligible products after the policy cleanup.</p>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure class="shot"><img src="img/supplements-before.png" alt="Google Ads screenshot June 2026 showing zero spend — account not yet launched" loading="lazy" /><figcaption>BEFORE &mdash; June 2026: $0 &mdash; account cold start</figcaption></figure>
+        <figure class="shot"><img src="img/supplements-after.png" alt="Google Ads screenshot July 2026: $6,574 spend, $13,290 conversion value, 199 conversions" loading="lazy" /><figcaption>AFTER &mdash; July 1&ndash;24, 2026: $6,574 spend &middot; $13,290 conv. value</figcaption></figure>
+      </div>
+      <p class="src">Source: Google Ads account (screenshots) + Google Ads API weekly pulls + Merchant Center product-status scan, Jul 24, 2026.</p>
+    </div>
+  </section>
+
+  <!-- ============ CASE STUDY 3 — FASHION ============ -->
+  <section class="cs alt" id="fashion">
+    <div class="wrap">
+      <div class="cs-head">
+        <span class="cs-num">03</span>
+        <h2>Canadian Fashion Boutique &mdash; 4,547-Variant Feed Rebuild</h2>
+      </div>
+      <p class="headline">Every one of 4,547 product variants retitled around real search demand &mdash; 99.8% Merchant Center eligibility at launch.</p>
+
+      <div class="cs-grid">
+        <div>
+          <h3>The problem</h3>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>4,547-variant catalog running on template titles &mdash; zero connection to search demand</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>A niche where Google watches misrepresentation closely &mdash; sloppy titles get accounts suspended</li>
+          </ul>
+          <h3 style="margin-top:1.6rem">What I did</h3>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Pulled 21,526 keywords with real volumes from the Google Ads API (Canada geo) &mdash; demand data, not guesswork</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Exclusive-assignment system: 1,827 keyword heads, each owned by exactly one product &mdash; listings never compete for the same query</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Every title through honesty gates: claims verified against the live site, competitor brands stripped, ungrounded copy killed</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Results &mdash; Merchant Center scan, Jul 24, 2026</h3>
+          <table class="ba">
+            <tr><th></th><th>Before</th><th>After</th></tr>
+            <tr><td class="metric">Keyword-grounded titles</td><td>0 / 4,547</td><td class="after">4,547 / 4,547</td></tr>
+            <tr><td class="metric">Unique titles</td><td>Template repeats</td><td class="after">4,547 unique</td></tr>
+            <tr><td class="metric">Eligible in Merchant Center</td><td>&mdash;</td><td class="after">4,538 / 4,547 (99.8%)</td></tr>
+          </table>
+          <p style="margin-top:1rem; font-size:.9rem; color:var(--ink-3)">Campaigns are in early launch phase &mdash; this feed infrastructure is the same system behind case study 01.</p>
+        </div>
+      </div>
+      <p class="src">Source: Google Ads API product-status scan + keyword-ideas API pull, Jul 24, 2026.</p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap cta-inner">
+      <h2>Want your feed and ads account looked at the same way?</h2>
+      <a class="btn" href="../index.html#contact">Book a project
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Keyvin Abillon &middot; <a href="../index.html">keidark13.github.io/project</a></div>
+</footer>
+
+</body>
+</html>
