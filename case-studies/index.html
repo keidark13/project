@@ -281,6 +281,63 @@
     </div>
   </section>
 
+
+  <!-- ============ CASE STUDY 4 — PRICE INTEGRITY MONITORING ============ -->
+  <section class="cs" id="price-integrity">
+    <div class="wrap">
+      <div class="cs-head">
+        <span class="cs-num">04</span>
+        <h2>20-Account Shopping Portfolio &mdash; Price-Integrity Monitoring</h2>
+      </div>
+      <p class="headline">Found live price errors on four client feeds that had never once been checked &mdash; including one feed running 60% of its rows below the price the store actually charged.</p>
+
+      <div class="cs-grid">
+        <div>
+          <h3>The problem</h3>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>A 20-account Google Shopping portfolio running <strong>$299,640 in 14 days</strong> &mdash; feeds built up over months, prices moving underneath them</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>The weekly price check reported <strong>&ldquo;0 mismatch&rdquo;</strong> for several accounts. They were not clean &mdash; nothing had been compared. The id pattern silently skipped them</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Localised feeds (CA / AU / NZ / UK / IE) were invisible to any check &mdash; a store&rsquo;s public product feed only serves its base currency</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>A feed priced below the real checkout price is the exact condition Google penalises &mdash; and nobody was seeing it</span></li>
+          </ul>
+          <h3 style="margin-top:1.6rem">What I did</h3>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Audited coverage across <strong>every feed file ever built</strong> &mdash; 92 files. Only 15 were being price-checked</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Made blind spots impossible to misread: the checker now prints an explicit <strong>ZERO COVERAGE</strong> warning instead of a clean-looking zero</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Built a second checker for localised feeds, validating them against the market price books captured at build time &mdash; the only source that holds per-country pricing</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Root-caused every finding before escalating &mdash; separating errors in my own feeds from errors in the client&rsquo;s store feed, so each went to the person who could actually fix it</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Results &mdash; coverage rebuild, Aug 7, 2026</h3>
+          <table class="ba">
+            <tr><th></th><th>Before</th><th>After</th></tr>
+            <tr><td class="metric">Feed files price-checked</td><td>15 / 92</td><td class="after">All current builds</td></tr>
+            <tr><td class="metric">Accounts with price coverage</td><td>16 / 20</td><td class="after">19 / 20</td></tr>
+            <tr><td class="metric">Localised feeds validated</td><td>0</td><td class="after">13 feeds &middot; 2,562 rows</td></tr>
+            <tr><td class="metric">Silent blind spots</td><td>Reported as &ldquo;clean&rdquo;</td><td class="after">Flagged explicitly</td></tr>
+            <tr><td class="metric">Live price errors surfaced</td><td>0 known</td><td class="after">4 accounts</td></tr>
+          </table>
+
+          <h3 style="margin-top:1.6rem">What the first run caught</h3>
+          <ul>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><strong>EU accessories brand</strong> &mdash; 32 of 53 rows priced &euro;5 under the live store. The feed had been built in July; the store raised prices after. Caught the same day it went live</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><strong>Swiss footwear retailer</strong> &mdash; 89 rows advertising below checkout price</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><strong>US workwear brand</strong> &mdash; the store&rsquo;s own feed was sending the was-price as the selling price. Same number, wrong column. Nothing to rebuild, one mapping to fix</span></li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span><strong>US motorcycle apparel</strong> &mdash; 19 rows at exactly half the live price, on the store&rsquo;s primary feed. The matching Shopping campaigns were running at 0.50x while the same products earned 3.72x elsewhere</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="shots">
+        <figure class="shot"><img src="img/ops-dashboard-demo.png" alt="Operations dashboard showing severity-ranked feed issues, ROAS scoreboard and Merchant Center eligibility sparklines across a 20-account portfolio" loading="lazy" /><figcaption>Ops dashboard &mdash; fires by severity, ROAS against a 1.0x break-even line, eligibility trend worst-first. Client names anonymised.</figcaption></figure>
+      </div>
+
+      <p style="margin-top:1rem; font-size:.9rem; color:var(--ink-3)">The dashboard ships with an anonymised mode so the interface can be shown without exposing an account roster &mdash; verified by scanning the rendered page for every real client name before publishing.</p>
+      <p class="src">Source: Google Ads API product-status and spend pulls, live store price capture, and feed-file audit &mdash; Aug 7, 2026. Client names withheld; niches only.</p>
+    </div>
+  </section>
+
   <section class="cta-band">
     <div class="wrap cta-inner">
       <h2>Want your feed and ads account looked at the same way?</h2>
