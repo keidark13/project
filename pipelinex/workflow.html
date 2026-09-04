@@ -81,6 +81,16 @@ section{padding:var(--sp-5) 0}
 .feed-line.show{transform:translateX(0);opacity:1}
 .feed-line .t{color:var(--accent);min-width:86px;font-weight:600}
 .feed-line.sys .t{color:var(--green)}
+/* real-build shot sa detail card */
+.shot{grid-column:1 / -1;border-top:1px solid var(--line);padding-top:var(--sp-2)}
+.shot img{width:100%;max-height:260px;object-fit:cover;object-position:top;border:1px solid var(--line);border-radius:var(--r-s);cursor:zoom-in;display:block;transition:transform .18s ease}
+.shot img:hover{transform:scale(1.01)}
+.shot .d-label span{color:var(--green)}
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(15,34,53,.88);z-index:200;display:none;align-items:flex-start;justify-content:center;padding:4vh 4vw;overflow:auto;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:min(1200px,94vw);width:100%;border-radius:var(--r-s);background:#fff}
+.lb .lb-cap{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);font-family:var(--fs);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--on-navy);background:rgba(15,34,53,.85);padding:8px 18px;border-radius:99px;border:1px solid var(--navy-line)}
 /* nurture band */
 .nurt{background:var(--ink);color:var(--on-navy)}
 .nurt .eyebrow{color:var(--on-navy-mist)}
@@ -119,7 +129,7 @@ section{padding:var(--sp-5) 0}
   <span class="eyebrow">Concept 4 &middot; The machinery behind all 3 pages</span>
   <h1>What happens <span class="hl">after</span> the form</h1>
   <p>A landing page only wins the first 10 seconds. This is the lead engine that runs the next 30 days — every enquiry chased, reminded, recovered and recycled, without anyone touching an inbox.</p>
-  <span class="chip"><span class="dot"></span>Same system running live on a client account — adapted here for resin installer leads</span>
+  <span class="chip"><span class="dot"></span>Live system, not a diagram — every stage below shows the actual build, screenshotted from the account</span>
 </div></header>
 
 <section class="rail-zone"><div class="wrap">
@@ -150,6 +160,11 @@ section{padding:var(--sp-5) 0}
       <p>Deal marked lost? The system waits 30 days, then re-opens the conversation automatically. If they engage, they re-enter the pipeline as a fresh lead. Lost today is not lost forever — and nobody has to remember to follow up.</p>
     </div>
   </div>
+  <div class="nurt-card" style="margin-top:24px">
+    <h3>The nurture drip itself — real build</h3>
+    <p style="margin-bottom:14px">The silent-lead sequence: spaced emails with waits between every send. Click to enlarge.</p>
+    <img src="assets/ghl/007-days-nurture.png" alt="Days nurture workflow, real build" loading="lazy" style="width:100%;border-radius:10px;border:1px solid rgba(244,196,48,.25);cursor:zoom-in" onclick="lbOpen('assets/ghl/007-days-nurture.png','Days Nurture')">
+  </div>
 </div></section>
 
 <section><div class="wrap">
@@ -170,33 +185,48 @@ section{padding:var(--sp-5) 0}
   <a class="btn btn-ghost" href="direct-response.html" style="margin-left:10px">Open concept 1</a>
 </div></section>
 
+<div class="lb" id="lb" onclick="this.classList.remove('on')"><img id="lb-img" src="" alt=""><span class="lb-cap" id="lb-cap"></span></div>
+
 <script>
+function lbOpen(src,cap){
+  document.getElementById("lb-img").src=src;
+  document.getElementById("lb-cap").textContent=cap+" — actual workflow build";
+  document.getElementById("lb").classList.add("on");
+}
+document.addEventListener("keydown",function(e){if(e.key==="Escape")document.getElementById("lb").classList.remove("on")});
 var STAGES=[
  {k:"lead",step:"Stage 1",name:"New Lead",tag:"status: new-lead",branch:false,
+  shot:"assets/ghl/001-new-lead.png",
   trig:"Form submitted on any of the 3 pages",
   fires:["Lead record + deal created instantly","Welcome email to the installer within seconds","Internal ping to your team","Revenue qualifier read from the form — under-threshold leads routed to their own lane"],
   time:"Instant, 24/7 — a 2am enquiry gets the same response as a 2pm one."},
  {k:"cont",step:"Stage 2",name:"Contacted",tag:"status: contacted",branch:false,
+  shot:"assets/ghl/002-contacted.png",
   trig:"The lead replies — email or text",
   fires:["Status flips from new-lead to contacted","Follow-up sequence stops itself immediately","Next-step email goes out"],
   time:"Fires only on a genuine reply — filtered so it can't trigger on the wrong contact."},
  {k:"qual",step:"Stage 3",name:"Qualified",tag:"status: qualified",branch:false,
+  shot:"assets/ghl/003-qualified.png",
   trig:"Your team moves the deal to Qualified",
   fires:["Status handoff","Booking link email — calendar, not phone tag"],
   time:"Human decision, automated paperwork."},
  {k:"book",step:"Stage 4",name:"Call Booked",tag:"status: booked",branch:false,
+  shot:"assets/ghl/004-strategy-booked.png",
   trig:"Strategy call lands on the calendar",
   fires:["Confirmation email straight away","Team notification","Reminder email before the call"],
   time:"Reminder spacing tuned so calls actually get attended."},
  {k:"nosh",step:"Safety net",name:"No-Show Recovery",tag:"recovery drip",branch:true,
+  shot:"assets/ghl/004b-no-show-recovery.png",
   trig:"The call is marked a no-show",
   fires:["Recovery email 1 — same day","Email 2 — two days later","Email 3 — three days after that, then rest"],
   time:"Three touches over ~5 days. Most no-shows rebook off touch 1 or 2."},
  {k:"won",step:"Stage 5",name:"Closed Won",tag:"status: client",branch:false,
+  shot:"assets/ghl/005-closed-won.png",
   trig:"Deal marked won",
   fires:["Onboarding email to the new client","Team ping + kickoff task created automatically"],
   time:"First impression handled before anyone opens their laptop."},
  {k:"lost",step:"Stage 6",name:"Lost &rarr; Recycle",tag:"30-day loop",branch:true,
+  shot:"assets/ghl/006-closed-lost-recycle.png",
   trig:"Deal marked lost",
   fires:["System waits 30 days — silence, on purpose","Re-engagement email","If they bite within a week, they re-enter as a fresh lead"],
   time:"The follow-up nobody on a busy team ever remembers to do."}
@@ -234,7 +264,8 @@ function select(k){
   document.querySelectorAll(".node").forEach(function(n){n.classList.toggle("sel",n.dataset.k===k)});
   detail.innerHTML='<div><span class="d-label">Stage</span><h3>'+s.name+'</h3><p style="margin-top:8px">'+s.time+'</p></div>'+
     '<div><span class="d-label">Triggered by</span><p>'+s.trig+'</p></div>'+
-    '<div><span class="d-label">What fires automatically</span><ul>'+s.fires.map(function(f){return"<li>"+f+"</li>"}).join("")+'</ul></div>';
+    '<div><span class="d-label">What fires automatically</span><ul>'+s.fires.map(function(f){return"<li>"+f+"</li>"}).join("")+'</ul></div>'+
+    (s.shot?'<div class="shot"><span class="d-label"><span>&#9679;</span> The actual build &mdash; live workflow, click to enlarge</span><img src="'+s.shot+'" alt="'+s.name+' workflow, real build" loading="lazy" onclick="lbOpen(\''+s.shot+'\',\''+s.name+'\')"></div>':'');
 }
 select("lead");
 var timer=null;
